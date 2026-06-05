@@ -1,16 +1,33 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import {
+  ArrowRight,
+  Building2,
+  CheckCircle2,
+  Cpu,
+  Lightbulb,
+  Package,
+  Shield,
+  Wrench,
+} from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
-import { ArrowRight, Flame, Cpu, Wrench, Package, Building2, Lightbulb, CheckCircle2 } from "lucide-react";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Nexora Energy Solutions" },
-      { name: "description", content: "Oil & gas, engineering, maintenance, procurement, infrastructure and consultancy services delivered by Nexora across the GCC." },
-      { property: "og:title", content: "Nexora Services" },
-      { property: "og:description", content: "Full-spectrum industrial services: oil & gas, engineering, maintenance, procurement, infrastructure and consultancy." },
+      { title: "Services | Nexora Energy Solutions" },
+      {
+        name: "description",
+        content:
+          "Integrated engineering, industrial services, procurement, maintenance, infrastructure delivery and operational support for Kuwait's energy sector.",
+      },
+      { property: "og:title", content: "Nexora Energy Services" },
+      {
+        property: "og:description",
+        content:
+          "Enterprise-grade engineering and industrial service capabilities for energy partners.",
+      },
       { property: "og:url", content: "/services" },
     ],
     links: [{ rel: "canonical", href: "/services" }],
@@ -19,12 +36,67 @@ export const Route = createFileRoute("/services")({
 });
 
 const services = [
-  { i: Flame, t: "Oil & Gas Services", d: "Comprehensive upstream, midstream and downstream support tailored to refinery and field operations.", f: ["Pipeline support & integrity", "Shutdown & turnaround support", "Field operations", "Technical manpower"] },
-  { i: Cpu, t: "Engineering Solutions", d: "Multidisciplinary engineering services with full lifecycle delivery from concept to commissioning.", f: ["Mechanical engineering", "Electrical systems", "Instrumentation & control", "Process automation"] },
-  { i: Wrench, t: "Industrial Maintenance", d: "Preventive and predictive maintenance programs designed for maximum asset uptime.", f: ["Preventive maintenance", "Asset integrity management", "Plant support services", "Rotating equipment overhaul"] },
-  { i: Package, t: "Procurement & Supply", d: "End-to-end procurement and logistics aligned with stringent industrial standards.", f: ["Industrial equipment", "Spare parts sourcing", "Global logistics", "Vendor management"] },
-  { i: Building2, t: "Infrastructure Projects", d: "Turnkey project delivery from civil works to commissioning of complex industrial facilities.", f: ["Installation services", "Commissioning support", "Project execution", "Site management"] },
-  { i: Lightbulb, t: "Technical Consultancy", d: "Strategic advisory rooted in deep operational expertise and compliance knowledge.", f: ["Project planning", "Process optimization", "Regulatory compliance", "Strategy & advisory"] },
+  {
+    icon: Cpu,
+    title: "Engineering Solutions",
+    text: "Multidisciplinary design, field engineering and technical assurance from concept through commissioning.",
+    features: [
+      "Mechanical and electrical design",
+      "Instrumentation and controls",
+      "Automation support",
+      "Technical documentation",
+    ],
+  },
+  {
+    icon: Wrench,
+    title: "Industrial Services",
+    text: "Execution teams for shutdowns, turnarounds, maintenance scopes and plant reliability programs.",
+    features: [
+      "Shutdown support",
+      "Preventive maintenance",
+      "Asset integrity",
+      "Rotating equipment",
+    ],
+  },
+  {
+    icon: Package,
+    title: "Procurement & Supply",
+    text: "Compliant sourcing and logistics support for industrial materials, spares and engineered equipment.",
+    features: [
+      "Vendor coordination",
+      "Spare parts sourcing",
+      "Logistics control",
+      "Traceable documentation",
+    ],
+  },
+  {
+    icon: Building2,
+    title: "Infrastructure Delivery",
+    text: "Installation, commissioning and site management for energy infrastructure and industrial facilities.",
+    features: [
+      "Project execution",
+      "Commissioning support",
+      "Site supervision",
+      "Handover packages",
+    ],
+  },
+  {
+    icon: Shield,
+    title: "HSE & Quality",
+    text: "Risk management, audit readiness and quality gates embedded into every delivery workflow.",
+    features: ["Risk assessment", "Permit-to-work support", "QA/QC controls", "Training programs"],
+  },
+  {
+    icon: Lightbulb,
+    title: "Operational Advisory",
+    text: "Planning, optimization and continuous-improvement support for teams managing critical energy assets.",
+    features: [
+      "Project planning",
+      "Process improvement",
+      "Compliance advisory",
+      "Performance reporting",
+    ],
+  },
 ];
 
 function ServicesPage() {
@@ -32,32 +104,48 @@ function ServicesPage() {
     <Layout>
       <PageHero
         eyebrow="Services"
-        title={<>Full-spectrum <span className="text-gradient-gold">industrial services</span></>}
-        description="A complete portfolio of energy, engineering and maintenance services designed for the most demanding industrial environments."
+        title={
+          <>
+            Integrated services for{" "}
+            <span className="text-gradient-energy">energy infrastructure.</span>
+          </>
+        }
+        description="A complete portfolio of engineering, industrial services, procurement, maintenance and operational support for high-stakes environments."
       />
 
-      <section className="relative py-16">
-        <div className="mx-auto max-w-7xl px-6 space-y-8">
-          {services.map((s, i) => (
-            <Reveal key={i} delay={i * 0.04}>
-              <article className={`group grid lg:grid-cols-12 gap-8 items-center rounded-3xl border border-border bg-card p-8 md:p-12 hover-lift overflow-hidden relative ${i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}>
-                <div className="lg:col-span-5">
-                  <div className="grid place-items-center w-20 h-20 rounded-3xl bg-primary/10 border border-gold-soft text-gold">
-                    <s.i className="w-9 h-9" />
+      <section className="py-16">
+        <div className="mx-auto max-w-7xl space-y-8 px-6">
+          {services.map((service, index) => (
+            <Reveal key={service.title} delay={index * 0.04}>
+              <article className="group relative grid items-center gap-8 overflow-hidden rounded-[2rem] border border-border bg-white p-8 shadow-sm hover-lift md:p-12 lg:grid-cols-12">
+                <div className="absolute -right-28 -top-28 h-64 w-64 rounded-full gradient-radial-teal blur-3xl opacity-0 transition group-hover:opacity-100" />
+                <div className="relative lg:col-span-5">
+                  <div className="grid h-20 w-20 place-items-center rounded-3xl bg-primary/8 text-primary ring-1 ring-primary/12">
+                    <service.icon className="h-9 w-9" />
                   </div>
-                  <div className="mt-6 text-xs uppercase tracking-[0.3em] text-gold font-semibold">0{i + 1} · Service</div>
-                  <h2 className="mt-3 text-3xl md:text-4xl font-extrabold leading-tight">{s.t}</h2>
-                  <p className="mt-4 text-muted-foreground leading-relaxed">{s.d}</p>
-                  <Link to="/contact" className="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground btn-glow-red">
-                    Request a quote <ArrowRight className="w-4 h-4" />
+                  <div className="mt-6 text-xs font-bold uppercase tracking-[0.22em] text-primary">
+                    0{index + 1} / Capability
+                  </div>
+                  <h2 className="mt-3 text-3xl font-extrabold leading-tight md:text-4xl">
+                    {service.title}
+                  </h2>
+                  <p className="mt-4 leading-relaxed text-muted-foreground">{service.text}</p>
+                  <Link
+                    to="/contact"
+                    className="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-primary-foreground btn-glow-blue"
+                  >
+                    Request capability brief <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
-                <div className="lg:col-span-7">
-                  <ul className="grid sm:grid-cols-2 gap-3">
-                    {s.f.map((f, idx) => (
-                      <li key={idx} className="flex items-start gap-3 rounded-2xl bg-background/60 border border-border p-4">
-                        <CheckCircle2 className="w-5 h-5 text-gold shrink-0 mt-0.5" />
-                        <span className="font-medium">{f}</span>
+                <div className="relative lg:col-span-7">
+                  <ul className="grid gap-3 sm:grid-cols-2">
+                    {service.features.map((feature) => (
+                      <li
+                        key={feature}
+                        className="flex items-start gap-3 rounded-2xl border border-border bg-background/70 p-4"
+                      >
+                        <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-energy" />
+                        <span className="font-semibold">{feature}</span>
                       </li>
                     ))}
                   </ul>

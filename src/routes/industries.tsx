@@ -1,16 +1,34 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import {
+  Activity,
+  ArrowRight,
+  Building2,
+  Cpu,
+  Factory,
+  HardHat,
+  Landmark,
+  Network,
+  Ship,
+  Zap,
+} from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
-import { Flame, Factory, Zap, Building2, Landmark, HardHat, Ship, Activity, ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/industries")({
   head: () => ({
     meta: [
-      { title: "Industries — Nexora Energy Solutions" },
-      { name: "description", content: "Nexora serves oil & gas, petrochemical, power, infrastructure, government, manufacturing, marine and energy facilities across the GCC." },
-      { property: "og:title", content: "Industries — Nexora" },
-      { property: "og:description", content: "Industries we serve across the GCC: oil & gas, petrochemical, power, infrastructure, government, manufacturing, marine and energy." },
+      { title: "Industries | Nexora Energy Solutions" },
+      {
+        name: "description",
+        content:
+          "Nexora serves refining, petrochemical, pipelines, power, infrastructure, government, manufacturing, marine and energy facilities across Kuwait and the GCC.",
+      },
+      { property: "og:title", content: "Industries Served by Nexora" },
+      {
+        property: "og:description",
+        content: "Critical energy and industrial markets supported by Nexora Energy Solutions.",
+      },
       { property: "og:url", content: "/industries" },
     ],
     links: [{ rel: "canonical", href: "/industries" }],
@@ -19,14 +37,51 @@ export const Route = createFileRoute("/industries")({
 });
 
 const items = [
-  { i: Flame, t: "Oil & Gas", d: "Upstream, midstream and downstream operations support." },
-  { i: Factory, t: "Petrochemical", d: "Complex plant maintenance and engineering services." },
-  { i: Zap, t: "Power Generation", d: "Reliability solutions for utility-scale power assets." },
-  { i: Building2, t: "Infrastructure", d: "Civil and industrial infrastructure project execution." },
-  { i: Landmark, t: "Government", d: "Trusted partner for government energy initiatives." },
-  { i: HardHat, t: "Manufacturing", d: "Industrial maintenance and uptime engineering." },
-  { i: Ship, t: "Marine", d: "Port, terminal and marine asset support." },
-  { i: Activity, t: "Energy Facilities", d: "Critical facility services and operational excellence." },
+  {
+    icon: Factory,
+    title: "Refining & Petrochemicals",
+    text: "Maintenance, reliability and project support for complex process facilities.",
+  },
+  {
+    icon: Network,
+    title: "Pipelines & Terminals",
+    text: "Integrity, construction support and operational services for transmission assets.",
+  },
+  {
+    icon: Zap,
+    title: "Power & Utilities",
+    text: "Engineering and uptime programs for utility-scale energy infrastructure.",
+  },
+  {
+    icon: Building2,
+    title: "Industrial Infrastructure",
+    text: "Site execution, commissioning and lifecycle support for critical facilities.",
+  },
+  {
+    icon: Landmark,
+    title: "Government Energy Programs",
+    text: "Disciplined delivery for public-sector and sovereign energy initiatives.",
+  },
+  {
+    icon: HardHat,
+    title: "Manufacturing",
+    text: "Maintenance, safety and operations support for production environments.",
+  },
+  {
+    icon: Ship,
+    title: "Marine & Terminals",
+    text: "Port, terminal and logistics-adjacent industrial services.",
+  },
+  {
+    icon: Activity,
+    title: "Energy Facilities",
+    text: "Operational readiness and asset performance support for live facilities.",
+  },
+  {
+    icon: Cpu,
+    title: "Automation & Controls",
+    text: "Instrumentation, control systems and technology-led operating improvements.",
+  },
 ];
 
 function IndustriesPage() {
@@ -34,24 +89,31 @@ function IndustriesPage() {
     <Layout>
       <PageHero
         eyebrow="Industries"
-        title={<>Trusted across <span className="text-gradient-gold">critical sectors</span></>}
-        description="From sovereign energy programs to high-stakes industrial facilities, Nexora delivers services calibrated to each sector's standards."
+        title={
+          <>
+            Trusted across <span className="text-gradient-energy">critical sectors.</span>
+          </>
+        }
+        description="Nexora supports the energy operators, contractors and industrial partners that keep Kuwait's infrastructure moving."
       />
 
       <section className="py-16">
-        <div className="mx-auto max-w-7xl px-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {items.map((it, i) => (
-            <Reveal key={i} delay={i * 0.05}>
-              <article className="group h-full rounded-3xl border border-border bg-card p-8 hover-lift overflow-hidden relative">
-                <div className="absolute -top-20 -right-20 w-48 h-48 rounded-full bg-primary/0 group-hover:bg-gold/10 blur-3xl transition" />
+        <div className="mx-auto grid max-w-7xl gap-6 px-6 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((item, index) => (
+            <Reveal key={item.title} delay={index * 0.04}>
+              <article className="group relative h-full overflow-hidden rounded-[1.75rem] border border-border bg-white p-8 hover-lift">
+                <div className="absolute -right-20 -top-20 h-48 w-48 rounded-full gradient-radial-teal opacity-0 blur-3xl transition group-hover:opacity-100" />
                 <div className="relative">
-                  <div className="grid place-items-center w-14 h-14 rounded-2xl bg-primary/10 border border-gold-soft text-gold">
-                    <it.i className="w-6 h-6" />
+                  <div className="grid h-14 w-14 place-items-center rounded-2xl bg-primary/8 text-primary">
+                    <item.icon className="h-6 w-6" />
                   </div>
-                  <h3 className="mt-6 text-xl font-display font-bold">{it.t}</h3>
-                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{it.d}</p>
-                  <Link to="/services" className="mt-6 inline-flex items-center gap-2 text-xs uppercase tracking-widest text-gold font-semibold">
-                    Related services <ArrowRight className="w-3.5 h-3.5" />
+                  <h3 className="mt-6 font-display text-xl font-bold">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.text}</p>
+                  <Link
+                    to="/services"
+                    className="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-primary"
+                  >
+                    Related services <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 </div>
               </article>

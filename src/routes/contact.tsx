@@ -1,16 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Clock, Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
-import { MapPin, Phone, Mail, Clock, MessageCircle, Send } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Nexora Energy Solutions" },
-      { name: "description", content: "Get in touch with Nexora Energy Solutions in Ahmadi, Kuwait. Contact form, phone, email and WhatsApp." },
-      { property: "og:title", content: "Contact Nexora" },
-      { property: "og:description", content: "Headquartered in Ahmadi, Kuwait. Contact our team." },
+      { title: "Contact | Nexora Energy Solutions" },
+      {
+        name: "description",
+        content:
+          "Contact Nexora Energy Solutions in Ahmadi, Kuwait for engineering, procurement, maintenance and energy-sector operational support.",
+      },
+      { property: "og:title", content: "Contact Nexora Energy Solutions" },
+      {
+        property: "og:description",
+        content: "Headquartered in Ahmadi, Kuwait. Contact the Nexora team.",
+      },
       { property: "og:url", content: "/contact" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],
@@ -22,29 +29,38 @@ function ContactPage() {
   return (
     <Layout>
       <PageHero
-        eyebrow="Get In Touch"
-        title={<>Let's start a <span className="text-gradient-gold">conversation</span></>}
-        description="Our team responds within one business day. Reach out for project enquiries, partnerships or media requests."
+        eyebrow="Contact"
+        title={
+          <>
+            Start a <span className="text-gradient-energy">partner conversation.</span>
+          </>
+        }
+        description="Reach out for project enquiries, procurement support, maintenance scopes, partnerships or media requests."
       />
 
       <section className="py-16">
-        <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-5 gap-8">
+        <div className="mx-auto grid max-w-7xl gap-8 px-6 lg:grid-cols-5">
           <Reveal className="lg:col-span-2">
             <div className="space-y-4">
               {[
-                { i: MapPin, t: "Headquarters", d: "Ahmadi, Kuwait" },
-                { i: Phone, t: "Phone", d: "+965 0000 0000" },
-                { i: Mail, t: "Email", d: "info@nexora-energy.com" },
-                { i: MessageCircle, t: "WhatsApp", d: "Chat With Nexora" },
-                { i: Clock, t: "Business Hours", d: "Sun – Thu · 8:00 – 17:00" },
-              ].map((c, i) => (
-                <div key={i} className="flex items-start gap-4 rounded-2xl border border-border bg-card p-5">
-                  <div className="grid place-items-center w-11 h-11 rounded-xl bg-primary/10 border border-gold-soft text-gold shrink-0">
-                    <c.i className="w-5 h-5" />
+                { icon: MapPin, title: "Headquarters", text: "Ahmadi, Kuwait" },
+                { icon: Phone, title: "Phone", text: "+965 0000 0000" },
+                { icon: Mail, title: "Email", text: "info@nexora-energy.com" },
+                { icon: MessageCircle, title: "WhatsApp", text: "Chat with Nexora" },
+                { icon: Clock, title: "Business Hours", text: "Sun - Thu, 8:00 - 17:00" },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="flex items-start gap-4 rounded-2xl border border-border bg-white p-5"
+                >
+                  <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-energy/14 text-primary">
+                    <item.icon className="h-5 w-5" />
                   </div>
                   <div>
-                    <div className="text-xs uppercase tracking-widest text-muted-foreground">{c.t}</div>
-                    <div className="mt-1 font-display font-bold">{c.d}</div>
+                    <div className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">
+                      {item.title}
+                    </div>
+                    <div className="mt-1 font-display font-bold">{item.text}</div>
                   </div>
                 </div>
               ))}
@@ -52,21 +68,28 @@ function ContactPage() {
           </Reveal>
 
           <Reveal delay={0.1} className="lg:col-span-3">
-            <form className="rounded-3xl border border-border bg-card p-8 grid sm:grid-cols-2 gap-5">
+            <form className="grid gap-5 rounded-[2rem] border border-border bg-white p-6 shadow-sm sm:grid-cols-2 md:p-8">
               <Field label="Full Name" />
               <Field label="Company" />
               <Field label="Email" type="email" />
               <Field label="Phone" />
               <div className="sm:col-span-2">
-                <label className="text-xs uppercase tracking-widest text-muted-foreground">Subject</label>
-                <input className="mt-2 w-full rounded-xl bg-background border border-border px-4 py-3 text-sm outline-none focus:border-gold-soft transition" />
+                <label className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">
+                  Subject
+                </label>
+                <input className="mt-2 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition focus:border-energy-soft focus:ring-4 focus:ring-energy/10" />
               </div>
               <div className="sm:col-span-2">
-                <label className="text-xs uppercase tracking-widest text-muted-foreground">Message</label>
-                <textarea rows={5} className="mt-2 w-full rounded-xl bg-background border border-border px-4 py-3 text-sm outline-none focus:border-gold-soft transition" />
+                <label className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">
+                  Message
+                </label>
+                <textarea
+                  rows={5}
+                  className="mt-2 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition focus:border-energy-soft focus:ring-4 focus:ring-energy/10"
+                />
               </div>
-              <button className="sm:col-span-2 inline-flex justify-center items-center gap-2 rounded-full bg-primary px-6 py-4 text-sm font-semibold text-primary-foreground btn-glow-red">
-                Send Message <Send className="w-4 h-4" />
+              <button className="sm:col-span-2 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-4 text-sm font-bold text-primary-foreground btn-glow-blue">
+                Send Message <Send className="h-4 w-4" />
               </button>
             </form>
           </Reveal>
@@ -75,11 +98,11 @@ function ContactPage() {
 
       <section className="pb-24">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="rounded-3xl overflow-hidden border border-border h-[420px]">
+          <div className="h-[420px] overflow-hidden rounded-[2rem] border border-border bg-white">
             <iframe
               title="Nexora Ahmadi Office"
               src="https://maps.google.com/maps?q=Ahmadi,%20Kuwait&t=&z=12&ie=UTF8&iwloc=&output=embed"
-              className="w-full h-full grayscale contrast-125 opacity-90"
+              className="h-full w-full grayscale-[0.35]"
               loading="lazy"
             />
           </div>
@@ -92,8 +115,13 @@ function ContactPage() {
 function Field({ label, type = "text" }: { label: string; type?: string }) {
   return (
     <div>
-      <label className="text-xs uppercase tracking-widest text-muted-foreground">{label}</label>
-      <input type={type} className="mt-2 w-full rounded-xl bg-background border border-border px-4 py-3 text-sm outline-none focus:border-gold-soft transition" />
+      <label className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">
+        {label}
+      </label>
+      <input
+        type={type}
+        className="mt-2 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition focus:border-energy-soft focus:ring-4 focus:ring-energy/10"
+      />
     </div>
   );
 }

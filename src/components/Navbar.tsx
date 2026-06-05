@@ -1,6 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { ArrowRight, Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
 
 const links = [
@@ -26,7 +26,9 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => { setOpen(false); }, [location.pathname]);
+  useEffect(() => {
+    setOpen(false);
+  }, [location.pathname]);
 
   return (
     <header
@@ -34,9 +36,9 @@ export function Navbar() {
         scrolled ? "glass-strong py-3" : "py-5 bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-6">
         <Link to="/" className="shrink-0">
-          <Logo size={34} />
+          <Logo size={46} className="origin-left scale-[1.32]" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
@@ -46,13 +48,13 @@ export function Navbar() {
               <Link
                 key={l.to}
                 to={l.to}
-                className={`relative px-4 py-2 text-sm font-medium transition-colors ${
-                  active ? "text-gold" : "text-muted-foreground hover:text-foreground"
+                className={`relative px-4 py-2 text-sm font-semibold transition-colors ${
+                  active ? "text-primary" : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {l.label}
                 {active && (
-                  <span className="absolute inset-x-3 -bottom-0.5 h-px bg-gradient-to-r from-transparent via-gold to-transparent" />
+                  <span className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-gradient-to-r from-primary to-energy" />
                 )}
               </Link>
             );
@@ -62,9 +64,9 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <Link
             to="/contact"
-            className="hidden sm:inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground btn-glow-red hover:bg-primary/90 transition-all"
+            className="hidden sm:inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground btn-glow-blue hover:bg-primary/90 transition-all"
           >
-            Contact <ArrowRight className="w-3.5 h-3.5" />
+            Partner with us <ArrowRight className="w-3.5 h-3.5" />
           </Link>
           <button
             onClick={() => setOpen((v) => !v)}
@@ -83,7 +85,7 @@ export function Navbar() {
               <Link
                 key={l.to}
                 to={l.to}
-                className="px-3 py-3 text-sm font-medium text-muted-foreground hover:text-gold border-b border-border last:border-0"
+                className="px-3 py-3 text-sm font-semibold text-muted-foreground hover:text-primary border-b border-border last:border-0"
               >
                 {l.label}
               </Link>

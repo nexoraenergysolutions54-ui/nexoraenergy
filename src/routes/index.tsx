@@ -1,28 +1,51 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import {
-  ArrowRight, ArrowUpRight, Shield, Cpu, Wrench, Package, Building2, Lightbulb,
-  Flame, Factory, Zap, Ship, Landmark, HardHat, CheckCircle2, Star, Quote,
-  Activity, Award, Target, Sparkles
+  Activity,
+  ArrowRight,
+  ArrowUpRight,
+  Award,
+  Building2,
+  CheckCircle2,
+  Cpu,
+  Factory,
+  Gauge,
+  HardHat,
+  Landmark,
+  Network,
+  Package,
+  Shield,
+  Target,
+  Wrench,
+  Zap,
 } from "lucide-react";
-import { Layout } from "@/components/Layout";
-import { Reveal } from "@/components/Reveal";
 import { Counter } from "@/components/Counter";
-import hero from "@/assets/hero-refinery.jpg";
+import { Layout } from "@/components/Layout";
+import { Logo } from "@/components/Logo";
+import { Reveal } from "@/components/Reveal";
 import about from "@/assets/about-engineers.jpg";
-import pPipeline from "@/assets/project-pipeline.jpg";
-import pRefinery from "@/assets/project-refinery.jpg";
-import pPlant from "@/assets/project-plant.jpg";
-import pMaint from "@/assets/project-maintenance.jpg";
+import hero from "@/assets/hero-refinery.jpg";
 import pEng from "@/assets/project-engineering.jpg";
+import pMaint from "@/assets/project-maintenance.jpg";
+import pPipeline from "@/assets/project-pipeline.jpg";
+import pPlant from "@/assets/project-plant.jpg";
+import pRefinery from "@/assets/project-refinery.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Nexora Energy Solutions — Powering Kuwait's Energy Future" },
-      { name: "description", content: "Kuwait-based energy and industrial services company delivering world-class engineering, maintenance, procurement and operational support across the oil, gas and infrastructure sectors." },
+      { title: "Nexora Energy Solutions | Engineering Tomorrow's Energy Infrastructure" },
+      {
+        name: "description",
+        content:
+          "Nexora Energy Solutions delivers integrated engineering, industrial services, procurement, maintenance and operational support for Kuwait's energy sector.",
+      },
       { property: "og:title", content: "Nexora Energy Solutions" },
-      { property: "og:description", content: "Engineering The Future Of Energy. Premium oil & gas, engineering and industrial services across Kuwait and the GCC." },
+      {
+        property: "og:description",
+        content:
+          "Modern engineering, industrial services, procurement, maintenance and operational support for Kuwait's energy sector.",
+      },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
     ],
@@ -30,7 +53,10 @@ export const Route = createFileRoute("/")({
       { rel: "canonical", href: "/" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap",
+      },
     ],
   }),
   component: Home,
@@ -40,230 +66,323 @@ function Home() {
   return (
     <Layout>
       <Hero />
+      <TrustBar />
       <About />
       <Services />
+      <Operations />
       <Industries />
-      <WhyUs />
       <Projects />
       <HSE />
-      <Testimonials />
-      <News />
       <FinalCTA />
     </Layout>
   );
 }
 
-/* ---------- Particles ---------- */
-function Particles({ count = 24 }: { count?: number }) {
-  return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden">
-      {Array.from({ length: count }).map((_, i) => {
-        const left = (i * 53) % 100;
-        const top = (i * 37) % 100;
-        const delay = (i % 6) * 0.5;
-        const size = 1 + ((i * 7) % 4);
-        return (
-          <span
-            key={i}
-            className="absolute rounded-full bg-gold/60 animate-float"
-            style={{
-              left: `${left}%`,
-              top: `${top}%`,
-              width: size,
-              height: size,
-              animationDelay: `${delay}s`,
-              boxShadow: "0 0 8px var(--gold)",
-            }}
-          />
-        );
-      })}
-    </div>
-  );
-}
-
-/* ---------- HERO ---------- */
 function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
+    <section className="relative min-h-screen overflow-hidden pt-32 pb-16 md:pt-40">
       <div className="absolute inset-0">
-        <img src={hero} alt="Industrial refinery at night" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/60" />
+        <img
+          src={hero}
+          alt="Energy infrastructure and industrial operations in Kuwait"
+          className="h-full w-full object-cover opacity-24"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/92 to-white/68" />
+        <div className="absolute inset-0 grid-bg opacity-70" />
       </div>
-      <Particles count={30} />
-      <div className="absolute inset-0 grid-bg opacity-30" />
+      <div className="absolute -top-32 right-0 h-[36rem] w-[36rem] rounded-full gradient-radial-teal blur-3xl" />
+      <div className="absolute top-40 left-0 h-[30rem] w-[30rem] rounded-full gradient-radial-blue blur-3xl" />
 
-      <div className="relative mx-auto max-w-7xl px-6 grid lg:grid-cols-12 gap-12 items-center">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-12">
         <div className="lg:col-span-7">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border-gold-soft text-xs uppercase tracking-[0.3em] text-gold font-semibold"
+            transition={{ duration: 0.55 }}
+            className="inline-flex items-center gap-3 rounded-full border border-energy-soft bg-white/76 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-primary shadow-sm backdrop-blur"
           >
-            <Sparkles className="w-3.5 h-3.5" /> Ahmadi · Kuwait
+            <span className="h-2 w-2 rounded-full bg-energy" />
+            Kuwait Energy Partner
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="mt-8 text-5xl md:text-7xl lg:text-[88px] font-extrabold leading-[0.95] tracking-tight"
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="mt-8 max-w-5xl text-5xl font-extrabold leading-[1.02] text-foreground md:text-7xl lg:text-[84px]"
           >
-            POWERING<br />
-            <span className="text-gradient-gold">KUWAIT'S</span><br />
-            ENERGY FUTURE
+            Engineering Tomorrow&apos;s{" "}
+            <span className="text-gradient-energy">Energy Infrastructure</span>
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.25 }}
-            className="mt-8 max-w-xl text-lg text-muted-foreground leading-relaxed"
+            transition={{ duration: 0.7, delay: 0.22 }}
+            className="mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl"
           >
-            Delivering innovative oil & gas solutions, industrial engineering services,
-            maintenance support and energy infrastructure for a stronger tomorrow.
+            Nexora Energy Solutions delivers integrated engineering, industrial services,
+            procurement, maintenance and operational support for Kuwait&apos;s energy sector.
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.7, delay: 0.34 }}
             className="mt-10 flex flex-wrap gap-4"
           >
             <Link
               to="/services"
-              className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground btn-glow-red hover:translate-y-[-2px] transition-all"
+              className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm font-bold text-primary-foreground btn-glow-blue transition-all hover:-translate-y-0.5 hover:bg-primary/92"
             >
-              Explore Services <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
+              Explore capabilities
+              <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
             </Link>
             <Link
               to="/contact"
-              className="group inline-flex items-center gap-2 rounded-full glass border-gold-soft px-7 py-4 text-sm font-semibold text-foreground hover:bg-gold/10 transition-all"
+              className="group inline-flex items-center gap-2 rounded-full border border-border bg-white/72 px-7 py-4 text-sm font-bold text-foreground backdrop-blur transition-all hover:border-energy-soft hover:text-primary"
             >
-              Contact Us <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition" />
+              Discuss a project
+              <ArrowUpRight className="h-4 w-4 transition group-hover:-translate-y-1 group-hover:translate-x-1" />
             </Link>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.7 }}
-            className="mt-14 grid grid-cols-3 gap-6 max-w-lg"
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="mt-12 grid max-w-2xl grid-cols-3 gap-3"
           >
             {[
-              { v: "ISO", l: "Certified" },
-              { v: "24/7", l: "Operations" },
-              { v: "GCC", l: "Coverage" },
-            ].map((s, i) => (
-              <div key={i} className="border-l border-gold-soft pl-4">
-                <div className="text-2xl font-display font-bold text-gold">{s.v}</div>
-                <div className="text-xs uppercase tracking-widest text-muted-foreground mt-1">{s.l}</div>
+              { value: "KOC", label: "Ready partner" },
+              { value: "KNPC", label: "Aligned delivery" },
+              { value: "EPC", label: "Contractor support" },
+            ].map((item) => (
+              <div
+                key={item.value}
+                className="rounded-2xl border border-border bg-white/70 p-4 backdrop-blur"
+              >
+                <div className="font-display text-xl font-bold text-primary">{item.value}</div>
+                <div className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+                  {item.label}
+                </div>
               </div>
             ))}
           </motion.div>
         </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.94 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, delay: 0.3 }}
-          className="lg:col-span-5 hidden lg:block relative"
+          transition={{ duration: 0.85, delay: 0.25 }}
+          className="lg:col-span-5"
         >
-          <Hero3DCard />
+          <OperationsDashboard />
         </motion.div>
       </div>
     </section>
   );
 }
 
-function Hero3DCard() {
+function OperationsDashboard() {
+  const metrics = [
+    { icon: Activity, label: "Asset uptime", value: "99.8%", tone: "text-primary" },
+    { icon: Shield, label: "HSE compliance", value: "ISO", tone: "text-energy" },
+    { icon: Gauge, label: "Response window", value: "24/7", tone: "text-primary" },
+    { icon: Network, label: "Supply visibility", value: "Live", tone: "text-energy" },
+  ];
+
   return (
-    <div className="relative aspect-square max-w-md mx-auto">
-      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/40 via-transparent to-gold/30 blur-3xl animate-pulse" />
-      <div className="relative h-full rounded-3xl glass border-gold-soft p-8 overflow-hidden">
-        <div className="absolute inset-0 grid-bg opacity-30" />
-        <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-primary/20 blur-3xl" />
-        <div className="relative h-full flex flex-col justify-between">
-          <div>
-            <div className="text-xs uppercase tracking-[0.3em] text-gold">Live Operations</div>
-            <div className="mt-2 text-3xl font-display font-bold">Energy Hub</div>
-          </div>
+    <div className="relative mx-auto max-w-md">
+      <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-primary/18 to-energy/18 blur-2xl" />
+      <div className="relative overflow-hidden rounded-[2rem] border border-white/70 bg-white/74 p-6 shadow-elevated backdrop-blur-2xl">
+        <div className="flex items-center justify-between gap-4">
+          <Logo size={34} />
+          <span className="rounded-full bg-energy/12 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-primary">
+            Operations
+          </span>
+        </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            {[
-              { i: Flame, l: "Refining", v: "98.4%" },
-              { i: Activity, l: "Uptime", v: "99.9%" },
-              { i: Shield, l: "HSE Score", v: "A+" },
-              { i: Zap, l: "Output", v: "+12%" },
-            ].map((s, i) => (
-              <div key={i} className="rounded-2xl bg-background/40 border border-border p-4 backdrop-blur">
-                <s.i className="w-5 h-5 text-gold" />
-                <div className="mt-3 text-lg font-bold">{s.v}</div>
-                <div className="text-[10px] uppercase tracking-widest text-muted-foreground">{s.l}</div>
+        <div className="mt-8 rounded-3xl bg-navy p-5 text-white">
+          <div className="flex items-center justify-between">
+            <div>
+              <div className="text-xs uppercase tracking-[0.2em] text-white/60">
+                Energy command layer
               </div>
-            ))}
+              <div className="mt-2 font-display text-2xl font-bold">Reliability dashboard</div>
+            </div>
+            <Cpu className="h-8 w-8 text-energy" />
           </div>
-
-          <svg viewBox="0 0 200 40" className="w-full h-12 text-gold/70">
-            <path d="M0 30 Q 25 10, 50 25 T 100 20 T 150 28 T 200 15" stroke="currentColor" strokeWidth="1.5" fill="none" />
-            <path d="M0 30 Q 25 10, 50 25 T 100 20 T 150 28 T 200 15 L 200 40 L 0 40 Z" fill="url(#g)" opacity="0.3" />
+          <svg viewBox="0 0 320 120" className="mt-7 h-28 w-full">
             <defs>
-              <linearGradient id="g" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="0%" stopColor="var(--gold)" />
-                <stop offset="100%" stopColor="transparent" />
+              <linearGradient id="energyLine" x1="0" x2="1">
+                <stop offset="0%" stopColor="#4BC0A8" />
+                <stop offset="100%" stopColor="#1565A8" />
               </linearGradient>
             </defs>
+            <path
+              d="M0 86 C42 18 66 95 112 48 C158 2 174 82 220 40 C262 4 282 54 320 24"
+              fill="none"
+              stroke="url(#energyLine)"
+              strokeWidth="5"
+              strokeLinecap="round"
+            />
+            <path
+              d="M0 86 C42 18 66 95 112 48 C158 2 174 82 220 40 C262 4 282 54 320 24 V120 H0Z"
+              fill="url(#energyLine)"
+              opacity="0.18"
+            />
           </svg>
+        </div>
+
+        <div className="mt-5 grid grid-cols-2 gap-3">
+          {metrics.map((metric) => (
+            <motion.div
+              key={metric.label}
+              whileHover={{ y: -4, scale: 1.02 }}
+              className="rounded-2xl border border-border bg-white/78 p-4"
+            >
+              <metric.icon className={`h-5 w-5 ${metric.tone}`} />
+              <div className="mt-4 font-display text-2xl font-bold text-foreground">
+                {metric.value}
+              </div>
+              <div className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+                {metric.label}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </div>
   );
 }
 
-/* ---------- ABOUT ---------- */
+function TrustBar() {
+  const columns = [
+    {
+      icon: Shield,
+      title: "Safety-led execution",
+      items: ["HSE discipline", "Zero-harm culture", "Risk-controlled sites", "Permit-ready teams"],
+    },
+    {
+      icon: Package,
+      title: "Procurement governance",
+      items: [
+        "Vendor traceability",
+        "Compliant sourcing",
+        "Logistics control",
+        "Documented handover",
+      ],
+    },
+    {
+      icon: Gauge,
+      title: "Operational readiness",
+      items: ["24/7 response", "Asset uptime", "Field support", "Maintenance planning"],
+    },
+    {
+      icon: Landmark,
+      title: "Kuwait energy sector",
+      items: ["KOC ready", "KNPC aligned", "EPC partner support", "Local execution"],
+    },
+  ];
+
+  return (
+    <section className="border-y border-border bg-white/72 backdrop-blur">
+      <div className="mx-auto grid max-w-7xl gap-px bg-border px-6 md:grid-cols-4">
+        {columns.map((column, index) => (
+          <div
+            key={column.title}
+            className="trust-ticker-card group relative overflow-hidden bg-white px-5 py-5"
+          >
+            <div className="mx-auto flex max-w-64 items-center justify-center gap-3">
+              <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-primary/8 text-primary ring-1 ring-primary/10">
+                <column.icon className="h-5 w-5" />
+              </div>
+              <div className="min-w-0 text-left">
+                <div className="truncate text-sm font-bold text-foreground">{column.title}</div>
+                <div className="relative mt-1 h-7 overflow-hidden text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
+                  <div
+                    className="animate-trust-detail-ticker flex flex-col"
+                    style={{ animationDelay: `${index * -1.4}s` }}
+                  >
+                    {[...column.items, column.items[0]].map((item, itemIndex) => (
+                      <div key={`${item}-${itemIndex}`} className="grid h-7 content-center">
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-0.5 scale-x-0 bg-gradient-to-r from-primary to-energy transition-transform duration-500 group-hover:scale-x-100" />
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function About() {
   const stats = [
-    { v: 50, suffix: "+", l: "Projects Delivered" },
-    { v: 100, suffix: "+", l: "Industrial Solutions" },
-    { v: 99, suffix: "%", l: "Client Satisfaction" },
-    { v: 24, suffix: "/7", l: "Support" },
+    { value: 50, suffix: "+", label: "Projects supported" },
+    { value: 100, suffix: "+", label: "Industrial solutions" },
+    { value: 99, suffix: "%", label: "Delivery satisfaction" },
+    { value: 24, suffix: "/7", label: "Operations support" },
   ];
+
   return (
-    <section className="relative py-32 overflow-hidden">
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] gradient-radial-red blur-3xl opacity-60" />
-      <div className="relative mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-16 items-center">
+    <section className="relative overflow-hidden py-28">
+      <div className="absolute right-0 top-24 h-[32rem] w-[32rem] rounded-full gradient-radial-teal blur-3xl" />
+      <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-2">
         <Reveal>
-          <SectionEyebrow>About Nexora</SectionEyebrow>
-          <h2 className="mt-5 text-4xl md:text-6xl font-extrabold leading-[1.05]">
-            Engineering Excellence.<br />
-            <span className="text-gradient-gold">Industrial Reliability.</span>
+          <SectionEyebrow>Enterprise energy partner</SectionEyebrow>
+          <h2 className="mt-5 text-4xl font-extrabold leading-[1.06] md:text-6xl">
+            Engineering depth for <span className="text-gradient-energy">critical operations.</span>
           </h2>
-          <p className="mt-8 text-muted-foreground text-lg leading-relaxed">
-            Nexora Energy Solutions is a Kuwait-based energy and industrial services company
-            delivering world-class engineering, maintenance, procurement and operational support
-            across the oil, gas and infrastructure sectors.
+          <p className="mt-7 text-lg leading-relaxed text-muted-foreground">
+            Nexora combines regional execution capability with international energy-sector
+            standards. Our teams support engineering, procurement, industrial maintenance and site
+            operations where reliability, safety and documentation discipline matter.
           </p>
-          <p className="mt-4 text-muted-foreground leading-relaxed">
-            Our commitment to safety, innovation and operational excellence enables us to support
-            critical industrial projects throughout Kuwait and the GCC region.
-          </p>
-          <Link to="/about" className="mt-10 inline-flex items-center gap-2 text-gold font-semibold group">
-            Discover our story
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
-          </Link>
+          <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            {[
+              "Safety-first project control",
+              "Integrated procurement support",
+              "Industrial maintenance delivery",
+              "Data-led operational visibility",
+            ].map((item) => (
+              <div
+                key={item}
+                className="flex items-center gap-3 rounded-2xl border border-border bg-white p-4"
+              >
+                <CheckCircle2 className="h-5 w-5 shrink-0 text-energy" />
+                <span className="text-sm font-semibold">{item}</span>
+              </div>
+            ))}
+          </div>
         </Reveal>
 
-        <Reveal delay={0.15}>
+        <Reveal delay={0.12}>
           <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-to-br from-primary/30 to-gold/20 rounded-3xl blur-2xl" />
-            <div className="relative rounded-3xl overflow-hidden border border-border">
-              <img src={about} alt="Nexora engineers inspecting pipeline" loading="lazy" className="w-full h-[520px] object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 glass rounded-2xl p-5 border-gold-soft">
+            <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-primary/14 to-energy/18 blur-2xl" />
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/70 bg-white shadow-elevated">
+              <img
+                src={about}
+                alt="Engineers reviewing industrial operations data"
+                loading="lazy"
+                className="h-[520px] w-full object-cover"
+              />
+              <div className="absolute inset-x-6 bottom-6 rounded-2xl border border-white/60 bg-white/82 p-5 backdrop-blur-xl">
                 <div className="flex items-center gap-3">
-                  <Award className="w-5 h-5 text-gold" />
-                  <div className="text-sm font-semibold">Certified by international standards</div>
+                  <Award className="h-6 w-6 text-energy" />
+                  <div>
+                    <div className="font-display text-lg font-bold">
+                      International standards mindset
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      Built for KOC, KNPC, EPC and partner expectations.
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -271,15 +390,17 @@ function About() {
         </Reveal>
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-6 mt-24 grid grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-3xl overflow-hidden border border-border">
-        {stats.map((s, i) => (
-          <Reveal key={i} delay={i * 0.08}>
-            <div className="bg-surface/80 p-8 h-full">
-              <div className="text-5xl font-display font-extrabold text-gradient-gold">
-                <Counter value={s.v} suffix={s.suffix} />
+      <div className="relative mx-auto mt-20 grid max-w-7xl grid-cols-2 gap-px overflow-hidden rounded-[2rem] border border-border bg-border px-0 md:grid-cols-4">
+        {stats.map((stat, index) => (
+          <Reveal key={stat.label} delay={index * 0.05}>
+            <motion.div whileHover={{ y: -4 }} className="h-full bg-white p-7 text-center md:p-9">
+              <div className="font-display text-4xl font-extrabold text-primary md:text-5xl">
+                <Counter value={stat.value} suffix={stat.suffix} />
               </div>
-              <div className="mt-3 text-sm uppercase tracking-widest text-muted-foreground">{s.l}</div>
-            </div>
+              <div className="mt-3 text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">
+                {stat.label}
+              </div>
+            </motion.div>
           </Reveal>
         ))}
       </div>
@@ -289,59 +410,82 @@ function About() {
 
 function SectionEyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border-gold-soft text-xs uppercase tracking-[0.3em] text-gold font-semibold">
-      <span className="w-1 h-1 rounded-full bg-gold" />
+    <span className="inline-flex items-center gap-2 rounded-full border border-energy-soft bg-white/74 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.22em] text-primary backdrop-blur">
+      <span className="h-1.5 w-1.5 rounded-full bg-energy" />
       {children}
     </span>
   );
 }
 
-/* ---------- SERVICES ---------- */
 const services = [
-  { i: Flame, t: "Oil & Gas Services", d: "Pipeline support, field operations, shutdown support and technical manpower." },
-  { i: Cpu, t: "Engineering Solutions", d: "Mechanical, electrical, instrumentation and automation engineering." },
-  { i: Wrench, t: "Industrial Maintenance", d: "Preventive maintenance, asset integrity and plant support services." },
-  { i: Package, t: "Procurement & Supply", d: "Industrial equipment, spare parts and full logistics solutions." },
-  { i: Building2, t: "Infrastructure Projects", d: "Installation, commissioning and end-to-end project execution." },
-  { i: Lightbulb, t: "Technical Consultancy", d: "Planning, optimization, compliance and strategic engineering advisory." },
+  {
+    icon: Cpu,
+    title: "Engineering Solutions",
+    text: "Mechanical, electrical, instrumentation, automation and technical design support.",
+  },
+  {
+    icon: Wrench,
+    title: "Industrial Services",
+    text: "Shutdown, turnaround, asset integrity and field operations for critical facilities.",
+  },
+  {
+    icon: Package,
+    title: "Procurement & Supply",
+    text: "Vendor coordination, spare parts sourcing, logistics and compliant documentation.",
+  },
+  {
+    icon: Activity,
+    title: "Operations Support",
+    text: "Planning, manpower, reporting and continuous improvement for live environments.",
+  },
+  {
+    icon: Building2,
+    title: "Infrastructure Delivery",
+    text: "Installation, commissioning and project execution for energy assets.",
+  },
+  {
+    icon: Shield,
+    title: "HSE & Quality Systems",
+    text: "Risk control, audits, training and quality governance embedded into every scope.",
+  },
 ];
 
 function Services() {
   return (
-    <section className="relative py-32 bg-surface/40 border-y border-border overflow-hidden">
-      <div className="absolute inset-0 grid-bg opacity-30" />
+    <section className="relative overflow-hidden border-y border-border bg-surface/70 py-28">
+      <div className="absolute inset-0 grid-bg opacity-60" />
       <div className="relative mx-auto max-w-7xl px-6">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
+        <div className="mb-14 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <Reveal>
-            <SectionEyebrow>Our Services</SectionEyebrow>
-            <h2 className="mt-5 text-4xl md:text-6xl font-extrabold leading-[1.05] max-w-2xl">
-              Full-spectrum <span className="text-gradient-gold">industrial services</span>
+            <SectionEyebrow>Integrated capabilities</SectionEyebrow>
+            <h2 className="mt-5 max-w-3xl text-4xl font-extrabold leading-[1.06] md:text-6xl">
+              One partner across the{" "}
+              <span className="text-gradient-energy">energy asset lifecycle.</span>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <Link to="/services" className="inline-flex items-center gap-2 text-gold font-semibold group">
-              View all services <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
+            <Link to="/services" className="inline-flex items-center gap-2 font-bold text-primary">
+              View all services <ArrowRight className="h-4 w-4" />
             </Link>
           </Reveal>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((s, i) => (
-            <Reveal key={i} delay={i * 0.06}>
-              <article className="group relative h-full rounded-3xl border border-border bg-card p-8 overflow-hidden hover-lift">
-                <div className="absolute -top-20 -right-20 w-48 h-48 rounded-full bg-primary/0 group-hover:bg-primary/20 blur-3xl transition-all duration-700" />
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent opacity-0 group-hover:opacity-100 transition" />
-                <div className="relative">
-                  <div className="inline-grid place-items-center w-14 h-14 rounded-2xl bg-primary/10 border border-primary/30 text-gold group-hover:bg-primary/20 transition">
-                    <s.i className="w-6 h-6" />
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, index) => (
+            <Reveal key={service.title} delay={index * 0.05}>
+              <motion.article
+                whileHover={{ y: -6 }}
+                className="group h-full overflow-hidden rounded-[1.75rem] border border-border bg-white p-7 shadow-sm"
+              >
+                <div className="flex items-start justify-between gap-5">
+                  <div className="grid h-14 w-14 place-items-center rounded-2xl bg-primary/8 text-primary ring-1 ring-primary/10 transition group-hover:bg-energy/14 group-hover:text-primary">
+                    <service.icon className="h-6 w-6" />
                   </div>
-                  <h3 className="mt-6 text-xl font-bold tracking-tight">{s.t}</h3>
-                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{s.d}</p>
-                  <div className="mt-8 inline-flex items-center gap-2 text-xs uppercase tracking-widest text-gold font-semibold">
-                    Learn more <ArrowUpRight className="w-3.5 h-3.5" />
-                  </div>
+                  <ArrowUpRight className="h-5 w-5 text-muted-foreground transition group-hover:text-primary" />
                 </div>
-              </article>
+                <h3 className="mt-8 font-display text-xl font-bold">{service.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{service.text}</p>
+              </motion.article>
             </Reveal>
           ))}
         </div>
@@ -350,44 +494,123 @@ function Services() {
   );
 }
 
-/* ---------- INDUSTRIES ---------- */
+function Operations() {
+  const rows = [
+    { label: "Asset integrity", value: "87%", color: "bg-primary" },
+    { label: "Preventive maintenance", value: "94%", color: "bg-energy" },
+    { label: "Procurement traceability", value: "91%", color: "bg-primary" },
+  ];
+
+  return (
+    <section className="py-28">
+      <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2">
+        <Reveal>
+          <div className="overflow-hidden rounded-[2rem] border border-border bg-navy p-6 text-white shadow-elevated">
+            <div className="flex items-center justify-between">
+              <div>
+                <div className="text-xs font-bold uppercase tracking-[0.2em] text-white/55">
+                  Technology dashboard
+                </div>
+                <h2 className="mt-2 font-display text-3xl font-bold">Operational control view</h2>
+              </div>
+              <Zap className="h-8 w-8 text-energy" />
+            </div>
+            <div className="mt-8 space-y-5">
+              {rows.map((row) => (
+                <div key={row.label}>
+                  <div className="mb-2 flex justify-between text-sm">
+                    <span className="text-white/72">{row.label}</span>
+                    <span className="font-bold">{row.value}</span>
+                  </div>
+                  <div className="h-3 rounded-full bg-white/10">
+                    <motion.div
+                      initial={{ width: 0 }}
+                      whileInView={{ width: row.value }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+                      className={`h-full rounded-full ${row.color}`}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8 grid grid-cols-3 gap-3">
+              {["Live QA", "HSE", "Logistics"].map((item) => (
+                <div
+                  key={item}
+                  className="rounded-2xl border border-white/10 bg-white/8 p-4 text-center"
+                >
+                  <div className="text-xs font-bold uppercase tracking-[0.14em] text-white/54">
+                    {item}
+                  </div>
+                  <div className="mt-2 h-2 rounded-full bg-energy" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.1}>
+          <SectionEyebrow>Digital operating model</SectionEyebrow>
+          <h2 className="mt-5 text-4xl font-extrabold leading-[1.06] md:text-6xl">
+            Visibility for teams working on{" "}
+            <span className="text-gradient-energy">high-consequence assets.</span>
+          </h2>
+          <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+            Nexora&apos;s experience is designed to feel modern, measurable and partner-ready:
+            transparent reporting, clear accountability, disciplined HSE practices and responsive
+            operational support.
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 const industries = [
-  { i: Flame, t: "Oil & Gas" },
-  { i: Factory, t: "Petrochemical" },
-  { i: Zap, t: "Power Generation" },
-  { i: Building2, t: "Infrastructure" },
-  { i: Landmark, t: "Government" },
-  { i: HardHat, t: "Manufacturing" },
-  { i: Ship, t: "Marine" },
-  { i: Activity, t: "Energy Facilities" },
+  { icon: Factory, title: "Refining & Petrochemicals", image: pRefinery },
+  { icon: Network, title: "Pipelines & Terminals", image: pPipeline },
+  { icon: Zap, title: "Power & Utilities", image: pPlant },
+  { icon: Landmark, title: "Government Programs", image: about },
+  { icon: HardHat, title: "Industrial Facilities", image: pMaint },
+  { icon: Cpu, title: "Automation & Controls", image: pEng },
 ];
 
 function Industries() {
   return (
-    <section className="relative py-32 overflow-hidden">
-      <div className="relative mx-auto max-w-7xl px-6">
+    <section className="border-y border-border bg-white py-28">
+      <div className="mx-auto max-w-7xl px-6">
         <Reveal>
-          <div className="text-center max-w-3xl mx-auto">
-            <SectionEyebrow>Industries We Serve</SectionEyebrow>
-            <h2 className="mt-5 text-4xl md:text-6xl font-extrabold leading-[1.05]">
-              Trusted across <span className="text-gradient-gold">critical sectors</span>
+          <div className="mx-auto max-w-3xl text-center">
+            <SectionEyebrow>Markets served</SectionEyebrow>
+            <h2 className="mt-5 text-4xl font-extrabold leading-[1.06] md:text-6xl">
+              Built for Kuwait&apos;s{" "}
+              <span className="text-gradient-energy">critical energy ecosystem.</span>
             </h2>
           </div>
         </Reveal>
-
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-px bg-border rounded-3xl overflow-hidden border border-border">
-          {industries.map((ind, i) => (
-            <Reveal key={i} delay={i * 0.05}>
-              <div className="group relative bg-card aspect-square p-6 flex flex-col justify-between transition-all hover:bg-primary/5 cursor-pointer overflow-hidden">
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition gradient-radial-gold" />
-                <ind.i className="relative w-8 h-8 text-gold transition-transform group-hover:scale-110" />
-                <div className="relative">
-                  <div className="text-lg font-display font-bold">{ind.t}</div>
-                  <div className="mt-2 flex items-center gap-2 text-xs uppercase tracking-widest text-muted-foreground group-hover:text-gold transition">
-                    Explore <ArrowUpRight className="w-3 h-3" />
-                  </div>
+        <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {industries.map((industry, index) => (
+            <Reveal key={industry.title} delay={index * 0.05}>
+              <Link
+                to="/industries"
+                className="group block overflow-hidden rounded-[1.75rem] border border-border bg-card"
+              >
+                <div className="relative aspect-[16/11] overflow-hidden">
+                  <img
+                    src={industry.image}
+                    alt={industry.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/68 via-navy/10 to-transparent" />
+                  <industry.icon className="absolute left-5 top-5 h-8 w-8 text-white" />
                 </div>
-              </div>
+                <div className="flex items-center justify-between gap-4 p-6">
+                  <h3 className="font-display text-xl font-bold">{industry.title}</h3>
+                  <ArrowUpRight className="h-5 w-5 text-primary" />
+                </div>
+              </Link>
             </Reveal>
           ))}
         </div>
@@ -395,236 +618,52 @@ function Industries() {
     </section>
   );
 }
-
-/* ---------- WHY US ---------- */
-const whyUs = [
-  { i: Shield, t: "Safety First", d: "Zero-compromise safety culture at every operational level." },
-  { i: Award, t: "Industry Expertise", d: "Decades of combined experience across GCC energy projects." },
-  { i: Target, t: "Reliable Delivery", d: "On-time, on-budget execution with measurable accountability." },
-  { i: Cpu, t: "Advanced Technology", d: "Digital twins, IoT monitoring, automation and predictive analytics." },
-  { i: HardHat, t: "Certified Professionals", d: "Internationally accredited engineers and technicians." },
-  { i: CheckCircle2, t: "Operational Excellence", d: "Continuous improvement driving world-class performance." },
-];
-
-function WhyUs() {
-  return (
-    <section className="relative py-32 bg-surface/40 border-y border-border overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] gradient-radial-gold blur-3xl" />
-      <div className="relative mx-auto max-w-7xl px-6">
-        <Reveal>
-          <div className="text-center max-w-3xl mx-auto">
-            <SectionEyebrow>Why Choose Nexora</SectionEyebrow>
-            <h2 className="mt-5 text-4xl md:text-6xl font-extrabold leading-[1.05]">
-              Built on principles<br /><span className="text-gradient-gold">that don't compromise</span>
-            </h2>
-          </div>
-        </Reveal>
-
-        <div className="mt-20 relative">
-          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gold-soft to-transparent" />
-          <div className="grid lg:grid-cols-2 gap-x-20 gap-y-12">
-            {whyUs.map((w, i) => (
-              <Reveal key={i} delay={i * 0.06}>
-                <div className={`flex gap-5 ${i % 2 === 1 ? "lg:flex-row-reverse lg:text-right" : ""}`}>
-                  <div className="shrink-0 grid place-items-center w-14 h-14 rounded-2xl bg-primary/10 border border-gold-soft text-gold">
-                    <w.i className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-display font-bold">{w.t}</h3>
-                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{w.d}</p>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ---------- PROJECTS SHOWCASE ---------- */
-const projects = [
-  { img: pRefinery, t: "Refinery Projects", d: "Distillation column installation & turnaround support." },
-  { img: pPipeline, t: "Pipeline Infrastructure", d: "Cross-country pipeline construction & integrity management." },
-  { img: pPlant, t: "Industrial Plants", d: "Petrochemical facility expansions & commissioning." },
-  { img: pMaint, t: "Maintenance Operations", d: "Rotating equipment overhaul & plant shutdowns." },
-  { img: pEng, t: "Engineering Solutions", d: "Detailed engineering, EPC and FEED studies." },
-];
 
 function Projects() {
+  const projects = [
+    { image: pRefinery, title: "Refinery Turnaround Support", category: "Maintenance" },
+    { image: pPipeline, title: "Pipeline Integrity Program", category: "Infrastructure" },
+    { image: pEng, title: "Engineering & Controls Upgrade", category: "Automation" },
+  ];
+
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section className="py-28">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+        <div className="mb-12 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <Reveal>
-            <SectionEyebrow>Project Showcase</SectionEyebrow>
-            <h2 className="mt-5 text-4xl md:text-6xl font-extrabold leading-[1.05] max-w-2xl">
-              Delivering at <span className="text-gradient-gold">industrial scale</span>
+            <SectionEyebrow>Delivery proof</SectionEyebrow>
+            <h2 className="mt-5 max-w-3xl text-4xl font-extrabold leading-[1.06] md:text-6xl">
+              Practical execution for{" "}
+              <span className="text-gradient-energy">industrial-scale programs.</span>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <Link to="/projects" className="inline-flex items-center gap-2 text-gold font-semibold group">
-              View portfolio <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
+            <Link to="/projects" className="inline-flex items-center gap-2 font-bold text-primary">
+              View portfolio <ArrowRight className="h-4 w-4" />
             </Link>
           </Reveal>
         </div>
-      </div>
-
-      <div className="relative">
-        <div className="flex gap-6 overflow-x-auto scrollbar-hide px-6 lg:px-[max(1.5rem,calc((100vw-80rem)/2+1.5rem))] pb-6 snap-x snap-mandatory">
-          {projects.map((p, i) => (
-            <article
-              key={i}
-              className="snap-start shrink-0 w-[88vw] md:w-[520px] lg:w-[600px] group"
-            >
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-border">
-                <img src={p.img} alt={p.t} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <div className="text-xs uppercase tracking-[0.3em] text-gold">{String(i + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}</div>
-                  <h3 className="mt-3 text-2xl md:text-3xl font-display font-bold">{p.t}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground max-w-md">{p.d}</p>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ---------- HSE ---------- */
-function HSE() {
-  const items = ["Risk Management", "Workplace Safety", "Quality Assurance", "Environmental Responsibility", "International Standards"];
-  return (
-    <section className="relative py-32 bg-[#0a0a0a] border-y border-border overflow-hidden">
-      <div className="absolute inset-0 grid-bg opacity-30" />
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] gradient-radial-red blur-3xl" />
-      <div className="relative mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-16 items-center">
-        <Reveal>
-          <SectionEyebrow>HSE Compliance</SectionEyebrow>
-          <h2 className="mt-5 text-4xl md:text-6xl font-extrabold leading-[1.05]">
-            Safety Is Not<br />A Priority.<br />
-            <span className="text-gradient-red">It's A Core Value.</span>
-          </h2>
-          <p className="mt-8 text-muted-foreground text-lg leading-relaxed max-w-xl">
-            At Nexora Energy Solutions, health, safety and environmental responsibility are
-            embedded in every project we undertake.
-          </p>
-          <Link to="/hse" className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground btn-glow-red hover:translate-y-[-2px] transition">
-            Our HSE policies <ArrowRight className="w-4 h-4" />
-          </Link>
-        </Reveal>
-
-        <Reveal delay={0.15}>
-          <div className="space-y-3">
-            {items.map((it, i) => (
-              <div key={i} className="group flex items-center justify-between gap-6 rounded-2xl glass border-gold-soft p-5 hover:bg-primary/5 transition">
-                <div className="flex items-center gap-4">
-                  <div className="grid place-items-center w-10 h-10 rounded-full bg-primary/20 border border-primary/40 text-gold">
-                    <CheckCircle2 className="w-4 h-4" />
-                  </div>
-                  <span className="font-display font-semibold text-lg">{it}</span>
-                </div>
-                <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-gold transition" />
-              </div>
-            ))}
-          </div>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
-/* ---------- TESTIMONIALS ---------- */
-const testimonials = [
-  { q: "Nexora's engineering team delivered our shutdown ahead of schedule with zero safety incidents. World-class execution.", n: "Operations Director", c: "Major Kuwaiti Refinery" },
-  { q: "Reliability and technical depth that we trust on every critical maintenance window. A true partner.", n: "Plant Manager", c: "GCC Petrochemical Group" },
-  { q: "From procurement to commissioning, Nexora's professionalism is unmatched in the region.", n: "Project Lead", c: "Government Energy Authority" },
-];
-
-function Testimonials() {
-  return (
-    <section className="relative py-32 overflow-hidden">
-      <div className="mx-auto max-w-7xl px-6">
-        <Reveal>
-          <div className="text-center max-w-3xl mx-auto">
-            <SectionEyebrow>Trusted Partners</SectionEyebrow>
-            <h2 className="mt-5 text-4xl md:text-6xl font-extrabold leading-[1.05]">
-              What our <span className="text-gradient-gold">clients say</span>
-            </h2>
-          </div>
-        </Reveal>
-
-        <div className="mt-16 grid md:grid-cols-3 gap-6">
-          {testimonials.map((t, i) => (
-            <Reveal key={i} delay={i * 0.1}>
-              <figure className="relative h-full rounded-3xl border border-border bg-card p-8 hover-lift overflow-hidden">
-                <Quote className="absolute -top-2 -left-2 w-32 h-32 text-primary/5" />
-                <div className="relative">
-                  <div className="flex gap-1 text-gold">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-current" />
-                    ))}
-                  </div>
-                  <blockquote className="mt-6 text-lg leading-relaxed text-foreground/90">
-                    "{t.q}"
-                  </blockquote>
-                  <figcaption className="mt-8 pt-6 border-t border-border">
-                    <div className="font-semibold">{t.n}</div>
-                    <div className="text-sm text-muted-foreground">{t.c}</div>
-                  </figcaption>
-                </div>
-              </figure>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ---------- NEWS ---------- */
-const news = [
-  { t: "Nexora awarded major shutdown contract in Ahmadi", d: "Industry · Sept 2026", img: pRefinery },
-  { t: "Investing in digital asset integrity monitoring", d: "Technology · Aug 2026", img: pEng },
-  { t: "Expanding maintenance operations across GCC", d: "Company · July 2026", img: pMaint },
-];
-
-function News() {
-  return (
-    <section className="relative py-32 bg-surface/40 border-y border-border overflow-hidden">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
-          <Reveal>
-            <SectionEyebrow>Latest News</SectionEyebrow>
-            <h2 className="mt-5 text-4xl md:text-6xl font-extrabold leading-[1.05]">
-              Industry <span className="text-gradient-gold">insights</span>
-            </h2>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <Link to="/news" className="inline-flex items-center gap-2 text-gold font-semibold group">
-              All news <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
-            </Link>
-          </Reveal>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          {news.map((n, i) => (
-            <Reveal key={i} delay={i * 0.08}>
-              <article className="group h-full rounded-3xl overflow-hidden border border-border bg-card hover-lift">
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <img src={n.img} alt={n.t} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
+        <div className="grid gap-6 lg:grid-cols-3">
+          {projects.map((project, index) => (
+            <Reveal key={project.title} delay={index * 0.07}>
+              <article className="group overflow-hidden rounded-[1.75rem] border border-border bg-white hover-lift">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                  />
+                  <span className="absolute left-5 top-5 rounded-full border border-white/60 bg-white/82 px-3 py-1 text-xs font-bold uppercase tracking-[0.14em] text-primary backdrop-blur">
+                    {project.category}
+                  </span>
                 </div>
                 <div className="p-6">
-                  <div className="text-xs uppercase tracking-widest text-gold">{n.d}</div>
-                  <h3 className="mt-3 text-xl font-display font-bold leading-snug group-hover:text-gold transition">{n.t}</h3>
-                  <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground group-hover:text-foreground transition">
-                    Read article <ArrowUpRight className="w-4 h-4" />
-                  </div>
+                  <h3 className="font-display text-xl font-bold">{project.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    Structured delivery, documentation control and safety leadership for demanding
+                    industrial environments.
+                  </p>
                 </div>
               </article>
             </Reveal>
@@ -635,36 +674,75 @@ function News() {
   );
 }
 
-/* ---------- FINAL CTA ---------- */
+function HSE() {
+  return (
+    <section className="relative overflow-hidden border-y border-border bg-surface/75 py-28">
+      <div className="absolute inset-0 grid-bg opacity-60" />
+      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2">
+        <Reveal>
+          <SectionEyebrow>Safety and reliability</SectionEyebrow>
+          <h2 className="mt-5 text-4xl font-extrabold leading-[1.06] md:text-6xl">
+            Trust starts with <span className="text-gradient-energy">disciplined execution.</span>
+          </h2>
+          <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+            HSE, quality assurance and project governance are built into planning, procurement, site
+            delivery and handover. Nexora is structured for operators and EPC partners who require
+            transparent control.
+          </p>
+          <Link
+            to="/hse"
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm font-bold text-primary-foreground btn-glow-blue"
+          >
+            View HSE standards <ArrowRight className="h-4 w-4" />
+          </Link>
+        </Reveal>
+        <Reveal delay={0.12}>
+          <div className="grid gap-4">
+            {[
+              { icon: Shield, title: "Zero-compromise safety culture" },
+              { icon: Target, title: "Quality gates and documented controls" },
+              { icon: Award, title: "International partner expectations" },
+            ].map((item) => (
+              <motion.div
+                key={item.title}
+                whileHover={{ x: 5 }}
+                className="flex items-center gap-4 rounded-2xl border border-border bg-white p-5 shadow-sm"
+              >
+                <div className="grid h-12 w-12 place-items-center rounded-xl bg-energy/14 text-primary">
+                  <item.icon className="h-6 w-6" />
+                </div>
+                <div className="font-display text-lg font-bold">{item.title}</div>
+              </motion.div>
+            ))}
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 function FinalCTA() {
   return (
-    <section className="relative py-32 overflow-hidden">
-      <div className="relative mx-auto max-w-7xl px-6">
-        <div className="relative rounded-[2.5rem] overflow-hidden border border-gold-soft bg-gradient-to-br from-[#1a0a0a] via-[#0a0a0a] to-[#1a1408] p-12 md:p-20 text-center">
-          <div className="absolute inset-0 grid-bg opacity-30" />
-          <Particles count={20} />
-          <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] gradient-radial-red blur-3xl" />
-
-          <svg className="absolute inset-0 w-full h-full opacity-30" preserveAspectRatio="none" viewBox="0 0 1000 500">
-            <path d="M0 250 Q 250 100, 500 250 T 1000 250" stroke="var(--gold)" strokeWidth="1" fill="none" />
-            <path d="M0 280 Q 250 130, 500 280 T 1000 280" stroke="var(--primary)" strokeWidth="1" fill="none" opacity="0.6" />
-            <path d="M0 220 Q 250 70, 500 220 T 1000 220" stroke="var(--gold)" strokeWidth="0.5" fill="none" opacity="0.5" />
-          </svg>
-
+    <section className="relative overflow-hidden py-28">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="relative overflow-hidden rounded-[2rem] bg-navy p-8 text-center text-white md:p-16">
+          <div className="absolute inset-0 grid-bg opacity-20" />
+          <div className="absolute -top-40 left-1/2 h-[34rem] w-[34rem] -translate-x-1/2 rounded-full gradient-radial-teal blur-3xl" />
           <Reveal>
             <div className="relative">
-              <SectionEyebrow>Get In Touch</SectionEyebrow>
-              <h2 className="mt-6 text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] max-w-4xl mx-auto">
-                Let's Build The Future Of <span className="text-gradient-gold">Energy Together</span>
+              <SectionEyebrow>Partner with Nexora</SectionEyebrow>
+              <h2 className="mx-auto mt-6 max-w-4xl text-4xl font-extrabold leading-[1.06] md:text-6xl">
+                Ready to support your next energy infrastructure program.
               </h2>
-              <p className="mt-6 max-w-2xl mx-auto text-muted-foreground text-lg">
-                Partner with Nexora for engineering excellence, operational reliability and uncompromising safety.
+              <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-white/70">
+                Bring Nexora into engineering, procurement, maintenance or operations scopes that
+                demand trust, speed and operational excellence.
               </p>
               <Link
                 to="/contact"
-                className="mt-10 inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-semibold text-primary-foreground btn-glow-red hover:translate-y-[-2px] transition-all"
+                className="mt-9 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-bold text-primary transition hover:bg-energy hover:text-navy"
               >
-                Contact Nexora <ArrowRight className="w-4 h-4" />
+                Start the conversation <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </Reveal>
