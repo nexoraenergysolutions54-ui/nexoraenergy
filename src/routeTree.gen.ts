@@ -11,8 +11,12 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as ProductsRouteImport } from './routes/products'
+import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as NewsRouteImport } from './routes/news'
+import { Route as ManpowerRouteImport } from './routes/manpower'
 import { Route as IndustriesRouteImport } from './routes/industries'
+import { Route as IndustrialServicesRouteImport } from './routes/industrial-services'
 import { Route as HseRouteImport } from './routes/hse'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CareersRouteImport } from './routes/careers'
@@ -29,14 +33,34 @@ const ProjectsRoute = ProjectsRouteImport.update({
   path: '/projects',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductsRoute = ProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartnersRoute = PartnersRouteImport.update({
+  id: '/partners',
+  path: '/partners',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NewsRoute = NewsRouteImport.update({
   id: '/news',
   path: '/news',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ManpowerRoute = ManpowerRouteImport.update({
+  id: '/manpower',
+  path: '/manpower',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndustriesRoute = IndustriesRouteImport.update({
   id: '/industries',
   path: '/industries',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndustrialServicesRoute = IndustrialServicesRouteImport.update({
+  id: '/industrial-services',
+  path: '/industrial-services',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HseRoute = HseRouteImport.update({
@@ -71,8 +95,12 @@ export interface FileRoutesByFullPath {
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/hse': typeof HseRoute
+  '/industrial-services': typeof IndustrialServicesRoute
   '/industries': typeof IndustriesRoute
+  '/manpower': typeof ManpowerRoute
   '/news': typeof NewsRoute
+  '/partners': typeof PartnersRoute
+  '/products': typeof ProductsRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
 }
@@ -82,8 +110,12 @@ export interface FileRoutesByTo {
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/hse': typeof HseRoute
+  '/industrial-services': typeof IndustrialServicesRoute
   '/industries': typeof IndustriesRoute
+  '/manpower': typeof ManpowerRoute
   '/news': typeof NewsRoute
+  '/partners': typeof PartnersRoute
+  '/products': typeof ProductsRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
 }
@@ -94,8 +126,12 @@ export interface FileRoutesById {
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/hse': typeof HseRoute
+  '/industrial-services': typeof IndustrialServicesRoute
   '/industries': typeof IndustriesRoute
+  '/manpower': typeof ManpowerRoute
   '/news': typeof NewsRoute
+  '/partners': typeof PartnersRoute
+  '/products': typeof ProductsRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
 }
@@ -107,8 +143,12 @@ export interface FileRouteTypes {
     | '/careers'
     | '/contact'
     | '/hse'
+    | '/industrial-services'
     | '/industries'
+    | '/manpower'
     | '/news'
+    | '/partners'
+    | '/products'
     | '/projects'
     | '/services'
   fileRoutesByTo: FileRoutesByTo
@@ -118,8 +158,12 @@ export interface FileRouteTypes {
     | '/careers'
     | '/contact'
     | '/hse'
+    | '/industrial-services'
     | '/industries'
+    | '/manpower'
     | '/news'
+    | '/partners'
+    | '/products'
     | '/projects'
     | '/services'
   id:
@@ -129,8 +173,12 @@ export interface FileRouteTypes {
     | '/careers'
     | '/contact'
     | '/hse'
+    | '/industrial-services'
     | '/industries'
+    | '/manpower'
     | '/news'
+    | '/partners'
+    | '/products'
     | '/projects'
     | '/services'
   fileRoutesById: FileRoutesById
@@ -141,8 +189,12 @@ export interface RootRouteChildren {
   CareersRoute: typeof CareersRoute
   ContactRoute: typeof ContactRoute
   HseRoute: typeof HseRoute
+  IndustrialServicesRoute: typeof IndustrialServicesRoute
   IndustriesRoute: typeof IndustriesRoute
+  ManpowerRoute: typeof ManpowerRoute
   NewsRoute: typeof NewsRoute
+  PartnersRoute: typeof PartnersRoute
+  ProductsRoute: typeof ProductsRoute
   ProjectsRoute: typeof ProjectsRoute
   ServicesRoute: typeof ServicesRoute
 }
@@ -163,6 +215,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/products': {
+      id: '/products'
+      path: '/products'
+      fullPath: '/products'
+      preLoaderRoute: typeof ProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/partners': {
+      id: '/partners'
+      path: '/partners'
+      fullPath: '/partners'
+      preLoaderRoute: typeof PartnersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/news': {
       id: '/news'
       path: '/news'
@@ -170,11 +236,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NewsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/manpower': {
+      id: '/manpower'
+      path: '/manpower'
+      fullPath: '/manpower'
+      preLoaderRoute: typeof ManpowerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/industries': {
       id: '/industries'
       path: '/industries'
       fullPath: '/industries'
       preLoaderRoute: typeof IndustriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industrial-services': {
+      id: '/industrial-services'
+      path: '/industrial-services'
+      fullPath: '/industrial-services'
+      preLoaderRoute: typeof IndustrialServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/hse': {
@@ -221,8 +301,12 @@ const rootRouteChildren: RootRouteChildren = {
   CareersRoute: CareersRoute,
   ContactRoute: ContactRoute,
   HseRoute: HseRoute,
+  IndustrialServicesRoute: IndustrialServicesRoute,
   IndustriesRoute: IndustriesRoute,
+  ManpowerRoute: ManpowerRoute,
   NewsRoute: NewsRoute,
+  PartnersRoute: PartnersRoute,
+  ProductsRoute: ProductsRoute,
   ProjectsRoute: ProjectsRoute,
   ServicesRoute: ServicesRoute,
 }

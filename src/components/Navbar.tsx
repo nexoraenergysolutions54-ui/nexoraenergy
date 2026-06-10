@@ -1,22 +1,42 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
-import { ArrowRight, Menu, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ArrowRight, ChevronDown, HardHat, Menu, Package, Wrench, X } from "lucide-react";
 import { Logo } from "./Logo";
 
-const links = [
-  { to: "/", label: "Home" },
+const solutionLinks = [
+  {
+    to: "/manpower",
+    icon: HardHat,
+    label: "Technical Manpower",
+    desc: "Engineers, technicians & skilled workforce for GCC projects",
+  },
+  {
+    to: "/industrial-services",
+    icon: Wrench,
+    label: "Industrial Services",
+    desc: "Shutdown, turnaround, maintenance & site support",
+  },
+  {
+    to: "/products",
+    icon: Package,
+    label: "Products & Procurement",
+    desc: "Valves, instrumentation & industrial supply chain",
+  },
+] as const;
+
+const mainLinks = [
   { to: "/about", label: "About" },
-  { to: "/services", label: "Services" },
   { to: "/industries", label: "Industries" },
   { to: "/projects", label: "Projects" },
-  { to: "/hse", label: "HSE" },
+  { to: "/partners", label: "Partners" },
   { to: "/careers", label: "Careers" },
-  { to: "/news", label: "News" },
 ] as const;
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const { location } = useRouterState();
 
   useEffect(() => {
@@ -27,13 +47,27 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
-    setOpen(false);
+    setMobileOpen(false);
+    setDropdownOpen(false);
   }, [location.pathname]);
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  const solutionPaths = ["/manpower", "/industrial-services", "/products"];
+  const isSolutionsActive = solutionPaths.includes(location.pathname);
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "glass-strong py-3" : "py-5 bg-transparent"
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+        scrolled ? "glass-strong py-3" : "bg-transparent py-5"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-6">
@@ -41,8 +75,71 @@ export function Navbar() {
           <Logo size={46} className="origin-left scale-[1.32]" />
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-1">
-          {links.map((l) => {
+        {/* Desktop nav */}
+        <nav className="hidden items-center gap-0.5 lg:flex">
+          {/* Solutions dropdown */}
+          <div ref={dropdownRef} className="relative">
+            <button
+              onMouseEnter={() => setDropdownOpen(true)}
+              onClick={() => setDropdownOpen((v) => !v)}
+              className={`relative inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
+                isSolutionsActive
+                  ? "text-primary"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Solutions
+              <ChevronDown
+                className={`h-3.5 w-3.5 transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`}
+              />
+              {isSolutionsActive && (
+                <span className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-linear-to-r from-primary to-energy" />
+              )}
+            </button>
+
+            {dropdownOpen && (
+              <div
+                onMouseLeave={() => setDropdownOpen(false)}
+                className="absolute left-1/2 top-full mt-2 w-80 -translate-x-1/2 overflow-hidden rounded-2xl border border-border bg-white p-2 shadow-elevated"
+              >
+                <div className="mb-2 px-3 pt-1 text-[10px] font-bold uppercase tracking-[0.22em] text-muted-foreground">
+                  Our Capabilities
+                </div>
+                {solutionLinks.map((link) => {
+                  const active = location.pathname === link.to;
+                  return (
+                    <Link
+                      key={link.to}
+                      to={link.to}
+                      className={`group flex items-start gap-3 rounded-xl p-3 transition ${
+                        active ? "bg-surface" : "hover:bg-surface"
+                      }`}
+                    >
+                      <div
+                        className={`grid h-10 w-10 shrink-0 place-items-center rounded-xl ring-1 transition ${
+                          active
+                            ? "bg-energy/14 text-primary ring-energy/20"
+                            : "bg-primary/8 text-primary ring-primary/10 group-hover:bg-energy/14 group-hover:ring-energy/20"
+                        }`}
+                      >
+                        <link.icon className="h-4.5 w-4.5" />
+                      </div>
+                      <div className="min-w-0">
+                        <div className={`text-sm font-bold ${active ? "text-primary" : "text-foreground"}`}>
+                          {link.label}
+                        </div>
+                        <div className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
+                          {link.desc}
+                        </div>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+
+          {mainLinks.map((l) => {
             const active = location.pathname === l.to;
             return (
               <Link
@@ -54,7 +151,7 @@ export function Navbar() {
               >
                 {l.label}
                 {active && (
-                  <span className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-gradient-to-r from-primary to-energy" />
+                  <span className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-linear-to-r from-primary to-energy" />
                 )}
               </Link>
             );
@@ -63,38 +160,55 @@ export function Navbar() {
 
         <div className="flex items-center gap-3">
           <Link
-            to="/contact"
-            className="hidden sm:inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground btn-glow-blue hover:bg-primary/90 transition-all"
+            to="/manpower"
+            className="hidden items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all btn-glow-blue hover:bg-primary/90 sm:inline-flex"
           >
-            Partner with us <ArrowRight className="w-3.5 h-3.5" />
+            Request Manpower <ArrowRight className="h-3.5 w-3.5" />
           </Link>
           <button
-            onClick={() => setOpen((v) => !v)}
-            className="lg:hidden grid place-items-center w-10 h-10 rounded-full border border-border text-foreground"
+            onClick={() => setMobileOpen((v) => !v)}
+            className="grid h-10 w-10 place-items-center rounded-full border border-border text-foreground transition hover:border-energy-soft lg:hidden"
             aria-label="Toggle menu"
           >
-            {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
       </div>
 
-      {open && (
-        <div className="lg:hidden mt-3 mx-4 rounded-2xl glass p-4 animate-fade-in">
+      {/* Mobile menu */}
+      {mobileOpen && (
+        <div className="mx-4 mt-3 overflow-hidden rounded-2xl glass p-4 lg:hidden">
           <div className="flex flex-col">
-            {links.map((l) => (
+            <div className="mb-1 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.22em] text-muted-foreground">
+              Solutions
+            </div>
+            {solutionLinks.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
-                className="px-3 py-3 text-sm font-semibold text-muted-foreground hover:text-primary border-b border-border last:border-0"
+                className="flex items-center gap-3 border-b border-border px-3 py-3 text-sm font-semibold text-muted-foreground transition hover:text-primary"
+              >
+                <l.icon className="h-4 w-4 shrink-0 text-primary" />
+                {l.label}
+              </Link>
+            ))}
+            <div className="mb-1 mt-3 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.22em] text-muted-foreground">
+              Company
+            </div>
+            {mainLinks.map((l) => (
+              <Link
+                key={l.to}
+                to={l.to}
+                className="border-b border-border px-3 py-3 text-sm font-semibold text-muted-foreground transition hover:text-primary last:border-0"
               >
                 {l.label}
               </Link>
             ))}
             <Link
               to="/contact"
-              className="mt-3 inline-flex justify-center items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground"
+              className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground"
             >
-              Contact Us
+              Contact Us <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </div>
         </div>
