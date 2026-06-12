@@ -1,49 +1,60 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Facebook, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
+import { ArrowRight, CheckCircle2, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { Logo } from "./Logo";
 
 export function Footer() {
+  const coverage = ["Qatar", "Kuwait", "Saudi Arabia", "UAE", "Bahrain", "Oman"];
+  const proofPoints = [
+    "Technical Manpower",
+    "Industrial Services",
+    "Procurement Support",
+    "GCC Coverage",
+  ];
+
   return (
-    <footer className="relative mt-28 border-t border-border bg-white">
-      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-energy/50 to-transparent" />
-      <div className="mx-auto max-w-7xl px-6 pb-10 pt-20">
-        <div className="grid gap-12 lg:grid-cols-5">
-          {/* Brand col */}
-          <div className="lg:col-span-2">
-            <Logo size={44} />
-            <p className="mt-6 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              Kuwait-based Technical Manpower &amp; Industrial Solutions Partner delivering qualified
-              workforce, industrial services and procurement support across the GCC.
-            </p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {["Kuwait", "Qatar", "Saudi Arabia", "UAE", "Bahrain", "Oman"].map((c) => (
-                <span
-                  key={c}
-                  className="rounded-full border border-border px-3 py-1 text-xs font-semibold text-muted-foreground"
-                >
-                  {c}
-                </span>
-              ))}
+    <footer className="relative overflow-hidden border-t border-white/10 bg-navy">
+      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-energy/70 to-transparent" />
+      <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(15,180,170,0.1),transparent_34%)]" />
+
+      <div className="relative mx-auto max-w-7xl px-6 pb-8 pt-16 lg:px-8">
+        <div className="mb-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {proofPoints.map((point) => (
+            <div
+              key={point}
+              className="flex items-center gap-3 rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm font-bold text-white"
+            >
+              <CheckCircle2 className="h-4 w-4 shrink-0 text-energy" />
+              <span>{point}</span>
             </div>
-            <form className="mt-8 flex max-w-sm overflow-hidden rounded-full border border-border bg-background">
-              <input
-                type="email"
-                placeholder="Corporate email"
-                className="flex-1 bg-transparent px-5 py-3 text-sm outline-none placeholder:text-muted-foreground"
-              />
-              <button
-                type="submit"
-                className="bg-primary px-5 text-primary-foreground transition hover:bg-primary/90"
-                aria-label="Subscribe"
-              >
-                <ArrowRight className="h-4 w-4" />
-              </button>
-            </form>
+          ))}
+        </div>
+
+        <div className="grid gap-10 lg:grid-cols-[1.25fr_0.72fr_0.72fr_0.95fr]">
+          <div className="max-w-md">
+            <Logo size={58} variant="light" />
+            <p className="mt-6 text-sm leading-7 text-white/68">
+              Qatar-based technical manpower and industrial solutions company supporting energy,
+              LNG, petrochemical, infrastructure and EPC projects across the GCC.
+            </p>
+            <div className="mt-6">
+              <div className="text-xs font-extrabold uppercase tracking-[0.16em] text-energy">
+                GCC Coverage
+              </div>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {coverage.map((country) => (
+                  <span
+                    key={country}
+                    className="rounded-md border border-white/10 bg-white/5 px-3 py-2 text-xs font-bold text-white/72"
+                  >
+                    {country}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
 
-          {/* Solutions */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-[0.22em] text-primary">
+            <h4 className="text-xs font-extrabold uppercase tracking-[0.18em] text-energy">
               Solutions
             </h4>
             <ul className="mt-5 space-y-3">
@@ -51,22 +62,21 @@ export function Footer() {
                 { to: "/manpower", label: "Technical Manpower" },
                 { to: "/industrial-services", label: "Industrial Services" },
                 { to: "/products", label: "Products & Procurement" },
-              ].map((l) => (
-                <li key={l.to}>
+              ].map((link) => (
+                <li key={link.to}>
                   <Link
-                    to={l.to}
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    to={link.to}
+                    className="text-sm font-semibold text-white/68 transition hover:text-white"
                   >
-                    {l.label}
+                    {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Company */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-[0.22em] text-primary">
+            <h4 className="text-xs font-extrabold uppercase tracking-[0.18em] text-energy">
               Company
             </h4>
             <ul className="mt-5 space-y-3">
@@ -77,66 +87,66 @@ export function Footer() {
                 { to: "/partners", label: "Partners" },
                 { to: "/careers", label: "Careers" },
                 { to: "/contact", label: "Contact" },
-              ].map((l) => (
-                <li key={l.to}>
+              ].map((link) => (
+                <li key={link.to}>
                   <Link
-                    to={l.to}
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    to={link.to}
+                    className="text-sm font-semibold text-white/68 transition hover:text-white"
                   >
-                    {l.label}
+                    {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-[0.22em] text-primary">
+            <h4 className="text-xs font-extrabold uppercase tracking-[0.18em] text-energy">
               Contact
             </h4>
-            <ul className="mt-5 space-y-4 text-sm text-muted-foreground">
+            <ul className="mt-5 space-y-4 text-sm text-white/68">
               <li className="flex gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-energy" />
-                <span>Ahmadi, Kuwait</span>
+                <span>Doha, Qatar</span>
               </li>
               <li className="flex gap-3">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-energy" />
-                <a href="tel:+96500000000" className="transition hover:text-primary">
-                  +965 0000 0000
+                <a href="tel:+97400000000" className="font-semibold transition hover:text-white">
+                  +974 0000 0000
                 </a>
               </li>
               <li className="flex gap-3">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0 text-energy" />
-                <a href="mailto:info@nexora-energy.com" className="transition hover:text-primary">
+                <a
+                  href="mailto:info@nexora-energy.com"
+                  className="font-semibold transition hover:text-white"
+                >
                   info@nexora-energy.com
                 </a>
               </li>
             </ul>
-            <div className="mt-6 flex gap-2">
-              {[
-                { Icon: Linkedin, href: "#", label: "LinkedIn" },
-                { Icon: Twitter, href: "#", label: "Twitter" },
-                { Icon: Facebook, href: "#", label: "Facebook" },
-              ].map(({ Icon, href, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  className="grid h-10 w-10 place-items-center rounded-full border border-border text-muted-foreground transition hover:border-energy-soft hover:text-primary"
-                >
-                  <Icon className="h-4 w-4" />
-                </a>
-              ))}
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link
+                to="/contact"
+                className="inline-flex min-h-11 items-center gap-2 rounded-md bg-energy px-5 py-2.5 text-sm font-extrabold text-navy transition hover:bg-white"
+              >
+                Request Proposal
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <a
+                href="#"
+                aria-label="LinkedIn"
+                className="grid h-11 w-11 place-items-center rounded-md border border-white/15 text-white/62 transition hover:border-energy/50 hover:text-white"
+              >
+                <Linkedin className="h-4 w-4" />
+              </a>
             </div>
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 text-xs text-muted-foreground md:flex-row">
-          <p>© {new Date().getFullYear()} Nexora Energy Solutions. All rights reserved.</p>
-          <p className="text-center">
-            Technical Manpower &amp; Industrial Solutions — Kuwait &amp; GCC
-          </p>
+        <div className="mt-14 flex flex-col justify-between gap-3 border-t border-white/10 pt-7 text-xs leading-5 text-white/50 md:flex-row">
+          <p>Copyright {new Date().getFullYear()} Nexora Energy Solutions. All rights reserved.</p>
+          <p>Technical Manpower & Industrial Solutions - Qatar & GCC</p>
         </div>
       </div>
     </footer>

@@ -5,7 +5,6 @@ import {
   ArrowUpRight,
   Award,
   Building2,
-  CheckCircle2,
   ClipboardList,
   HardHat,
   Package,
@@ -20,11 +19,15 @@ import {
 } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
+import homeHeroBriefing from "@/assets/home-hero-briefing.png";
+import homeHeroMaintenance from "@/assets/home-hero-maintenance.png";
+import homeHeroPlanning from "@/assets/home-hero-planning.png";
+import homeHeroProcurement from "@/assets/home-hero-procurement.png";
+import industrialServicesValveTeam from "@/assets/industrial-services-valve-team.png";
+import manpowerHeroCrewBriefing from "@/assets/manpower-hero-crew-briefing.png";
 import pMaint from "@/assets/project-maintenance.jpg";
 import pRefinery from "@/assets/project-refinery.jpg";
 import pEng from "@/assets/project-engineering.jpg";
-import pPipeline from "@/assets/project-pipeline.jpg";
-import about from "@/assets/about-engineers.jpg";
 
 export const Route = createFileRoute("/industrial-services")({
   head: () => ({
@@ -112,8 +115,7 @@ function ServicesHero() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="max-w-3xl font-display text-5xl font-extrabold leading-[1.02] text-white md:text-6xl"
         >
-          Full Lifecycle{" "}
-          <span className="text-energy">Industrial Site Support</span>
+          Full Lifecycle <span className="text-energy">Industrial Site Support</span>
         </motion.h1>
 
         <motion.p
@@ -147,7 +149,6 @@ function ServicesHero() {
           </Link>
         </motion.div>
       </div>
-      <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-background to-transparent" />
     </section>
   );
 }
@@ -158,109 +159,101 @@ const services = [
   {
     icon: Timer,
     title: "Shutdown Support",
-    desc: "Planned and unplanned plant shutdown execution. We provide specialist crews for piping, mechanical, electrical and instrumentation disciplines to execute safe and efficient shutdowns on schedule.",
-    points: ["Permit-to-work management", "Multi-discipline coordination", "Isolation and de-isolation", "Documentation and handover"],
-    image: pRefinery,
+    desc: "Qualified manpower and site support for shutdown planning, execution and close-out activities.",
+    image: manpowerHeroCrewBriefing,
   },
   {
     icon: TrendingUp,
     title: "Turnaround Support",
-    desc: "End-to-end turnaround manpower packages from planning through re-commissioning. Our crews are experienced in high-pressure, time-critical turnaround environments across refineries and process plants.",
-    points: ["Pre-TA planning support", "Full discipline crew packages", "Progress tracking and reporting", "HSSE monitoring"],
-    image: pMaint,
+    desc: "Multi-discipline support teams for refinery, LNG and petrochemical turnaround projects.",
+    image: homeHeroMaintenance,
   },
   {
     icon: Wrench,
     title: "Maintenance Support",
-    desc: "Corrective, preventive and predictive maintenance services for critical rotating and static equipment. Structured maintenance support that maximises asset uptime and extends equipment life.",
-    points: ["Rotating equipment overhaul", "Static equipment inspection", "Preventive maintenance programs", "Reliability-centered maintenance"],
-    image: pEng,
+    desc: "Preventive, corrective and routine maintenance support for critical industrial assets.",
+    image: industrialServicesValveTeam,
   },
   {
     icon: HardHat,
     title: "Project Support",
-    desc: "Site execution crews for greenfield, brownfield and capital project delivery. We support EPC contractors and operators with skilled, compliant tradespeople and supervision.",
-    points: ["Greenfield & brownfield execution", "Commissioning support", "Sub-contractor supervision", "Project closeout documentation"],
-    image: pPipeline,
+    desc: "Technical personnel and site coordination support for project delivery and execution.",
+    image: homeHeroPlanning,
   },
   {
     icon: Building2,
     title: "Site Services",
-    desc: "Scaffolding, insulation, surface preparation, painting, civil works and general site services provided by experienced, safety-trained personnel with the correct tools and equipment.",
-    points: ["CISRS scaffolding crews", "Insulation and cladding", "Surface prep and painting", "Civil and groundwork support"],
-    image: about,
+    desc: "Site-ready manpower and operational support for industrial facilities and infrastructure projects.",
+    image: homeHeroBriefing,
   },
   {
     icon: Package,
     title: "Procurement Support",
-    desc: "Coordinated spare parts sourcing, vendor management and documented supply chain control to ensure your materials arrive on time and meet project specifications.",
-    points: ["OEM and approved vendor sourcing", "Lead time management", "Quality documentation", "Logistics and customs support"],
-    image: pRefinery,
+    desc: "Procurement coordination and industrial material sourcing support for project requirements.",
+    image: homeHeroProcurement,
   },
   {
     icon: Settings2,
     title: "Engineering Support",
-    desc: "On-site technical engineering, inspection and documentation services embedded in your project team. Our engineers work alongside your team to resolve technical issues and maintain quality standards.",
-    points: ["Technical query resolution", "As-built documentation", "Inspection and test plans", "Engineering change management"],
+    desc: "Engineering, inspection and documentation support for controlled project environments.",
     image: pEng,
   },
 ];
 
 function ServicesGrid() {
   return (
-    <section className="py-24">
+    <section className="bg-background py-20 md:py-24">
       <div className="mx-auto max-w-7xl px-6">
-        <Reveal className="mb-14 text-center">
+        <Reveal className="mb-12 max-w-3xl">
           <Eyebrow>Our Services</Eyebrow>
-          <h2 className="mt-5 text-4xl font-extrabold leading-[1.06] md:text-5xl">
-            Seven service lines.{" "}
-            <span className="text-gradient-energy">One trusted partner.</span>
+          <h2 className="mt-5 text-4xl font-extrabold leading-[1.06] text-foreground md:text-5xl">
+            Seven Service Lines. One Trusted Partner.
           </h2>
+          <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
+            Practical industrial support solutions for energy, LNG, petrochemical, infrastructure
+            and EPC projects across Qatar and the GCC.
+          </p>
         </Reveal>
 
-        <div className="space-y-6">
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => (
-            <Reveal key={service.title} delay={i * 0.04}>
-              <div
-                className={`group grid overflow-hidden rounded-2xl border border-border bg-white shadow-sm hover:shadow-elevated transition lg:grid-cols-5 ${
-                  i % 2 === 0 ? "" : "lg:grid-flow-dense"
-                }`}
-              >
-                {/* Image */}
-                <div className={`relative aspect-video overflow-hidden lg:aspect-auto lg:col-span-2 ${i % 2 !== 0 ? "lg:order-2" : ""}`}>
+            <Reveal key={service.title} delay={i * 0.055}>
+              <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-energy/35 hover:shadow-elevated">
+                <div className="relative aspect-video overflow-hidden bg-navy">
                   <img
                     src={service.image}
                     alt={service.title}
                     loading="lazy"
-                    className="h-full w-full object-cover transition duration-700 group-hover:scale-103"
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"
                   />
-                  <div className="absolute inset-0 bg-linear-to-br from-navy/40 to-transparent" />
-                  <div className="absolute left-5 top-5 grid h-12 w-12 place-items-center rounded-xl bg-white/12 text-white backdrop-blur">
-                    <service.icon className="h-6 w-6" />
-                  </div>
+                  <div className="absolute inset-0 bg-linear-to-t from-navy/42 via-navy/5 to-transparent" />
                 </div>
-                {/* Content */}
-                <div className="flex flex-col justify-center p-7 lg:col-span-3 lg:p-9">
-                  <div className="font-display text-xl font-bold">{service.title}</div>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{service.desc}</p>
-                  <div className="mt-5 grid gap-2 sm:grid-cols-2">
-                    {service.points.map((point) => (
-                      <div key={point} className="flex items-center gap-2 text-xs font-semibold">
-                        <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-energy" />
-                        {point}
-                      </div>
-                    ))}
+                <div className="flex flex-1 flex-col p-6">
+                  <div className="flex items-start justify-between gap-5">
+                    <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-primary/10 bg-primary/6 text-primary transition group-hover:border-energy/30 group-hover:bg-energy/12">
+                      <service.icon className="h-5.5 w-5.5" />
+                    </div>
+                    <span className="pt-1 text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground/65">
+                      0{i + 1}
+                    </span>
                   </div>
-                  <div className="mt-6">
+                  <h3 className="mt-6 text-xl font-extrabold leading-tight text-foreground">
+                    {service.title}
+                  </h3>
+                  <p className="mt-3 flex-1 text-sm leading-6 text-muted-foreground">
+                    {service.desc}
+                  </p>
+                  <div className="mt-6 border-t border-border pt-5">
                     <Link
                       to="/contact"
-                      className="inline-flex items-center gap-2 text-sm font-bold text-primary transition hover:text-primary/80"
+                      className="inline-flex items-center gap-2 text-sm font-bold text-primary transition hover:text-energy"
                     >
-                      Request this service <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+                      Learn More
+                      <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
                     </Link>
                   </div>
                 </div>
-              </div>
+              </article>
             </Reveal>
           ))}
         </div>
@@ -272,11 +265,36 @@ function ServicesGrid() {
 /* ─── METHODOLOGY ─────────────────────────────────────────────────────────── */
 
 const methodology = [
-  { num: "01", icon: ClipboardList, title: "Scope Review", desc: "We analyse your project requirements, site conditions and timeline." },
-  { num: "02", icon: Users, title: "Team Assembly", desc: "Specialist crews assembled from verified workforce pool." },
-  { num: "03", icon: Shield, title: "HSE Preparation", desc: "Site-specific safety plans, permits and inductions completed." },
-  { num: "04", icon: HardHat, title: "Site Execution", desc: "Deployment with full supervision, monitoring and documentation." },
-  { num: "05", icon: Award, title: "Handover", desc: "Quality documentation, lessons learned and project closeout." },
+  {
+    num: "01",
+    icon: ClipboardList,
+    title: "Scope Review",
+    desc: "We analyse your project requirements, site conditions and timeline.",
+  },
+  {
+    num: "02",
+    icon: Users,
+    title: "Team Assembly",
+    desc: "Specialist crews assembled from verified workforce pool.",
+  },
+  {
+    num: "03",
+    icon: Shield,
+    title: "HSE Preparation",
+    desc: "Site-specific safety plans, permits and inductions completed.",
+  },
+  {
+    num: "04",
+    icon: HardHat,
+    title: "Site Execution",
+    desc: "Deployment with full supervision, monitoring and documentation.",
+  },
+  {
+    num: "05",
+    icon: Award,
+    title: "Handover",
+    desc: "Quality documentation, lessons learned and project closeout.",
+  },
 ];
 
 function MethodologySection() {
@@ -286,8 +304,7 @@ function MethodologySection() {
         <Reveal className="mb-14 text-center">
           <Eyebrow>Our Methodology</Eyebrow>
           <h2 className="mt-5 text-4xl font-extrabold leading-[1.06] md:text-5xl">
-            Structured delivery.{" "}
-            <span className="text-gradient-energy">Consistent results.</span>
+            Structured delivery. <span className="text-gradient-energy">Consistent results.</span>
           </h2>
         </Reveal>
 
@@ -334,13 +351,12 @@ function ProjectTypesSection() {
           <Reveal>
             <Eyebrow>Project Experience</Eyebrow>
             <h2 className="mt-5 text-4xl font-extrabold leading-[1.06] md:text-5xl">
-              Experienced across all{" "}
-              <span className="text-gradient-energy">facility types.</span>
+              Experienced across all <span className="text-gradient-energy">facility types.</span>
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-              Our industrial service teams have been deployed across Kuwait&apos;s and the
-              GCC&apos;s most demanding facilities — from high-pressure refineries to offshore
-              platforms and government infrastructure programs.
+              Our industrial service teams have been deployed across Qatar and the GCC&apos;s most
+              demanding facilities — from high-pressure refineries to offshore platforms and
+              government infrastructure programs.
             </p>
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
               {projectTypes.map((pt, i) => (
@@ -374,7 +390,9 @@ function ProjectTypesSection() {
                   </div>
                   <div>
                     <div className="font-display text-sm font-bold">Safety-First Execution</div>
-                    <div className="text-xs text-muted-foreground">HSE embedded in every scope — zero compromise</div>
+                    <div className="text-xs text-muted-foreground">
+                      HSE embedded in every scope — zero compromise
+                    </div>
                   </div>
                 </div>
               </div>
@@ -402,17 +420,33 @@ function SafetySection() {
             <span className="text-energy">It is our culture.</span>
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-white/55">
-            Every Nexora industrial service is planned, executed and handed over under a
-            structured HSE framework aligned to Kuwait and GCC operator requirements.
+            Every Nexora industrial service is planned, executed and handed over under a structured
+            HSE framework aligned to Qatar and GCC operator requirements.
           </p>
         </Reveal>
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            { icon: Shield, title: "Permit-to-Work", desc: "All personnel trained in Kuwait oil sector PTW requirements." },
-            { icon: HardHat, title: "PPE Compliance", desc: "Full personal protective equipment provided and enforced." },
-            { icon: ClipboardList, title: "Toolbox Talks", desc: "Daily hazard identification and safety briefings on every shift." },
-            { icon: Award, title: "Incident Reporting", desc: "Zero-tolerance near-miss reporting and root cause analysis." },
+            {
+              icon: Shield,
+              title: "Permit-to-Work",
+              desc: "All personnel trained in Qatar and GCC operator PTW requirements.",
+            },
+            {
+              icon: HardHat,
+              title: "PPE Compliance",
+              desc: "Full personal protective equipment provided and enforced.",
+            },
+            {
+              icon: ClipboardList,
+              title: "Toolbox Talks",
+              desc: "Daily hazard identification and safety briefings on every shift.",
+            },
+            {
+              icon: Award,
+              title: "Incident Reporting",
+              desc: "Zero-tolerance near-miss reporting and root cause analysis.",
+            },
           ].map((item, i) => (
             <Reveal key={item.title} delay={i * 0.06}>
               <div className="group rounded-2xl border border-white/10 bg-white/6 p-6 backdrop-blur transition hover:border-energy/30 hover:bg-white/10">
@@ -444,8 +478,8 @@ function ServicesCTA() {
               <span className="text-gradient-energy">service requirement?</span>
             </h2>
             <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-muted-foreground">
-              Tell us about your project and we&apos;ll propose a service delivery plan tailored
-              to your facility, timeline and workforce requirements.
+              Tell us about your project and we&apos;ll propose a service delivery plan tailored to
+              your facility, timeline and workforce requirements.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link

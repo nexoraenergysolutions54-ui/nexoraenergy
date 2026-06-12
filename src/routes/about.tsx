@@ -15,9 +15,10 @@ import { Counter } from "@/components/Counter";
 import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
+import aboutHero from "@/assets/about-hero-team-refinery.png";
 import about from "@/assets/about-engineers.jpg";
-import pRefinery from "@/assets/project-refinery.jpg";
 import pEng from "@/assets/project-engineering.jpg";
+import pRefinery from "@/assets/project-refinery.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -26,13 +27,13 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Nexora Energy Solutions is a Kuwait-based Technical Manpower & Industrial Solutions Partner serving energy, LNG, petrochemical, infrastructure and EPC projects across the GCC.",
+          "Nexora Energy Solutions is a Qatar-based Technical Manpower & Industrial Solutions Partner serving energy, LNG, petrochemical, infrastructure and EPC projects across the GCC.",
       },
       { property: "og:title", content: "About Nexora Energy Solutions" },
       {
         property: "og:description",
         content:
-          "Kuwait-based technical manpower and industrial solutions partner for the GCC energy sector.",
+          "Qatar-based technical manpower and industrial solutions partner for the GCC energy sector.",
       },
       { property: "og:url", content: "/about" },
     ],
@@ -49,10 +50,12 @@ function AboutPage() {
         title={
           <>
             The technical partner built for{" "}
-            <span className="text-gradient-energy">GCC energy projects.</span>
+            <span className="text-energy">GCC energy projects.</span>
           </>
         }
-        description="Nexora Energy Solutions is a Kuwait-based Technical Manpower & Industrial Solutions Partner. We deliver qualified workforce, industrial services and procurement support for the region's most demanding energy, LNG and industrial projects."
+        description="Nexora Energy Solutions is a Qatar-based Technical Manpower & Industrial Solutions Partner. We deliver qualified workforce, industrial services and procurement support for the region's most demanding energy, LNG and industrial projects."
+        backgroundImage={aboutHero}
+        imagePosition="object-[64%_center]"
       />
 
       {/* Company story */}
@@ -64,31 +67,34 @@ function AboutPage() {
               Who We Are
             </span>
             <h2 className="mt-5 text-3xl font-extrabold leading-[1.06] md:text-5xl">
-              Positioned where Kuwait&apos;s{" "}
+              Positioned where Qatar&apos;s{" "}
               <span className="text-gradient-energy">energy projects need us most.</span>
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-              Nexora Energy Solutions was established to fill a specific gap in the Kuwait and GCC
+              Nexora Energy Solutions was established to fill a specific gap in the Qatar and GCC
               market: a technically capable, compliance-focused manpower and industrial solutions
               partner that understands the real demands of energy, LNG, petrochemical and EPC
               project environments.
             </p>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              We are not a general labour company. We are a technical partner — deploying
-              qualified engineers, certified tradespeople and experienced supervisors who meet the
-              documentation, safety and technical standards of Kuwait&apos;s major operators and
+              We are not a general labour company. We are a technical partner — deploying qualified
+              engineers, certified tradespeople and experienced supervisors who meet the
+              documentation, safety and technical standards of Qatar&apos;s major operators and
               international EPC contractors.
             </p>
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
               {[
-                "KOC & KNPC project aligned",
+                "QatarEnergy project aligned",
                 "QatarEnergy LNG capable",
                 "EPC contractor preferred",
-                "CODO & MOI compliance managed",
+                "GCC compliance managed",
                 "24/7 mobilisation support",
                 "GCC-wide deployment capability",
               ].map((item) => (
-                <div key={item} className="flex items-center gap-3 rounded-xl border border-border bg-white p-3">
+                <div
+                  key={item}
+                  className="flex items-center gap-3 rounded-xl border border-border bg-white p-3"
+                >
                   <CheckCircle2 className="h-4 w-4 shrink-0 text-energy" />
                   <span className="text-sm font-semibold">{item}</span>
                 </div>
@@ -112,8 +118,12 @@ function AboutPage() {
                       <Award className="h-5 w-5" />
                     </div>
                     <div>
-                      <div className="font-display text-sm font-bold">Headquartered in Ahmadi, Kuwait</div>
-                      <div className="text-xs text-muted-foreground">Serving Kuwait, Qatar, Saudi Arabia, UAE, Bahrain &amp; Oman</div>
+                      <div className="font-display text-sm font-bold">
+                        Headquartered in Doha, Qatar
+                      </div>
+                      <div className="text-xs text-muted-foreground">
+                        Serving Qatar, Kuwait, Saudi Arabia, UAE, Bahrain &amp; Oman
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -157,8 +167,7 @@ function AboutPage() {
               Our Purpose
             </span>
             <h2 className="mt-5 text-3xl font-extrabold leading-[1.06] md:text-5xl">
-              Mission, vision &amp;{" "}
-              <span className="text-gradient-energy">core values.</span>
+              Mission, vision &amp; <span className="text-gradient-energy">core values.</span>
             </h2>
           </Reveal>
 
@@ -170,7 +179,7 @@ function AboutPage() {
                 </div>
                 <div className="font-display text-lg font-bold">Our Mission</div>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  To be Kuwait and the GCC&apos;s most trusted technical manpower and industrial
+                  To be Qatar and the GCC&apos;s most trusted technical manpower and industrial
                   solutions partner — delivering qualified, compliant and reliable workforce and
                   services for every project phase, every time.
                 </p>
@@ -197,8 +206,8 @@ function AboutPage() {
                 <div className="font-display text-lg font-bold">Our Commitment</div>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   Compliance, safety and quality are non-negotiable. Every Nexora deployment,
-                  service and supply is executed with the documentation discipline and HSE
-                  standards that our clients&apos; facilities demand.
+                  service and supply is executed with the documentation discipline and HSE standards
+                  that our clients&apos; facilities demand.
                 </p>
               </div>
             </Reveal>
@@ -210,16 +219,30 @@ function AboutPage() {
       <section className="border-y border-border bg-surface/60 py-20">
         <div className="mx-auto max-w-7xl px-6">
           <Reveal className="mb-12 text-center">
-            <h2 className="text-3xl font-extrabold md:text-4xl">
-              The values we work by.
-            </h2>
+            <h2 className="text-3xl font-extrabold md:text-4xl">The values we work by.</h2>
           </Reveal>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { icon: Shield, title: "Safety First", desc: "HSE is embedded in planning, execution and handover — zero compromise on personnel or facility safety." },
-              { icon: Award, title: "Integrity", desc: "We say what we deliver and we deliver what we say. Transparent reporting and honest project communication." },
-              { icon: Users, title: "Partnership", desc: "Long-term partnerships with clients, employees and suppliers built on trust, performance and mutual benefit." },
-              { icon: HardHat, title: "Technical Excellence", desc: "Every person we deploy, every service we deliver meets the technical standard our clients are entitled to expect." },
+              {
+                icon: Shield,
+                title: "Safety First",
+                desc: "HSE is embedded in planning, execution and handover — zero compromise on personnel or facility safety.",
+              },
+              {
+                icon: Award,
+                title: "Integrity",
+                desc: "We say what we deliver and we deliver what we say. Transparent reporting and honest project communication.",
+              },
+              {
+                icon: Users,
+                title: "Partnership",
+                desc: "Long-term partnerships with clients, employees and suppliers built on trust, performance and mutual benefit.",
+              },
+              {
+                icon: HardHat,
+                title: "Technical Excellence",
+                desc: "Every person we deploy, every service we deliver meets the technical standard our clients are entitled to expect.",
+              },
             ].map((val, i) => (
               <Reveal key={val.title} delay={i * 0.06}>
                 <div className="group rounded-2xl border border-border bg-white p-6 shadow-sm transition hover:shadow-elevated hover:-translate-y-0.5">
@@ -245,25 +268,27 @@ function AboutPage() {
                 Regional Reach
               </span>
               <h2 className="mt-5 text-3xl font-extrabold leading-[1.06] md:text-5xl">
-                Kuwait headquarters.{" "}
-                <span className="text-gradient-energy">GCC deployment.</span>
+                Qatar headquarters. <span className="text-gradient-energy">GCC deployment.</span>
               </h2>
               <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-                Nexora&apos;s headquarters in Ahmadi, Kuwait places us at the heart of the
+                Nexora&apos;s headquarters in Doha, Qatar places us at the heart of the
                 region&apos;s energy industry. From here, we support project deployment across all
                 six GCC member states — with in-country coordination, visa and compliance support
                 managed locally.
               </p>
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
                 {[
-                  { code: "KW", country: "Kuwait — HQ" },
-                  { code: "QA", country: "Qatar" },
+                  { code: "QA", country: "Qatar - HQ" },
+                  { code: "KW", country: "Kuwait" },
                   { code: "SA", country: "Saudi Arabia" },
                   { code: "AE", country: "UAE" },
                   { code: "BH", country: "Bahrain" },
                   { code: "OM", country: "Oman" },
                 ].map((c) => (
-                  <div key={c.code} className="flex items-center gap-3 rounded-xl border border-border bg-white p-3.5">
+                  <div
+                    key={c.code}
+                    className="flex items-center gap-3 rounded-xl border border-border bg-white p-3.5"
+                  >
                     <div className="grid h-8 w-10 place-items-center rounded-lg bg-primary/8 font-display text-xs font-bold text-primary">
                       {c.code}
                     </div>
@@ -278,7 +303,7 @@ function AboutPage() {
                 <div className="relative overflow-hidden rounded-4xl border border-border bg-white shadow-elevated">
                   <img
                     src={pRefinery}
-                    alt="Energy facility in Kuwait"
+                    alt="Energy facility in Qatar"
                     loading="lazy"
                     className="h-56 w-full object-cover"
                   />

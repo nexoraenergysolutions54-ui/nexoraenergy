@@ -20,7 +20,7 @@ export const Route = createFileRoute("/services")({
       {
         name: "description",
         content:
-          "Integrated engineering, industrial services, procurement, maintenance, infrastructure delivery and operational support for Kuwait's energy sector.",
+          "Integrated engineering, industrial services, procurement, maintenance, infrastructure delivery and operational support for Qatar and GCC energy sectors.",
       },
       { property: "og:title", content: "Nexora Energy Services" },
       {

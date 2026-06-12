@@ -101,8 +101,7 @@ function ProductsHero() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="max-w-3xl font-display text-5xl font-extrabold leading-[1.02] text-white md:text-6xl"
         >
-          Industrial Supply{" "}
-          <span className="text-energy">Capability for Energy Projects</span>
+          Industrial Supply <span className="text-energy">Capability for Energy Projects</span>
         </motion.h1>
 
         <motion.p
@@ -111,9 +110,9 @@ function ProductsHero() {
           transition={{ duration: 0.7, delay: 0.22 }}
           className="mt-6 max-w-xl text-base leading-relaxed text-white/68 md:text-lg"
         >
-          Nexora supplies industrial valves, instrumentation and electrical products to energy,
-          LNG, petrochemical and EPC projects across Kuwait and the GCC. This is procurement
-          capability — not an ecommerce catalogue.
+          Nexora supplies industrial valves, instrumentation and electrical products to energy, LNG,
+          petrochemical and EPC projects across Qatar and the GCC. This is procurement capability —
+          not an ecommerce catalogue.
         </motion.p>
 
         <motion.div
@@ -136,7 +135,6 @@ function ProductsHero() {
           </Link>
         </motion.div>
       </div>
-      <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-background to-transparent" />
     </section>
   );
 }
@@ -169,7 +167,10 @@ function ProductsCapability() {
           </p>
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
             {points.map((p) => (
-              <div key={p} className="flex items-center gap-3 rounded-xl border border-border bg-white p-3.5">
+              <div
+                key={p}
+                className="flex items-center gap-3 rounded-xl border border-border bg-white p-3.5"
+              >
                 <CheckCircle2 className="h-4 w-4 shrink-0 text-energy" />
                 <span className="text-sm font-semibold">{p}</span>
               </div>
@@ -319,27 +320,15 @@ function ProductCategories() {
 
                 {/* Specs table */}
                 <div className="mt-4 space-y-2 rounded-xl border border-border bg-surface/60 p-3">
-                  {cat.standards && (
-                    <SpecRow label="Standards" value={cat.standards} />
-                  )}
-                  {cat.sizes && (
-                    <SpecRow label="Size Range" value={cat.sizes} />
-                  )}
-                  {cat.classes && (
-                    <SpecRow label="Pressure Class" value={cat.classes} />
-                  )}
-                  {cat.materials && (
-                    <SpecRow label="Materials" value={cat.materials} />
-                  )}
-                  {cat.types && (
-                    <SpecRow label="Types" value={cat.types} />
-                  )}
+                  {cat.standards && <SpecRow label="Standards" value={cat.standards} />}
+                  {cat.sizes && <SpecRow label="Size Range" value={cat.sizes} />}
+                  {cat.classes && <SpecRow label="Pressure Class" value={cat.classes} />}
+                  {cat.materials && <SpecRow label="Materials" value={cat.materials} />}
+                  {cat.types && <SpecRow label="Types" value={cat.types} />}
                   {cat.certifications && (
                     <SpecRow label="Certifications" value={cat.certifications} />
                   )}
-                  {cat.applications && (
-                    <SpecRow label="Applications" value={cat.applications} />
-                  )}
+                  {cat.applications && <SpecRow label="Applications" value={cat.applications} />}
                 </div>
 
                 <a
@@ -369,10 +358,26 @@ function SpecRow({ label, value }: { label: string; value: string }) {
 /* ─── PROCUREMENT PROCESS ─────────────────────────────────────────────────── */
 
 const procSteps = [
-  { icon: FileText, title: "RFQ Review", desc: "Submit your specification, quantity and required delivery date." },
-  { icon: Globe, title: "Vendor Sourcing", desc: "Nexora identifies approved manufacturers and distributors." },
-  { icon: Shield, title: "Quality Confirmation", desc: "Mill certs, test reports and inspection requirements confirmed." },
-  { icon: Package, title: "Delivery & Handover", desc: "Products delivered with full documentation package." },
+  {
+    icon: FileText,
+    title: "RFQ Review",
+    desc: "Submit your specification, quantity and required delivery date.",
+  },
+  {
+    icon: Globe,
+    title: "Vendor Sourcing",
+    desc: "Nexora identifies approved manufacturers and distributors.",
+  },
+  {
+    icon: Shield,
+    title: "Quality Confirmation",
+    desc: "Mill certs, test reports and inspection requirements confirmed.",
+  },
+  {
+    icon: Package,
+    title: "Delivery & Handover",
+    desc: "Products delivered with full documentation package.",
+  },
 ];
 
 function ProcurementProcess() {
@@ -382,8 +387,7 @@ function ProcurementProcess() {
         <Reveal className="mb-14 text-center">
           <Eyebrow>Procurement Process</Eyebrow>
           <h2 className="mt-5 text-4xl font-extrabold leading-[1.06] md:text-5xl">
-            From RFQ to delivery.{" "}
-            <span className="text-gradient-energy">Fully documented.</span>
+            From RFQ to delivery. <span className="text-gradient-energy">Fully documented.</span>
           </h2>
         </Reveal>
 
@@ -420,8 +424,7 @@ function ProductsCTA() {
         <Reveal className="mb-10 text-center">
           <Eyebrow>Supply Enquiry</Eyebrow>
           <h2 className="mt-5 text-3xl font-extrabold md:text-4xl">
-            Submit your supply{" "}
-            <span className="text-gradient-energy">requirement.</span>
+            Submit your supply <span className="text-gradient-energy">requirement.</span>
           </h2>
           <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-muted-foreground">
             Provide your specification and our procurement team will respond with vendor options,
@@ -435,7 +438,7 @@ function ProductsCTA() {
               <FormField label="Company Name *" placeholder="Project owner or EPC" />
               <FormField label="Contact Name *" placeholder="Full name" />
               <FormField label="Email *" type="email" placeholder="procurement@company.com" />
-              <FormField label="Phone / WhatsApp" placeholder="+965 or +974..." />
+              <FormField label="Phone / WhatsApp" placeholder="+974 or international..." />
             </div>
 
             <div>
@@ -443,17 +446,23 @@ function ProductsCTA() {
                 Product Category
               </label>
               <div className="mt-3 flex flex-wrap gap-2">
-                {["Ball Valves", "Butterfly Valves", "Gate Valves", "Globe Valves", "Control Valves", "Instrumentation", "Electrical Products"].map(
-                  (p) => (
-                    <button
-                      key={p}
-                      type="button"
-                      className="rounded-full border border-border px-4 py-1.5 text-xs font-bold text-muted-foreground transition hover:border-primary/40 hover:text-primary"
-                    >
-                      {p}
-                    </button>
-                  ),
-                )}
+                {[
+                  "Ball Valves",
+                  "Butterfly Valves",
+                  "Gate Valves",
+                  "Globe Valves",
+                  "Control Valves",
+                  "Instrumentation",
+                  "Electrical Products",
+                ].map((p) => (
+                  <button
+                    key={p}
+                    type="button"
+                    className="rounded-full border border-border px-4 py-1.5 text-xs font-bold text-muted-foreground transition hover:border-primary/40 hover:text-primary"
+                  >
+                    {p}
+                  </button>
+                ))}
               </div>
             </div>
 
@@ -471,8 +480,8 @@ function ProductsCTA() {
             <label className="flex cursor-pointer items-center gap-3 rounded-xl border border-dashed border-border bg-surface/60 px-4 py-4 text-sm text-muted-foreground transition hover:border-energy-soft">
               <FileText className="h-5 w-5 shrink-0 text-primary" />
               <span>
-                <span className="font-bold text-foreground">Attach RFQ or datasheet</span>{" "}
-                — PDF, Excel (optional, max 10 MB)
+                <span className="font-bold text-foreground">Attach RFQ or datasheet</span> — PDF,
+                Excel (optional, max 10 MB)
               </span>
               <input type="file" accept=".pdf,.xls,.xlsx,.doc,.docx" className="hidden" />
             </label>

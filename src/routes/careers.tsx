@@ -26,13 +26,13 @@ export const Route = createFileRoute("/careers")({
       {
         name: "description",
         content:
-          "Join Nexora Energy Solutions — Kuwait's technical manpower and industrial solutions partner. Engineering, technical trades, HSE, procurement and management roles across Kuwait and the GCC.",
+          "Join Nexora Energy Solutions - Qatar's technical manpower and industrial solutions partner. Engineering, technical trades, HSE, procurement and management roles across Qatar and the GCC.",
       },
       { property: "og:title", content: "Careers at Nexora Energy Solutions" },
       {
         property: "og:description",
         content:
-          "Engineering, technical and operational careers with Kuwait's leading energy manpower partner.",
+          "Engineering, technical and operational careers with Qatar's leading energy manpower partner.",
       },
       { property: "og:url", content: "/careers" },
     ],
@@ -45,7 +45,7 @@ const openRoles = [
   {
     title: "Senior Mechanical Engineer",
     department: "Engineering",
-    location: "Ahmadi, Kuwait",
+    location: "Doha, Qatar",
     type: "Contract",
     duration: "12 months",
     disciplines: ["Pressure vessels", "Rotating equipment", "Piping design", "ASME compliance"],
@@ -63,7 +63,7 @@ const openRoles = [
   {
     title: "Project Manager — EPC",
     department: "Management",
-    location: "Kuwait / GCC",
+    location: "Qatar / GCC",
     type: "Full-time",
     duration: "Permanent",
     disciplines: ["EPC execution", "Stakeholder management", "Cost & schedule", "Reporting"],
@@ -76,7 +76,7 @@ const openRoles = [
     type: "Contract",
     duration: "6–12 months",
     disciplines: ["PTW management", "Incident investigation", "NEBOSH", "Risk assessment"],
-    requirements: "5+ years O&G HSE, NEBOSH IGC, Kuwait oil sector experience",
+    requirements: "5+ years O&G HSE, NEBOSH IGC, GCC oil sector experience",
   },
   {
     title: "QA/QC Inspector — Welding",
@@ -108,7 +108,7 @@ const openRoles = [
   {
     title: "Site Supervisor — Mechanical",
     department: "Supervision",
-    location: "Kuwait / GCC",
+    location: "Qatar / GCC",
     type: "Contract",
     duration: "6–12 months",
     disciplines: ["Field supervision", "Sub-contractor management", "Daily reporting", "PTW"],
@@ -126,7 +126,7 @@ const openRoles = [
   {
     title: "Procurement Specialist",
     department: "Procurement",
-    location: "Ahmadi, Kuwait",
+    location: "Doha, Qatar",
     type: "Full-time",
     duration: "Permanent",
     disciplines: ["Vendor management", "Material sourcing", "Logistics", "Documentation"],
@@ -135,12 +135,36 @@ const openRoles = [
 ];
 
 const perks = [
-  { icon: Globe, title: "GCC Deployment", desc: "Work on major projects across Kuwait, Qatar, Saudi Arabia, UAE, Bahrain and Oman." },
-  { icon: Award, title: "Competitive Compensation", desc: "Market-competitive salaries, per diem, accommodation and transport where applicable." },
-  { icon: TrendingUp, title: "Career Growth", desc: "Access to senior roles, increased responsibility and long-term placement opportunities." },
-  { icon: Shield, title: "Compliance Support", desc: "Full visa, CODO, medical and mobilisation support managed by Nexora." },
-  { icon: HardHat, title: "Safety Culture", desc: "Work in environments where safety is non-negotiable and every person matters." },
-  { icon: Users, title: "Strong Network", desc: "Join a community of experienced GCC energy professionals." },
+  {
+    icon: Globe,
+    title: "GCC Deployment",
+    desc: "Work on major projects across Kuwait, Qatar, Saudi Arabia, UAE, Bahrain and Oman.",
+  },
+  {
+    icon: Award,
+    title: "Competitive Compensation",
+    desc: "Market-competitive salaries, per diem, accommodation and transport where applicable.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Career Growth",
+    desc: "Access to senior roles, increased responsibility and long-term placement opportunities.",
+  },
+  {
+    icon: Shield,
+    title: "Compliance Support",
+    desc: "Full visa, CODO, medical and mobilisation support managed by Nexora.",
+  },
+  {
+    icon: HardHat,
+    title: "Safety Culture",
+    desc: "Work in environments where safety is non-negotiable and every person matters.",
+  },
+  {
+    icon: Users,
+    title: "Strong Network",
+    desc: "Join a community of experienced GCC energy professionals.",
+  },
 ];
 
 function CareersPage() {
@@ -150,11 +174,10 @@ function CareersPage() {
         eyebrow="Careers"
         title={
           <>
-            Join Nexora.{" "}
-            <span className="text-gradient-energy">Build something real.</span>
+            Join Nexora. <span className="text-gradient-energy">Build something real.</span>
           </>
         }
-        description="Nexora deploys experienced technical professionals to Kuwait and GCC's most demanding energy, LNG, petrochemical and industrial projects. If you have the credentials and the drive, we want to hear from you."
+        description="Nexora deploys experienced technical professionals to Qatar and the GCC's most demanding energy, LNG, petrochemical and industrial projects. If you have the credentials and the drive, we want to hear from you."
       />
 
       {/* Why join */}
@@ -166,8 +189,7 @@ function CareersPage() {
               Why Nexora
             </span>
             <h2 className="mt-5 text-3xl font-extrabold md:text-4xl">
-              What you get when you{" "}
-              <span className="text-gradient-energy">work with Nexora.</span>
+              What you get when you <span className="text-gradient-energy">work with Nexora.</span>
             </h2>
           </Reveal>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -196,9 +218,7 @@ function CareersPage() {
               <span className="h-1.5 w-1.5 rounded-full bg-energy" />
               Open Positions
             </span>
-            <h2 className="mt-5 text-3xl font-extrabold md:text-4xl">
-              Current vacancies.
-            </h2>
+            <h2 className="mt-5 text-3xl font-extrabold md:text-4xl">Current vacancies.</h2>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
               All positions are subject to project availability. Additional roles are added
               regularly — submit your CV if you don&apos;t see your discipline listed.
@@ -283,9 +303,12 @@ function CareersPage() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <FormField label="Full Name *" placeholder="Your full name" />
                 <FormField label="Email Address *" type="email" placeholder="name@email.com" />
-                <FormField label="Phone / WhatsApp *" placeholder="+965 or international..." />
+                <FormField label="Phone / WhatsApp *" placeholder="+974 or international..." />
                 <FormField label="Current Location" placeholder="City, Country" />
-                <FormField label="Area of Expertise *" placeholder="e.g. Mechanical Engineering, Welding" />
+                <FormField
+                  label="Area of Expertise *"
+                  placeholder="e.g. Mechanical Engineering, Welding"
+                />
                 <FormField label="Years of Experience" placeholder="e.g. 8 years" />
               </div>
 
@@ -294,17 +317,23 @@ function CareersPage() {
                   Industry Experience
                 </label>
                 <div className="mt-3 flex flex-wrap gap-2">
-                  {["Oil & Gas", "LNG", "Petrochemical", "Power", "Infrastructure", "Marine", "EPC"].map(
-                    (ind) => (
-                      <button
-                        key={ind}
-                        type="button"
-                        className="rounded-full border border-border px-4 py-1.5 text-xs font-bold text-muted-foreground transition hover:border-primary/40 hover:text-primary"
-                      >
-                        {ind}
-                      </button>
-                    ),
-                  )}
+                  {[
+                    "Oil & Gas",
+                    "LNG",
+                    "Petrochemical",
+                    "Power",
+                    "Infrastructure",
+                    "Marine",
+                    "EPC",
+                  ].map((ind) => (
+                    <button
+                      key={ind}
+                      type="button"
+                      className="rounded-full border border-border px-4 py-1.5 text-xs font-bold text-muted-foreground transition hover:border-primary/40 hover:text-primary"
+                    >
+                      {ind}
+                    </button>
+                  ))}
                 </div>
               </div>
 
@@ -322,8 +351,8 @@ function CareersPage() {
               <label className="flex cursor-pointer items-center gap-3 rounded-xl border border-dashed border-border bg-surface/60 px-4 py-4 text-sm text-muted-foreground transition hover:border-energy-soft">
                 <Upload className="h-5 w-5 shrink-0 text-primary" />
                 <span>
-                  <span className="font-bold text-foreground">Upload your CV</span>{" "}
-                  — PDF or DOC (max 5 MB)
+                  <span className="font-bold text-foreground">Upload your CV</span> — PDF or DOC
+                  (max 5 MB)
                 </span>
                 <input type="file" accept=".pdf,.doc,.docx" className="hidden" />
               </label>
@@ -331,11 +360,14 @@ function CareersPage() {
               <div className="grid gap-3 sm:grid-cols-2">
                 {[
                   "Available for immediate deployment",
-                  "Hold valid Kuwait/GCC residency",
+                  "Hold valid Qatar/GCC residency",
                   "OPITO / safety certifications",
                   "Available for GCC-wide projects",
                 ].map((item) => (
-                  <label key={item} className="flex cursor-pointer items-center gap-2.5 text-xs font-semibold">
+                  <label
+                    key={item}
+                    className="flex cursor-pointer items-center gap-2.5 text-xs font-semibold"
+                  >
                     <input type="checkbox" className="rounded border-border text-primary" />
                     {item}
                   </label>
@@ -366,9 +398,24 @@ function CareersPage() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { n: "01", icon: Send, t: "Submit CV", d: "Apply via this form or email directly." },
-              { n: "02", icon: Users, t: "Initial Review", d: "Our team reviews your profile and experience." },
-              { n: "03", icon: CheckCircle2, t: "Shortlisting", d: "Matched to active or upcoming opportunities." },
-              { n: "04", icon: HardHat, t: "Deployment", d: "Compliance, visa and mobilisation coordinated." },
+              {
+                n: "02",
+                icon: Users,
+                t: "Initial Review",
+                d: "Our team reviews your profile and experience.",
+              },
+              {
+                n: "03",
+                icon: CheckCircle2,
+                t: "Shortlisting",
+                d: "Matched to active or upcoming opportunities.",
+              },
+              {
+                n: "04",
+                icon: HardHat,
+                t: "Deployment",
+                d: "Compliance, visa and mobilisation coordinated.",
+              },
             ].map((step, i) => (
               <Reveal key={step.n} delay={i * 0.07}>
                 <div className="flex flex-col items-center text-center">

@@ -36,6 +36,7 @@ import { Layout } from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
 import { Counter } from "@/components/Counter";
 import about from "@/assets/about-engineers.jpg";
+import manpowerHeroCrewBriefing from "@/assets/manpower-hero-crew-briefing.png";
 import pEng from "@/assets/project-engineering.jpg";
 import pMaint from "@/assets/project-maintenance.jpg";
 import pPipeline from "@/assets/project-pipeline.jpg";
@@ -46,8 +47,7 @@ export const Route = createFileRoute("/manpower")({
   head: () => ({
     meta: [
       {
-        title:
-          "Technical Manpower Solutions | Nexora Energy Solutions — Kuwait & GCC",
+        title: "Technical Manpower Solutions | Nexora Energy Solutions - Qatar & GCC",
       },
       {
         name: "description",
@@ -106,16 +106,14 @@ function ManpowerHero() {
     <section className="relative min-h-[92vh] overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src={pEng}
-          alt="Engineers at industrial energy facility"
+          src={manpowerHeroCrewBriefing}
+          alt="Industrial workforce attending a technical manpower site briefing"
           className="h-full w-full object-cover"
           fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-linear-to-r from-navy/95 via-navy/82 to-navy/55" />
-        <div className="absolute inset-0 bg-linear-to-t from-navy/50 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-navy/88 via-navy/68 to-navy/28" />
+        <div className="absolute inset-0 bg-linear-to-t from-navy/38 via-transparent to-transparent" />
       </div>
-      <div className="absolute inset-0 grid-bg opacity-10" />
-      <div className="absolute right-0 top-0 h-[40rem] w-[40rem] rounded-full bg-radial from-energy/15 to-transparent blur-3xl" />
 
       <div className="relative mx-auto flex min-h-[92vh] max-w-7xl flex-col justify-center px-6 pb-16 pt-36">
         <motion.div
@@ -143,8 +141,8 @@ function ManpowerHero() {
           transition={{ duration: 0.7, delay: 0.22 }}
           className="mt-7 max-w-2xl text-lg leading-relaxed text-white/70 md:text-xl"
         >
-          Nexora delivers pre-qualified engineers, skilled technicians and certified tradespeople for
-          energy, LNG, petrochemical, infrastructure and EPC projects across Kuwait and the GCC.
+          Nexora delivers pre-qualified engineers, skilled technicians and certified tradespeople
+          for energy, LNG, petrochemical, infrastructure and EPC projects across Qatar and the GCC.
           Rapid mobilisation. Full compliance. Proven delivery.
         </motion.p>
 
@@ -194,7 +192,6 @@ function ManpowerHero() {
           ))}
         </motion.div>
       </div>
-      <div className="absolute inset-x-0 bottom-0 h-28 bg-linear-to-t from-background to-transparent" />
     </section>
   );
 }
@@ -205,7 +202,7 @@ function ManpowerOverview() {
   const highlights = [
     "Pre-screened, document-ready workforce",
     "Rapid mobilisation within project timelines",
-    "Full CODO, MOI & GCC visa compliance",
+    "Full Qatar and GCC visa compliance",
     "24/7 deployment support and coordination",
     "On-site HSE monitoring and oversight",
     "Performance tracking and reporting",
@@ -218,16 +215,19 @@ function ManpowerOverview() {
           <Eyebrow>Why Nexora Manpower</Eyebrow>
           <h2 className="mt-5 text-4xl font-extrabold leading-[1.06] md:text-5xl">
             The manpower partner trusted by{" "}
-            <span className="text-gradient-energy">Kuwait&apos;s energy sector.</span>
+            <span className="text-gradient-energy">Qatar and GCC energy clients.</span>
           </h2>
           <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-            Nexora maintains an active pool of pre-qualified technical personnel available for
-            rapid deployment across Kuwait, Qatar, Saudi Arabia, UAE, Bahrain and Oman. Every
-            candidate is skills-assessed, document-verified and HSE briefed before mobilisation.
+            Nexora maintains an active pool of pre-qualified technical personnel available for rapid
+            deployment across Qatar, Kuwait, Saudi Arabia, UAE, Bahrain and Oman. Every candidate is
+            skills-assessed, document-verified and HSE briefed before mobilisation.
           </p>
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
             {highlights.map((h) => (
-              <div key={h} className="flex items-center gap-3 rounded-xl border border-border bg-white p-3.5">
+              <div
+                key={h}
+                className="flex items-center gap-3 rounded-xl border border-border bg-white p-3.5"
+              >
                 <CheckCircle2 className="h-4 w-4 shrink-0 text-energy" />
                 <span className="text-sm font-semibold">{h}</span>
               </div>
@@ -252,7 +252,7 @@ function ManpowerOverview() {
                   </div>
                   <div>
                     <div className="font-display text-sm font-bold">
-                      KOC &amp; KNPC Project Aligned
+                      QatarEnergy &amp; GCC Operator Aligned
                     </div>
                     <div className="text-xs text-muted-foreground">
                       Workforce standards matched to operator requirements
@@ -277,11 +277,31 @@ const allCategories = [
     bg: "bg-primary/8",
     ring: "ring-primary/12",
     roles: [
-      { icon: Settings2, title: "Mechanical Engineers", spec: "ASME, PED, Rotating Equipment, Static Plant" },
-      { icon: Zap, title: "Electrical Engineers", spec: "HV/LV, Protection, Power Distribution, Drives" },
-      { icon: BarChart3, title: "Instrumentation Engineers", spec: "DCS, ESD, SIS, SCADA, Field Instruments" },
-      { icon: Building2, title: "Civil Engineers", spec: "Structural, Foundations, Civil Infrastructure" },
-      { icon: ClipboardList, title: "Project Engineers", spec: "Scope Control, Coordination, Documentation" },
+      {
+        icon: Settings2,
+        title: "Mechanical Engineers",
+        spec: "ASME, PED, Rotating Equipment, Static Plant",
+      },
+      {
+        icon: Zap,
+        title: "Electrical Engineers",
+        spec: "HV/LV, Protection, Power Distribution, Drives",
+      },
+      {
+        icon: BarChart3,
+        title: "Instrumentation Engineers",
+        spec: "DCS, ESD, SIS, SCADA, Field Instruments",
+      },
+      {
+        icon: Building2,
+        title: "Civil Engineers",
+        spec: "Structural, Foundations, Civil Infrastructure",
+      },
+      {
+        icon: ClipboardList,
+        title: "Project Engineers",
+        spec: "Scope Control, Coordination, Documentation",
+      },
     ],
   },
   {
@@ -290,10 +310,26 @@ const allCategories = [
     bg: "bg-navy/8",
     ring: "ring-navy/12",
     roles: [
-      { icon: Target, title: "Project Managers", spec: "Full Lifecycle, Stakeholder, Cost & Schedule" },
-      { icon: HardHat, title: "Site Supervisors", spec: "Day-to-Day Execution, Sub-Contractor Management" },
-      { icon: CheckSquare, title: "QA/QC Inspectors", spec: "NDT, Weld Inspection, Pressure Testing, ITP" },
-      { icon: Shield, title: "HSE Officers", spec: "PTW, Incident Investigation, Toolbox Talks, Audits" },
+      {
+        icon: Target,
+        title: "Project Managers",
+        spec: "Full Lifecycle, Stakeholder, Cost & Schedule",
+      },
+      {
+        icon: HardHat,
+        title: "Site Supervisors",
+        spec: "Day-to-Day Execution, Sub-Contractor Management",
+      },
+      {
+        icon: CheckSquare,
+        title: "QA/QC Inspectors",
+        spec: "NDT, Weld Inspection, Pressure Testing, ITP",
+      },
+      {
+        icon: Shield,
+        title: "HSE Officers",
+        spec: "PTW, Incident Investigation, Toolbox Talks, Audits",
+      },
     ],
   },
   {
@@ -303,7 +339,11 @@ const allCategories = [
     ring: "ring-energy/12",
     roles: [
       { icon: Flame, title: "Welders", spec: "SMAW, GTAW, GMAW — ASME IX / AWS / API 1104" },
-      { icon: Wrench, title: "Fabricators", spec: "Structural Steel, Piping Spools, Pressure Parts" },
+      {
+        icon: Wrench,
+        title: "Fabricators",
+        spec: "Structural Steel, Piping Spools, Pressure Parts",
+      },
       { icon: Layers, title: "Pipe Fitters", spec: "CS, SS, Alloy — Hydro-tested, Alignment" },
       { icon: Anchor, title: "Riggers", spec: "Heavy Lift, Crane Operations, Slinging" },
       { icon: Network, title: "Scaffolders", spec: "CISRS / OPITO Certified, Inspection Ready" },
@@ -317,7 +357,11 @@ const allCategories = [
     roles: [
       { icon: Cpu, title: "Operators", spec: "Plant Operations, DCS Operations, Panel Operators" },
       { icon: Users, title: "Helpers", spec: "General Labour, Trade Support, Material Handling" },
-      { icon: FileText, title: "Administrative Staff", spec: "Site Admin, Document Control, Logistics Coord." },
+      {
+        icon: FileText,
+        title: "Administrative Staff",
+        spec: "Site Admin, Document Control, Logistics Coord.",
+      },
     ],
   },
 ];
@@ -395,7 +439,7 @@ const complianceItems = [
   {
     icon: Shield,
     title: "CODO Compliance",
-    desc: "All manpower processed through Kuwait's Central Organisation for Defence Offices requirements.",
+    desc: "All manpower processed through relevant Qatar and GCC operator compliance requirements.",
   },
   {
     icon: FileText,
@@ -452,7 +496,9 @@ function ComplianceSection() {
                 </div>
                 <div>
                   <h3 className="font-display text-base font-bold">{item.title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+                  <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                    {item.desc}
+                  </p>
                 </div>
               </motion.div>
             </Reveal>
@@ -640,7 +686,9 @@ function ProjectSupport() {
                   </div>
                   <div>
                     <div className="font-display text-sm font-bold">{item.title}</div>
-                    <div className="mt-1 text-xs leading-relaxed text-muted-foreground">{item.desc}</div>
+                    <div className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                      {item.desc}
+                    </div>
                   </div>
                 </motion.div>
               </Reveal>
@@ -730,7 +778,7 @@ function RequestManpowerForm() {
               <FormField label="Contact Person *" placeholder="Full name" />
               <FormField label="Designation" placeholder="e.g. Project Manager" />
               <FormField label="Email Address *" type="email" placeholder="name@company.com" />
-              <FormField label="Phone / WhatsApp *" placeholder="+965 or +974..." />
+              <FormField label="Phone / WhatsApp *" placeholder="+974 or international..." />
               <div>
                 <label className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">
                   Country
@@ -787,7 +835,14 @@ function RequestManpowerForm() {
                     >
                       {checked.includes(d) && (
                         <svg className="h-2.5 w-2.5 fill-current" viewBox="0 0 12 12">
-                          <path d="M1 6l4 4L11 2" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                          <path
+                            d="M1 6l4 4L11 2"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            fill="none"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
                         </svg>
                       )}
                     </div>
@@ -802,7 +857,10 @@ function RequestManpowerForm() {
               <FormField label="Estimated Workforce Size" placeholder="e.g. 10–50 personnel" />
               <FormField label="Project Duration" placeholder="e.g. 3 months, 12 months" />
               <div className="sm:col-span-2">
-                <FormField label="Project Location / Site" placeholder="e.g. Ahmadi, Kuwait / Ras Laffan, Qatar" />
+                <FormField
+                  label="Project Location / Site"
+                  placeholder="e.g. Doha, Qatar / Ras Laffan, Qatar"
+                />
               </div>
             </div>
 
@@ -822,8 +880,8 @@ function RequestManpowerForm() {
             <label className="flex cursor-pointer items-center gap-3 rounded-xl border border-dashed border-border bg-surface/60 px-4 py-4 text-sm text-muted-foreground transition hover:border-energy-soft">
               <Upload className="h-5 w-5 shrink-0 text-primary" />
               <span>
-                <span className="font-bold text-foreground">Attach specification or RFQ</span>{" "}
-                — PDF, DOC (optional, max 10 MB)
+                <span className="font-bold text-foreground">Attach specification or RFQ</span> —
+                PDF, DOC (optional, max 10 MB)
               </span>
               <input type="file" accept=".pdf,.doc,.docx" className="hidden" />
             </label>

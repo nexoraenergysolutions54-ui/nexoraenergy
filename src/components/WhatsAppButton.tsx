@@ -12,10 +12,11 @@ export function WhatsAppButton() {
       className="fixed bottom-6 right-6 z-50 group"
       aria-label="Chat with Nexora on WhatsApp"
     >
-      <div className="relative grid place-items-center w-14 h-14 rounded-full bg-[#25D366] text-white animate-pulse-glow shadow-2xl transition-transform hover:scale-110">
+      <div className="relative grid h-14 w-14 place-items-center rounded-full bg-[#25D366] text-white shadow-[0_20px_50px_-24px_rgba(7,28,44,0.55)] ring-1 ring-white/50 transition-transform duration-300 hover:-translate-y-0.5 hover:scale-[1.04]">
+        <span className="absolute inset-0 rounded-full border border-[#25D366]/50 animate-premium-ping" />
         <svg
           viewBox="0 0 16 16"
-          className="w-7 h-7 fill-current"
+          className="h-7 w-7 fill-current"
           aria-hidden="true"
           focusable="false"
         >
@@ -24,7 +25,7 @@ export function WhatsAppButton() {
       </div>
       <span
         className={`absolute right-16 top-1/2 -translate-y-1/2 whitespace-nowrap rounded-full glass px-4 py-2 text-xs font-medium text-foreground transition-all ${
-          hover ? "opacity-100 translate-x-0" : "opacity-0 translate-x-2 pointer-events-none"
+          hover ? "translate-x-0 opacity-100" : "pointer-events-none translate-x-2 opacity-0"
         }`}
       >
         Chat With Nexora

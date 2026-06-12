@@ -22,13 +22,13 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Contact Nexora Energy Solutions in Ahmadi, Kuwait for technical manpower, industrial services and procurement enquiries across the GCC.",
+          "Contact Nexora Energy Solutions in Doha, Qatar for technical manpower, industrial services and procurement enquiries across the GCC.",
       },
       { property: "og:title", content: "Contact Nexora Energy Solutions" },
       {
         property: "og:description",
         content:
-          "Kuwait headquarters. Contact Nexora for manpower, industrial services and procurement support.",
+          "Qatar headquarters. Contact Nexora for manpower, industrial services and procurement support.",
       },
       { property: "og:url", content: "/contact" },
     ],
@@ -44,11 +44,10 @@ function ContactPage() {
         eyebrow="Contact"
         title={
           <>
-            Start a{" "}
-            <span className="text-gradient-energy">project conversation.</span>
+            Start a <span className="text-gradient-energy">project conversation.</span>
           </>
         }
-        description="Whether you need technical manpower, industrial services, procurement support or want to discuss a partnership — our team is ready to help."
+        description="Whether you need technical manpower, industrial services, procurement support or want to discuss a partnership, our team is ready to help."
       />
 
       {/* Quick links */}
@@ -56,9 +55,24 @@ function ContactPage() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid gap-3 sm:grid-cols-3">
             {[
-              { icon: HardHat, label: "Request Manpower", to: "/manpower", desc: "Submit a workforce requirement" },
-              { icon: Wrench, label: "Industrial Services", to: "/industrial-services", desc: "Discuss a service scope" },
-              { icon: Package, label: "Products & Supply", to: "/products", desc: "Submit a supply enquiry" },
+              {
+                icon: HardHat,
+                label: "Request Manpower",
+                to: "/manpower",
+                desc: "Submit a workforce requirement",
+              },
+              {
+                icon: Wrench,
+                label: "Industrial Services",
+                to: "/industrial-services",
+                desc: "Discuss a service scope",
+              },
+              {
+                icon: Package,
+                label: "Products & Supply",
+                to: "/products",
+                desc: "Submit a supply enquiry",
+              },
             ].map((item) => (
               <Link
                 key={item.label}
@@ -87,13 +101,28 @@ function ContactPage() {
           {/* Contact info */}
           <Reveal className="lg:col-span-2">
             <div className="space-y-4">
-              <div className="font-display text-xl font-bold">Kuwait Headquarters</div>
+              <div className="font-display text-xl font-bold">Qatar Headquarters</div>
 
               {[
-                { icon: MapPin, title: "Address", text: "Ahmadi, Kuwait", sub: "Kuwait Oil Sector District" },
-                { icon: Phone, title: "Phone", text: "+965 0000 0000", sub: "Sun–Thu, 8:00–17:00" },
-                { icon: Mail, title: "Email", text: "info@nexora-energy.com", sub: "General enquiries" },
-                { icon: Clock, title: "Business Hours", text: "Sunday – Thursday", sub: "8:00 AM – 5:00 PM (Kuwait time)" },
+                {
+                  icon: MapPin,
+                  title: "Address",
+                  text: "Doha, Qatar",
+                  sub: "GCC energy project coordination",
+                },
+                { icon: Phone, title: "Phone", text: "+974 0000 0000", sub: "Sun-Thu, 8:00-17:00" },
+                {
+                  icon: Mail,
+                  title: "Email",
+                  text: "info@nexora-energy.com",
+                  sub: "General enquiries",
+                },
+                {
+                  icon: Clock,
+                  title: "Business Hours",
+                  text: "Sunday - Thursday",
+                  sub: "8:00 AM - 5:00 PM (Qatar time)",
+                },
               ].map((item) => (
                 <div
                   key={item.title}
@@ -114,7 +143,7 @@ function ContactPage() {
 
               {/* WhatsApp */}
               <a
-                href="https://wa.me/96500000000?text=Hello%20Nexora%20Energy%20Solutions%2C%20I%20would%20like%20to%20discuss%20a%20project%20requirement."
+                href="https://wa.me/97400000000?text=Hello%20Nexora%20Energy%20Solutions%2C%20I%20would%20like%20to%20discuss%20a%20project%20requirement."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 rounded-2xl border border-[#25D366]/30 bg-[#25D366]/5 p-5 shadow-sm transition hover:bg-[#25D366]/10 hover:border-[#25D366]/50"
@@ -129,7 +158,9 @@ function ContactPage() {
                     WhatsApp
                   </div>
                   <div className="mt-1 font-display text-sm font-bold">Chat with Nexora</div>
-                  <div className="mt-0.5 text-xs text-muted-foreground">Quick response during business hours</div>
+                  <div className="mt-0.5 text-xs text-muted-foreground">
+                    Quick response during business hours
+                  </div>
                 </div>
                 <ArrowUpRight className="ml-auto h-4 w-4 text-[#25D366]" />
               </a>
@@ -140,7 +171,7 @@ function ContactPage() {
                   Regional Coverage
                 </div>
                 <div className="mt-3 flex flex-wrap gap-1.5">
-                  {["Kuwait", "Qatar", "Saudi Arabia", "UAE", "Bahrain", "Oman"].map((c) => (
+                  {["Qatar", "Kuwait", "Saudi Arabia", "UAE", "Bahrain", "Oman"].map((c) => (
                     <span
                       key={c}
                       className="rounded-full border border-border bg-surface px-2.5 py-1 text-xs font-semibold text-foreground"
@@ -163,13 +194,13 @@ function ContactPage() {
                 <FormField label="Company *" placeholder="Company or project name" />
                 <FormField label="Designation" placeholder="e.g. Project Manager" />
                 <FormField label="Email Address *" type="email" placeholder="name@company.com" />
-                <FormField label="Phone" placeholder="+965 or international..." />
+                <FormField label="Phone" placeholder="+974 or international..." />
                 <div>
                   <label className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">
                     Country
                   </label>
                   <select className="mt-2 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition focus:border-energy-soft focus:ring-4 focus:ring-energy/10">
-                    {["Kuwait", "Qatar", "Saudi Arabia", "UAE", "Bahrain", "Oman", "Other"].map(
+                    {["Qatar", "Kuwait", "Saudi Arabia", "UAE", "Bahrain", "Oman", "Other"].map(
                       (c) => (
                         <option key={c}>{c}</option>
                       ),
@@ -238,12 +269,12 @@ function ContactPage() {
               <div className="border-b border-border px-6 py-4">
                 <div className="flex items-center gap-2">
                   <MapPin className="h-4 w-4 text-energy" />
-                  <span className="text-sm font-bold">Nexora Energy Solutions — Ahmadi, Kuwait</span>
+                  <span className="text-sm font-bold">Nexora Energy Solutions - Doha, Qatar</span>
                 </div>
               </div>
               <iframe
-                title="Nexora Energy Solutions — Ahmadi, Kuwait"
-                src="https://maps.google.com/maps?q=Ahmadi,%20Kuwait&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                title="Nexora Energy Solutions - Doha, Qatar"
+                src="https://maps.google.com/maps?q=Doha,%20Qatar&t=&z=13&ie=UTF8&iwloc=&output=embed"
                 className="h-105 w-full"
                 loading="lazy"
               />

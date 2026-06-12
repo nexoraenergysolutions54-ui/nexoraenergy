@@ -77,7 +77,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Nexora Energy Solutions delivers engineering, procurement, maintenance and operational support for Kuwait's energy infrastructure.",
+          "Nexora Energy Solutions delivers engineering, procurement, maintenance and operational support for Qatar and GCC energy infrastructure.",
       },
       { property: "og:site_name", content: "Nexora Energy Solutions" },
       { property: "og:type", content: "website" },
@@ -89,7 +89,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap",
       },
     ],
   }),

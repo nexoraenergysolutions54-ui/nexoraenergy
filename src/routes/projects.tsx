@@ -18,7 +18,7 @@ export const Route = createFileRoute("/projects")({
       {
         name: "description",
         content:
-          "Explore Nexora Energy Solutions' project delivery experience across refinery, LNG, pipeline, maintenance, engineering and EPC programs across Kuwait and the GCC.",
+          "Explore Nexora Energy Solutions' project delivery experience across refinery, LNG, pipeline, maintenance, engineering and EPC programs across Qatar and the GCC.",
       },
       { property: "og:title", content: "Project Portfolio — Nexora Energy Solutions" },
       {
@@ -40,7 +40,8 @@ const projects = [
     title: "Refinery Turnaround Manpower Package",
     location: "Ahmadi, Kuwait",
     client: "Major Kuwait Refinery",
-    scope: "Multi-discipline manpower package for planned turnaround. 150+ personnel deployed across mechanical, electrical, instrumentation and scaffolding disciplines over 45 days.",
+    scope:
+      "Multi-discipline manpower package for planned turnaround. 150+ personnel deployed across mechanical, electrical, instrumentation and scaffolding disciplines over 45 days.",
     disciplines: ["Mechanical Engineers", "Welders", "Pipe Fitters", "Scaffolders", "HSE Officers"],
   },
   {
@@ -49,7 +50,8 @@ const projects = [
     title: "Pipeline Integrity Programme — Manpower Support",
     location: "GCC Corridor",
     client: "GCC Pipeline Operator",
-    scope: "Long-term manpower provision for pipeline inspection and integrity management programme. Specialised in-line inspection engineers, corrosion specialists and field technicians.",
+    scope:
+      "Long-term manpower provision for pipeline inspection and integrity management programme. Specialised in-line inspection engineers, corrosion specialists and field technicians.",
     disciplines: ["Pipeline Engineers", "NDT Technicians", "Corrosion Specialists", "Survey Crews"],
   },
   {
@@ -58,7 +60,8 @@ const projects = [
     title: "Rotating Equipment Overhaul Programme",
     location: "Major Refinery, Kuwait",
     client: "KNPC Facility",
-    scope: "Full overhaul programme for rotating equipment including compressors, pumps and turbines. Planned maintenance execution with full documentation package and handover.",
+    scope:
+      "Full overhaul programme for rotating equipment including compressors, pumps and turbines. Planned maintenance execution with full documentation package and handover.",
     disciplines: ["Mechanical Technicians", "Alignment Specialists", "Vibration Analysts"],
   },
   {
@@ -67,8 +70,14 @@ const projects = [
     title: "Petrochemical Expansion — Engineering Manpower",
     location: "Kuwait",
     client: "Government Petrochemical Program",
-    scope: "Provision of project and design engineers for a major petrochemical facility expansion. Roles spanning process, mechanical, electrical and civil engineering disciplines.",
-    disciplines: ["Process Engineers", "Mechanical Engineers", "Civil Engineers", "Project Engineers"],
+    scope:
+      "Provision of project and design engineers for a major petrochemical facility expansion. Roles spanning process, mechanical, electrical and civil engineering disciplines.",
+    disciplines: [
+      "Process Engineers",
+      "Mechanical Engineers",
+      "Civil Engineers",
+      "Project Engineers",
+    ],
   },
   {
     category: "Industrial Services",
@@ -76,7 +85,8 @@ const projects = [
     title: "Plant Shutdown Support — LNG Facility",
     location: "Ras Laffan, Qatar",
     client: "QatarEnergy Affiliate",
-    scope: "Specialist shutdown crew for an LNG processing facility turnaround. Full trade and supervisory personnel with cryogenic service experience and OPITO-certified HSE competencies.",
+    scope:
+      "Specialist shutdown crew for an LNG processing facility turnaround. Full trade and supervisory personnel with cryogenic service experience and OPITO-certified HSE competencies.",
     disciplines: ["Shutdown Supervisors", "Instrumentation Techs", "Welders", "HSE Officers"],
   },
   {
@@ -85,8 +95,14 @@ const projects = [
     title: "EPC Contractor Site Supervision",
     location: "Abu Dhabi, UAE",
     client: "Major EPC Contractor",
-    scope: "Site supervision and quality assurance manpower for a greenfield industrial facility. QA/QC inspectors, site supervisors and project engineers embedded in the client team.",
-    disciplines: ["QA/QC Inspectors", "Site Supervisors", "Project Engineers", "Document Controllers"],
+    scope:
+      "Site supervision and quality assurance manpower for a greenfield industrial facility. QA/QC inspectors, site supervisors and project engineers embedded in the client team.",
+    disciplines: [
+      "QA/QC Inspectors",
+      "Site Supervisors",
+      "Project Engineers",
+      "Document Controllers",
+    ],
   },
   {
     category: "Industrial Services",
@@ -94,7 +110,8 @@ const projects = [
     title: "Refinery Maintenance Contract",
     location: "Kuwait",
     client: "KNPC Refinery",
-    scope: "Three-year maintenance services contract covering planned and corrective maintenance for process plant equipment. Dedicated Nexora crew with performance KPIs.",
+    scope:
+      "Three-year maintenance services contract covering planned and corrective maintenance for process plant equipment. Dedicated Nexora crew with performance KPIs.",
     disciplines: ["Mechanical Technicians", "Electrical Technicians", "Instrumentation Techs"],
   },
   {
@@ -103,7 +120,8 @@ const projects = [
     title: "Valve & Instrumentation Supply — EPC Project",
     location: "Kuwait Industrial City",
     client: "EPC Contractor",
-    scope: "Supply of API-compliant ball valves, gate valves and field instrumentation for a major industrial facility. Full material traceability documentation package provided.",
+    scope:
+      "Supply of API-compliant ball valves, gate valves and field instrumentation for a major industrial facility. Full material traceability documentation package provided.",
     disciplines: ["Ball Valves", "Gate Valves", "Pressure Transmitters", "Flow Meters"],
   },
 ];
@@ -112,8 +130,7 @@ const categories = ["All", "Manpower", "Industrial Services", "Products"] as con
 
 function ProjectsPage() {
   const [filter, setFilter] = useState<(typeof categories)[number]>("All");
-  const filtered =
-    filter === "All" ? projects : projects.filter((p) => p.category === filter);
+  const filtered = filter === "All" ? projects : projects.filter((p) => p.category === filter);
 
   return (
     <Layout>
@@ -121,11 +138,10 @@ function ProjectsPage() {
         eyebrow="Project Portfolio"
         title={
           <>
-            Delivery experience at{" "}
-            <span className="text-gradient-energy">industrial scale.</span>
+            Delivery experience at <span className="text-gradient-energy">industrial scale.</span>
           </>
         }
-        description="Selected project profiles representing Nexora's delivery capability across technical manpower, industrial services and procurement supply for Kuwait and GCC energy clients."
+        description="Selected project profiles representing Nexora's delivery capability across technical manpower, industrial services and procurement supply for Qatar and GCC energy clients."
       />
 
       <section className="py-14">
@@ -145,7 +161,9 @@ function ProjectsPage() {
                 >
                   {cat}
                   {cat !== "All" && (
-                    <span className={`ml-2 rounded-full px-1.5 py-0.5 text-[10px] font-bold ${filter === cat ? "bg-white/20 text-white" : "bg-muted text-muted-foreground"}`}>
+                    <span
+                      className={`ml-2 rounded-full px-1.5 py-0.5 text-[10px] font-bold ${filter === cat ? "bg-white/20 text-white" : "bg-muted text-muted-foreground"}`}
+                    >
                       {projects.filter((p) => p.category === cat).length}
                     </span>
                   )}

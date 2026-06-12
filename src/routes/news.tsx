@@ -16,7 +16,7 @@ export const Route = createFileRoute("/news")({
       {
         name: "description",
         content:
-          "News, project milestones and operational insights from Nexora Energy Solutions in Kuwait.",
+          "News, project milestones and operational insights from Nexora Energy Solutions in Qatar and the GCC.",
       },
       { property: "og:title", content: "Nexora News & Insights" },
       {
@@ -35,7 +35,7 @@ const articles = [
     image: pRefinery,
     category: "Contracts",
     date: "Sept 2026",
-    title: "Nexora expands turnaround support capability in Ahmadi",
+    title: "Nexora expands turnaround support capability in Ras Laffan",
   },
   {
     image: pEng,

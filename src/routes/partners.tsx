@@ -108,8 +108,7 @@ function PartnersHero() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="max-w-3xl font-display text-5xl font-extrabold leading-[1.02] text-white md:text-6xl"
         >
-          Built on{" "}
-          <span className="text-energy">Trusted Industrial Partnerships</span>
+          Built on <span className="text-energy">Trusted Industrial Partnerships</span>
         </motion.h1>
 
         <motion.p
@@ -118,9 +117,9 @@ function PartnersHero() {
           transition={{ duration: 0.7, delay: 0.22 }}
           className="mt-6 max-w-xl text-base leading-relaxed text-white/68 md:text-lg"
         >
-          Nexora&apos;s capability is strengthened by strategic relationships with energy
-          operators, EPC contractors, equipment manufacturers and international manpower networks
-          — enabling rapid, compliant and reliable project support across the GCC.
+          Nexora&apos;s capability is strengthened by strategic relationships with energy operators,
+          EPC contractors, equipment manufacturers and international manpower networks — enabling
+          rapid, compliant and reliable project support across the GCC.
         </motion.p>
 
         <motion.div
@@ -149,7 +148,6 @@ function PartnersHero() {
           ))}
         </motion.div>
       </div>
-      <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-background to-transparent" />
     </section>
   );
 }
@@ -181,7 +179,7 @@ const partnerTypes = [
   {
     icon: Users,
     title: "Manpower Sourcing Networks",
-    desc: "International networks across South Asia, Southeast Asia and the Philippines for sourcing qualified technical manpower to Kuwait and GCC standards.",
+    desc: "International networks across South Asia, Southeast Asia and the Philippines for sourcing qualified technical manpower to Qatar and GCC standards.",
     examples: ["Philippines", "India", "Sri Lanka", "Nepal"],
     color: "bg-primary/8 text-primary ring-primary/12",
   },
@@ -195,7 +193,7 @@ const partnerTypes = [
   {
     icon: Package,
     title: "Logistics & Freight Partners",
-    desc: "Established freight forwarding and customs clearance partners enabling efficient product delivery across Kuwait and the GCC.",
+    desc: "Established freight forwarding and customs clearance partners enabling efficient product delivery across Qatar and the GCC.",
     examples: ["Sea freight", "Air freight", "Last-mile delivery", "Customs clearance"],
     color: "bg-navy/8 text-navy ring-navy/12",
   },
@@ -259,7 +257,15 @@ const clientGroups = [
   },
   {
     title: "EPC & Industrial",
-    clients: ["Technip Energies", "L&T Construction", "CCC", "HBK Engineering", "Milaha", "ABB", "GE"],
+    clients: [
+      "Technip Energies",
+      "L&T Construction",
+      "CCC",
+      "HBK Engineering",
+      "Milaha",
+      "ABB",
+      "GE",
+    ],
   },
   {
     title: "Government & Authorities",
@@ -310,17 +316,17 @@ function ClientsSection() {
 
 const gccPresence = [
   {
-    code: "KW",
-    country: "Kuwait",
+    code: "QA",
+    country: "Qatar",
     role: "Headquarters",
-    desc: "Primary operations hub. KOC, KNPC and government project delivery.",
+    desc: "Primary operations hub. QatarEnergy, QatarEnergy LNG, QAFCO, QAPCO and EPC project support.",
     highlight: true,
   },
   {
-    code: "QA",
-    country: "Qatar",
-    role: "Major Market",
-    desc: "QatarEnergy, QatarEnergy LNG, QAFCO, QAPCO and EPC project support.",
+    code: "KW",
+    country: "Kuwait",
+    role: "Active Market",
+    desc: "KOC, KNPC and government project delivery.",
     highlight: false,
   },
   {
@@ -360,12 +366,11 @@ function GCCPresence() {
         <Reveal className="mb-14 text-center">
           <Eyebrow>Regional Presence</Eyebrow>
           <h2 className="mt-5 text-4xl font-extrabold leading-[1.06] md:text-5xl">
-            Six GCC countries.{" "}
-            <span className="text-gradient-energy">One trusted partner.</span>
+            Six GCC countries. <span className="text-gradient-energy">One trusted partner.</span>
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
             Nexora maintains active deployment capability and client relationships across all six
-            GCC member states, with headquarters in Ahmadi, Kuwait.
+            GCC member states, with headquarters in Doha, Qatar.
           </p>
         </Reveal>
 
@@ -411,10 +416,26 @@ function GCCPresence() {
 /* ─── PARTNERSHIP BENEFITS ────────────────────────────────────────────────── */
 
 const benefits = [
-  { icon: Shield, title: "Compliance-First", desc: "All partnerships structured around GCC regulatory and operator compliance requirements." },
-  { icon: Globe, title: "International Reach", desc: "Access to global sourcing networks while maintaining local GCC delivery capability." },
-  { icon: Network, title: "Supply Chain Depth", desc: "Multiple approved vendors per product category ensures continuity of supply." },
-  { icon: Wrench, title: "Technical Alignment", desc: "Workforce standards and product specifications aligned to operator expectations." },
+  {
+    icon: Shield,
+    title: "Compliance-First",
+    desc: "All partnerships structured around GCC regulatory and operator compliance requirements.",
+  },
+  {
+    icon: Globe,
+    title: "International Reach",
+    desc: "Access to global sourcing networks while maintaining local GCC delivery capability.",
+  },
+  {
+    icon: Network,
+    title: "Supply Chain Depth",
+    desc: "Multiple approved vendors per product category ensures continuity of supply.",
+  },
+  {
+    icon: Wrench,
+    title: "Technical Alignment",
+    desc: "Workforce standards and product specifications aligned to operator expectations.",
+  },
 ];
 
 function PartnerBenefits() {
@@ -493,8 +514,7 @@ function PartnershipCTA() {
           <div className="rounded-[2rem] border border-border bg-white p-8 text-center shadow-elevated md:p-12">
             <Eyebrow>Partner With Us</Eyebrow>
             <h2 className="mt-5 text-3xl font-extrabold md:text-4xl">
-              Interested in a{" "}
-              <span className="text-gradient-energy">strategic partnership?</span>
+              Interested in a <span className="text-gradient-energy">strategic partnership?</span>
             </h2>
             <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-muted-foreground">
               Nexora welcomes partnerships with equipment manufacturers, training providers,

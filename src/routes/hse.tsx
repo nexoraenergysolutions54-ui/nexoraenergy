@@ -19,7 +19,7 @@ export const Route = createFileRoute("/hse")({
       {
         name: "description",
         content:
-          "Health, safety, environmental and quality standards embedded across Nexora Energy Solutions projects in Kuwait and the GCC.",
+          "Health, safety, environmental and quality standards embedded across Nexora Energy Solutions projects in Qatar and the GCC.",
       },
       { property: "og:title", content: "HSE Standards at Nexora" },
       {

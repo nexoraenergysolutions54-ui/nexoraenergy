@@ -6,6 +6,11 @@ import { defineConfig } from "vite";
 import tsConfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
+  server: {
+    watch: {
+      ignored: ["**/.output/**", "**/dist/**"],
+    },
+  },
   plugins: [
     tanstackStart({
       server: { entry: "server" },
@@ -30,7 +35,7 @@ export default defineConfig({
         { path: "/news" },
       ],
     }),
-    nitro(),
+    nitro({ preset: "vercel" }),
     viteReact(),
     tailwindcss(),
     tsConfigPaths(),
