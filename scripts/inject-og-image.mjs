@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Post-build script: injects og:image meta tags into every prerendered HTML file.
  *
  * TanStack Start / React 19 SSR silently drops <meta property="og:image"> tags
@@ -12,12 +12,12 @@ import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 const SITE_URL = "https://www.nexoraqa.com";
-const OG_IMAGE = `${SITE_URL}/og-nexora-energy.png`;
+const OG_IMAGE = `${SITE_URL}/og-nexora-energy.jpg`;
 
 const INJECT = [
   `<meta property="og:image" content="${OG_IMAGE}">`,
   `<meta property="og:image:secure_url" content="${OG_IMAGE}">`,
-  `<meta property="og:image:type" content="image/png">`,
+  `<meta property="og:image:type" content="image/jpeg">`,
   `<meta property="og:image:width" content="1200">`,
   `<meta property="og:image:height" content="630">`,
   `<meta property="og:image:alt" content="Nexora Energy Solutions - Qatar &amp; GCC Technical Manpower">`,
@@ -29,7 +29,7 @@ function walk(dir) {
   try {
     entries = readdirSync(dir, { withFileTypes: true });
   } catch {
-    return; // directory doesn't exist — skip silently
+    return; // directory doesn't exist â€” skip silently
   }
 
   for (const entry of entries) {
@@ -51,3 +51,5 @@ function walk(dir) {
 walk(join(process.cwd(), ".output", "public"));
 
 console.log("[og-inject] done");
+
+

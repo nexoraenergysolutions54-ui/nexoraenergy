@@ -1,4 +1,4 @@
-import { site } from "./enterprise-content";
+﻿import { site } from "./enterprise-content";
 
 export function organizationSchema() {
   return {
@@ -9,7 +9,7 @@ export function organizationSchema() {
     description:
       "Doha-based technical manpower, industrial services, procurement support and project coordination company serving Qatar and GCC energy markets.",
     url: site.url,
-    logo: `${site.url}/og-nexora-energy.png`,
+    logo: `${site.url}/og-nexora-energy.jpg`,
     email: site.email,
     telephone: site.phone,
     address: {
@@ -178,3 +178,4 @@ export function faqSchema(items: Array<{ question: string; answer: string }>) {
     })),
   };
 }
+

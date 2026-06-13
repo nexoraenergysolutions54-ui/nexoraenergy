@@ -1,4 +1,4 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+﻿import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   HeadContent,
   Link,
@@ -14,7 +14,7 @@ import appCss from "../styles.css?url";
 const siteUrl = "https://www.nexoraqa.com";
 const defaultDescription =
   "Nexora Energy Solutions delivers engineering, procurement, maintenance and operational support for Qatar and GCC energy infrastructure.";
-const defaultOgImage = `${siteUrl}/og-nexora-energy.png`;
+const defaultOgImage = `${siteUrl}/og-nexora-energy.jpg`;
 
 function NotFoundComponent() {
   return (
@@ -92,7 +92,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:url", content: siteUrl },
       { property: "og:image", content: defaultOgImage },
       { property: "og:image:secure_url", content: defaultOgImage },
-      { property: "og:image:type", content: "image/png" },
+      { property: "og:image:type", content: "image/jpeg" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       { property: "og:image:alt", content: "Nexora Energy Solutions industrial project support" },
@@ -131,10 +131,10 @@ function RootShell({ children }: { children: ReactNode }) {
          */}
         <meta property="og:image" content={defaultOgImage} />
         <meta property="og:image:secure_url" content={defaultOgImage} />
-        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Nexora Energy Solutions — Qatar & GCC Technical Manpower" />
+        <meta property=”og:image:alt” content=”Nexora Energy Solutions - Qatar and GCC Technical Manpower” />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={defaultOgImage} />
         <HeadContent />
@@ -157,3 +157,5 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
+
+
