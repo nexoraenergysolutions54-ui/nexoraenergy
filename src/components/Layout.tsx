@@ -6,6 +6,13 @@ import type { ReactNode } from "react";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 import { WhatsAppButton } from "./WhatsAppButton";
+import { structuredDataForPath } from "@/lib/seo";
+
+function JsonLd({ data }: { data: unknown }) {
+  return (
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+  );
+}
 
 function ScrollToTop() {
   const [visible, setVisible] = useState(false);
@@ -37,9 +44,13 @@ function ScrollToTop() {
 
 export function Layout({ children }: { children: ReactNode }) {
   const { location } = useRouterState();
+  const structuredData = structuredDataForPath(location.pathname);
 
   return (
     <div className="relative min-h-screen w-full max-w-full overflow-x-hidden bg-background text-foreground">
+      {structuredData.map((data, index) => (
+        <JsonLd key={`${location.pathname}-${index}`} data={data} />
+      ))}
       <Navbar />
       <AnimatePresence mode="wait">
         <motion.main

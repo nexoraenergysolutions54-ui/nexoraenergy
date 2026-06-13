@@ -16,30 +16,14 @@ import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { site } from "@/lib/enterprise-content";
+import { seoHead } from "@/lib/seo";
 import aboutHero from "@/assets/about-hero-team-refinery.png";
 import about from "@/assets/about-engineers.jpg";
 import pEng from "@/assets/project-engineering.jpg";
 import pRefinery from "@/assets/project-refinery.jpg";
 
 export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About | Nexora Energy Solutions" },
-      {
-        name: "description",
-        content:
-          "Nexora Energy Solutions is a Qatar-based Technical Manpower & Industrial Solutions Partner serving energy, LNG, petrochemical, infrastructure and EPC projects across the GCC.",
-      },
-      { property: "og:title", content: "About Nexora Energy Solutions" },
-      {
-        property: "og:description",
-        content:
-          "Qatar-based technical manpower and industrial solutions partner for the GCC energy sector.",
-      },
-      { property: "og:url", content: `${site.url}/about` },
-    ],
-    links: [{ rel: "canonical", href: `${site.url}/about` }],
-  }),
+  head: () => seoHead("/about"),
   component: AboutPage,
 });
 

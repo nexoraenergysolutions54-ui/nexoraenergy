@@ -5,6 +5,7 @@ import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { site } from "@/lib/enterprise-content";
 import { breadcrumbSchema, itemListSchema, webPageSchema } from "@/lib/schema";
+import { seoHead } from "@/lib/seo";
 
 function JsonLd({ data }: { data: unknown }) {
   return (
@@ -13,26 +14,7 @@ function JsonLd({ data }: { data: unknown }) {
 }
 
 export const Route = createFileRoute("/resources")({
-  head: () => ({
-    meta: [
-      { title: "Industrial Manpower Resources | Nexora Energy Solutions" },
-      {
-        name: "description",
-        content:
-          "Practical Nexora resources for GCC technical manpower, industrial services, procurement support and EPC project coordination.",
-      },
-      { property: "og:title", content: "Industrial Manpower Resources | Nexora" },
-      {
-        property: "og:description",
-        content:
-          "Buyer-focused guides for EPC contractors, energy operators and procurement teams across Qatar and the GCC.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: `${site.url}/resources` },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: `${site.url}/resources` }],
-  }),
+  head: () => seoHead("/resources"),
   component: ResourcesRouteComponent,
 });
 

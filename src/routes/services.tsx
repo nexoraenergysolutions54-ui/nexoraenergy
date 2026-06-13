@@ -13,26 +13,10 @@ import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { site } from "@/lib/enterprise-content";
+import { seoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/services")({
-  head: () => ({
-    meta: [
-      { title: "Services | Nexora Energy Solutions" },
-      {
-        name: "description",
-        content:
-          "Integrated engineering, industrial services, procurement, maintenance, infrastructure delivery and operational support for Qatar and GCC energy sectors.",
-      },
-      { property: "og:title", content: "Nexora Energy Services" },
-      {
-        property: "og:description",
-        content:
-          "Enterprise-grade engineering and industrial service capabilities for energy partners.",
-      },
-      { property: "og:url", content: `${site.url}/services` },
-    ],
-    links: [{ rel: "canonical", href: `${site.url}/services` }],
-  }),
+  head: () => seoHead("/services"),
   component: ServicesRouteComponent,
 });
 

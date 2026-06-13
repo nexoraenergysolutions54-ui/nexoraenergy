@@ -6,7 +6,10 @@ export function organizationSchema() {
     "@type": ["Organization", "LocalBusiness"],
     name: site.name,
     legalName: site.legalName,
+    description:
+      "Doha-based technical manpower, industrial services, procurement support and project coordination company serving Qatar and GCC energy markets.",
     url: site.url,
+    logo: `${site.url}/og-nexora-energy.svg`,
     email: site.email,
     telephone: site.phone,
     address: {
@@ -15,7 +18,20 @@ export function organizationSchema() {
       addressLocality: site.city,
       addressCountry: site.country,
     },
+    openingHours: "Su-Th 08:00-17:00",
     areaServed: ["Qatar", "Saudi Arabia", "United Arab Emirates", "Kuwait", "Bahrain", "Oman"],
+    knowsAbout: [
+      "Technical manpower supply",
+      "Industrial services",
+      "Shutdown support",
+      "Maintenance support",
+      "Procurement support",
+      "EPC contractor support",
+      "LNG facility support",
+      "Oil and gas projects",
+      "Petrochemical plants",
+    ],
+    sameAs: ["https://www.linkedin.com/company/nexora-energy-solutions"],
     contactPoint: [
       {
         "@type": "ContactPoint",
@@ -24,6 +40,28 @@ export function organizationSchema() {
         areaServed: "GCC",
         availableLanguage: ["English", "Arabic"],
       },
+    ],
+  };
+}
+
+export function websiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: site.name,
+    url: site.url,
+    inLanguage: "en",
+    publisher: {
+      "@type": "Organization",
+      name: site.name,
+      url: site.url,
+    },
+    about: [
+      "Technical manpower supply",
+      "Industrial services",
+      "Procurement support",
+      "Shutdown support",
+      "GCC energy projects",
     ],
   };
 }

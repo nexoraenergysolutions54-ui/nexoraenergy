@@ -16,6 +16,7 @@ import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { site } from "@/lib/enterprise-content";
+import { seoHead } from "@/lib/seo";
 import about from "@/assets/about-engineers.jpg";
 import pEng from "@/assets/project-engineering.jpg";
 import pMaint from "@/assets/project-maintenance.jpg";
@@ -26,24 +27,7 @@ import hero from "@/assets/hero-refinery.jpg";
 import industriesHero from "@/assets/industries-hero-energy-infrastructure.png";
 
 export const Route = createFileRoute("/industries")({
-  head: () => ({
-    meta: [
-      { title: "Industries | Nexora Energy Solutions" },
-      {
-        name: "description",
-        content:
-          "Nexora Energy Solutions serves oil & gas, LNG, petrochemical, power, infrastructure, marine, government and manufacturing sectors across Qatar and the GCC.",
-      },
-      { property: "og:title", content: "Industries Served - Nexora Energy Solutions" },
-      {
-        property: "og:description",
-        content:
-          "Technical manpower and industrial services across GCC energy and industrial sectors.",
-      },
-      { property: "og:url", content: `${site.url}/industries` },
-    ],
-    links: [{ rel: "canonical", href: `${site.url}/industries` }],
-  }),
+  head: () => seoHead("/industries"),
   component: IndustriesRouteComponent,
 });
 

@@ -15,27 +15,11 @@ import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { site } from "@/lib/enterprise-content";
+import { seoHead } from "@/lib/seo";
 import contactHero from "@/assets/contact-hero-project-conversation.png";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact | Nexora Energy Solutions" },
-      {
-        name: "description",
-        content:
-          "Contact Nexora Energy Solutions in Doha, Qatar for technical manpower, industrial services and procurement enquiries across the GCC.",
-      },
-      { property: "og:title", content: "Contact Nexora Energy Solutions" },
-      {
-        property: "og:description",
-        content:
-          "Qatar headquarters. Contact Nexora for manpower, industrial services and procurement support.",
-      },
-      { property: "og:url", content: `${site.url}/contact` },
-    ],
-    links: [{ rel: "canonical", href: `${site.url}/contact` }],
-  }),
+  head: () => seoHead("/contact"),
   component: ContactPage,
 });
 

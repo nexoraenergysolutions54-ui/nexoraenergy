@@ -20,6 +20,7 @@ import {
 import { Layout } from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
 import { site } from "@/lib/enterprise-content";
+import { seoHead } from "@/lib/seo";
 import homeHeroBriefing from "@/assets/home-hero-briefing.png";
 import homeHeroMaintenance from "@/assets/home-hero-maintenance.png";
 import homeHeroPlanning from "@/assets/home-hero-planning.png";
@@ -31,24 +32,7 @@ import pRefinery from "@/assets/project-refinery.jpg";
 import pEng from "@/assets/project-engineering.jpg";
 
 export const Route = createFileRoute("/industrial-services")({
-  head: () => ({
-    meta: [
-      { title: "Industrial Services | Nexora Energy Solutions" },
-      {
-        name: "description",
-        content:
-          "Nexora Energy Solutions provides industrial services including shutdown, turnaround, maintenance, project support and site services for energy and industrial facilities across the GCC.",
-      },
-      { property: "og:title", content: "Industrial Services - Nexora Energy Solutions" },
-      {
-        property: "og:description",
-        content:
-          "Shutdown, turnaround, maintenance and project support for critical energy and industrial facilities.",
-      },
-      { property: "og:url", content: `${site.url}/industrial-services` },
-    ],
-    links: [{ rel: "canonical", href: `${site.url}/industrial-services` }],
-  }),
+  head: () => seoHead("/industrial-services"),
   component: IndustrialServicesPage,
 });
 

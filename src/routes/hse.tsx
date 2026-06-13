@@ -12,26 +12,10 @@ import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { site } from "@/lib/enterprise-content";
+import { seoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/hse")({
-  head: () => ({
-    meta: [
-      { title: "HSE | Nexora Energy Solutions" },
-      {
-        name: "description",
-        content:
-          "Health, safety, environmental and quality standards embedded across Nexora Energy Solutions projects in Qatar and the GCC.",
-      },
-      { property: "og:title", content: "HSE Standards at Nexora" },
-      {
-        property: "og:description",
-        content:
-          "Safety, environmental responsibility and quality governance for critical energy work.",
-      },
-      { property: "og:url", content: `${site.url}/hse` },
-    ],
-    links: [{ rel: "canonical", href: `${site.url}/hse` }],
-  }),
+  head: () => seoHead("/hse"),
   component: HSEPage,
 });
 

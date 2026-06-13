@@ -19,26 +19,10 @@ import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { site } from "@/lib/enterprise-content";
+import { seoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/careers")({
-  head: () => ({
-    meta: [
-      { title: "Careers | Nexora Energy Solutions" },
-      {
-        name: "description",
-        content:
-          "Join Nexora Energy Solutions - Qatar's technical manpower and industrial solutions partner. Engineering, technical trades, HSE, procurement and management roles across Qatar and the GCC.",
-      },
-      { property: "og:title", content: "Careers at Nexora Energy Solutions" },
-      {
-        property: "og:description",
-        content:
-          "Engineering, technical and operational careers with Qatar's leading energy manpower partner.",
-      },
-      { property: "og:url", content: `${site.url}/careers` },
-    ],
-    links: [{ rel: "canonical", href: `${site.url}/careers` }],
-  }),
+  head: () => seoHead("/careers"),
   component: CareersPage,
 });
 

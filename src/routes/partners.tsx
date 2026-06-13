@@ -20,28 +20,12 @@ import { Layout } from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
 import { Counter } from "@/components/Counter";
 import { site } from "@/lib/enterprise-content";
+import { seoHead } from "@/lib/seo";
 import about from "@/assets/about-engineers.jpg";
 import pRefinery from "@/assets/project-refinery.jpg";
 
 export const Route = createFileRoute("/partners")({
-  head: () => ({
-    meta: [
-      { title: "Partners | Nexora Energy Solutions" },
-      {
-        name: "description",
-        content:
-          "Nexora Energy Solutions partners with energy operators, EPC contractors, equipment manufacturers and technical institutions across the GCC and internationally.",
-      },
-      { property: "og:title", content: "Partners - Nexora Energy Solutions" },
-      {
-        property: "og:description",
-        content:
-          "Strategic partnerships with energy operators, EPC contractors and industrial suppliers across the GCC.",
-      },
-      { property: "og:url", content: `${site.url}/partners` },
-    ],
-    links: [{ rel: "canonical", href: `${site.url}/partners` }],
-  }),
+  head: () => seoHead("/partners"),
   component: PartnersPage,
 });
 

@@ -21,39 +21,13 @@ import {
   industrialImages,
   industryCards,
   primaryServices,
-  site,
   trustCards,
 } from "@/lib/enterprise-content";
 import { organizationSchema } from "@/lib/schema";
+import { seoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      {
-        title:
-          "Nexora Energy Solutions | Technical Manpower & Industrial Services in Qatar and GCC",
-      },
-      {
-        name: "description",
-        content:
-          "Nexora Energy Solutions supplies technical manpower, shutdown support, maintenance teams, procurement support and industrial services for Qatar and GCC energy projects.",
-      },
-      { property: "og:title", content: "Nexora Energy Solutions" },
-      {
-        property: "og:description",
-        content:
-          "Qatar-based technical manpower and industrial services for LNG, oil and gas, EPC, petrochemical and infrastructure projects across the GCC.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: site.url },
-      { name: "twitter:card", content: "summary_large_image" },
-      {
-        name: "twitter:title",
-        content: "Nexora Energy Solutions | Technical Manpower & Industrial Services",
-      },
-    ],
-    links: [{ rel: "canonical", href: site.url }],
-  }),
+  head: () => seoHead("/"),
   component: Home,
 });
 

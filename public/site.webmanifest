@@ -1,0 +1,16 @@
+{
+  "name": "Nexora Energy Solutions",
+  "short_name": "Nexora",
+  "description": "Technical manpower, industrial services and procurement support for Qatar and GCC energy projects.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#071b2d",
+  "theme_color": "#071b2d",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}

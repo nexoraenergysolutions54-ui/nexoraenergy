@@ -36,6 +36,7 @@ import { Layout } from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
 import { Counter } from "@/components/Counter";
 import { site } from "@/lib/enterprise-content";
+import { seoHead } from "@/lib/seo";
 import about from "@/assets/about-engineers.jpg";
 import manpowerHeroCrewBriefing from "@/assets/manpower-hero-crew-briefing.png";
 import pEng from "@/assets/project-engineering.jpg";
@@ -45,26 +46,7 @@ import pPlant from "@/assets/project-plant.jpg";
 import pRefinery from "@/assets/project-refinery.jpg";
 
 export const Route = createFileRoute("/manpower")({
-  head: () => ({
-    meta: [
-      {
-        title: "Technical Manpower Solutions | Nexora Energy Solutions - Qatar & GCC",
-      },
-      {
-        name: "description",
-        content:
-          "Nexora Energy Solutions provides qualified technical manpower - engineers, technicians, and skilled tradespeople - for energy, LNG, petrochemical, infrastructure and EPC projects across the GCC.",
-      },
-      { property: "og:title", content: "Technical Manpower Solutions - Nexora Energy Solutions" },
-      {
-        property: "og:description",
-        content:
-          "Engineers, technicians & skilled workforce for critical GCC energy and industrial projects.",
-      },
-      { property: "og:url", content: `${site.url}/manpower` },
-    ],
-    links: [{ rel: "canonical", href: `${site.url}/manpower` }],
-  }),
+  head: () => seoHead("/manpower"),
   component: ManpowerPage,
 });
 

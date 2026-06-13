@@ -5,6 +5,7 @@ import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { site } from "@/lib/enterprise-content";
+import { seoHead } from "@/lib/seo";
 import pEng from "@/assets/project-engineering.jpg";
 import pMaint from "@/assets/project-maintenance.jpg";
 import pPipeline from "@/assets/project-pipeline.jpg";
@@ -13,24 +14,7 @@ import pRefinery from "@/assets/project-refinery.jpg";
 import about from "@/assets/about-engineers.jpg";
 
 export const Route = createFileRoute("/projects")({
-  head: () => ({
-    meta: [
-      { title: "Projects | Nexora Energy Solutions" },
-      {
-        name: "description",
-        content:
-          "Explore Nexora Energy Solutions' project delivery experience across refinery, LNG, pipeline, maintenance, engineering and EPC programs across Qatar and the GCC.",
-      },
-      { property: "og:title", content: "Project Portfolio - Nexora Energy Solutions" },
-      {
-        property: "og:description",
-        content:
-          "Selected delivery profiles across refinery, LNG, pipelines, maintenance and engineering programs.",
-      },
-      { property: "og:url", content: `${site.url}/projects` },
-    ],
-    links: [{ rel: "canonical", href: `${site.url}/projects` }],
-  }),
+  head: () => seoHead("/projects"),
   component: ProjectsPage,
 });
 

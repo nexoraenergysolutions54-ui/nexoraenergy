@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Allow: /llms.txt
+Allow: /sitemap.xml
+Allow: /site.webmanifest
 
 Sitemap: https://www.nexora-energy.com/sitemap.xml

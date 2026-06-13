@@ -4,6 +4,7 @@ import { Layout } from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
 import { industrialImages, markets, site } from "@/lib/enterprise-content";
 import { breadcrumbSchema, faqSchema, itemListSchema, webPageSchema } from "@/lib/schema";
+import { seoHead } from "@/lib/seo";
 
 function JsonLd({ data }: { data: unknown }) {
   return (
@@ -48,18 +49,7 @@ const faqs = [
 ];
 
 export const Route = createFileRoute("/resources/gcc-industrial-manpower-guide")({
-  head: () => ({
-    meta: [
-      { title: `${pageTitle} | Nexora Energy Solutions` },
-      { name: "description", content: pageDescription },
-      { property: "og:title", content: pageTitle },
-      { property: "og:description", content: pageDescription },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: `${site.url}/resources/gcc-industrial-manpower-guide` },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: `${site.url}/resources/gcc-industrial-manpower-guide` }],
-  }),
+  head: () => seoHead("/resources/gcc-industrial-manpower-guide"),
   component: GccIndustrialManpowerGuide,
 });
 

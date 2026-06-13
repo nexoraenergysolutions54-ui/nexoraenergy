@@ -4,6 +4,7 @@ import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { site } from "@/lib/enterprise-content";
+import { seoHead } from "@/lib/seo";
 import pEng from "@/assets/project-engineering.jpg";
 import pMaint from "@/assets/project-maintenance.jpg";
 import pPipeline from "@/assets/project-pipeline.jpg";
@@ -11,23 +12,7 @@ import pPlant from "@/assets/project-plant.jpg";
 import pRefinery from "@/assets/project-refinery.jpg";
 
 export const Route = createFileRoute("/news")({
-  head: () => ({
-    meta: [
-      { title: "News | Nexora Energy Solutions" },
-      {
-        name: "description",
-        content:
-          "News, project milestones and operational insights from Nexora Energy Solutions in Qatar and the GCC.",
-      },
-      { property: "og:title", content: "Nexora News & Insights" },
-      {
-        property: "og:description",
-        content: "Company updates, project milestones and energy-sector insights.",
-      },
-      { property: "og:url", content: `${site.url}/news` },
-    ],
-    links: [{ rel: "canonical", href: `${site.url}/news` }],
-  }),
+  head: () => seoHead("/news"),
   component: NewsPage,
 });
 

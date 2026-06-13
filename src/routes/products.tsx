@@ -15,28 +15,12 @@ import {
 import { Layout } from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
 import { site } from "@/lib/enterprise-content";
+import { seoHead } from "@/lib/seo";
 import pPlant from "@/assets/project-plant.jpg";
 import pEng from "@/assets/project-engineering.jpg";
 
 export const Route = createFileRoute("/products")({
-  head: () => ({
-    meta: [
-      { title: "Products & Procurement | Nexora Energy Solutions" },
-      {
-        name: "description",
-        content:
-          "Nexora Energy Solutions supplies industrial valves, instrumentation and electrical products for energy, LNG, petrochemical and infrastructure projects across the GCC.",
-      },
-      { property: "og:title", content: "Products & Procurement - Nexora Energy Solutions" },
-      {
-        property: "og:description",
-        content:
-          "Industrial valves, instrumentation and electrical products for GCC energy projects. Capability-driven supply - not ecommerce.",
-      },
-      { property: "og:url", content: `${site.url}/products` },
-    ],
-    links: [{ rel: "canonical", href: `${site.url}/products` }],
-  }),
+  head: () => seoHead("/products"),
   component: ProductsPage,
 });
 
