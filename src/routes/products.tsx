@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
+import { site } from "@/lib/enterprise-content";
 import pPlant from "@/assets/project-plant.jpg";
 import pEng from "@/assets/project-engineering.jpg";
 
@@ -26,15 +27,15 @@ export const Route = createFileRoute("/products")({
         content:
           "Nexora Energy Solutions supplies industrial valves, instrumentation and electrical products for energy, LNG, petrochemical and infrastructure projects across the GCC.",
       },
-      { property: "og:title", content: "Products & Procurement — Nexora Energy Solutions" },
+      { property: "og:title", content: "Products & Procurement - Nexora Energy Solutions" },
       {
         property: "og:description",
         content:
-          "Industrial valves, instrumentation and electrical products for GCC energy projects. Capability-driven supply — not ecommerce.",
+          "Industrial valves, instrumentation and electrical products for GCC energy projects. Capability-driven supply - not ecommerce.",
       },
-      { property: "og:url", content: "/products" },
+      { property: "og:url", content: `${site.url}/products` },
     ],
-    links: [{ rel: "canonical", href: "/products" }],
+    links: [{ rel: "canonical", href: `${site.url}/products` }],
   }),
   component: ProductsPage,
 });
@@ -68,7 +69,7 @@ function ProductsPage() {
   );
 }
 
-/* ─── HERO ────────────────────────────────────────────────────────────────── */
+/* --- HERO ------------------------------------------------------------------ */
 
 function ProductsHero() {
   return (
@@ -111,7 +112,7 @@ function ProductsHero() {
           className="mt-6 max-w-xl text-base leading-relaxed text-white/68 md:text-lg"
         >
           Nexora supplies industrial valves, instrumentation and electrical products to energy, LNG,
-          petrochemical and EPC projects across Qatar and the GCC. This is procurement capability —
+          petrochemical and EPC projects across Qatar and the GCC. This is procurement capability -
           not an ecommerce catalogue.
         </motion.p>
 
@@ -139,7 +140,7 @@ function ProductsHero() {
   );
 }
 
-/* ─── CAPABILITY OVERVIEW ─────────────────────────────────────────────────── */
+/* --- CAPABILITY OVERVIEW --------------------------------------------------- */
 
 function ProductsCapability() {
   const points = [
@@ -207,15 +208,15 @@ function ProductsCapability() {
   );
 }
 
-/* ─── PRODUCT CATEGORIES ──────────────────────────────────────────────────── */
+/* --- PRODUCT CATEGORIES ---------------------------------------------------- */
 
 const categories = [
   {
     icon: Settings2,
     title: "Ball Valves",
-    standards: "API 6D · ASME B16.34",
-    sizes: "½″ – 60″",
-    classes: "Class 150 – 2500",
+    standards: "API 6D Â· ASME B16.34",
+    sizes: '1/2" - 60"',
+    classes: "Class 150 - 2500",
     materials: "Carbon Steel, Stainless Steel, Alloy Steel",
     applications: "Oil & Gas, LNG, Petrochemical, Water",
     desc: "Full bore and reduced bore ball valves for on/off and throttling service in demanding pipeline and process applications.",
@@ -223,9 +224,9 @@ const categories = [
   {
     icon: Settings2,
     title: "Butterfly Valves",
-    standards: "API 609 · ASME B16.5",
-    sizes: "2″ – 120″",
-    classes: "PN 6 – PN 40 / Class 150–300",
+    standards: "API 609 Â· ASME B16.5",
+    sizes: '2" - 120"',
+    classes: "PN 6 - PN 40 / Class 150-300",
     materials: "Ductile Iron, Carbon Steel, Stainless Steel",
     applications: "Water Treatment, Gas, Process",
     desc: "Wafer, lug and double-flanged butterfly valves for flow control and isolation in large-diameter pipeline systems.",
@@ -233,9 +234,9 @@ const categories = [
   {
     icon: Settings2,
     title: "Gate Valves",
-    standards: "API 600 · API 602",
-    sizes: "½″ – 72″",
-    classes: "Class 150 – 4500",
+    standards: "API 600 Â· API 602",
+    sizes: '1/2" - 72"',
+    classes: "Class 150 - 4500",
     materials: "Cast Carbon Steel, Forged Steel, Alloy",
     applications: "Upstream, Midstream, Refineries",
     desc: "Full port gate valves providing bi-directional zero-leakage isolation for high-pressure hydrocarbon service.",
@@ -243,9 +244,9 @@ const categories = [
   {
     icon: Settings2,
     title: "Globe Valves",
-    standards: "API 623 · ASME B16.10",
-    sizes: "½″ – 24″",
-    classes: "Class 150 – 2500",
+    standards: "API 623 Â· ASME B16.10",
+    sizes: '1/2" - 24"',
+    classes: "Class 150 - 2500",
     materials: "Carbon Steel, Stainless, Duplex SS",
     applications: "Process, Refinery, Petrochemical",
     desc: "Rising stem globe valves for precision flow control in steam, process fluid and high-pressure hydrocarbon service.",
@@ -253,9 +254,9 @@ const categories = [
   {
     icon: Settings2,
     title: "Control Valves",
-    standards: "ANSI/FCI 70-2 · IEC 60534",
-    sizes: "½″ – 36″",
-    classes: "Class 150 – 900",
+    standards: "ANSI/FCI 70-2 Â· IEC 60534",
+    sizes: '1/2" - 36"',
+    classes: "Class 150 - 900",
     materials: "Carbon Steel, Stainless, Exotic Alloys",
     applications: "Process Control, DCS Integration",
     desc: "Pneumatic and electric actuated control valves for precise flow regulation in process plant and refinery applications.",
@@ -263,7 +264,7 @@ const categories = [
   {
     icon: Zap,
     title: "Instrumentation",
-    standards: "IEC · ATEX · SIL",
+    standards: "IEC Â· ATEX Â· SIL",
     types: "Pressure, Temperature, Flow, Level",
     certifications: "ATEX Zone 0/1/2, IECEx, SIL 2/3",
     brands: "Rosemount, Endress+Hauser, Yokogawa",
@@ -273,7 +274,7 @@ const categories = [
   {
     icon: Zap,
     title: "Electrical Products",
-    standards: "IEC · ATEX · BS",
+    standards: "IEC Â· ATEX Â· BS",
     types: "Switchgear, LV/MV Panels, Cables",
     certifications: "ATEX, IECEx, CE Marked",
     brands: "ABB, Schneider, Siemens Compatible",
@@ -293,7 +294,7 @@ function ProductCategories() {
             <span className="text-gradient-energy">electrical products.</span>
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
-            Specification-driven supply. Not a commodity catalogue — every item is sourced to meet
+            Specification-driven supply. Not a commodity catalogue - every item is sourced to meet
             your project&apos;s technical, quality and documentation requirements.
           </p>
         </Reveal>
@@ -311,7 +312,7 @@ function ProductCategories() {
                     <Package className="h-5 w-5" />
                   </div>
                   <span className="rounded-full border border-border px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-muted-foreground">
-                    {cat.standards.split("·")[0].trim()}
+                    {cat.standards.split("Â·")[0].trim()}
                   </span>
                 </div>
 
@@ -355,7 +356,7 @@ function SpecRow({ label, value }: { label: string; value: string }) {
   );
 }
 
-/* ─── PROCUREMENT PROCESS ─────────────────────────────────────────────────── */
+/* --- PROCUREMENT PROCESS --------------------------------------------------- */
 
 const procSteps = [
   {
@@ -415,7 +416,7 @@ function ProcurementProcess() {
   );
 }
 
-/* ─── CTA / ENQUIRY ───────────────────────────────────────────────────────── */
+/* --- CTA / ENQUIRY --------------------------------------------------------- */
 
 function ProductsCTA() {
   return (
@@ -480,7 +481,7 @@ function ProductsCTA() {
             <label className="flex cursor-pointer items-center gap-3 rounded-xl border border-dashed border-border bg-surface/60 px-4 py-4 text-sm text-muted-foreground transition hover:border-energy-soft">
               <FileText className="h-5 w-5 shrink-0 text-primary" />
               <span>
-                <span className="font-bold text-foreground">Attach RFQ or datasheet</span> — PDF,
+                <span className="font-bold text-foreground">Attach RFQ or datasheet</span> - PDF,
                 Excel (optional, max 10 MB)
               </span>
               <input type="file" accept=".pdf,.xls,.xlsx,.doc,.docx" className="hidden" />

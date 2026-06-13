@@ -2,90 +2,102 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
-  Building2,
+  CalendarClock,
   CheckCircle2,
   ChevronRight,
   ClipboardCheck,
-  Factory,
-  Flame,
-  Gauge,
+  Clock3,
+  FileCheck2,
   HardHat,
-  Landmark,
-  MapPinned,
-  Ship,
+  ListChecks,
   ShieldCheck,
-  Truck,
   UsersRound,
-  Wrench,
-  Zap,
 } from "lucide-react";
+import type { ReactNode } from "react";
 import { Layout } from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
-import aboutNexoraTeam from "@/assets/about-nexora-team.png";
-import homeHeroBriefing from "@/assets/home-hero-briefing.png";
-import homeHeroLng from "@/assets/home-hero-lng.png";
-import homeHeroMaintenance from "@/assets/home-hero-maintenance.png";
-import homeHeroPlanning from "@/assets/home-hero-planning.png";
-import homeHeroProcurement from "@/assets/home-hero-procurement.png";
-import heroManpower from "@/assets/hero-manpower-refinery.jpg";
-import industrialServicesValveTeam from "@/assets/industrial-services-valve-team.png";
-import pMaint from "@/assets/project-maintenance.jpg";
-import pPipeline from "@/assets/project-pipeline.jpg";
-import pPlant from "@/assets/project-plant.jpg";
-import pRefinery from "@/assets/project-refinery.jpg";
-import technicalManpowerTeam from "@/assets/technical-manpower-team.png";
+import {
+  heroSlides,
+  industrialImages,
+  industryCards,
+  primaryServices,
+  site,
+  trustCards,
+} from "@/lib/enterprise-content";
+import { organizationSchema } from "@/lib/schema";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "Nexora Energy Solutions | Technical Manpower & Industrial Solutions - Qatar & GCC",
+        title:
+          "Nexora Energy Solutions | Technical Manpower & Industrial Services in Qatar and GCC",
       },
       {
         name: "description",
         content:
-          "Nexora Energy Solutions provides qualified technical manpower and industrial services for energy, LNG, petrochemical, infrastructure and industrial projects across Qatar and the GCC.",
+          "Nexora Energy Solutions supplies technical manpower, shutdown support, maintenance teams, procurement support and industrial services for Qatar and GCC energy projects.",
       },
       { property: "og:title", content: "Nexora Energy Solutions" },
       {
         property: "og:description",
-        content: "Technical Manpower & Industrial Solutions - Qatar & GCC.",
+        content:
+          "Qatar-based technical manpower and industrial services for LNG, oil and gas, EPC, petrochemical and infrastructure projects across the GCC.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: site.url },
+      { name: "twitter:card", content: "summary_large_image" },
+      {
+        name: "twitter:title",
+        content: "Nexora Energy Solutions | Technical Manpower & Industrial Services",
+      },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: site.url }],
   }),
   component: Home,
 });
 
+const heroItem = {
+  hidden: { opacity: 0, y: 22 },
+  show: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.72, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] as const },
+  }),
+};
+
+function JsonLd({ data }: { data: unknown }) {
+  return (
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+  );
+}
+
 function Home() {
   return (
     <Layout>
+      <JsonLd data={organizationSchema()} />
       <HeroSection />
-      <TrustSection />
-      <AboutSection />
-      <TechnicalManpowerSection />
-      <WorkforceCategoriesSection />
-      <IndustrialServicesSection />
-      <ProductsSection />
-      <IndustriesSection />
+      <TrustMarkersSection />
+      <BuyerFitSection />
+      <ClientConfidenceSection />
+      <ServiceFocusSection />
+      <CapabilityMatrixSection />
+      <ProjectScenarioSection />
+      <IndustriesGridSection />
+      <GccCoverageSection />
       <WhyNexoraSection />
+      <InsightsSection />
       <FinalCTASection />
     </Layout>
   );
 }
 
-function SectionLabel({ children, dark = false }: { children: React.ReactNode; dark?: boolean }) {
+function SectionBadge({ children, dark = false }: { children: ReactNode; dark?: boolean }) {
   return (
-    <div className="mb-5 flex items-center gap-3">
-      <span className={dark ? "h-px w-9 bg-energy" : "h-px w-9 bg-primary"} />
+    <div className="mb-5 inline-flex items-center gap-3 rounded-md border border-primary/10 bg-white px-4 py-2 shadow-sm">
+      <span className="h-px w-8 bg-energy" />
       <span
-        className={
-          dark
-            ? "text-xs font-bold uppercase tracking-[0.18em] text-energy"
-            : "text-xs font-bold uppercase tracking-[0.18em] text-primary"
-        }
+        className={`text-[11px] font-extrabold uppercase tracking-[0.24em] ${dark ? "text-energy" : "text-primary"}`}
       >
         {children}
       </span>
@@ -93,23 +105,11 @@ function SectionLabel({ children, dark = false }: { children: React.ReactNode; d
   );
 }
 
-function PrimaryButton({
-  to,
-  children,
-  dark = false,
-}: {
-  to: "/manpower" | "/contact" | "/industrial-services" | "/products";
-  children: React.ReactNode;
-  dark?: boolean;
-}) {
+function PrimaryButton({ to, children }: { to: "/contact" | "/manpower"; children: ReactNode }) {
   return (
     <Link
       to={to}
-      className={
-        dark
-          ? "inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md bg-energy px-6 py-3 text-sm font-bold text-navy transition hover:bg-white sm:w-auto"
-          : "inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-bold text-white transition hover:bg-navy sm:w-auto"
-      }
+      className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md bg-energy px-6 py-3 text-sm font-extrabold text-navy transition hover:bg-white sm:w-auto"
     >
       {children}
       <ArrowRight className="h-4 w-4" />
@@ -122,8 +122,8 @@ function SecondaryButton({
   children,
   dark = false,
 }: {
-  to: "/contact" | "/about" | "/manpower" | "/industries" | "/products" | "/industrial-services";
-  children: React.ReactNode;
+  to: "/about" | "/contact" | "/industrial-services" | "/industries" | "/manpower" | "/services";
+  children: ReactNode;
   dark?: boolean;
 }) {
   return (
@@ -131,8 +131,8 @@ function SecondaryButton({
       to={to}
       className={
         dark
-          ? "inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md border border-white/30 px-6 py-3 text-sm font-bold text-white transition hover:border-white hover:bg-white/10 sm:w-auto"
-          : "inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md border border-primary/25 px-6 py-3 text-sm font-bold text-primary transition hover:border-primary hover:bg-primary/5 sm:w-auto"
+          ? "inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md border border-white/25 px-6 py-3 text-sm font-extrabold text-white transition hover:border-energy hover:bg-white/10 sm:w-auto"
+          : "inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md border border-primary/20 px-6 py-3 text-sm font-extrabold text-primary transition hover:border-primary hover:bg-primary/5 sm:w-auto"
       }
     >
       {children}
@@ -141,164 +141,94 @@ function SecondaryButton({
   );
 }
 
-const heroItem = {
-  hidden: { opacity: 0, y: 22 },
-  show: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.75, delay: i * 0.13, ease: [0.16, 1, 0.3, 1] as const },
-  }),
-};
-
 function HeroSection() {
   const slideSeconds = 7;
-  const heroImages = [
-    {
-      image: homeHeroPlanning,
-      label: "Plan The Work",
-      caption: "Engineering teams align drawings, roles and mobilisation before site execution.",
-      position: "object-[54%_50%]",
-    },
-    {
-      image: homeHeroBriefing,
-      label: "Brief The Crew",
-      caption: "Supervisors bring the field team together around safety, permits and sequencing.",
-      position: "object-[50%_50%]",
-    },
-    {
-      image: homeHeroMaintenance,
-      label: "Execute On Site",
-      caption:
-        "Qualified technicians carry out maintenance support in controlled plant conditions.",
-      position: "object-[54%_50%]",
-    },
-    {
-      image: homeHeroLng,
-      label: "Oversee Critical Assets",
-      caption: "Project leads track LNG and industrial assets with practical site visibility.",
-      position: "object-[52%_50%]",
-    },
-    {
-      image: homeHeroProcurement,
-      label: "Inspect And Supply",
-      caption:
-        "Procurement and QA teams verify equipment, spares and documentation before delivery.",
-      position: "object-[54%_50%]",
-    },
-  ];
 
   return (
-    <section className="relative min-h-[92svh] overflow-hidden bg-navy" aria-label="Nexora hero">
+    <section className="relative min-h-[90svh] overflow-hidden bg-dark-navy" aria-label="Nexora">
       <div className="absolute inset-0">
-        {heroImages.map((item, index) => (
+        {heroSlides.map((slide, index) => (
           <div
-            key={item.label}
+            key={slide.label}
             className="hero-cinema-frame absolute inset-0"
             style={{ animationDelay: `${index * slideSeconds}s` }}
           >
             <img
-              src={item.image}
+              src={slide.image}
               alt=""
               aria-hidden="true"
-              className={`hero-cinema-image h-full w-full object-cover ${item.position}`}
               fetchPriority={index === 0 ? "high" : undefined}
               loading={index === 0 ? "eager" : "lazy"}
+              className={`hero-cinema-image h-full w-full object-cover ${slide.position}`}
               style={{ animationDelay: `${index * slideSeconds}s` }}
             />
           </div>
         ))}
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(2,18,34,0.86),rgba(2,18,34,0.56)_46%,rgba(2,18,34,0.18))]" />
-        <div className="absolute inset-0 bg-linear-to-b from-navy/14 via-transparent to-navy/30" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(2,17,31,0.96),rgba(4,28,50,0.82)_42%,rgba(4,28,50,0.28)_76%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,17,31,0.28),transparent_38%,rgba(2,17,31,0.66))]" />
       </div>
 
-      <div className="relative mx-auto flex min-h-[92svh] max-w-7xl items-center px-6 pb-16 pt-32 lg:px-8">
-        <div className="w-full max-w-[21.5rem] sm:max-w-[58rem]">
+      <div className="relative mx-auto flex min-h-[90svh] max-w-7xl items-center px-6 pb-16 pt-32 lg:px-8">
+        <div className="max-w-5xl">
           <motion.div
             initial="hidden"
             animate="show"
             custom={0}
             variants={heroItem}
-            className="mb-7 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-bold uppercase tracking-[0.18em] text-white/70"
+            className="mb-7 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-extrabold uppercase tracking-[0.2em] text-white/72"
           >
-            <span className="h-px w-10 bg-energy" />
-            <span>GCC Energy & Industrial Project Support</span>
+            <span className="h-px w-11 bg-energy" />
+            Qatar based. GCC ready. Site focused.
           </motion.div>
-
           <motion.h1
             initial="hidden"
             animate="show"
             custom={1}
             variants={heroItem}
-            className="max-w-4xl text-[34px] font-extrabold leading-[1.08] tracking-display text-white sm:text-4xl md:text-5xl lg:text-[58px]"
+            className="max-w-4xl text-[40px] font-extrabold leading-[1.04] tracking-display text-white sm:text-5xl md:text-6xl lg:text-[70px]"
           >
-            Technical Manpower & Industrial Solutions For Critical Energy Projects
+            Qualified technical manpower for Qatar and GCC energy projects.
           </motion.h1>
-
           <motion.p
             initial="hidden"
             animate="show"
             custom={2}
             variants={heroItem}
-            className="mt-7 max-w-3xl text-base leading-8 text-white/82 md:text-lg"
+            className="mt-7 max-w-3xl text-base font-medium leading-8 text-white/78 md:text-lg"
           >
-            Providing qualified engineers, technicians, supervisors and industrial personnel for
-            energy, LNG, petrochemical, infrastructure and industrial projects across Qatar and the
-            GCC.
+            Nexora supports LNG operators, EPC contractors, petrochemical facilities and industrial
+            project teams with qualified personnel, shutdown support, maintenance coordination and
+            procurement assistance across Qatar and the GCC.
           </motion.p>
-
-          <div className="mt-7 h-20 overflow-hidden text-white sm:h-[4.5rem]" aria-hidden="true">
-            <div className="relative h-full">
-              {heroImages.map((item, index) => (
-                <div
-                  key={item.label}
-                  className="hero-cinema-label absolute inset-0 block"
-                  style={{ animationDelay: `${index * slideSeconds}s` }}
-                >
-                  <span className="block text-xs font-bold uppercase tracking-[0.16em] text-energy">
-                    {item.label}
-                  </span>
-                  <span className="mt-2 block max-w-xl text-sm leading-6 text-white/72">
-                    {item.caption}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
           <motion.div
             initial="hidden"
             animate="show"
             custom={3}
             variants={heroItem}
-            className="mt-6 flex max-w-xl gap-2"
-            aria-hidden="true"
+            className="mt-9 flex flex-wrap gap-4"
           >
-            {heroImages.map((item, index) => (
-              <span key={item.label} className="h-px flex-1 overflow-hidden bg-white/22">
-                <span
-                  className="hero-cinema-progress block h-full origin-left bg-energy"
-                  style={{ animationDelay: `${index * slideSeconds}s` }}
-                />
-              </span>
-            ))}
+            <PrimaryButton to="/manpower">Request manpower support</PrimaryButton>
+            <SecondaryButton to="/industrial-services" dark>
+              View capabilities
+            </SecondaryButton>
           </motion.div>
-          <span className="sr-only">
-            Plan the work, brief the crew, execute on site, oversee critical assets, inspect and
-            supply
-          </span>
-
           <motion.div
             initial="hidden"
             animate="show"
             custom={4}
             variants={heroItem}
-            className="mt-9 flex flex-wrap gap-4"
+            className="mt-10 grid max-w-3xl gap-px overflow-hidden rounded-md border border-white/12 bg-white/12 sm:grid-cols-3"
           >
-            <PrimaryButton to="/manpower" dark>
-              Request Manpower
-            </PrimaryButton>
-            <SecondaryButton to="/contact" dark>
-              Request Proposal
-            </SecondaryButton>
+            {[
+              ["500+", "workforce pool"],
+              ["24/7", "coordination"],
+              ["6", "GCC markets"],
+            ].map(([value, label]) => (
+              <div key={label} className="bg-dark-navy/62 px-5 py-4">
+                <div className="font-display text-2xl font-extrabold text-energy">{value}</div>
+                <div className="mt-1 text-sm font-bold text-white/78">{label}</div>
+              </div>
+            ))}
           </motion.div>
         </div>
       </div>
@@ -306,230 +236,231 @@ function HeroSection() {
   );
 }
 
-function TrustSection() {
-  const supportCards = [
+function TrustMarkersSection() {
+  const markers = [
     {
-      icon: Factory,
-      title: "Energy Operators",
-      desc: "Site-ready manpower and support for upstream, downstream and utility operations.",
-      className: "md:col-span-2 lg:col-span-6",
-      variant: "feature",
-      tags: ["Site-ready manpower", "Utility operations", "Field supervision"],
-    },
-    {
-      icon: Flame,
-      title: "LNG Facilities",
-      desc: "Qualified personnel for controlled LNG environments, shutdowns and maintenance.",
-      className: "md:col-span-1 lg:col-span-3",
-      variant: "accent",
-    },
-    {
-      icon: Building2,
-      title: "Petrochemical Plants",
-      desc: "Technical teams for process facilities, plant upgrades and routine execution.",
-      className: "md:col-span-1 lg:col-span-3",
-      variant: "light",
+      icon: ShieldCheck,
+      label: "QHSE documentation",
+      text: "Personnel records, training, certificates and site requirements prepared before mobilisation.",
     },
     {
       icon: HardHat,
-      title: "EPC Contractors",
-      desc: "Flexible engineering, supervision and trades support for project delivery teams.",
-      className: "md:col-span-1 lg:col-span-4",
-      variant: "light",
+      label: "Shutdown manpower",
+      text: "Multi-discipline support for planned maintenance windows and controlled plant access.",
     },
     {
-      icon: ShieldCheck,
-      title: "OEM & Vendor Teams",
-      desc: "Documented site support for specialist vendor scopes and commissioning activity.",
-      className: "md:col-span-1 lg:col-span-4",
-      variant: "light",
+      icon: ClipboardCheck,
+      label: "EPC coordination",
+      text: "Clear communication across procurement, project controls, supervision and site teams.",
     },
     {
-      icon: MapPinned,
-      title: "Infrastructure Projects",
-      desc: "Practical manpower and coordination for industrial infrastructure programs.",
-      className: "md:col-span-2 lg:col-span-4",
-      variant: "accent",
+      icon: CalendarClock,
+      label: "GCC mobilisation",
+      text: "Doha-based coordination for Qatar, Saudi Arabia, UAE, Kuwait, Bahrain and Oman.",
     },
   ];
 
   return (
-    <section className="border-b border-border bg-white py-20 md:py-24">
+    <section className="border-b border-border bg-white py-14 md:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <Reveal className="mb-12 grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
-          <div>
-            <SectionLabel>Who We Support</SectionLabel>
-            <h2 className="max-w-3xl text-3xl font-extrabold leading-tight text-foreground md:text-5xl">
-              Trusted Across Energy, LNG & Industrial Projects
-            </h2>
-          </div>
-          <div className="lg:flex lg:justify-end">
-            <p className="max-w-2xl text-base leading-7 text-muted-foreground lg:max-w-xl">
-              Supporting operators, EPC contractors, industrial facilities and infrastructure
-              projects with qualified manpower and practical industrial services.
-            </p>
+        <Reveal className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {markers.map((item) => (
+            <div
+              key={item.label}
+              className="relative overflow-hidden rounded-lg border border-border bg-light-gray p-6 shadow-sm"
+            >
+              <span className="absolute inset-x-0 top-0 h-1 bg-energy" />
+              <div className="grid h-14 w-14 place-items-center rounded-md border border-primary/10 bg-white text-primary shadow-sm">
+                <item.icon className="h-7 w-7" />
+              </div>
+              <div className="mt-5 text-base font-extrabold uppercase tracking-[0.11em] text-primary">
+                {item.label}
+              </div>
+              <p className="mt-3 text-base font-medium leading-7 text-muted-foreground">
+                {item.text}
+              </p>
+            </div>
+          ))}
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function ClientConfidenceSection() {
+  const confidence = [
+    {
+      label: "Industries served",
+      value: "LNG, oil and gas, EPC, petrochemical, infrastructure and manufacturing.",
+    },
+    {
+      label: "Typical roles",
+      value: "Engineers, supervisors, QA/QC, HSE, technicians, welders, fitters and project staff.",
+    },
+    {
+      label: "Documents checked",
+      value: "Certificates, training records, medicals, project forms and site-specific HSE needs.",
+    },
+    {
+      label: "Project types",
+      value:
+        "Shutdowns, maintenance campaigns, brownfield works, EPC packages and procurement scopes.",
+    },
+  ];
+  const buyerOutputs = [
+    "A clarified role and discipline list",
+    "Mobilisation assumptions and timing",
+    "Required documentation checklist",
+    "Next-step response for manpower or service scope",
+  ];
+
+  return (
+    <section className="border-y border-border bg-light-gray py-20 md:py-24">
+      <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[0.78fr_0.52fr] lg:px-8">
+        <Reveal>
+          <SectionBadge>Client Confidence</SectionBadge>
+          <h2 className="max-w-4xl text-3xl font-extrabold leading-tight text-foreground md:text-5xl">
+            A procurement-ready capability statement, not a generic staffing pitch.
+          </h2>
+          <div className="mt-8 overflow-hidden rounded-lg border border-border bg-white">
+            {confidence.map((item) => (
+              <div
+                key={item.label}
+                className="grid gap-3 border-b border-border p-5 md:grid-cols-[12rem_1fr] md:p-6 last:border-b-0"
+              >
+                <div className="text-sm font-extrabold uppercase tracking-[0.14em] text-primary">
+                  {item.label}
+                </div>
+                <p className="text-base font-medium leading-7 text-muted-foreground">
+                  {item.value}
+                </p>
+              </div>
+            ))}
           </div>
         </Reveal>
-
-        <div className="grid auto-rows-fr gap-4 md:grid-cols-2 lg:grid-cols-12">
-          {supportCards.map((card, index) => (
-            <Reveal key={card.title} delay={index * 0.04} className={card.className}>
-              <div
-                className={
-                  card.variant === "feature"
-                    ? "group relative flex h-full min-h-57.5 flex-col justify-between overflow-hidden rounded-lg border border-primary/20 bg-navy p-7 shadow-elevated transition duration-300 hover:-translate-y-1"
-                    : card.variant === "accent"
-                      ? "group flex h-full min-h-52.5 flex-col justify-between rounded-lg border border-energy/25 bg-[linear-gradient(135deg,rgb(55_181_159/0.1),rgb(255_255_255/0.98)_58%)] p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-energy/45 hover:shadow-elevated"
-                      : "group flex h-full min-h-52.5 flex-col justify-between rounded-lg border border-border bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary/22 hover:shadow-elevated"
-                }
-              >
-                {card.variant === "feature" ? (
-                  <div className="absolute inset-y-0 right-0 w-1/2 bg-[linear-gradient(135deg,transparent,rgb(55_181_159/0.18))]" />
-                ) : null}
-
-                <div className="relative">
-                  <div
-                    className={
-                      card.variant === "feature"
-                        ? "grid h-12 w-12 place-items-center rounded-md border border-white/15 bg-white/10 text-energy"
-                        : "grid h-12 w-12 place-items-center rounded-md border border-primary/10 bg-primary/6 text-primary transition group-hover:border-energy/28 group-hover:bg-energy/12"
-                    }
-                  >
-                    <card.icon className="h-6 w-6" />
-                  </div>
-                  <h3
-                    className={
-                      card.variant === "feature"
-                        ? "mt-7 max-w-md text-2xl font-extrabold leading-tight text-white md:text-[28px]"
-                        : "mt-6 text-base font-extrabold text-foreground"
-                    }
-                  >
-                    {card.title}
-                  </h3>
-                  <p
-                    className={
-                      card.variant === "feature"
-                        ? "mt-4 max-w-lg text-sm leading-7 text-white/72"
-                        : "mt-3 text-sm leading-6 text-muted-foreground"
-                    }
-                  >
-                    {card.desc}
-                  </p>
+        <Reveal delay={0.08}>
+          <aside className="h-full rounded-lg border border-primary/10 bg-dark-navy p-7 text-white shadow-elevated">
+            <div className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-energy">
+              What clients receive
+            </div>
+            <h3 className="mt-5 text-3xl font-extrabold leading-tight">
+              A clearer requirement before anyone reaches site.
+            </h3>
+            <div className="mt-7 grid gap-4">
+              {buyerOutputs.map((item) => (
+                <div key={item} className="flex gap-3 text-base font-bold leading-7 text-white/78">
+                  <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-energy" />
+                  {item}
                 </div>
-
-                {card.tags ? (
-                  <div className="relative mt-8 flex flex-wrap gap-2">
-                    {card.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-md border border-white/14 bg-white/8 px-3 py-2 text-xs font-bold text-white/86"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                ) : null}
-              </div>
-            </Reveal>
-          ))}
-        </div>
+              ))}
+            </div>
+          </aside>
+        </Reveal>
       </div>
     </section>
   );
 }
 
-function AboutSection() {
-  return (
-    <section className="bg-background py-20 md:py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
-          <Reveal>
-            <SectionLabel>About Nexora</SectionLabel>
-            <h2 className="max-w-3xl text-3xl font-extrabold leading-tight text-foreground md:text-5xl">
-              A Qatar-based company focused on technical manpower and industrial project support.
-            </h2>
-            <div className="mt-6 max-w-2xl space-y-4 text-base leading-7 text-muted-foreground">
-              <p>
-                Nexora Energy Solutions supplies qualified technical personnel and practical
-                industrial services for energy, LNG, petrochemical, infrastructure and industrial
-                projects across Qatar and the GCC.
-              </p>
-              <p>
-                Our core work is manpower: engineers, technicians, supervisors, tradespeople and
-                site support staff with the documentation and compliance needed for controlled
-                industrial environments.
-              </p>
-              <p>
-                We are building the company around dependable response, clear communication and
-                disciplined mobilisation rather than inflated claims.
-              </p>
-            </div>
-            <div className="mt-8">
-              <SecondaryButton to="/about">Learn More About Nexora</SecondaryButton>
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.08}>
-            <div className="overflow-hidden rounded-lg border border-border bg-white shadow-elevated">
-              <img
-                src={aboutNexoraTeam}
-                alt="Technical personnel reviewing site documentation at an industrial facility"
-                loading="lazy"
-                className="h-110 w-full object-cover"
-              />
-            </div>
-          </Reveal>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function TechnicalManpowerSection() {
-  const points = [
-    "Engineers, technicians, supervisors, tradespeople and site support staff",
-    "Documentation, qualification checks and project-specific onboarding",
-    "Personnel packages for short-term shutdowns, maintenance and project execution",
-    "Qatar-based coordination with GCC deployment capability",
+function BuyerFitSection() {
+  const buyers = [
+    "Energy operators planning controlled maintenance windows",
+    "EPC contractors that need qualified site disciplines quickly",
+    "Procurement teams coordinating industrial materials and documentation",
+    "Project managers balancing headcount, certifications and schedule pressure",
   ];
 
   return (
-    <section className="bg-navy py-20 md:py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-[1.12fr_0.88fr] lg:items-center">
-          <Reveal>
-            <div className="overflow-hidden rounded-lg border border-white/10">
-              <img
-                src={technicalManpowerTeam}
-                alt="Technical manpower team reviewing project drawings at an industrial facility"
-                loading="lazy"
-                className="w-full object-cover object-center"
-              />
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.08}>
-            <SectionLabel dark>Primary Service</SectionLabel>
-            <h2 className="max-w-2xl text-3xl font-extrabold leading-tight text-white md:text-5xl">
-              Technical Manpower Solutions
+    <section className="bg-white py-20 md:py-24">
+      <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[0.82fr_0.78fr] lg:items-center lg:px-8">
+        <Reveal>
+          <div className="overflow-hidden rounded-lg border border-border bg-dark-navy shadow-elevated">
+            <img
+              src={industrialImages.briefing}
+              alt="Industrial project team receiving a field briefing"
+              loading="lazy"
+              className="h-130 w-full object-cover"
+            />
+          </div>
+        </Reveal>
+        <Reveal delay={0.08}>
+          <div>
+            <SectionBadge>Who Nexora Supports</SectionBadge>
+            <h2 className="max-w-3xl text-3xl font-extrabold leading-tight text-foreground md:text-5xl">
+              Built for buyers who cannot afford vague manpower promises.
             </h2>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-white/70">
-              We provide qualified manpower for the project realities of energy and industrial work:
-              urgent mobilisation, safety-controlled sites, discipline matching, documentation and
-              clear communication with procurement and project teams.
+            <p className="mt-6 max-w-2xl text-base font-medium leading-8 text-muted-foreground">
+              Nexora is positioned for project teams that need clear scope definition, site-ready
+              personnel, document control and fast coordination across controlled industrial
+              environments.
             </p>
-            <div className="mt-8 grid gap-4">
-              {points.map((point) => (
-                <div key={point} className="flex gap-3 text-sm leading-6 text-white/72">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-energy" />
-                  <span>{point}</span>
+            <div className="mt-8 grid gap-3">
+              {buyers.map((buyer) => (
+                <div
+                  key={buyer}
+                  className="flex gap-3 border-b border-border pb-4 text-base font-bold leading-7 text-primary last:border-b-0"
+                >
+                  <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-energy" />
+                  {buyer}
                 </div>
               ))}
             </div>
             <div className="mt-9 flex flex-wrap gap-4">
-              <PrimaryButton to="/manpower" dark>
-                Request Manpower
-              </PrimaryButton>
+              <SecondaryButton to="/industries">View sectors</SecondaryButton>
+              <SecondaryButton to="/contact">Discuss requirement</SecondaryButton>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function ServiceFocusSection() {
+  const points = [
+    "Engineers, supervisors, technicians and skilled trades",
+    "Project, shutdown, maintenance and engineering support roles",
+    "Documentation, certification and mobilisation coordination",
+    "Personnel planning for Qatar and GCC industrial environments",
+  ];
+
+  return (
+    <section className="bg-dark-navy py-20 md:py-24">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <Reveal>
+            <div className="overflow-hidden rounded-lg border border-white/10">
+              <img
+                src={industrialImages.manpower}
+                alt="Engineers reviewing plans at an active industrial facility"
+                loading="lazy"
+                className="h-140 w-full object-cover"
+              />
+            </div>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <div className="mb-5 flex items-center gap-3">
+              <span className="h-px w-10 bg-energy" />
+              <span className="text-[11px] font-extrabold uppercase tracking-[0.24em] text-energy">
+                Technical Manpower
+              </span>
+            </div>
+            <h2 className="max-w-2xl text-3xl font-extrabold leading-tight text-white md:text-5xl">
+              Workforce support planned around industrial project realities.
+            </h2>
+            <p className="mt-6 text-base font-medium leading-8 text-white/70">
+              Nexora helps project teams secure the right disciplines for the right phase, from
+              mobilisation and permit readiness to execution support and close-out.
+            </p>
+            <div className="mt-8 grid gap-4">
+              {points.map((point) => (
+                <div key={point} className="flex gap-3 text-sm font-bold leading-6 text-white/76">
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-energy" />
+                  {point}
+                </div>
+              ))}
+            </div>
+            <div className="mt-9 flex flex-wrap gap-4">
+              <PrimaryButton to="/manpower">Request Manpower</PrimaryButton>
               <SecondaryButton to="/manpower" dark>
                 View Disciplines
               </SecondaryButton>
@@ -541,99 +472,114 @@ function TechnicalManpowerSection() {
   );
 }
 
-const workforceGroups = [
-  {
-    icon: Gauge,
-    title: "Engineering",
-    label: "Engineering Roles",
-    roles: [
-      "Mechanical Engineers",
-      "Electrical Engineers",
-      "Instrumentation Engineers",
-      "Civil Engineers",
-      "Project Engineers",
-    ],
-  },
-  {
-    icon: UsersRound,
-    title: "Management & Site Control",
-    label: "Site Control",
-    roles: ["Project Managers", "Site Supervisors", "QA/QC Inspectors", "HSE Officers"],
-  },
-  {
-    icon: Wrench,
-    title: "Skilled Trades",
-    label: "Trade Crews",
-    roles: ["Welders", "Fabricators", "Pipe Fitters", "Riggers", "Scaffolders"],
-  },
-  {
-    icon: ShieldCheck,
-    title: "Operations & Support",
-    label: "Site Support",
-    roles: ["Operators", "Helpers", "Administrative Staff"],
-  },
-];
+function ProjectScenarioSection() {
+  const scenario = [
+    ["Scope", "Controlled plant shutdown support with multi-discipline technical manpower."],
+    ["Disciplines", "Supervisors, technicians, HSE support, QA/QC and document coordination."],
+    ["Mobilisation", "Role matching, certificate review, site paperwork and deployment timing."],
+    ["Close-out", "Project communication, replacement coordination and documentation follow-up."],
+  ];
 
-function WorkforceCategoriesSection() {
   return (
-    <section className="border-b border-border bg-background py-20 md:py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mb-12 grid gap-10 lg:grid-cols-[0.95fr_0.75fr] lg:items-end">
-          <Reveal className="max-w-3xl">
-            <SectionLabel>Workforce Categories</SectionLabel>
-            <h2 className="text-3xl font-extrabold leading-tight text-foreground md:text-5xl">
-              Qualified workforce across every site function.
-            </h2>
-            <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
-              Engineers, supervisors, trades and support staff matched to project scope, site
-              conditions and mobilisation timelines.
-            </p>
-            <div className="mt-7">
-              <SecondaryButton to="/manpower">View Manpower Solutions</SecondaryButton>
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.08}>
-            <div className="relative overflow-hidden rounded-lg border border-border bg-white shadow-elevated">
-              <img
-                src={technicalManpowerTeam}
-                alt="Qualified technical manpower team preparing for industrial site work"
-                loading="lazy"
-                className="h-72.5 w-full object-cover object-center"
-              />
-              <div className="absolute inset-0 bg-linear-to-t from-navy/78 via-navy/8 to-transparent" />
-              <div className="absolute inset-x-5 bottom-5">
-                <div className="max-w-sm text-sm font-bold leading-6 text-white">
-                  Crew planning, documentation and site-readiness support for controlled industrial
-                  environments.
+    <section className="relative overflow-hidden bg-dark-navy py-20 md:py-24">
+      <img
+        src={industrialImages.maintenance}
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        className="absolute inset-0 h-full w-full object-cover opacity-30"
+      />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(2,17,31,0.96),rgba(2,17,31,0.78)_50%,rgba(2,17,31,0.92))]" />
+      <div className="relative mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[0.82fr_0.78fr] lg:items-center lg:px-8">
+        <Reveal>
+          <div className="mb-5 flex items-center gap-3">
+            <span className="h-px w-10 bg-energy" />
+            <span className="text-[11px] font-extrabold uppercase tracking-[0.24em] text-energy">
+              Project Scenario
+            </span>
+          </div>
+          <h2 className="max-w-3xl text-3xl font-extrabold leading-tight text-white md:text-5xl">
+            Shutdown manpower for a controlled plant maintenance window.
+          </h2>
+          <p className="mt-6 max-w-2xl text-base font-medium leading-8 text-white/72">
+            A realistic client request is rarely just a headcount. Nexora frames the scope around
+            disciplines, documents, site conditions and timing so procurement and project teams can
+            move without ambiguity.
+          </p>
+          <div className="mt-9 flex flex-wrap gap-4">
+            <PrimaryButton to="/manpower">Send a shutdown requirement</PrimaryButton>
+            <SecondaryButton to="/industrial-services" dark>
+              View service support
+            </SecondaryButton>
+          </div>
+        </Reveal>
+        <Reveal delay={0.08}>
+          <div className="overflow-hidden rounded-lg border border-white/12 bg-white/[0.07] shadow-elevated backdrop-blur">
+            {scenario.map(([label, value]) => (
+              <div
+                key={label}
+                className="grid gap-3 border-b border-white/10 p-5 md:grid-cols-[8rem_1fr] last:border-b-0"
+              >
+                <div className="text-sm font-extrabold uppercase tracking-[0.16em] text-energy">
+                  {label}
                 </div>
+                <p className="text-base font-medium leading-7 text-white/78">{value}</p>
               </div>
-            </div>
-          </Reveal>
-        </div>
+            ))}
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {workforceGroups.map((group, index) => (
-            <Reveal key={group.title} delay={index * 0.04}>
-              <div className="group flex h-full min-h-67.5 flex-col rounded-lg border border-border bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-energy/35 hover:shadow-elevated">
-                <div className="flex items-start justify-between gap-5">
-                  <div className="grid h-12 w-12 place-items-center rounded-md border border-primary/10 bg-primary/6 text-primary transition group-hover:border-energy/30 group-hover:bg-energy/12">
-                    <group.icon className="h-6 w-6" />
+function CapabilityMatrixSection() {
+  const capabilityRows = primaryServices.map((service, index) => ({
+    ...service,
+    stage: ["Manpower", "Shutdown", "Maintenance", "Procurement", "Project", "Engineering"][index],
+  }));
+
+  return (
+    <section className="bg-white py-20 md:py-24">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <Reveal className="mb-12 grid gap-6 lg:grid-cols-[0.78fr_0.52fr] lg:items-end">
+          <div>
+            <SectionBadge>Industrial Services</SectionBadge>
+            <h2 className="max-w-4xl text-3xl font-extrabold leading-tight text-foreground md:text-5xl">
+              One coordination model for manpower, maintenance, engineering and procurement.
+            </h2>
+          </div>
+          <p className="max-w-xl text-base font-medium leading-7 text-muted-foreground">
+            The offer is intentionally practical: define the scope, match the discipline, prepare
+            documents, coordinate mobilisation and keep the project team informed.
+          </p>
+        </Reveal>
+        <div className="overflow-hidden rounded-lg border border-border bg-light-gray">
+          {capabilityRows.map((service, index) => (
+            <Reveal key={service.title} delay={index * 0.04}>
+              <a
+                href={`/services/${service.slug}`}
+                className="group grid gap-5 border-b border-border bg-white p-5 transition hover:bg-light-gray md:grid-cols-[9rem_1fr_auto] md:items-center md:p-6 last:border-b-0"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="grid h-11 w-11 place-items-center rounded-md border border-primary/10 bg-primary/5 text-primary">
+                    <service.icon className="h-5 w-5" />
                   </div>
-                  <span className="pt-1 text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground/70">
-                    {group.label}
+                  <span className="text-sm font-extrabold uppercase tracking-[0.12em] text-muted-foreground">
+                    {service.stage}
                   </span>
                 </div>
-                <h3 className="mt-6 text-base font-extrabold text-foreground">{group.title}</h3>
-                <div className="mt-5 space-y-3">
-                  {group.roles.map((role) => (
-                    <div key={role} className="flex items-start gap-3 text-sm text-foreground/75">
-                      <span className="mt-2 h-px w-4 shrink-0 bg-energy" />
-                      <span>{role}</span>
-                    </div>
-                  ))}
+                <div>
+                  <h3 className="text-xl font-extrabold text-foreground">{service.title}</h3>
+                  <p className="mt-2 text-base font-medium leading-7 text-muted-foreground">
+                    {service.summary}
+                  </p>
                 </div>
-              </div>
+                <span className="inline-flex items-center gap-2 text-sm font-extrabold text-primary group-hover:text-energy">
+                  View
+                  <ArrowRight className="h-4 w-4" />
+                </span>
+              </a>
             </Reveal>
           ))}
         </div>
@@ -642,494 +588,366 @@ function WorkforceCategoriesSection() {
   );
 }
 
-const industrialServices = [
-  {
-    icon: Wrench,
-    title: "Shutdown Support",
-    label: "Planned outages",
-    desc: "Manpower and site crews for planned shutdown windows, urgent work packs and close-out support.",
-  },
-  {
-    icon: Gauge,
-    title: "Turnaround Support",
-    label: "Multi-discipline crews",
-    desc: "Multi-discipline labour coordination for refinery, LNG and petrochemical turnaround activity.",
-  },
-  {
-    icon: ClipboardCheck,
-    title: "Maintenance Support",
-    label: "Asset uptime",
-    desc: "Personnel and practical support for preventive, corrective and routine plant maintenance work.",
-  },
-  {
-    icon: HardHat,
-    title: "Project Support",
-    label: "Execution teams",
-    desc: "Site personnel for greenfield, brownfield and infrastructure project execution.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Engineering Support",
-    label: "Technical control",
-    desc: "Discipline engineers, inspectors and documentation support for controlled project environments.",
-  },
-  {
-    icon: Truck,
-    title: "Procurement Support",
-    label: "Material readiness",
-    desc: "Sourcing and supply coordination for documented industrial materials and project requirements.",
-  },
-];
-
-const serviceCapabilities = [
-  "Planning Support",
-  "Site Coordination",
-  "Technical Personnel",
-  "Procurement Assistance",
-];
-
-function IndustrialServicesSection() {
+function IndustriesGridSection() {
   return (
-    <section className="bg-surface py-20 md:py-24">
+    <section className="bg-light-gray py-20 md:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
-          <Reveal>
-            <SectionLabel>Industrial Services</SectionLabel>
-            <h2 className="text-3xl font-extrabold leading-tight text-foreground md:text-5xl">
-              Industrial support for critical plant work.
-            </h2>
-            <p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground">
-              Nexora supports shutdowns, turnarounds, maintenance and project execution with
-              qualified teams, practical coordination and site-ready industrial services.
-            </p>
-            <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-white shadow-elevated">
-              <div className="relative">
+        <Reveal className="mb-12 max-w-4xl">
+          <SectionBadge>Industries We Serve</SectionBadge>
+          <h2 className="text-3xl font-extrabold leading-tight text-foreground md:text-5xl">
+            Sector-specific support for controlled industrial environments.
+          </h2>
+        </Reveal>
+        <div className="grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {industryCards.map((industry, index) => (
+            <Reveal key={industry.title} delay={index * 0.04}>
+              <a
+                href={`/industries/${industry.slug}`}
+                className="group relative block h-full min-h-77.5 overflow-hidden rounded-lg border border-white bg-dark-navy shadow-sm"
+              >
                 <img
-                  src={industrialServicesValveTeam}
-                  alt="Nexora technicians supporting industrial plant maintenance"
+                  src={industry.image}
+                  alt={`${industry.title} services`}
                   loading="lazy"
-                  className="h-97.5 w-full object-cover object-center"
+                  className="absolute inset-0 h-full w-full object-cover opacity-82 transition duration-700 group-hover:scale-[1.04]"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-navy/82 via-navy/10 to-transparent" />
-                <div className="absolute inset-x-5 bottom-5">
-                  <p className="max-w-sm text-sm font-bold leading-6 text-white">
-                    Field crews, supervisors and technical teams aligned around safe, controlled
-                    execution.
+                <div className="absolute inset-0 bg-linear-to-t from-dark-navy via-dark-navy/42 to-transparent" />
+                <div className="absolute inset-x-6 bottom-6">
+                  <h3 className="text-2xl font-extrabold text-white">{industry.title}</h3>
+                  <p className="mt-3 text-sm font-medium leading-6 text-white/76">
+                    {industry.summary}
                   </p>
                 </div>
-              </div>
-            </div>
-          </Reveal>
-
-          <div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {industrialServices.map((service, index) => (
-                <Reveal key={service.title} delay={index * 0.04}>
-                  <Link
-                    to="/industrial-services"
-                    className="group flex h-full min-h-52.5 flex-col rounded-2xl border border-border bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-energy/45 hover:shadow-elevated"
-                  >
-                    <div className="flex items-start justify-between gap-5">
-                      <div className="grid h-11 w-11 place-items-center rounded-lg border border-primary/10 bg-primary/6 text-primary transition group-hover:border-energy/35 group-hover:bg-energy/12">
-                        <service.icon className="h-5.5 w-5.5" />
-                      </div>
-                      <span className="max-w-36 pt-1 text-right text-[11px] font-bold uppercase tracking-[0.13em] text-muted-foreground/70">
-                        {service.label}
-                      </span>
-                    </div>
-                    <h3 className="mt-5 text-base font-extrabold text-foreground">
-                      {service.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-6 text-muted-foreground">{service.desc}</p>
-                    <span className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-bold text-primary transition group-hover:text-energy">
-                      Learn More
-                      <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
-                    </span>
-                  </Link>
-                </Reveal>
-              ))}
-            </div>
-
-            <Reveal delay={0.2}>
-              <div className="mt-5 rounded-2xl border border-primary/10 bg-white p-4 shadow-sm">
-                <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-                  {serviceCapabilities.map((capability) => (
-                    <div
-                      key={capability}
-                      className="flex items-center gap-3 rounded-lg bg-surface px-4 py-3 text-sm font-bold text-foreground"
-                    >
-                      <CheckCircle2 className="h-4 w-4 shrink-0 text-energy" />
-                      <span>{capability}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              </a>
             </Reveal>
-
-            <Reveal delay={0.24}>
-              <div className="mt-7">
-                <SecondaryButton to="/industrial-services">View All Service Lines</SecondaryButton>
-              </div>
-            </Reveal>
-          </div>
+          ))}
         </div>
       </div>
     </section>
   );
 }
 
-function ProductsSection() {
-  const procurementCards = [
+function GccCoverageSection() {
+  const coverageNotes = [
     {
-      icon: Factory,
-      title: "Industrial Materials",
-      desc: "Valves, piping items, mechanical spares, consumables and site support supplies.",
+      label: "Single coordination base",
+      text: "Qatar-led communication for manpower, services and procurement follow-up.",
     },
     {
-      icon: Zap,
-      title: "Electrical & Instrumentation",
-      desc: "Field instruments, electrical products and documented technical items.",
+      label: "Regional deployment planning",
+      text: "Support for documentation, timing and mobilisation across GCC project locations.",
     },
     {
-      icon: ClipboardCheck,
-      title: "Vendor & Project Coordination",
-      desc: "Supplier coordination, documentation follow-up and project procurement support.",
+      label: "Industrial buyer alignment",
+      text: "Built for operators, EPC contractors and controlled facility environments.",
     },
   ];
-  const procurementFlow = ["Source", "Verify", "Coordinate", "Deliver"];
+  const countries = ["Qatar", "Saudi Arabia", "UAE", "Kuwait", "Bahrain", "Oman"];
+  const indicators = [
+    "24/7 Project Coordination",
+    "Technical Manpower Deployment",
+    "Industrial Services Support",
+  ];
 
   return (
-    <section className="border-y border-border bg-white py-20 md:py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
-          <Reveal>
-            <SectionLabel>Products & Procurement</SectionLabel>
-            <h2 className="text-3xl font-extrabold leading-tight text-foreground md:text-4xl">
-              Procurement support for industrial project requirements.
-            </h2>
-            <p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground">
-              Nexora helps project teams source, coordinate and document industrial materials,
-              valves, instrumentation, electrical items and site support supplies.
-            </p>
-            <div className="mt-8">
-              <SecondaryButton to="/products">View Procurement Support</SecondaryButton>
-            </div>
-          </Reveal>
+    <section className="relative overflow-hidden border-y border-border bg-[#f4f6f7] py-20 md:py-24">
+      <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:px-8">
+        <Reveal>
+          <div className="mb-5 flex items-center gap-3">
+            <span className="h-px w-10 bg-primary" />
+            <span className="text-[11px] font-extrabold uppercase tracking-[0.24em] text-primary">
+              REGIONAL REACH
+            </span>
+          </div>
+          <h2 className="max-w-xl text-3xl font-extrabold leading-tight text-foreground md:text-5xl">
+            Qatar Headquarters.
+            <br />
+            GCC Deployment.
+          </h2>
+          <p className="mt-6 max-w-xl text-base font-medium leading-8 text-muted-foreground">
+            From Doha, Nexora coordinates technical manpower, industrial services, procurement
+            support and project execution across Qatar, Saudi Arabia, UAE, Kuwait, Bahrain and Oman.
+          </p>
+          <div className="mt-9 grid gap-3">
+            {coverageNotes.map((item) => (
+              <div
+                key={item.label}
+                className="rounded-lg border border-border bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-elevated"
+              >
+                <div className="text-base font-extrabold text-primary">{item.label}</div>
+                <p className="mt-2 text-sm font-medium leading-6 text-muted-foreground">
+                  {item.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Reveal>
 
-          <Reveal delay={0.08}>
-            <div className="grid gap-4 lg:grid-cols-[0.95fr_1.05fr]">
-              <div className="overflow-hidden rounded-2xl border border-border bg-surface shadow-sm">
-                <div className="relative h-full min-h-82.5">
-                  <img
-                    src={homeHeroProcurement}
-                    alt="Industrial procurement team inspecting valves and technical equipment"
-                    loading="lazy"
-                    className="h-full w-full object-cover object-center"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-navy/80 via-navy/12 to-transparent" />
-                  <div className="absolute inset-x-5 bottom-5">
-                    <p className="max-w-xs text-sm font-bold leading-6 text-white">
-                      Product sourcing with documentation control for industrial and EPC
-                      requirements.
+        <Reveal delay={0.08}>
+          <div className="overflow-hidden rounded-lg border border-white bg-dark-navy shadow-elevated">
+            <div className="relative h-62 overflow-hidden border-b border-white/10">
+              <img
+                src={industrialImages.execution}
+                alt="Senior engineers and project coordinators reviewing engineering drawings at an industrial facility"
+                loading="lazy"
+                className="h-full w-full object-cover opacity-70"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-dark-navy via-dark-navy/28 to-transparent" />
+              <div className="absolute bottom-5 left-5 right-5">
+                <div className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-energy">
+                  Regional operations
+                </div>
+                <h3 className="mt-2 text-3xl font-extrabold text-white">Qatar HQ to GCC sites</h3>
+              </div>
+            </div>
+            <div className="grid gap-6 p-6">
+              <div className="grid gap-2 sm:grid-cols-2">
+                {countries.map((country) => (
+                  <div
+                    key={country}
+                    className="flex items-center gap-2 rounded-md border border-white/10 bg-white/7 px-3 py-2 text-sm font-bold text-white/84"
+                  >
+                    <span className="h-2 w-2 rounded-full bg-energy" />
+                    {country}
+                  </div>
+                ))}
+              </div>
+              <div className="grid gap-3 border-t border-white/10 pt-5 sm:grid-cols-3">
+                {indicators.map((indicator) => (
+                  <div key={indicator} className="text-sm font-extrabold leading-6 text-white/76">
+                    {indicator}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function WhyNexoraSection() {
+  const process = [
+    {
+      icon: ListChecks,
+      title: "Requirement intake",
+      text: "Clarify work location, disciplines, certifications, duration, rotation, reporting line and mobilisation date.",
+    },
+    {
+      icon: UsersRound,
+      title: "Role and team matching",
+      text: "Align the request with available engineers, supervisors, technicians, trades or service support teams.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Documentation readiness",
+      text: "Check training records, project requirements, HSE expectations and mobilisation documentation before site.",
+    },
+    {
+      icon: CalendarClock,
+      title: "Mobilisation tracking",
+      text: "Coordinate the practical next steps with procurement, site contacts and project managers through deployment.",
+    },
+  ];
+
+  return (
+    <section className="bg-white py-20 md:py-24">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <Reveal className="mb-12 grid gap-6 lg:grid-cols-[0.8fr_0.55fr] lg:items-end">
+          <div>
+            <SectionBadge>Why Nexora</SectionBadge>
+            <h2 className="max-w-4xl text-3xl font-extrabold leading-tight text-foreground md:text-5xl">
+              Credibility comes from operational details, not decoration.
+            </h2>
+          </div>
+          <p className="max-w-xl text-base font-medium leading-7 text-muted-foreground">
+            Project teams choose Nexora because they need more than a name on a roster. They need
+            personnel who are site-ready, compliant and supported by clear communication from
+            request to deployment.
+          </p>
+        </Reveal>
+        <div className="grid gap-10 lg:grid-cols-[0.88fr_0.52fr]">
+          <div className="grid gap-0 overflow-hidden rounded-lg border border-border">
+            {process.map((step, index) => (
+              <Reveal key={step.title} delay={index * 0.04}>
+                <div className="grid gap-5 border-b border-border bg-white p-6 sm:grid-cols-[4rem_1fr] last:border-b-0">
+                  <div className="flex items-start gap-3">
+                    <span className="font-display text-sm font-extrabold text-muted-foreground">
+                      0{index + 1}
+                    </span>
+                    <div className="grid h-11 w-11 place-items-center rounded-md border border-primary/10 bg-primary/5 text-primary">
+                      <step.icon className="h-5 w-5" />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-extrabold text-foreground">{step.title}</h3>
+                    <p className="mt-2 text-base font-medium leading-7 text-muted-foreground">
+                      {step.text}
                     </p>
                   </div>
                 </div>
-              </div>
-
-              <div className="grid gap-4">
-                {procurementCards.map((card, index) => (
-                  <div
-                    key={card.title}
-                    className="group rounded-2xl border border-border bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-energy/45 hover:shadow-elevated"
-                  >
-                    <div className="flex items-start gap-4">
-                      <div className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-primary/10 bg-primary/6 text-primary transition group-hover:border-energy/35 group-hover:bg-energy/12">
-                        <card.icon className="h-5 w-5" />
-                      </div>
-                      <div>
-                        <div className="text-[11px] font-bold uppercase tracking-[0.14em] text-muted-foreground/70">
-                          0{index + 1}
-                        </div>
-                        <h3 className="mt-1 text-base font-extrabold text-foreground">
-                          {card.title}
-                        </h3>
-                        <p className="mt-2 text-sm leading-6 text-muted-foreground">{card.desc}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="mt-4 rounded-2xl border border-primary/10 bg-surface p-4">
-              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                {procurementFlow.map((step, index) => (
-                  <div
-                    key={step}
-                    className="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-sm font-bold text-foreground shadow-sm"
-                  >
-                    <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-primary text-xs text-white">
-                      {index + 1}
-                    </span>
-                    <span>{step}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-const industries = [
-  {
-    icon: Factory,
-    title: "Oil & Gas",
-    summary: "Field-ready manpower and services for upstream and downstream assets.",
-    image: pRefinery,
-    className: "lg:col-span-2",
-  },
-  {
-    icon: Flame,
-    title: "LNG",
-    summary: "Support for process facilities, terminals and critical maintenance windows.",
-    image: homeHeroLng,
-  },
-  {
-    icon: Building2,
-    title: "Petrochemical",
-    summary: "Specialist teams for plant operations, shutdowns and brownfield scopes.",
-    image: pPlant,
-  },
-  {
-    icon: Zap,
-    title: "Power & Utilities",
-    summary: "Industrial support for generation, transmission and utility corridors.",
-    image: pPipeline,
-  },
-  {
-    icon: MapPinned,
-    title: "Infrastructure",
-    summary: "Project manpower for pipeline, civil and industrial infrastructure sites.",
-    image: homeHeroPlanning,
-  },
-  {
-    icon: Ship,
-    title: "Marine",
-    summary: "Qualified site crews for port, marine and offshore-adjacent operations.",
-    image: heroManpower,
-  },
-  {
-    icon: Landmark,
-    title: "Government",
-    summary: "Compliance-led support for public and strategic industrial programs.",
-    image: pMaint,
-  },
-  {
-    icon: Factory,
-    title: "Manufacturing",
-    summary: "Technical resources for production facilities and plant maintenance.",
-    image: industrialServicesValveTeam,
-  },
-];
-
-function IndustriesSection() {
-  return (
-    <section className="bg-background py-20 md:py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <Reveal className="mb-12 grid gap-6 lg:grid-cols-[minmax(0,0.78fr)_minmax(280px,0.22fr)] lg:items-end">
-          <div className="max-w-4xl">
-            <SectionLabel>Industries Served</SectionLabel>
-            <h2 className="text-3xl font-extrabold leading-tight text-foreground md:text-5xl lg:text-[3.35rem]">
-              Built for energy, infrastructure and industrial operations.
-            </h2>
-          </div>
-          <div className="flex flex-col gap-4 lg:items-start">
-            <p className="max-w-sm text-sm font-medium leading-6 text-muted-foreground">
-              Sector-specific teams for controlled sites, urgent mobilisation and long-cycle
-              industrial programs across Qatar and the GCC.
-            </p>
-            <SecondaryButton to="/industries">View Industries</SecondaryButton>
-          </div>
-        </Reveal>
-
-        <div className="grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {industries.map((industry, index) => {
-            const Icon = industry.icon;
-            return (
-              <Reveal
-                key={industry.title}
-                delay={index * 0.03}
-                className={industry.className ?? ""}
-              >
-                <Link
-                  to="/industries"
-                  className="group block h-full overflow-hidden rounded-lg border border-white/70 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-elevated"
-                >
-                  <div className="relative min-h-[220px] overflow-hidden sm:aspect-4/3 lg:h-full">
-                    <img
-                      src={industry.image}
-                      alt={`${industry.title} project environment`}
-                      loading="lazy"
-                      className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.04]"
-                    />
-                    <div className="absolute inset-0 bg-linear-to-t from-navy/92 via-navy/28 to-transparent" />
-                    <div className="absolute inset-0 bg-linear-to-br from-primary/24 via-transparent to-energy/12 opacity-70 transition group-hover:opacity-95" />
-                    <div className="absolute left-4 top-4 grid h-9 w-9 place-items-center rounded-md border border-white/22 bg-white/10 text-white shadow-sm backdrop-blur-sm">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <div className="absolute inset-x-4 bottom-4">
-                      <div className="text-lg font-extrabold text-white">{industry.title}</div>
-                      <p className="mt-2 line-clamp-2 max-w-md text-sm font-medium leading-5 text-white/78">
-                        {industry.summary}
-                      </p>
-                    </div>
-                  </div>
-                </Link>
               </Reveal>
-            );
-          })}
+            ))}
+          </div>
+          <Reveal delay={0.08}>
+            <aside className="h-full rounded-lg border border-border bg-light-gray p-6">
+              <h3 className="text-2xl font-extrabold text-foreground">What gets checked</h3>
+              <div className="mt-6 grid gap-4">
+                {trustCards.map((card) => (
+                  <div key={card.title} className="border-b border-border pb-4 last:border-b-0">
+                    <div className="text-base font-extrabold text-primary">{card.title}</div>
+                    <p className="mt-1 text-sm font-medium leading-6 text-muted-foreground">
+                      {card.text}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </aside>
+          </Reveal>
         </div>
       </div>
     </section>
   );
 }
 
-const whyNexora = [
-  {
-    icon: UsersRound,
-    title: "Qualified Workforce",
-    desc: "Screened engineers, supervisors, technicians and site personnel matched to project requirements.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Compliance Ready",
-    desc: "Support for HSE, certification, permits, client documentation and controlled site requirements.",
-  },
-  {
-    icon: Truck,
-    title: "Rapid Mobilisation",
-    desc: "Responsive coordination for shutdowns, maintenance windows and urgent project starts.",
-  },
-  {
-    icon: MapPinned,
-    title: "GCC Project Support",
-    desc: "Qatar-based coordination with capability to support industrial requirements across the GCC.",
-  },
-];
+function InsightsSection() {
+  const insights = [
+    {
+      icon: HardHat,
+      category: "Technical Manpower",
+      title: "How EPC teams plan manpower for shutdown and maintenance windows",
+    },
+    {
+      icon: ShieldCheck,
+      category: "LNG",
+      title: "Documentation readiness for controlled LNG facility mobilisation",
+    },
+    {
+      icon: FileCheck2,
+      category: "Procurement",
+      title: "What project buyers need from industrial materials suppliers",
+    },
+  ];
 
-const trustSignals = ["Energy & LNG", "Shutdown Support", "HSE Documentation", "GCC Coverage"];
-
-function WhyNexoraSection() {
   return (
-    <section className="relative overflow-hidden border-y border-white/10 bg-navy py-20 md:py-24">
-      <div className="absolute inset-y-0 right-0 hidden w-[44%] lg:block">
-        <img
-          src={homeHeroLng}
-          alt=""
-          aria-hidden="true"
-          loading="lazy"
-          className="h-full w-full object-cover opacity-40"
-        />
-        <div className="absolute inset-0 bg-linear-to-r from-navy via-navy/72 to-navy/10" />
-      </div>
-      <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(15,180,170,0.08),transparent_38%)]" />
-
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mb-12 grid gap-8 lg:grid-cols-[0.95fr_0.65fr] lg:items-end">
-          <Reveal className="max-w-3xl">
-            <SectionLabel dark>Why Nexora</SectionLabel>
-            <h2 className="text-3xl font-extrabold leading-tight text-white md:text-5xl">
-              Why project teams choose Nexora.
+    <section className="border-y border-border bg-light-gray py-20 md:py-24">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <Reveal className="mb-12 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+          <div>
+            <SectionBadge>Insights</SectionBadge>
+            <h2 className="max-w-3xl text-3xl font-extrabold leading-tight text-foreground md:text-5xl">
+              Practical notes for energy, manpower and industrial project teams.
             </h2>
-            <p className="mt-5 max-w-2xl text-base leading-7 text-white/70">
-              Because industrial projects need more than people on site. They need qualified
-              personnel, documentation control, fast mobilisation and practical coordination.
-            </p>
-          </Reveal>
-
-          <Reveal delay={0.08}>
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-elevated backdrop-blur">
-              <div className="text-xs font-bold uppercase tracking-[0.16em] text-energy">
-                Project Reliability
-              </div>
-              <p className="mt-3 text-sm leading-6 text-white/72">
-                Built for controlled industrial environments where readiness, documentation and site
-                coordination directly affect delivery.
-              </p>
-            </div>
-          </Reveal>
-        </div>
-
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {whyNexora.map((card, index) => (
-            <Reveal key={card.title} delay={index * 0.04}>
-              <div className="group h-full rounded-2xl border border-white/10 bg-white/5 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-energy/45 hover:bg-white/8 hover:shadow-elevated">
-                <div className="grid h-12 w-12 place-items-center rounded-lg border border-white/10 bg-white/8 text-energy transition group-hover:border-energy/35 group-hover:bg-energy/12">
-                  <card.icon className="h-6 w-6" />
+          </div>
+          <Link
+            to="/news"
+            className="inline-flex min-h-12 items-center gap-2 rounded-md border border-primary/20 px-6 py-3 text-sm font-extrabold text-primary transition hover:bg-primary/5"
+          >
+            View Insights
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </Reveal>
+        <div className="overflow-hidden rounded-lg border border-border bg-white">
+          {insights.map((insight, index) => (
+            <Reveal key={insight.title} delay={index * 0.04}>
+              <article className="grid gap-5 border-b border-border p-6 transition hover:bg-white/70 md:grid-cols-[3.5rem_1fr_auto] md:items-center last:border-b-0">
+                <div className="grid h-11 w-11 place-items-center rounded-md bg-primary/5 text-primary">
+                  <insight.icon className="h-5 w-5" />
                 </div>
-                <h3 className="mt-6 text-base font-extrabold text-white">{card.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-white/64">{card.desc}</p>
-              </div>
+                <div>
+                  <p className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-energy">
+                    {insight.category}
+                  </p>
+                  <h3 className="mt-2 text-xl font-extrabold leading-snug text-foreground">
+                    {insight.title}
+                  </h3>
+                </div>
+                <div className="inline-flex items-center gap-2 text-sm font-extrabold text-muted-foreground">
+                  <Clock3 className="h-4 w-4" />
+                  Field note
+                </div>
+              </article>
             </Reveal>
           ))}
         </div>
-
-        <Reveal delay={0.2}>
-          <div className="mt-5 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur">
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              {trustSignals.map((signal) => (
-                <div
-                  key={signal}
-                  className="flex items-center gap-3 rounded-lg bg-white/10 px-4 py-3 text-sm font-bold text-white"
-                >
-                  <CheckCircle2 className="h-4 w-4 shrink-0 text-energy" />
-                  <span>{signal}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Reveal>
       </div>
     </section>
   );
 }
 
 function FinalCTASection() {
-  const contactReasons = ["Manpower Request", "Project Support", "Procurement Inquiry"];
+  const requestInputs = [
+    "Discipline and headcount",
+    "Project location and duration",
+    "Certificates or HSE requirements",
+    "Target mobilisation date",
+  ];
+  const responseOutputs = [
+    "Availability response",
+    "Role fit review",
+    "Documentation checklist",
+    "Mobilisation next step",
+  ];
 
   return (
-    <section className="border-t border-border bg-white py-20 md:py-24">
+    <section className="border-t border-white/10 bg-dark-navy py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <Reveal>
-          <div className="grid gap-8 lg:grid-cols-[0.95fr_0.75fr] lg:items-center">
+          <div className="grid gap-12 lg:grid-cols-[0.92fr_0.72fr] lg:items-start">
             <div>
-              <SectionLabel>Contact Nexora</SectionLabel>
-              <h2 className="max-w-3xl text-3xl font-extrabold leading-tight text-foreground md:text-5xl">
-                Discuss your manpower, site support or procurement requirement.
-              </h2>
-              <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
-                Share the discipline, duration, location and mobilisation timeline. Our team will
-                respond with a practical next step.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-border bg-surface p-5 shadow-elevated">
-              <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
-                {contactReasons.map((reason) => (
-                  <div
-                    key={reason}
-                    className="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-sm font-bold text-foreground shadow-sm"
-                  >
-                    <CheckCircle2 className="h-4 w-4 shrink-0 text-energy" />
-                    <span>{reason}</span>
-                  </div>
-                ))}
+              <div className="mb-5 flex items-center gap-3">
+                <span className="h-px w-10 bg-energy" />
+                <span className="text-[11px] font-extrabold uppercase tracking-[0.24em] text-energy">
+                  Request Support
+                </span>
               </div>
-              <div className="mt-5 flex flex-wrap gap-3">
+              <h2 className="max-w-4xl text-4xl font-extrabold leading-tight text-white md:text-6xl">
+                Send your manpower requirement with the details project teams actually need.
+              </h2>
+              <p className="mt-5 max-w-2xl text-base font-medium leading-7 text-white/70">
+                Nexora responds around role fit, documentation readiness, timing and the practical
+                mobilisation path for manpower, industrial services or procurement support.
+              </p>
+              <div className="mt-9 flex flex-wrap gap-3">
                 <PrimaryButton to="/manpower">Request Manpower</PrimaryButton>
-                <SecondaryButton to="/contact">Request Proposal</SecondaryButton>
+                <SecondaryButton to="/contact" dark>
+                  Contact Nexora
+                </SecondaryButton>
+              </div>
+            </div>
+            <div className="grid gap-0 overflow-hidden rounded-lg border border-white/12 bg-white/[0.06] shadow-elevated">
+              <div className="grid gap-4 border-b border-white/10 p-6 md:grid-cols-[7rem_1fr]">
+                <div className="text-sm font-extrabold uppercase tracking-[0.2em] text-energy">
+                  Send
+                </div>
+                <div className="grid gap-3">
+                  {requestInputs.map((item) => (
+                    <div
+                      key={item}
+                      className="flex items-center gap-3 text-base font-bold leading-7 text-white/82"
+                    >
+                      <CheckCircle2 className="h-5 w-5 text-energy" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="grid gap-4 p-6 md:grid-cols-[7rem_1fr]">
+                <div className="text-sm font-extrabold uppercase tracking-[0.2em] text-energy">
+                  Receive
+                </div>
+                <div className="grid gap-3">
+                  {responseOutputs.map((item) => (
+                    <div
+                      key={item}
+                      className="flex items-center gap-3 text-base font-bold leading-7 text-white/82"
+                    >
+                      <ArrowRight className="h-5 w-5 text-energy" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

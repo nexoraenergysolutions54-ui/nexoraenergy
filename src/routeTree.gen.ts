@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as PartnersRouteImport } from './routes/partners'
@@ -22,10 +23,28 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicesShutdownSupportRouteImport } from './routes/services/shutdown-support'
+import { Route as ServicesProjectSupportRouteImport } from './routes/services/project-support'
+import { Route as ServicesProcurementSupportRouteImport } from './routes/services/procurement-support'
+import { Route as ServicesManpowerSupplyRouteImport } from './routes/services/manpower-supply'
+import { Route as ServicesMaintenanceSupportRouteImport } from './routes/services/maintenance-support'
+import { Route as ServicesEngineeringSupportRouteImport } from './routes/services/engineering-support'
+import { Route as ResourcesGccIndustrialManpowerGuideRouteImport } from './routes/resources/gcc-industrial-manpower-guide'
+import { Route as IndustriesPetrochemicalRouteImport } from './routes/industries/petrochemical'
+import { Route as IndustriesOilAndGasRouteImport } from './routes/industries/oil-and-gas'
+import { Route as IndustriesManufacturingRouteImport } from './routes/industries/manufacturing'
+import { Route as IndustriesLngRouteImport } from './routes/industries/lng'
+import { Route as IndustriesInfrastructureRouteImport } from './routes/industries/infrastructure'
+import { Route as IndustriesEpcRouteImport } from './routes/industries/epc'
 
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProjectsRoute = ProjectsRouteImport.update({
@@ -88,6 +107,76 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesShutdownSupportRoute = ServicesShutdownSupportRouteImport.update({
+  id: '/shutdown-support',
+  path: '/shutdown-support',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesProjectSupportRoute = ServicesProjectSupportRouteImport.update({
+  id: '/project-support',
+  path: '/project-support',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesProcurementSupportRoute =
+  ServicesProcurementSupportRouteImport.update({
+    id: '/procurement-support',
+    path: '/procurement-support',
+    getParentRoute: () => ServicesRoute,
+  } as any)
+const ServicesManpowerSupplyRoute = ServicesManpowerSupplyRouteImport.update({
+  id: '/manpower-supply',
+  path: '/manpower-supply',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesMaintenanceSupportRoute =
+  ServicesMaintenanceSupportRouteImport.update({
+    id: '/maintenance-support',
+    path: '/maintenance-support',
+    getParentRoute: () => ServicesRoute,
+  } as any)
+const ServicesEngineeringSupportRoute =
+  ServicesEngineeringSupportRouteImport.update({
+    id: '/engineering-support',
+    path: '/engineering-support',
+    getParentRoute: () => ServicesRoute,
+  } as any)
+const ResourcesGccIndustrialManpowerGuideRoute =
+  ResourcesGccIndustrialManpowerGuideRouteImport.update({
+    id: '/gcc-industrial-manpower-guide',
+    path: '/gcc-industrial-manpower-guide',
+    getParentRoute: () => ResourcesRoute,
+  } as any)
+const IndustriesPetrochemicalRoute = IndustriesPetrochemicalRouteImport.update({
+  id: '/petrochemical',
+  path: '/petrochemical',
+  getParentRoute: () => IndustriesRoute,
+} as any)
+const IndustriesOilAndGasRoute = IndustriesOilAndGasRouteImport.update({
+  id: '/oil-and-gas',
+  path: '/oil-and-gas',
+  getParentRoute: () => IndustriesRoute,
+} as any)
+const IndustriesManufacturingRoute = IndustriesManufacturingRouteImport.update({
+  id: '/manufacturing',
+  path: '/manufacturing',
+  getParentRoute: () => IndustriesRoute,
+} as any)
+const IndustriesLngRoute = IndustriesLngRouteImport.update({
+  id: '/lng',
+  path: '/lng',
+  getParentRoute: () => IndustriesRoute,
+} as any)
+const IndustriesInfrastructureRoute =
+  IndustriesInfrastructureRouteImport.update({
+    id: '/infrastructure',
+    path: '/infrastructure',
+    getParentRoute: () => IndustriesRoute,
+  } as any)
+const IndustriesEpcRoute = IndustriesEpcRouteImport.update({
+  id: '/epc',
+  path: '/epc',
+  getParentRoute: () => IndustriesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -96,13 +185,27 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/hse': typeof HseRoute
   '/industrial-services': typeof IndustrialServicesRoute
-  '/industries': typeof IndustriesRoute
+  '/industries': typeof IndustriesRouteWithChildren
   '/manpower': typeof ManpowerRoute
   '/news': typeof NewsRoute
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
   '/projects': typeof ProjectsRoute
-  '/services': typeof ServicesRoute
+  '/resources': typeof ResourcesRouteWithChildren
+  '/services': typeof ServicesRouteWithChildren
+  '/industries/epc': typeof IndustriesEpcRoute
+  '/industries/infrastructure': typeof IndustriesInfrastructureRoute
+  '/industries/lng': typeof IndustriesLngRoute
+  '/industries/manufacturing': typeof IndustriesManufacturingRoute
+  '/industries/oil-and-gas': typeof IndustriesOilAndGasRoute
+  '/industries/petrochemical': typeof IndustriesPetrochemicalRoute
+  '/resources/gcc-industrial-manpower-guide': typeof ResourcesGccIndustrialManpowerGuideRoute
+  '/services/engineering-support': typeof ServicesEngineeringSupportRoute
+  '/services/maintenance-support': typeof ServicesMaintenanceSupportRoute
+  '/services/manpower-supply': typeof ServicesManpowerSupplyRoute
+  '/services/procurement-support': typeof ServicesProcurementSupportRoute
+  '/services/project-support': typeof ServicesProjectSupportRoute
+  '/services/shutdown-support': typeof ServicesShutdownSupportRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -111,13 +214,27 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/hse': typeof HseRoute
   '/industrial-services': typeof IndustrialServicesRoute
-  '/industries': typeof IndustriesRoute
+  '/industries': typeof IndustriesRouteWithChildren
   '/manpower': typeof ManpowerRoute
   '/news': typeof NewsRoute
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
   '/projects': typeof ProjectsRoute
-  '/services': typeof ServicesRoute
+  '/resources': typeof ResourcesRouteWithChildren
+  '/services': typeof ServicesRouteWithChildren
+  '/industries/epc': typeof IndustriesEpcRoute
+  '/industries/infrastructure': typeof IndustriesInfrastructureRoute
+  '/industries/lng': typeof IndustriesLngRoute
+  '/industries/manufacturing': typeof IndustriesManufacturingRoute
+  '/industries/oil-and-gas': typeof IndustriesOilAndGasRoute
+  '/industries/petrochemical': typeof IndustriesPetrochemicalRoute
+  '/resources/gcc-industrial-manpower-guide': typeof ResourcesGccIndustrialManpowerGuideRoute
+  '/services/engineering-support': typeof ServicesEngineeringSupportRoute
+  '/services/maintenance-support': typeof ServicesMaintenanceSupportRoute
+  '/services/manpower-supply': typeof ServicesManpowerSupplyRoute
+  '/services/procurement-support': typeof ServicesProcurementSupportRoute
+  '/services/project-support': typeof ServicesProjectSupportRoute
+  '/services/shutdown-support': typeof ServicesShutdownSupportRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -127,13 +244,27 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/hse': typeof HseRoute
   '/industrial-services': typeof IndustrialServicesRoute
-  '/industries': typeof IndustriesRoute
+  '/industries': typeof IndustriesRouteWithChildren
   '/manpower': typeof ManpowerRoute
   '/news': typeof NewsRoute
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
   '/projects': typeof ProjectsRoute
-  '/services': typeof ServicesRoute
+  '/resources': typeof ResourcesRouteWithChildren
+  '/services': typeof ServicesRouteWithChildren
+  '/industries/epc': typeof IndustriesEpcRoute
+  '/industries/infrastructure': typeof IndustriesInfrastructureRoute
+  '/industries/lng': typeof IndustriesLngRoute
+  '/industries/manufacturing': typeof IndustriesManufacturingRoute
+  '/industries/oil-and-gas': typeof IndustriesOilAndGasRoute
+  '/industries/petrochemical': typeof IndustriesPetrochemicalRoute
+  '/resources/gcc-industrial-manpower-guide': typeof ResourcesGccIndustrialManpowerGuideRoute
+  '/services/engineering-support': typeof ServicesEngineeringSupportRoute
+  '/services/maintenance-support': typeof ServicesMaintenanceSupportRoute
+  '/services/manpower-supply': typeof ServicesManpowerSupplyRoute
+  '/services/procurement-support': typeof ServicesProcurementSupportRoute
+  '/services/project-support': typeof ServicesProjectSupportRoute
+  '/services/shutdown-support': typeof ServicesShutdownSupportRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -150,7 +281,21 @@ export interface FileRouteTypes {
     | '/partners'
     | '/products'
     | '/projects'
+    | '/resources'
     | '/services'
+    | '/industries/epc'
+    | '/industries/infrastructure'
+    | '/industries/lng'
+    | '/industries/manufacturing'
+    | '/industries/oil-and-gas'
+    | '/industries/petrochemical'
+    | '/resources/gcc-industrial-manpower-guide'
+    | '/services/engineering-support'
+    | '/services/maintenance-support'
+    | '/services/manpower-supply'
+    | '/services/procurement-support'
+    | '/services/project-support'
+    | '/services/shutdown-support'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -165,7 +310,21 @@ export interface FileRouteTypes {
     | '/partners'
     | '/products'
     | '/projects'
+    | '/resources'
     | '/services'
+    | '/industries/epc'
+    | '/industries/infrastructure'
+    | '/industries/lng'
+    | '/industries/manufacturing'
+    | '/industries/oil-and-gas'
+    | '/industries/petrochemical'
+    | '/resources/gcc-industrial-manpower-guide'
+    | '/services/engineering-support'
+    | '/services/maintenance-support'
+    | '/services/manpower-supply'
+    | '/services/procurement-support'
+    | '/services/project-support'
+    | '/services/shutdown-support'
   id:
     | '__root__'
     | '/'
@@ -180,7 +339,21 @@ export interface FileRouteTypes {
     | '/partners'
     | '/products'
     | '/projects'
+    | '/resources'
     | '/services'
+    | '/industries/epc'
+    | '/industries/infrastructure'
+    | '/industries/lng'
+    | '/industries/manufacturing'
+    | '/industries/oil-and-gas'
+    | '/industries/petrochemical'
+    | '/resources/gcc-industrial-manpower-guide'
+    | '/services/engineering-support'
+    | '/services/maintenance-support'
+    | '/services/manpower-supply'
+    | '/services/procurement-support'
+    | '/services/project-support'
+    | '/services/shutdown-support'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -190,13 +363,14 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   HseRoute: typeof HseRoute
   IndustrialServicesRoute: typeof IndustrialServicesRoute
-  IndustriesRoute: typeof IndustriesRoute
+  IndustriesRoute: typeof IndustriesRouteWithChildren
   ManpowerRoute: typeof ManpowerRoute
   NewsRoute: typeof NewsRoute
   PartnersRoute: typeof PartnersRoute
   ProductsRoute: typeof ProductsRoute
   ProjectsRoute: typeof ProjectsRoute
-  ServicesRoute: typeof ServicesRoute
+  ResourcesRoute: typeof ResourcesRouteWithChildren
+  ServicesRoute: typeof ServicesRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -206,6 +380,13 @@ declare module '@tanstack/react-router' {
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/projects': {
@@ -292,8 +473,156 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/shutdown-support': {
+      id: '/services/shutdown-support'
+      path: '/shutdown-support'
+      fullPath: '/services/shutdown-support'
+      preLoaderRoute: typeof ServicesShutdownSupportRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/project-support': {
+      id: '/services/project-support'
+      path: '/project-support'
+      fullPath: '/services/project-support'
+      preLoaderRoute: typeof ServicesProjectSupportRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/procurement-support': {
+      id: '/services/procurement-support'
+      path: '/procurement-support'
+      fullPath: '/services/procurement-support'
+      preLoaderRoute: typeof ServicesProcurementSupportRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/manpower-supply': {
+      id: '/services/manpower-supply'
+      path: '/manpower-supply'
+      fullPath: '/services/manpower-supply'
+      preLoaderRoute: typeof ServicesManpowerSupplyRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/maintenance-support': {
+      id: '/services/maintenance-support'
+      path: '/maintenance-support'
+      fullPath: '/services/maintenance-support'
+      preLoaderRoute: typeof ServicesMaintenanceSupportRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/engineering-support': {
+      id: '/services/engineering-support'
+      path: '/engineering-support'
+      fullPath: '/services/engineering-support'
+      preLoaderRoute: typeof ServicesEngineeringSupportRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/resources/gcc-industrial-manpower-guide': {
+      id: '/resources/gcc-industrial-manpower-guide'
+      path: '/gcc-industrial-manpower-guide'
+      fullPath: '/resources/gcc-industrial-manpower-guide'
+      preLoaderRoute: typeof ResourcesGccIndustrialManpowerGuideRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
+    '/industries/petrochemical': {
+      id: '/industries/petrochemical'
+      path: '/petrochemical'
+      fullPath: '/industries/petrochemical'
+      preLoaderRoute: typeof IndustriesPetrochemicalRouteImport
+      parentRoute: typeof IndustriesRoute
+    }
+    '/industries/oil-and-gas': {
+      id: '/industries/oil-and-gas'
+      path: '/oil-and-gas'
+      fullPath: '/industries/oil-and-gas'
+      preLoaderRoute: typeof IndustriesOilAndGasRouteImport
+      parentRoute: typeof IndustriesRoute
+    }
+    '/industries/manufacturing': {
+      id: '/industries/manufacturing'
+      path: '/manufacturing'
+      fullPath: '/industries/manufacturing'
+      preLoaderRoute: typeof IndustriesManufacturingRouteImport
+      parentRoute: typeof IndustriesRoute
+    }
+    '/industries/lng': {
+      id: '/industries/lng'
+      path: '/lng'
+      fullPath: '/industries/lng'
+      preLoaderRoute: typeof IndustriesLngRouteImport
+      parentRoute: typeof IndustriesRoute
+    }
+    '/industries/infrastructure': {
+      id: '/industries/infrastructure'
+      path: '/infrastructure'
+      fullPath: '/industries/infrastructure'
+      preLoaderRoute: typeof IndustriesInfrastructureRouteImport
+      parentRoute: typeof IndustriesRoute
+    }
+    '/industries/epc': {
+      id: '/industries/epc'
+      path: '/epc'
+      fullPath: '/industries/epc'
+      preLoaderRoute: typeof IndustriesEpcRouteImport
+      parentRoute: typeof IndustriesRoute
+    }
   }
 }
+
+interface IndustriesRouteChildren {
+  IndustriesEpcRoute: typeof IndustriesEpcRoute
+  IndustriesInfrastructureRoute: typeof IndustriesInfrastructureRoute
+  IndustriesLngRoute: typeof IndustriesLngRoute
+  IndustriesManufacturingRoute: typeof IndustriesManufacturingRoute
+  IndustriesOilAndGasRoute: typeof IndustriesOilAndGasRoute
+  IndustriesPetrochemicalRoute: typeof IndustriesPetrochemicalRoute
+}
+
+const IndustriesRouteChildren: IndustriesRouteChildren = {
+  IndustriesEpcRoute: IndustriesEpcRoute,
+  IndustriesInfrastructureRoute: IndustriesInfrastructureRoute,
+  IndustriesLngRoute: IndustriesLngRoute,
+  IndustriesManufacturingRoute: IndustriesManufacturingRoute,
+  IndustriesOilAndGasRoute: IndustriesOilAndGasRoute,
+  IndustriesPetrochemicalRoute: IndustriesPetrochemicalRoute,
+}
+
+const IndustriesRouteWithChildren = IndustriesRoute._addFileChildren(
+  IndustriesRouteChildren,
+)
+
+interface ResourcesRouteChildren {
+  ResourcesGccIndustrialManpowerGuideRoute: typeof ResourcesGccIndustrialManpowerGuideRoute
+}
+
+const ResourcesRouteChildren: ResourcesRouteChildren = {
+  ResourcesGccIndustrialManpowerGuideRoute:
+    ResourcesGccIndustrialManpowerGuideRoute,
+}
+
+const ResourcesRouteWithChildren = ResourcesRoute._addFileChildren(
+  ResourcesRouteChildren,
+)
+
+interface ServicesRouteChildren {
+  ServicesEngineeringSupportRoute: typeof ServicesEngineeringSupportRoute
+  ServicesMaintenanceSupportRoute: typeof ServicesMaintenanceSupportRoute
+  ServicesManpowerSupplyRoute: typeof ServicesManpowerSupplyRoute
+  ServicesProcurementSupportRoute: typeof ServicesProcurementSupportRoute
+  ServicesProjectSupportRoute: typeof ServicesProjectSupportRoute
+  ServicesShutdownSupportRoute: typeof ServicesShutdownSupportRoute
+}
+
+const ServicesRouteChildren: ServicesRouteChildren = {
+  ServicesEngineeringSupportRoute: ServicesEngineeringSupportRoute,
+  ServicesMaintenanceSupportRoute: ServicesMaintenanceSupportRoute,
+  ServicesManpowerSupplyRoute: ServicesManpowerSupplyRoute,
+  ServicesProcurementSupportRoute: ServicesProcurementSupportRoute,
+  ServicesProjectSupportRoute: ServicesProjectSupportRoute,
+  ServicesShutdownSupportRoute: ServicesShutdownSupportRoute,
+}
+
+const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
+  ServicesRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -302,13 +631,14 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   HseRoute: HseRoute,
   IndustrialServicesRoute: IndustrialServicesRoute,
-  IndustriesRoute: IndustriesRoute,
+  IndustriesRoute: IndustriesRouteWithChildren,
   ManpowerRoute: ManpowerRoute,
   NewsRoute: NewsRoute,
   PartnersRoute: PartnersRoute,
   ProductsRoute: ProductsRoute,
   ProjectsRoute: ProjectsRoute,
-  ServicesRoute: ServicesRoute,
+  ResourcesRoute: ResourcesRouteWithChildren,
+  ServicesRoute: ServicesRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -11,6 +11,7 @@ import {
 import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
+import { site } from "@/lib/enterprise-content";
 
 export const Route = createFileRoute("/hse")({
   head: () => ({
@@ -27,9 +28,9 @@ export const Route = createFileRoute("/hse")({
         content:
           "Safety, environmental responsibility and quality governance for critical energy work.",
       },
-      { property: "og:url", content: "/hse" },
+      { property: "og:url", content: `${site.url}/hse` },
     ],
-    links: [{ rel: "canonical", href: "/hse" }],
+    links: [{ rel: "canonical", href: `${site.url}/hse` }],
   }),
   component: HSEPage,
 });

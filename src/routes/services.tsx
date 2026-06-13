@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Outlet, createFileRoute, Link, useRouterState } from "@tanstack/react-router";
 import {
   ArrowRight,
   Building2,
@@ -12,6 +12,7 @@ import {
 import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
+import { site } from "@/lib/enterprise-content";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -28,11 +29,11 @@ export const Route = createFileRoute("/services")({
         content:
           "Enterprise-grade engineering and industrial service capabilities for energy partners.",
       },
-      { property: "og:url", content: "/services" },
+      { property: "og:url", content: `${site.url}/services` },
     ],
-    links: [{ rel: "canonical", href: "/services" }],
+    links: [{ rel: "canonical", href: `${site.url}/services` }],
   }),
-  component: ServicesPage,
+  component: ServicesRouteComponent,
 });
 
 const services = [
@@ -98,6 +99,17 @@ const services = [
     ],
   },
 ];
+
+function ServicesRouteComponent() {
+  const pathname = useRouterState({ select: (state) => state.location.pathname });
+  const normalizedPath = pathname.replace(/\/+$/, "") || "/";
+
+  if (normalizedPath !== "/services") {
+    return <Outlet />;
+  }
+
+  return <ServicesPage />;
+}
 
 function ServicesPage() {
   return (

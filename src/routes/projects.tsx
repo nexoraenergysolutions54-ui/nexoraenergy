@@ -4,6 +4,7 @@ import { ArrowRight, ArrowUpRight, MapPin } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
+import { site } from "@/lib/enterprise-content";
 import pEng from "@/assets/project-engineering.jpg";
 import pMaint from "@/assets/project-maintenance.jpg";
 import pPipeline from "@/assets/project-pipeline.jpg";
@@ -20,15 +21,15 @@ export const Route = createFileRoute("/projects")({
         content:
           "Explore Nexora Energy Solutions' project delivery experience across refinery, LNG, pipeline, maintenance, engineering and EPC programs across Qatar and the GCC.",
       },
-      { property: "og:title", content: "Project Portfolio — Nexora Energy Solutions" },
+      { property: "og:title", content: "Project Portfolio - Nexora Energy Solutions" },
       {
         property: "og:description",
         content:
           "Selected delivery profiles across refinery, LNG, pipelines, maintenance and engineering programs.",
       },
-      { property: "og:url", content: "/projects" },
+      { property: "og:url", content: `${site.url}/projects` },
     ],
-    links: [{ rel: "canonical", href: "/projects" }],
+    links: [{ rel: "canonical", href: `${site.url}/projects` }],
   }),
   component: ProjectsPage,
 });
@@ -47,7 +48,7 @@ const projects = [
   {
     category: "Manpower",
     image: pPipeline,
-    title: "Pipeline Integrity Programme — Manpower Support",
+    title: "Pipeline Integrity Programme - Manpower Support",
     location: "GCC Corridor",
     client: "GCC Pipeline Operator",
     scope:
@@ -67,7 +68,7 @@ const projects = [
   {
     category: "Manpower",
     image: pEng,
-    title: "Petrochemical Expansion — Engineering Manpower",
+    title: "Petrochemical Expansion - Engineering Manpower",
     location: "Kuwait",
     client: "Government Petrochemical Program",
     scope:
@@ -82,7 +83,7 @@ const projects = [
   {
     category: "Industrial Services",
     image: pPlant,
-    title: "Plant Shutdown Support — LNG Facility",
+    title: "Plant Shutdown Support - LNG Facility",
     location: "Ras Laffan, Qatar",
     client: "QatarEnergy Affiliate",
     scope:
@@ -117,7 +118,7 @@ const projects = [
   {
     category: "Products",
     image: pEng,
-    title: "Valve & Instrumentation Supply — EPC Project",
+    title: "Valve & Instrumentation Supply - EPC Project",
     location: "Kuwait Industrial City",
     client: "EPC Contractor",
     scope:
@@ -198,7 +199,7 @@ function ProjectsPage() {
                     <div className="mt-2 flex items-center gap-1.5 text-xs text-muted-foreground">
                       <MapPin className="h-3 w-3" />
                       <span>{project.location}</span>
-                      <span className="mx-1 text-border">·</span>
+                      <span className="mx-1 text-border">Â·</span>
                       <span>{project.client}</span>
                     </div>
                     <p className="mt-3 text-xs leading-relaxed text-muted-foreground line-clamp-3">

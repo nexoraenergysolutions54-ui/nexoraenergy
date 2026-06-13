@@ -113,9 +113,7 @@ export function PageHero({
                 key={item}
                 className={cn(
                   "rounded-md border px-3 py-2 shadow-sm backdrop-blur",
-                  hasImage
-                    ? "border-white/18 bg-white/10"
-                    : "border-border bg-white/70",
+                  hasImage ? "border-white/18 bg-white/10" : "border-border bg-white/70",
                 )}
               >
                 {item}

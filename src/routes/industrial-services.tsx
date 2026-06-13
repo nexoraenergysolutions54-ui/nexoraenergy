@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
+import { site } from "@/lib/enterprise-content";
 import homeHeroBriefing from "@/assets/home-hero-briefing.png";
 import homeHeroMaintenance from "@/assets/home-hero-maintenance.png";
 import homeHeroPlanning from "@/assets/home-hero-planning.png";
@@ -38,15 +39,15 @@ export const Route = createFileRoute("/industrial-services")({
         content:
           "Nexora Energy Solutions provides industrial services including shutdown, turnaround, maintenance, project support and site services for energy and industrial facilities across the GCC.",
       },
-      { property: "og:title", content: "Industrial Services — Nexora Energy Solutions" },
+      { property: "og:title", content: "Industrial Services - Nexora Energy Solutions" },
       {
         property: "og:description",
         content:
           "Shutdown, turnaround, maintenance and project support for critical energy and industrial facilities.",
       },
-      { property: "og:url", content: "/industrial-services" },
+      { property: "og:url", content: `${site.url}/industrial-services` },
     ],
-    links: [{ rel: "canonical", href: "/industrial-services" }],
+    links: [{ rel: "canonical", href: `${site.url}/industrial-services` }],
   }),
   component: IndustrialServicesPage,
 });
@@ -81,7 +82,7 @@ function IndustrialServicesPage() {
   );
 }
 
-/* ─── HERO ────────────────────────────────────────────────────────────────── */
+/* --- HERO ------------------------------------------------------------------ */
 
 function ServicesHero() {
   return (
@@ -124,7 +125,7 @@ function ServicesHero() {
           transition={{ duration: 0.7, delay: 0.22 }}
           className="mt-6 max-w-xl text-base leading-relaxed text-white/68 md:text-lg"
         >
-          From planned shutdowns to emergency maintenance and long-term site services — Nexora
+          From planned shutdowns to emergency maintenance and long-term site services - Nexora
           delivers specialist industrial crews with the discipline, compliance and documentation
           standards your facility demands.
         </motion.p>
@@ -153,7 +154,7 @@ function ServicesHero() {
   );
 }
 
-/* ─── SERVICES GRID ───────────────────────────────────────────────────────── */
+/* --- SERVICES GRID --------------------------------------------------------- */
 
 const services = [
   {
@@ -262,7 +263,7 @@ function ServicesGrid() {
   );
 }
 
-/* ─── METHODOLOGY ─────────────────────────────────────────────────────────── */
+/* --- METHODOLOGY ----------------------------------------------------------- */
 
 const methodology = [
   {
@@ -332,7 +333,7 @@ function MethodologySection() {
   );
 }
 
-/* ─── PROJECT TYPES ───────────────────────────────────────────────────────── */
+/* --- PROJECT TYPES --------------------------------------------------------- */
 
 const projectTypes = [
   { icon: Zap, title: "Refineries & Process Plants" },
@@ -355,7 +356,7 @@ function ProjectTypesSection() {
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
               Our industrial service teams have been deployed across Qatar and the GCC&apos;s most
-              demanding facilities — from high-pressure refineries to offshore platforms and
+              demanding facilities - from high-pressure refineries to offshore platforms and
               government infrastructure programs.
             </p>
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -391,7 +392,7 @@ function ProjectTypesSection() {
                   <div>
                     <div className="font-display text-sm font-bold">Safety-First Execution</div>
                     <div className="text-xs text-muted-foreground">
-                      HSE embedded in every scope — zero compromise
+                      HSE embedded in every scope - zero compromise
                     </div>
                   </div>
                 </div>
@@ -404,7 +405,7 @@ function ProjectTypesSection() {
   );
 }
 
-/* ─── SAFETY ──────────────────────────────────────────────────────────────── */
+/* --- SAFETY ---------------------------------------------------------------- */
 
 function SafetySection() {
   return (
@@ -464,7 +465,7 @@ function SafetySection() {
   );
 }
 
-/* ─── CTA ─────────────────────────────────────────────────────────────────── */
+/* --- CTA ------------------------------------------------------------------- */
 
 function ServicesCTA() {
   return (

@@ -4,7 +4,7 @@ export function WhatsAppButton() {
   const [hover, setHover] = useState(false);
   return (
     <a
-      href="https://wa.me/96500000000?text=Hello%20Nexora%20Energy%20Solutions"
+      href="https://wa.me/97433110000?text=Hello%20Nexora%20Energy%20Solutions"
       target="_blank"
       rel="noopener noreferrer"
       onMouseEnter={() => setHover(true)}

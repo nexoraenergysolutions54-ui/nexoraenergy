@@ -35,6 +35,7 @@ import {
 import { Layout } from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
 import { Counter } from "@/components/Counter";
+import { site } from "@/lib/enterprise-content";
 import about from "@/assets/about-engineers.jpg";
 import manpowerHeroCrewBriefing from "@/assets/manpower-hero-crew-briefing.png";
 import pEng from "@/assets/project-engineering.jpg";
@@ -52,17 +53,17 @@ export const Route = createFileRoute("/manpower")({
       {
         name: "description",
         content:
-          "Nexora Energy Solutions provides qualified technical manpower — engineers, technicians, and skilled tradespeople — for energy, LNG, petrochemical, infrastructure and EPC projects across the GCC.",
+          "Nexora Energy Solutions provides qualified technical manpower - engineers, technicians, and skilled tradespeople - for energy, LNG, petrochemical, infrastructure and EPC projects across the GCC.",
       },
-      { property: "og:title", content: "Technical Manpower Solutions — Nexora Energy Solutions" },
+      { property: "og:title", content: "Technical Manpower Solutions - Nexora Energy Solutions" },
       {
         property: "og:description",
         content:
           "Engineers, technicians & skilled workforce for critical GCC energy and industrial projects.",
       },
-      { property: "og:url", content: "/manpower" },
+      { property: "og:url", content: `${site.url}/manpower` },
     ],
-    links: [{ rel: "canonical", href: "/manpower" }],
+    links: [{ rel: "canonical", href: `${site.url}/manpower` }],
   }),
   component: ManpowerPage,
 });
@@ -99,7 +100,7 @@ function ManpowerPage() {
   );
 }
 
-/* ─── HERO ────────────────────────────────────────────────────────────────── */
+/* --- HERO ------------------------------------------------------------------ */
 
 function ManpowerHero() {
   return (
@@ -122,7 +123,7 @@ function ManpowerHero() {
           transition={{ duration: 0.55 }}
           className="mb-8 self-start"
         >
-          <Eyebrow light>Technical Manpower Solutions — GCC</Eyebrow>
+          <Eyebrow light>Technical Manpower Solutions - GCC</Eyebrow>
         </motion.div>
 
         <motion.h1
@@ -196,7 +197,7 @@ function ManpowerHero() {
   );
 }
 
-/* ─── OVERVIEW ────────────────────────────────────────────────────────────── */
+/* --- OVERVIEW -------------------------------------------------------------- */
 
 function ManpowerOverview() {
   const highlights = [
@@ -268,7 +269,7 @@ function ManpowerOverview() {
   );
 }
 
-/* ─── WORKFORCE CATEGORIES ────────────────────────────────────────────────── */
+/* --- WORKFORCE CATEGORIES -------------------------------------------------- */
 
 const allCategories = [
   {
@@ -338,13 +339,13 @@ const allCategories = [
     bg: "bg-energy/8",
     ring: "ring-energy/12",
     roles: [
-      { icon: Flame, title: "Welders", spec: "SMAW, GTAW, GMAW — ASME IX / AWS / API 1104" },
+      { icon: Flame, title: "Welders", spec: "SMAW, GTAW, GMAW - ASME IX / AWS / API 1104" },
       {
         icon: Wrench,
         title: "Fabricators",
         spec: "Structural Steel, Piping Spools, Pressure Parts",
       },
-      { icon: Layers, title: "Pipe Fitters", spec: "CS, SS, Alloy — Hydro-tested, Alignment" },
+      { icon: Layers, title: "Pipe Fitters", spec: "CS, SS, Alloy - Hydro-tested, Alignment" },
       { icon: Anchor, title: "Riggers", spec: "Heavy Lift, Crane Operations, Slinging" },
       { icon: Network, title: "Scaffolders", spec: "CISRS / OPITO Certified, Inspection Ready" },
     ],
@@ -380,7 +381,7 @@ function WorkforceCategories() {
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
             Our workforce spans 17 core categories across engineering, management, technical trades
-            and operations — all available for short-term, long-term or project-based deployment.
+            and operations - all available for short-term, long-term or project-based deployment.
           </p>
         </Reveal>
 
@@ -433,7 +434,7 @@ function WorkforceCategories() {
   );
 }
 
-/* ─── COMPLIANCE ──────────────────────────────────────────────────────────── */
+/* --- COMPLIANCE ------------------------------------------------------------ */
 
 const complianceItems = [
   {
@@ -479,8 +480,8 @@ function ComplianceSection() {
             <span className="text-gradient-energy">Fully verified.</span>
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
-            Nexora manages the complete compliance lifecycle — from initial documentation through to
-            on-site mobilisation — eliminating administrative burden for your project team.
+            Nexora manages the complete compliance lifecycle - from initial documentation through to
+            on-site mobilisation - eliminating administrative burden for your project team.
           </p>
         </Reveal>
 
@@ -509,7 +510,7 @@ function ComplianceSection() {
   );
 }
 
-/* ─── DEPLOYMENT PROCESS ──────────────────────────────────────────────────── */
+/* --- DEPLOYMENT PROCESS ---------------------------------------------------- */
 
 const steps = [
   {
@@ -583,7 +584,7 @@ function DeploymentProcess() {
   );
 }
 
-/* ─── INDUSTRIES SUPPORTED ────────────────────────────────────────────────── */
+/* --- INDUSTRIES SUPPORTED -------------------------------------------------- */
 
 const industries = [
   { icon: Factory, title: "Oil & Gas", image: pRefinery },
@@ -634,7 +635,7 @@ function IndustriesSupported() {
   );
 }
 
-/* ─── PROJECT SUPPORT ─────────────────────────────────────────────────────── */
+/* --- PROJECT SUPPORT ------------------------------------------------------- */
 
 const supportItems = [
   {
@@ -726,7 +727,7 @@ function ProjectSupport() {
   );
 }
 
-/* ─── REQUEST FORM ────────────────────────────────────────────────────────── */
+/* --- REQUEST FORM ---------------------------------------------------------- */
 
 const projectTypes = [
   "Shutdown / Turnaround",
@@ -854,7 +855,7 @@ function RequestManpowerForm() {
 
             {/* Workforce size + duration */}
             <div className="grid gap-4 sm:grid-cols-2">
-              <FormField label="Estimated Workforce Size" placeholder="e.g. 10–50 personnel" />
+              <FormField label="Estimated Workforce Size" placeholder="e.g. 10-50 personnel" />
               <FormField label="Project Duration" placeholder="e.g. 3 months, 12 months" />
               <div className="sm:col-span-2">
                 <FormField
@@ -880,7 +881,7 @@ function RequestManpowerForm() {
             <label className="flex cursor-pointer items-center gap-3 rounded-xl border border-dashed border-border bg-surface/60 px-4 py-4 text-sm text-muted-foreground transition hover:border-energy-soft">
               <Upload className="h-5 w-5 shrink-0 text-primary" />
               <span>
-                <span className="font-bold text-foreground">Attach specification or RFQ</span> —
+                <span className="font-bold text-foreground">Attach specification or RFQ</span> -
                 PDF, DOC (optional, max 10 MB)
               </span>
               <input type="file" accept=".pdf,.doc,.docx" className="hidden" />

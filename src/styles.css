@@ -15,6 +15,7 @@
   --radius-2xl: 28px;
 
   --color-background: var(--background);
+  --color-light-gray: #f7f9fb;
   --color-foreground: var(--foreground);
   --color-surface: var(--surface);
   --color-card: var(--card);
@@ -31,7 +32,9 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-energy: var(--energy);
   --color-teal: var(--energy);
+  --color-blue: var(--blue);
   --color-navy: var(--navy);
+  --color-dark-navy: var(--dark-navy);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
@@ -44,22 +47,24 @@
 :root,
 .dark {
   --background: #f6f8fa;
-  --foreground: #071c2c;
+  --foreground: #041c32;
   --surface: #eef2f5;
   --card: #ffffff;
   --card-foreground: #071c2c;
   --popover: #ffffff;
   --popover-foreground: #071c2c;
-  --primary: #12558c;
+  --primary: #041c32;
   --primary-foreground: #ffffff;
   --secondary: #e8eef3;
   --secondary-foreground: #071c2c;
   --muted: #edf2f7;
   --muted-foreground: #667085;
-  --accent: #37a996;
-  --accent-foreground: #071c2c;
-  --energy: #37b59f;
-  --navy: #071c2c;
+  --accent: #1877f2;
+  --accent-foreground: #ffffff;
+  --energy: #2fd0c4;
+  --blue: #1877f2;
+  --navy: #041c32;
+  --dark-navy: #02111f;
   --destructive: #c2410c;
   --destructive-foreground: #ffffff;
   --border: rgb(21 101 168 / 0.13);
@@ -403,6 +408,41 @@
   }
 }
 
+@keyframes enterprise-globe-rotate {
+  0% {
+    transform: rotate(0deg) scaleX(0.94);
+  }
+  100% {
+    transform: rotate(360deg) scaleX(0.94);
+  }
+}
+
+@keyframes enterprise-route-flow {
+  0% {
+    opacity: 0.35;
+    stroke-dashoffset: 18;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.35;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes enterprise-marker-pulse {
+  0%,
+  100% {
+    opacity: 0.28;
+    transform: scale(0.88);
+  }
+  50% {
+    opacity: 0.82;
+    transform: scale(1.2);
+  }
+}
+
 .animate-pulse-glow {
   animation: pulse-glow 2s ease-in-out infinite;
 }
@@ -469,6 +509,40 @@
   animation-play-state: paused;
 }
 
+.enterprise-globe-spin {
+  animation: enterprise-globe-rotate 34s linear infinite;
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+
+.enterprise-route {
+  animation: enterprise-route-flow 4.8s linear infinite;
+  stroke-dasharray: 9 8;
+  filter: drop-shadow(0 0 7px rgb(47 208 196 / 0.7));
+}
+
+.enterprise-route-dot {
+  filter: drop-shadow(0 0 8px rgb(47 208 196 / 0.95));
+}
+
+.enterprise-marker-pulse {
+  animation: enterprise-marker-pulse 2s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* -- EnterpriseGlobe v2 - animated route dashes -- */
+.gcc-route-flow {
+  stroke-dasharray: 5 5;
+  animation: gcc-route-dash 2.2s linear infinite;
+}
+
+@keyframes gcc-route-dash {
+  to {
+    stroke-dashoffset: -30;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-cinema-frame,
   .hero-cinema-image,
@@ -476,7 +550,11 @@
   .hero-cinema-progress,
   .animate-trust-detail-ticker,
   .animate-premium-ping,
-  .industrial-scan-line {
+  .industrial-scan-line,
+  .enterprise-globe-spin,
+  .enterprise-route,
+  .enterprise-marker-pulse,
+  .gcc-route-flow {
     animation: none;
   }
 

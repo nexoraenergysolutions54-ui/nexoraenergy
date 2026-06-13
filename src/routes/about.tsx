@@ -15,6 +15,7 @@ import { Counter } from "@/components/Counter";
 import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
+import { site } from "@/lib/enterprise-content";
 import aboutHero from "@/assets/about-hero-team-refinery.png";
 import about from "@/assets/about-engineers.jpg";
 import pEng from "@/assets/project-engineering.jpg";
@@ -35,9 +36,9 @@ export const Route = createFileRoute("/about")({
         content:
           "Qatar-based technical manpower and industrial solutions partner for the GCC energy sector.",
       },
-      { property: "og:url", content: "/about" },
+      { property: "og:url", content: `${site.url}/about` },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: `${site.url}/about` }],
   }),
   component: AboutPage,
 });
@@ -77,7 +78,7 @@ function AboutPage() {
               project environments.
             </p>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              We are not a general labour company. We are a technical partner — deploying qualified
+              We are not a general labour company. We are a technical partner - deploying qualified
               engineers, certified tradespeople and experienced supervisors who meet the
               documentation, safety and technical standards of Qatar&apos;s major operators and
               international EPC contractors.
@@ -180,7 +181,7 @@ function AboutPage() {
                 <div className="font-display text-lg font-bold">Our Mission</div>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   To be Qatar and the GCC&apos;s most trusted technical manpower and industrial
-                  solutions partner — delivering qualified, compliant and reliable workforce and
+                  solutions partner - delivering qualified, compliant and reliable workforce and
                   services for every project phase, every time.
                 </p>
               </div>
@@ -193,7 +194,7 @@ function AboutPage() {
                 <div className="font-display text-lg font-bold">Our Vision</div>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   To build the GCC&apos;s leading technical manpower and industrial solutions
-                  platform — recognised by operators, EPC contractors and government programs as the
+                  platform - recognised by operators, EPC contractors and government programs as the
                   partner of choice for critical project delivery.
                 </p>
               </div>
@@ -226,7 +227,7 @@ function AboutPage() {
               {
                 icon: Shield,
                 title: "Safety First",
-                desc: "HSE is embedded in planning, execution and handover — zero compromise on personnel or facility safety.",
+                desc: "HSE is embedded in planning, execution and handover - zero compromise on personnel or facility safety.",
               },
               {
                 icon: Award,
@@ -273,7 +274,7 @@ function AboutPage() {
               <p className="mt-5 text-base leading-relaxed text-muted-foreground">
                 Nexora&apos;s headquarters in Doha, Qatar places us at the heart of the
                 region&apos;s energy industry. From here, we support project deployment across all
-                six GCC member states — with in-country coordination, visa and compliance support
+                six GCC member states - with in-country coordination, visa and compliance support
                 managed locally.
               </p>
               <div className="mt-8 grid gap-3 sm:grid-cols-2">

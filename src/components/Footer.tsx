@@ -1,5 +1,13 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, CheckCircle2, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle2,
+  Linkedin,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Phone,
+} from "lucide-react";
 import { Logo } from "./Logo";
 
 export function Footer() {
@@ -62,6 +70,7 @@ export function Footer() {
                 { to: "/manpower", label: "Technical Manpower" },
                 { to: "/industrial-services", label: "Industrial Services" },
                 { to: "/products", label: "Products & Procurement" },
+                { to: "/resources", label: "Resources" },
               ].map((link) => (
                 <li key={link.to}>
                   <Link
@@ -134,11 +143,18 @@ export function Footer() {
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <a
-                href="#"
+                href="https://www.linkedin.com/company/nexora-energy-solutions"
                 aria-label="LinkedIn"
                 className="grid h-11 w-11 place-items-center rounded-md border border-white/15 text-white/62 transition hover:border-energy/50 hover:text-white"
               >
                 <Linkedin className="h-4 w-4" />
+              </a>
+              <a
+                href="https://wa.me/97433110000"
+                aria-label="WhatsApp"
+                className="grid h-11 w-11 place-items-center rounded-md border border-white/15 text-white/62 transition hover:border-energy/50 hover:text-white"
+              >
+                <MessageCircle className="h-4 w-4" />
               </a>
             </div>
           </div>

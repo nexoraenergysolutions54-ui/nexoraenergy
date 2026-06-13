@@ -22,6 +22,7 @@ const navLinks = [
   { to: "/industrial-services" as const, label: "Industrial Services" },
   { to: "/products" as const, label: "Products" },
   { to: "/industries" as const, label: "Industries" },
+  { to: "/resources" as const, label: "Resources" },
   { to: "/partners" as const, label: "Partners" },
   { to: "/contact" as const, label: "Contact" },
 ];
@@ -67,7 +68,7 @@ export function Navbar() {
             : "border-white/10 bg-[rgba(2,18,34,0.66)] backdrop-blur-md"
         }`}
       >
-        {/* Top contact bar — desktop only */}
+        {/* Top contact bar - desktop only */}
         <div
           className={`hidden border-b lg:block ${
             lightHeader ? "border-border/60 bg-white/90" : "border-white/10 bg-navy/45"

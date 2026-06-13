@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Outlet, createFileRoute, Link, useRouterState } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -15,6 +15,7 @@ import {
 import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
+import { site } from "@/lib/enterprise-content";
 import about from "@/assets/about-engineers.jpg";
 import pEng from "@/assets/project-engineering.jpg";
 import pMaint from "@/assets/project-maintenance.jpg";
@@ -22,6 +23,7 @@ import pPipeline from "@/assets/project-pipeline.jpg";
 import pPlant from "@/assets/project-plant.jpg";
 import pRefinery from "@/assets/project-refinery.jpg";
 import hero from "@/assets/hero-refinery.jpg";
+import industriesHero from "@/assets/industries-hero-energy-infrastructure.png";
 
 export const Route = createFileRoute("/industries")({
   head: () => ({
@@ -32,17 +34,17 @@ export const Route = createFileRoute("/industries")({
         content:
           "Nexora Energy Solutions serves oil & gas, LNG, petrochemical, power, infrastructure, marine, government and manufacturing sectors across Qatar and the GCC.",
       },
-      { property: "og:title", content: "Industries Served — Nexora Energy Solutions" },
+      { property: "og:title", content: "Industries Served - Nexora Energy Solutions" },
       {
         property: "og:description",
         content:
           "Technical manpower and industrial services across GCC energy and industrial sectors.",
       },
-      { property: "og:url", content: "/industries" },
+      { property: "og:url", content: `${site.url}/industries` },
     ],
-    links: [{ rel: "canonical", href: "/industries" }],
+    links: [{ rel: "canonical", href: `${site.url}/industries` }],
   }),
-  component: IndustriesPage,
+  component: IndustriesRouteComponent,
 });
 
 const industries = [
@@ -163,6 +165,17 @@ const industries = [
 const featuredIndustries = industries.slice(0, 3);
 const supportingIndustries = industries.slice(3);
 
+function IndustriesRouteComponent() {
+  const pathname = useRouterState({ select: (state) => state.location.pathname });
+  const normalizedPath = pathname.replace(/\/+$/, "") || "/";
+
+  if (normalizedPath !== "/industries") {
+    return <Outlet />;
+  }
+
+  return <IndustriesPage />;
+}
+
 function IndustriesPage() {
   return (
     <Layout>
@@ -174,7 +187,9 @@ function IndustriesPage() {
             <span className="text-gradient-energy">GCC&apos;s critical sectors.</span>
           </>
         }
-        description="Nexora supports the energy operators, EPC contractors and industrial facilities that drive Qatar and the GCC's economy — with qualified technical manpower and industrial services built for demanding environments."
+        description="Nexora supports the energy operators, EPC contractors and industrial facilities that drive Qatar and the GCC's economy - with qualified technical manpower and industrial services built for demanding environments."
+        backgroundImage={industriesHero}
+        imagePosition="object-center"
       />
 
       <section className="py-16">
@@ -327,7 +342,7 @@ function IndustriesPage() {
                   Your sector. Your project. <span className="text-energy">Our workforce.</span>
                 </h2>
                 <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-white/55">
-                  Speak to Nexora about your manpower requirements — from single specialist roles to
+                  Speak to Nexora about your manpower requirements - from single specialist roles to
                   complete multi-discipline project crews.
                 </p>
                 <div className="mt-8 flex flex-wrap justify-center gap-4">

@@ -19,6 +19,7 @@ import {
 import { Layout } from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
 import { Counter } from "@/components/Counter";
+import { site } from "@/lib/enterprise-content";
 import about from "@/assets/about-engineers.jpg";
 import pRefinery from "@/assets/project-refinery.jpg";
 
@@ -31,15 +32,15 @@ export const Route = createFileRoute("/partners")({
         content:
           "Nexora Energy Solutions partners with energy operators, EPC contractors, equipment manufacturers and technical institutions across the GCC and internationally.",
       },
-      { property: "og:title", content: "Partners — Nexora Energy Solutions" },
+      { property: "og:title", content: "Partners - Nexora Energy Solutions" },
       {
         property: "og:description",
         content:
           "Strategic partnerships with energy operators, EPC contractors and industrial suppliers across the GCC.",
       },
-      { property: "og:url", content: "/partners" },
+      { property: "og:url", content: `${site.url}/partners` },
     ],
-    links: [{ rel: "canonical", href: "/partners" }],
+    links: [{ rel: "canonical", href: `${site.url}/partners` }],
   }),
   component: PartnersPage,
 });
@@ -74,7 +75,7 @@ function PartnersPage() {
   );
 }
 
-/* ─── HERO ────────────────────────────────────────────────────────────────── */
+/* --- HERO ------------------------------------------------------------------ */
 
 function PartnersHero() {
   return (
@@ -118,7 +119,7 @@ function PartnersHero() {
           className="mt-6 max-w-xl text-base leading-relaxed text-white/68 md:text-lg"
         >
           Nexora&apos;s capability is strengthened by strategic relationships with energy operators,
-          EPC contractors, equipment manufacturers and international manpower networks — enabling
+          EPC contractors, equipment manufacturers and international manpower networks - enabling
           rapid, compliant and reliable project support across the GCC.
         </motion.p>
 
@@ -152,7 +153,7 @@ function PartnersHero() {
   );
 }
 
-/* ─── PARTNER TYPES ───────────────────────────────────────────────────────── */
+/* --- PARTNER TYPES --------------------------------------------------------- */
 
 const partnerTypes = [
   {
@@ -210,7 +211,7 @@ function PartnerTypes() {
             <span className="text-gradient-energy">One integrated network.</span>
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
-            Nexora&apos;s value to clients comes from the depth of its partnership ecosystem —
+            Nexora&apos;s value to clients comes from the depth of its partnership ecosystem -
             enabling rapid sourcing, compliant delivery and reliable project execution.
           </p>
         </Reveal>
@@ -248,7 +249,7 @@ function PartnerTypes() {
   );
 }
 
-/* ─── CLIENTS ─────────────────────────────────────────────────────────────── */
+/* --- CLIENTS --------------------------------------------------------------- */
 
 const clientGroups = [
   {
@@ -312,7 +313,7 @@ function ClientsSection() {
   );
 }
 
-/* ─── GCC PRESENCE ────────────────────────────────────────────────────────── */
+/* --- GCC PRESENCE ---------------------------------------------------------- */
 
 const gccPresence = [
   {
@@ -413,7 +414,7 @@ function GCCPresence() {
   );
 }
 
-/* ─── PARTNERSHIP BENEFITS ────────────────────────────────────────────────── */
+/* --- PARTNERSHIP BENEFITS -------------------------------------------------- */
 
 const benefits = [
   {
@@ -452,7 +453,7 @@ function PartnerBenefits() {
             </h2>
             <p className="mt-5 text-base leading-relaxed text-white/55">
               Every partnership Nexora maintains is built on compliance, technical alignment and
-              project delivery track record — so when you engage Nexora, you access a pre-qualified
+              project delivery track record - so when you engage Nexora, you access a pre-qualified
               network of industrial partners without the procurement overhead.
             </p>
             <div className="mt-8 space-y-4">
@@ -504,7 +505,7 @@ function PartnerBenefits() {
   );
 }
 
-/* ─── PARTNERSHIP CTA ─────────────────────────────────────────────────────── */
+/* --- PARTNERSHIP CTA ------------------------------------------------------- */
 
 function PartnershipCTA() {
   return (

@@ -14,6 +14,8 @@ import {
 import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
+import { site } from "@/lib/enterprise-content";
+import contactHero from "@/assets/contact-hero-project-conversation.png";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -30,9 +32,9 @@ export const Route = createFileRoute("/contact")({
         content:
           "Qatar headquarters. Contact Nexora for manpower, industrial services and procurement support.",
       },
-      { property: "og:url", content: "/contact" },
+      { property: "og:url", content: `${site.url}/contact` },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: `${site.url}/contact` }],
   }),
   component: ContactPage,
 });
@@ -48,6 +50,8 @@ function ContactPage() {
           </>
         }
         description="Whether you need technical manpower, industrial services, procurement support or want to discuss a partnership, our team is ready to help."
+        backgroundImage={contactHero}
+        imagePosition="object-center"
       />
 
       {/* Quick links */}

@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
+import { site } from "@/lib/enterprise-content";
 import pEng from "@/assets/project-engineering.jpg";
 import pMaint from "@/assets/project-maintenance.jpg";
 import pPipeline from "@/assets/project-pipeline.jpg";
@@ -23,9 +24,9 @@ export const Route = createFileRoute("/news")({
         property: "og:description",
         content: "Company updates, project milestones and energy-sector insights.",
       },
-      { property: "og:url", content: "/news" },
+      { property: "og:url", content: `${site.url}/news` },
     ],
-    links: [{ rel: "canonical", href: "/news" }],
+    links: [{ rel: "canonical", href: `${site.url}/news` }],
   }),
   component: NewsPage,
 });

@@ -18,6 +18,7 @@ import {
 import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
+import { site } from "@/lib/enterprise-content";
 
 export const Route = createFileRoute("/careers")({
   head: () => ({
@@ -34,9 +35,9 @@ export const Route = createFileRoute("/careers")({
         content:
           "Engineering, technical and operational careers with Qatar's leading energy manpower partner.",
       },
-      { property: "og:url", content: "/careers" },
+      { property: "og:url", content: `${site.url}/careers` },
     ],
-    links: [{ rel: "canonical", href: "/careers" }],
+    links: [{ rel: "canonical", href: `${site.url}/careers` }],
   }),
   component: CareersPage,
 });
@@ -52,16 +53,16 @@ const openRoles = [
     requirements: "10+ years O&G experience, B.Eng Mechanical, ASME VIII knowledge",
   },
   {
-    title: "Instrumentation Engineer — DCS/ESD",
+    title: "Instrumentation Engineer - DCS/ESD",
     department: "Engineering",
     location: "Ras Laffan, Qatar",
     type: "Contract",
-    duration: "12–24 months",
+    duration: "12-24 months",
     disciplines: ["Yokogawa/Honeywell DCS", "SIS/ESD systems", "HAZOP reviews", "SIL analysis"],
     requirements: "8+ years process instrumentation, functional safety awareness",
   },
   {
-    title: "Project Manager — EPC",
+    title: "Project Manager - EPC",
     department: "Management",
     location: "Qatar / GCC",
     type: "Full-time",
@@ -70,16 +71,16 @@ const openRoles = [
     requirements: "15+ years GCC EPC project management, PMP preferred",
   },
   {
-    title: "HSE Officer — Process Plant",
+    title: "HSE Officer - Process Plant",
     department: "Health & Safety",
     location: "Kuwait",
     type: "Contract",
-    duration: "6–12 months",
+    duration: "6-12 months",
     disciplines: ["PTW management", "Incident investigation", "NEBOSH", "Risk assessment"],
     requirements: "5+ years O&G HSE, NEBOSH IGC, GCC oil sector experience",
   },
   {
-    title: "QA/QC Inspector — Welding",
+    title: "QA/QC Inspector - Welding",
     department: "Quality",
     location: "Kuwait",
     type: "Contract",
@@ -88,16 +89,16 @@ const openRoles = [
     requirements: "AWS CWI certified, API 1104 / ASME IX knowledge, 5+ years",
   },
   {
-    title: "Senior Welders — CS/SS/CRA",
+    title: "Senior Welders - CS/SS/CRA",
     department: "Technical Trades",
     location: "Kuwait / Qatar",
     type: "Contract",
-    duration: "3–12 months",
+    duration: "3-12 months",
     disciplines: ["SMAW", "GTAW", "GMAW", "ASME IX / API 1104"],
     requirements: "ASME IX or API 1104 qualified, 5+ years process piping experience",
   },
   {
-    title: "Electrical Engineer — HV/LV",
+    title: "Electrical Engineer - HV/LV",
     department: "Engineering",
     location: "Kuwait",
     type: "Contract",
@@ -106,20 +107,20 @@ const openRoles = [
     requirements: "8+ years industrial electrical, HV up to 33kV experience",
   },
   {
-    title: "Site Supervisor — Mechanical",
+    title: "Site Supervisor - Mechanical",
     department: "Supervision",
     location: "Qatar / GCC",
     type: "Contract",
-    duration: "6–12 months",
+    duration: "6-12 months",
     disciplines: ["Field supervision", "Sub-contractor management", "Daily reporting", "PTW"],
     requirements: "10+ years mechanical site supervision in O&G or petrochemical",
   },
   {
-    title: "Pipe Fitters — Process Piping",
+    title: "Pipe Fitters - Process Piping",
     department: "Technical Trades",
     location: "Kuwait",
     type: "Contract",
-    duration: "3–6 months",
+    duration: "3-6 months",
     disciplines: ["CS/SS piping", "Hydro-testing", "Alignment", "Flange management"],
     requirements: "5+ years process piping in refinery or petrochemical environment",
   },
@@ -221,7 +222,7 @@ function CareersPage() {
             <h2 className="mt-5 text-3xl font-extrabold md:text-4xl">Current vacancies.</h2>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
               All positions are subject to project availability. Additional roles are added
-              regularly — submit your CV if you don&apos;t see your discipline listed.
+              regularly - submit your CV if you don&apos;t see your discipline listed.
             </p>
           </Reveal>
 
@@ -351,7 +352,7 @@ function CareersPage() {
               <label className="flex cursor-pointer items-center gap-3 rounded-xl border border-dashed border-border bg-surface/60 px-4 py-4 text-sm text-muted-foreground transition hover:border-energy-soft">
                 <Upload className="h-5 w-5 shrink-0 text-primary" />
                 <span>
-                  <span className="font-bold text-foreground">Upload your CV</span> — PDF or DOC
+                  <span className="font-bold text-foreground">Upload your CV</span> - PDF or DOC
                   (max 5 MB)
                 </span>
                 <input type="file" accept=".pdf,.doc,.docx" className="hidden" />
