@@ -9,7 +9,7 @@ export function organizationSchema() {
     description:
       "Doha-based technical manpower, industrial services, procurement support and project coordination company serving Qatar and GCC energy markets.",
     url: site.url,
-    logo: `${site.url}/og-nexora-energy.svg`,
+    logo: `${site.url}/og-nexora-energy.png`,
     email: site.email,
     telephone: site.phone,
     address: {

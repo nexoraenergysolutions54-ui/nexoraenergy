@@ -11,10 +11,10 @@ import type { ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 
-const siteUrl = "https://www.nexora-energy.com";
+const siteUrl = "https://www.nexoraqa.com";
 const defaultDescription =
   "Nexora Energy Solutions delivers engineering, procurement, maintenance and operational support for Qatar and GCC energy infrastructure.";
-const defaultOgImage = `${siteUrl}/og-nexora-energy.svg`;
+const defaultOgImage = `${siteUrl}/og-nexora-energy.png`;
 
 function NotFoundComponent() {
   return (
@@ -92,7 +92,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:url", content: siteUrl },
       { property: "og:image", content: defaultOgImage },
       { property: "og:image:secure_url", content: defaultOgImage },
-      { property: "og:image:type", content: "image/svg+xml" },
+      { property: "og:image:type", content: "image/png" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       { property: "og:image:alt", content: "Nexora Energy Solutions industrial project support" },
@@ -125,6 +125,18 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
+        {/*
+         * og:image injected BEFORE HeadContent because TanStack Start / React 19
+         * silently drops meta[property] tags that appear after the HeadContent flush.
+         */}
+        <meta property="og:image" content={defaultOgImage} />
+        <meta property="og:image:secure_url" content={defaultOgImage} />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Nexora Energy Solutions — Qatar & GCC Technical Manpower" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={defaultOgImage} />
         <HeadContent />
       </head>
       <body>

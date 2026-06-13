@@ -237,7 +237,7 @@ export function seoHead(path: SeoRoutePath) {
   const page = seoPages[path];
   const canonical = canonicalUrl(path);
   const keywords = [...new Set([...page.keywords, ...marketKeywords])].join(", ");
-  const image = `${site.url}/og-nexora-energy.svg`;
+  const image = `${site.url}/og-nexora-energy.png`;
   const title = page.title;
   const ogTitle = page.ogTitle ?? title;
 
@@ -260,7 +260,7 @@ export function seoHead(path: SeoRoutePath) {
       { property: "og:url", content: canonical },
       { property: "og:image", content: image },
       { property: "og:image:secure_url", content: image },
-      { property: "og:image:type", content: "image/svg+xml" },
+      { property: "og:image:type", content: "image/png" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       { property: "og:image:alt", content: "Nexora Energy Solutions industrial project support" },

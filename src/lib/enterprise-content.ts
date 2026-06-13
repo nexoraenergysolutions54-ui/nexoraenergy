@@ -33,7 +33,7 @@ import technicalManpowerTeam from "@/assets/technical-manpower-team.png";
 export const site = {
   name: "Nexora Energy Solutions",
   legalName: "Nexora Energy Solutions W.L.L",
-  url: "https://www.nexora-energy.com",
+  url: "https://www.nexoraqa.com",
   phone: "+974 0000 0000",
   whatsapp: "+974 3311 0000",
   email: "info@nexora-energy.com",
