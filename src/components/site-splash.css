@@ -1,0 +1,106 @@
+/* Critical, scoped CSS is inlined in the root head to avoid a first-paint flash. */
+html {
+  scrollbar-gutter: stable;
+}
+.site-splash {
+  display: none;
+}
+html[data-nexora-splash="active"] {
+  overflow: hidden !important;
+  background: var(--dark-navy, #02111f);
+}
+html[data-nexora-splash="active"] body {
+  overflow: hidden !important;
+}
+html[data-nexora-splash="active"] .site-splash {
+  --splash-logo-width: clamp(240px, 28vw, 400px);
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: max(16px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right))
+    max(16px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  background:
+    radial-gradient(ellipse at center, rgb(47 208 196 / 0.045), transparent 55%),
+    var(--dark-navy, #02111f);
+  opacity: 1;
+  pointer-events: auto;
+  touch-action: none;
+  /* Compositor fallback if application initialization fails. JS also releases
+     the attribute/scroll lock independently at the 1,400 ms deadline. */
+  animation: site-splash-safety 1400ms linear both;
+}
+.site-splash__brand {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(var(--splash-logo-width), 100%);
+}
+.site-splash__logo {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  animation: site-splash-logo-in 180ms ease-out both;
+}
+.site-splash__ring {
+  position: absolute;
+  width: min(clamp(280px, 34vw, 480px), calc(100vw - 24px));
+  aspect-ratio: 1;
+  border: 1px solid rgb(47 208 196 / 0.1);
+  border-top-color: rgb(47 208 196 / 0.55);
+  border-right-color: rgb(47 208 196 / 0.28);
+  border-radius: 50%;
+  animation: site-splash-orbit 1100ms linear both;
+}
+html[data-nexora-splash="active"] .site-splash[data-phase="exiting"] {
+  animation: site-splash-exit 200ms ease-out both;
+}
+@keyframes site-splash-logo-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes site-splash-orbit {
+  to {
+    transform: rotate(300deg);
+  }
+}
+@keyframes site-splash-exit {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes site-splash-safety {
+  0%,
+  85.714% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html[data-nexora-splash="active"] .site-splash {
+    display: none;
+  }
+  .site-splash__logo,
+  .site-splash__ring {
+    animation: none;
+  }
+}

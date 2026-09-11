@@ -18,6 +18,11 @@ export default defineConfig({
         enabled: true,
         crawlLinks: true,
         failOnError: true,
+        // Crawled anchor links (e.g. "/about#collaborations") resolve to the
+        // same page as their base path - a browser never sends the fragment
+        // to the server, so prerendering it separately would just be dead
+        // output. Skip anything with a hash instead of crawling it as a page.
+        filter: (page) => !page.path.includes("#"),
       },
       pages: [
         { path: "/" },
@@ -26,15 +31,12 @@ export default defineConfig({
         { path: "/industrial-services" },
         { path: "/products" },
         { path: "/industries" },
-        { path: "/projects" },
         { path: "/partners" },
         { path: "/careers" },
         { path: "/contact" },
         { path: "/services" },
         { path: "/hse" },
         { path: "/news" },
-        { path: "/resources" },
-        { path: "/resources/gcc-industrial-manpower-guide" },
         { path: "/industries/oil-and-gas" },
         { path: "/industries/lng" },
         { path: "/industries/petrochemical" },

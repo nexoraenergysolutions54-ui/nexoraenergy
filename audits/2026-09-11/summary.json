@@ -1,0 +1,726 @@
+{
+  "lighthouse": [
+    {
+      "file": "contact-mobile.report.json",
+      "url": "https://www.nexoraqa.com/contact",
+      "date": "2026-09-11T15:31:05.302Z",
+      "version": "13.4.1",
+      "categories": {
+        "performance": 65,
+        "accessibility": 89,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 3019.67,
+          "display": "3.0 s"
+        },
+        "largest-contentful-paint": {
+          "value": 16986.094000000005,
+          "display": "17.0 s"
+        },
+        "total-blocking-time": {
+          "value": 0,
+          "display": "0 ms"
+        },
+        "cumulative-layout-shift": {
+          "value": 0,
+          "display": "0"
+        },
+        "speed-index": {
+          "value": 5659.581811995387,
+          "display": "5.7 s"
+        },
+        "total-byte-weight": {
+          "value": 3467383,
+          "display": "Total size was 3,386 KiB"
+        }
+      },
+      "warnings": [],
+      "failures": [
+        {
+          "id": "first-contentful-paint",
+          "display": "3.0 s"
+        },
+        {
+          "id": "largest-contentful-paint",
+          "display": "17.0 s"
+        },
+        {
+          "id": "speed-index",
+          "display": "5.7 s"
+        },
+        {
+          "id": "interactive",
+          "display": "17.0 s"
+        },
+        {
+          "id": "unsized-images"
+        },
+        {
+          "id": "aria-hidden-focus"
+        },
+        {
+          "id": "heading-order"
+        },
+        {
+          "id": "select-name"
+        },
+        {
+          "id": "total-byte-weight",
+          "display": "Total size was 3,386 KiB"
+        },
+        {
+          "id": "unused-javascript",
+          "display": "Est savings of 75 KiB"
+        },
+        {
+          "id": "cache-insight",
+          "display": "Est savings of 25 KiB"
+        },
+        {
+          "id": "forced-reflow-insight"
+        },
+        {
+          "id": "image-delivery-insight",
+          "display": "Est savings of 2,480 KiB"
+        },
+        {
+          "id": "lcp-breakdown-insight"
+        },
+        {
+          "id": "lcp-discovery-insight"
+        },
+        {
+          "id": "network-dependency-tree-insight"
+        },
+        {
+          "id": "render-blocking-insight",
+          "display": "Est savings of 680 ms"
+        }
+      ]
+    },
+    {
+      "file": "home-desktop.report.json",
+      "url": "https://www.nexoraqa.com/",
+      "date": "2026-09-11T15:29:13.108Z",
+      "version": "13.4.1",
+      "categories": {
+        "performance": 61,
+        "accessibility": 98,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 2382.6562,
+          "display": "2.4 s"
+        },
+        "largest-contentful-paint": {
+          "value": 4507.419,
+          "display": "4.5 s"
+        },
+        "total-blocking-time": {
+          "value": 0,
+          "display": "0 ms"
+        },
+        "cumulative-layout-shift": {
+          "value": 0.0006237481656177447,
+          "display": "0.001"
+        },
+        "speed-index": {
+          "value": 3787.3643597007613,
+          "display": "3.8 s"
+        },
+        "total-byte-weight": {
+          "value": 16760416,
+          "display": "Total size was 16,368 KiB"
+        }
+      },
+      "warnings": [],
+      "failures": [
+        {
+          "id": "first-contentful-paint",
+          "display": "2.4 s"
+        },
+        {
+          "id": "largest-contentful-paint",
+          "display": "4.5 s"
+        },
+        {
+          "id": "speed-index",
+          "display": "3.8 s"
+        },
+        {
+          "id": "interactive",
+          "display": "4.5 s"
+        },
+        {
+          "id": "unsized-images"
+        },
+        {
+          "id": "heading-order"
+        },
+        {
+          "id": "total-byte-weight",
+          "display": "Total size was 16,368 KiB"
+        },
+        {
+          "id": "unused-javascript",
+          "display": "Est savings of 75 KiB"
+        },
+        {
+          "id": "forced-reflow-insight"
+        },
+        {
+          "id": "image-delivery-insight",
+          "display": "Est savings of 14,857 KiB"
+        },
+        {
+          "id": "lcp-breakdown-insight"
+        },
+        {
+          "id": "network-dependency-tree-insight"
+        },
+        {
+          "id": "render-blocking-insight",
+          "display": "Est savings of 170 ms"
+        }
+      ]
+    },
+    {
+      "file": "home-mobile-repeat.report.json",
+      "url": "https://www.nexoraqa.com/",
+      "date": "2026-09-11T15:30:39.633Z",
+      "version": "13.4.1",
+      "categories": {
+        "performance": 59
+      },
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 3994.6595,
+          "display": "4.0 s"
+        },
+        "largest-contentful-paint": {
+          "value": 16493.286999999997,
+          "display": "16.5 s"
+        },
+        "total-blocking-time": {
+          "value": 0,
+          "display": "0 ms"
+        },
+        "cumulative-layout-shift": {
+          "value": 0,
+          "display": "0"
+        },
+        "speed-index": {
+          "value": 8035.043556009869,
+          "display": "8.0 s"
+        },
+        "total-byte-weight": {
+          "value": 14399013,
+          "display": "Total size was 14,062 KiB"
+        }
+      },
+      "warnings": [],
+      "failures": [
+        {
+          "id": "first-contentful-paint",
+          "display": "4.0 s"
+        },
+        {
+          "id": "largest-contentful-paint",
+          "display": "16.5 s"
+        },
+        {
+          "id": "speed-index",
+          "display": "8.0 s"
+        },
+        {
+          "id": "interactive",
+          "display": "16.5 s"
+        },
+        {
+          "id": "mainthread-work-breakdown",
+          "display": "2.5 s"
+        },
+        {
+          "id": "unsized-images"
+        },
+        {
+          "id": "total-byte-weight",
+          "display": "Total size was 14,062 KiB"
+        },
+        {
+          "id": "unused-javascript",
+          "display": "Est savings of 75 KiB"
+        },
+        {
+          "id": "image-delivery-insight",
+          "display": "Est savings of 13,383 KiB"
+        },
+        {
+          "id": "lcp-breakdown-insight"
+        },
+        {
+          "id": "network-dependency-tree-insight"
+        },
+        {
+          "id": "render-blocking-insight",
+          "display": "Est savings of 1,060 ms"
+        }
+      ]
+    },
+    {
+      "file": "home-mobile.report.json",
+      "url": "https://www.nexoraqa.com/",
+      "date": "2026-09-11T15:27:37.728Z",
+      "version": "13.4.1",
+      "categories": {
+        "performance": 59,
+        "accessibility": 98,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 3909.225,
+          "display": "3.9 s"
+        },
+        "largest-contentful-paint": {
+          "value": 17395.649000000005,
+          "display": "17.4 s"
+        },
+        "total-blocking-time": {
+          "value": 0,
+          "display": "0 ms"
+        },
+        "cumulative-layout-shift": {
+          "value": 0,
+          "display": "0"
+        },
+        "speed-index": {
+          "value": 9030.331839986258,
+          "display": "9.0 s"
+        },
+        "total-byte-weight": {
+          "value": 14398399,
+          "display": "Total size was 14,061 KiB"
+        }
+      },
+      "warnings": [],
+      "failures": [
+        {
+          "id": "first-contentful-paint",
+          "display": "3.9 s"
+        },
+        {
+          "id": "largest-contentful-paint",
+          "display": "17.4 s"
+        },
+        {
+          "id": "speed-index",
+          "display": "9.0 s"
+        },
+        {
+          "id": "interactive",
+          "display": "17.4 s"
+        },
+        {
+          "id": "mainthread-work-breakdown",
+          "display": "2.5 s"
+        },
+        {
+          "id": "unsized-images"
+        },
+        {
+          "id": "heading-order"
+        },
+        {
+          "id": "total-byte-weight",
+          "display": "Total size was 14,061 KiB"
+        },
+        {
+          "id": "unused-javascript",
+          "display": "Est savings of 75 KiB"
+        },
+        {
+          "id": "forced-reflow-insight"
+        },
+        {
+          "id": "image-delivery-insight",
+          "display": "Est savings of 13,359 KiB"
+        },
+        {
+          "id": "lcp-breakdown-insight"
+        },
+        {
+          "id": "network-dependency-tree-insight"
+        },
+        {
+          "id": "render-blocking-insight",
+          "display": "Est savings of 1,070 ms"
+        }
+      ]
+    }
+  ],
+  "pages": 27,
+  "non200": [],
+  "duplicateCanonicals": [
+    {
+      "route": "/resources/gcc-industrial-manpower-guide",
+      "canonicals": [
+        "https://www.nexoraqa.com/resources",
+        "https://www.nexoraqa.com/resources/gcc-industrial-manpower-guide"
+      ]
+    },
+    {
+      "route": "/industries/oil-and-gas",
+      "canonicals": [
+        "https://www.nexoraqa.com/industries",
+        "https://www.nexoraqa.com/industries/oil-and-gas"
+      ]
+    },
+    {
+      "route": "/industries/lng",
+      "canonicals": [
+        "https://www.nexoraqa.com/industries",
+        "https://www.nexoraqa.com/industries/lng"
+      ]
+    },
+    {
+      "route": "/industries/petrochemical",
+      "canonicals": [
+        "https://www.nexoraqa.com/industries",
+        "https://www.nexoraqa.com/industries/petrochemical"
+      ]
+    },
+    {
+      "route": "/industries/infrastructure",
+      "canonicals": [
+        "https://www.nexoraqa.com/industries",
+        "https://www.nexoraqa.com/industries/infrastructure"
+      ]
+    },
+    {
+      "route": "/industries/manufacturing",
+      "canonicals": [
+        "https://www.nexoraqa.com/industries",
+        "https://www.nexoraqa.com/industries/manufacturing"
+      ]
+    },
+    {
+      "route": "/industries/epc",
+      "canonicals": [
+        "https://www.nexoraqa.com/industries",
+        "https://www.nexoraqa.com/industries/epc"
+      ]
+    },
+    {
+      "route": "/services/manpower-supply",
+      "canonicals": [
+        "https://www.nexoraqa.com/services",
+        "https://www.nexoraqa.com/services/manpower-supply"
+      ]
+    },
+    {
+      "route": "/services/shutdown-support",
+      "canonicals": [
+        "https://www.nexoraqa.com/services",
+        "https://www.nexoraqa.com/services/shutdown-support"
+      ]
+    },
+    {
+      "route": "/services/maintenance-support",
+      "canonicals": [
+        "https://www.nexoraqa.com/services",
+        "https://www.nexoraqa.com/services/maintenance-support"
+      ]
+    },
+    {
+      "route": "/services/procurement-support",
+      "canonicals": [
+        "https://www.nexoraqa.com/services",
+        "https://www.nexoraqa.com/services/procurement-support"
+      ]
+    },
+    {
+      "route": "/services/project-support",
+      "canonicals": [
+        "https://www.nexoraqa.com/services",
+        "https://www.nexoraqa.com/services/project-support"
+      ]
+    },
+    {
+      "route": "/services/engineering-support",
+      "canonicals": [
+        "https://www.nexoraqa.com/services",
+        "https://www.nexoraqa.com/services/engineering-support"
+      ]
+    }
+  ],
+  "unknownLinks": [],
+  "forms": [
+    {
+      "route": "/manpower",
+      "forms": [
+        {
+          "action": null,
+          "method": "get",
+          "fields": [
+            {
+              "type": "text",
+              "name": "",
+              "required": false,
+              "labelCount": 0
+            },
+            {
+              "type": "text",
+              "name": "",
+              "required": false,
+              "labelCount": 0
+            },
+            {
+              "type": "text",
+              "name": "",
+              "required": false,
+              "labelCount": 0
+            },
+            {
+              "type": "email",
+              "name": "",
+              "required": false,
+              "labelCount": 0
+            },
+            {
+              "type": "text",
+              "name": "",
+              "required": false,
+              "labelCount": 0
+            },
+            {
+              "type": "select-one",
+              "name": "",
+              "required": false,
+              "labelCount": 0
+            },
+            {
+              "type": "text",
+              "name": "",
+              "required": false,
+              "labelCount": 0
+            },
+            {
+              "type": "text",
+              "name": "",
+              "required": false,
+              "labelCount": 0
+            },
+            {
+              "type": "text",
+              "name": "",
+              "required": false,
+              "labelCount": 0
+            },
+            {
+              "type": "textarea",
+              "name": "",
+              "required": false,
+              "labelCount": 0
+            },
+            {
+              "type": "file",
+              "name": "",
+              "required": false,
+              "labelCount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/products",
+      "forms": [
+        {
+          "action": null,
+          "method": "get",
+          "fields": [
+            {
+              "type": "text",
+              "name": "",
+              "required": false,
+              "labelCount": 0
+            },
+            {
+              "type": "text",
+              "name": "",
+              "required": false,
+              "labelCount": 0
+            },
+            {
+              "type": "email",
+              "name": "",
+              "required": false,
+              "labelCount": 0
+            },
+            {
+              "type": "text",
+              "name": "",
+              "required": false,
+              "labelCount": 0
+            },
+            {
+              "type": "textarea",
+              "name": "",
+              "required": false,
+              "labelCount": 0
+            },
+            {
+              "type": "file",
+              "name": "",
+              "required": false,
+              "labelCount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/careers",
+      "forms": [
+        {
+          "action": null,
+          "method": "get",
+          "fields": [
+            {
+              "type": "text",
+              "name": "",
+              "required": false,
+              "labelCount": 0
+            },
+            {
+              "type": "email",
+              "name": "",
+              "required": false,
+              "labelCount": 0
+            },
+            {
+              "type": "text",
+              "name": "",
+              "required": false,
+              "labelCount": 0
+            },
+            {
+              "type": "text",
+              "name": "",
+              "required": false,
+              "labelCount": 0
+            },
+            {
+              "type": "text",
+              "name": "",
+              "required": false,
+              "labelCount": 0
+            },
+            {
+              "type": "text",
+              "name": "",
+              "required": false,
+              "labelCount": 0
+            },
+            {
+              "type": "textarea",
+              "name": "",
+              "required": false,
+              "labelCount": 0
+            },
+            {
+              "type": "file",
+              "name": "",
+              "required": false,
+              "labelCount": 1
+            },
+            {
+              "type": "checkbox",
+              "name": "",
+              "required": false,
+              "labelCount": 1
+            },
+            {
+              "type": "checkbox",
+              "name": "",
+              "required": false,
+              "labelCount": 1
+            },
+            {
+              "type": "checkbox",
+              "name": "",
+              "required": false,
+              "labelCount": 1
+            },
+            {
+              "type": "checkbox",
+              "name": "",
+              "required": false,
+              "labelCount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/contact",
+      "forms": [
+        {
+          "action": null,
+          "method": "get",
+          "fields": [
+            {
+              "type": "text",
+              "name": "",
+              "required": false,
+              "labelCount": 0
+            },
+            {
+              "type": "text",
+              "name": "",
+              "required": false,
+              "labelCount": 0
+            },
+            {
+              "type": "text",
+              "name": "",
+              "required": false,
+              "labelCount": 0
+            },
+            {
+              "type": "email",
+              "name": "",
+              "required": false,
+              "labelCount": 0
+            },
+            {
+              "type": "text",
+              "name": "",
+              "required": false,
+              "labelCount": 0
+            },
+            {
+              "type": "select-one",
+              "name": "",
+              "required": false,
+              "labelCount": 0
+            },
+            {
+              "type": "textarea",
+              "name": "",
+              "required": false,
+              "labelCount": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "duplicateTitles": []
+}

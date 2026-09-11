@@ -2,6 +2,22 @@
 @source "../src";
 @import "tw-animate-css";
 
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("@fontsource-variable/inter/files/inter-latin-wght-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("@fontsource-variable/plus-jakarta-sans/files/plus-jakarta-sans-latin-wght-normal.woff2")
+    format("woff2");
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -385,6 +401,19 @@
   }
 }
 
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 46s linear infinite;
+}
+
 @keyframes trust-detail-ticker {
   0%,
   15% {
@@ -554,8 +583,20 @@
   .enterprise-globe-spin,
   .enterprise-route,
   .enterprise-marker-pulse,
-  .gcc-route-flow {
+  .gcc-route-flow,
+  .animate-marquee,
+  .animate-marquee-reverse {
     animation: none;
+  }
+
+  .marquee-track {
+    flex-wrap: wrap;
+    width: 100%;
+    transform: none !important;
+  }
+
+  .marquee-track[aria-hidden="true"] {
+    display: none;
   }
 
   .hero-cinema-frame {

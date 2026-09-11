@@ -3,6 +3,23 @@
   "framework": "tanstack-start",
   "installCommand": "npm ci",
   "buildCommand": "npm run build",
+  "redirects": [
+    {
+      "source": "/resources/gcc-industrial-manpower-guide",
+      "destination": "/manpower",
+      "permanent": true
+    },
+    {
+      "source": "/resources",
+      "destination": "/manpower",
+      "permanent": true
+    },
+    {
+      "source": "/projects",
+      "destination": "/industrial-services",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

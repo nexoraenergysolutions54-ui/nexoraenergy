@@ -1,4 +1,10 @@
-﻿import { markets, primaryServices, seoLandingContent, site } from "./enterprise-content";
+﻿import {
+  industryCards,
+  markets,
+  primaryServices,
+  seoLandingContent,
+  site,
+} from "./enterprise-content";
 import {
   breadcrumbSchema,
   itemListSchema,
@@ -26,9 +32,6 @@ export type SeoRoutePath =
   | "/news"
   | "/partners"
   | "/products"
-  | "/projects"
-  | "/resources"
-  | "/resources/gcc-industrial-manpower-guide"
   | "/services"
   | "/services/engineering-support"
   | "/services/maintenance-support"
@@ -55,24 +58,24 @@ const marketKeywords = [
 
 export const seoPages: Record<SeoRoutePath, SeoPage> = {
   "/": {
-    title: "Nexora Energy Solutions | Technical Manpower & Industrial Services in Qatar and GCC",
+    title: "Nexora Energy Solutions | Technical Manpower & Industrial Support in Qatar",
     description:
-      "Nexora Energy Solutions supplies technical manpower, shutdown support, maintenance teams, procurement support and industrial services for Qatar and GCC energy projects.",
+      "Nexora Energy Solutions is a Qatar-based technical manpower and industrial support provider serving Qatar, Saudi Arabia and Kuwait.",
     ogTitle: "Nexora Energy Solutions",
     keywords: [
       "Nexora Energy Solutions",
       "technical manpower Qatar",
       "industrial services Qatar",
-      "GCC energy projects",
-      "shutdown manpower",
-      "procurement support",
+      "technical staffing Saudi Arabia",
+      "technical manpower Kuwait",
+      "energy and industrial support",
     ],
   },
   "/about": {
-    title: "About Nexora Energy Solutions | Qatar Technical Manpower Partner",
+    title: "About NEXORA Energy Solutions | Qatar",
     description:
-      "Learn about Nexora Energy Solutions W.L.L, a Doha-based technical manpower, industrial services and procurement support partner for Qatar and GCC energy projects.",
-    ogTitle: "About Nexora Energy Solutions",
+      "Learn about NEXORA Energy Solutions, a Qatar-based provider of technical manpower, industrial services and procurement support focused on Qatar, Saudi Arabia and Kuwait.",
+    ogTitle: "About NEXORA Energy Solutions",
     keywords: ["about Nexora", "Qatar manpower company", "Doha industrial services"],
   },
   "/careers": {
@@ -83,11 +86,16 @@ export const seoPages: Record<SeoRoutePath, SeoPage> = {
     keywords: ["energy jobs Qatar", "engineering jobs GCC", "Nexora careers"],
   },
   "/contact": {
-    title: "Contact Nexora Energy Solutions | Doha, Qatar",
+    title: "Contact NEXORA Energy Solutions | Qatar",
     description:
-      "Contact Nexora Energy Solutions in Doha, Qatar for technical manpower, industrial services, procurement support and GCC project enquiries.",
-    ogTitle: "Contact Nexora Energy Solutions",
-    keywords: ["contact Nexora", "technical manpower enquiry Qatar", "industrial services Doha"],
+      "Contact NEXORA in Doha regarding technical manpower, industrial services and products and procurement requirements.",
+    ogTitle: "Contact NEXORA Energy Solutions",
+    keywords: [
+      "contact Nexora Energy Solutions",
+      "technical manpower enquiry Qatar",
+      "industrial services enquiry Qatar",
+      "industrial procurement enquiry Qatar",
+    ],
   },
   "/hse": {
     title: "HSE Standards | Nexora Energy Solutions",
@@ -97,30 +105,49 @@ export const seoPages: Record<SeoRoutePath, SeoPage> = {
     keywords: ["HSE Qatar", "industrial safety GCC", "QHSE energy projects"],
   },
   "/industrial-services": {
-    title: "Industrial Services in Qatar and GCC | Nexora Energy Solutions",
+    title: "Industrial Services in Qatar | Nexora Energy Solutions",
     description:
-      "Shutdown support, turnaround teams, maintenance services, site support, engineering coordination and procurement assistance for Qatar and GCC industrial assets.",
+      "Industrial maintenance, engineering and site-support services coordinated from Qatar for project requirements in Qatar, Saudi Arabia and Kuwait.",
     ogTitle: "Industrial Services - Nexora Energy Solutions",
-    keywords: ["industrial services Qatar", "shutdown support GCC", "turnaround manpower"],
+    keywords: [
+      "industrial services Qatar",
+      "industrial maintenance support Qatar",
+      "shutdown and turnaround support",
+      "mechanical and piping support",
+      "electrical and instrumentation support",
+      "industrial project support Saudi Arabia",
+      "industrial services Kuwait",
+      "engineering support services Qatar",
+    ],
   },
   "/industries": {
-    title: "Industries Served | Nexora Energy Solutions Qatar and GCC",
+    title: "Industries We Support | Nexora Energy Solutions Qatar",
     description:
-      "Nexora serves oil and gas, LNG, petrochemical, infrastructure, manufacturing and EPC sectors with technical manpower and industrial services.",
-    ogTitle: "Industries Served - Nexora Energy Solutions",
-    keywords: ["oil and gas manpower", "LNG manpower Qatar", "EPC support GCC"],
+      "Explore the energy and industrial sectors supported by Nexora through technical manpower, industrial services and procurement coordination from Qatar.",
+    ogTitle: "Industries We Support - Nexora Energy Solutions",
+    keywords: ["oil and gas manpower Qatar", "LNG manpower Qatar", "EPC support Qatar"],
   },
   "/manpower": {
-    title: "Technical Manpower Solutions in Qatar and GCC | Nexora Energy Solutions",
+    title: "Technical Manpower Services in Qatar | Nexora Energy Solutions",
     description:
-      "Qualified engineers, supervisors, technicians, welders, fitters, HSE officers, QA/QC inspectors and project staff for Qatar and GCC energy projects.",
-    ogTitle: "Technical Manpower Solutions - Nexora Energy Solutions",
-    keywords: ["technical manpower Qatar", "skilled manpower GCC", "engineering manpower Qatar"],
+      "Technical manpower support for industrial projects in Qatar, Saudi Arabia and Kuwait, including skilled trades, technicians, supervisors and project-support personnel.",
+    ogTitle: "Technical Manpower Services - Nexora Energy Solutions",
+    keywords: [
+      "technical manpower Qatar",
+      "industrial manpower Qatar",
+      "skilled technical workforce Qatar",
+      "technical staffing Saudi Arabia",
+      "technical manpower supply Kuwait",
+      "shutdown and turnaround manpower",
+      "mechanical manpower",
+      "electrical and instrumentation manpower",
+      "HSE and QA/QC personnel",
+    ],
   },
   "/news": {
-    title: "News and Industrial Insights | Nexora Energy Solutions",
+    title: "Industrial Planning Insights | Nexora Energy Solutions",
     description:
-      "Nexora news, field notes and insights on technical manpower, industrial services, procurement support and energy project coordination.",
+      "Practical planning notes on technical manpower, industrial services, documentation and procurement support for industrial project teams.",
     ogTitle: "Nexora News and Insights",
     keywords: ["Nexora news", "industrial insights Qatar", "energy manpower updates"],
   },
@@ -132,33 +159,20 @@ export const seoPages: Record<SeoRoutePath, SeoPage> = {
     keywords: ["energy partners Qatar", "EPC partnership GCC", "industrial supplier network"],
   },
   "/products": {
-    title: "Industrial Products and Procurement Support | Nexora Energy Solutions",
+    title: "Industrial Products & Procurement in Qatar | Nexora Energy Solutions",
     description:
-      "Industrial materials, valves, instrumentation, electrical products, vendor coordination and procurement support for Qatar and GCC project teams.",
-    ogTitle: "Products and Procurement - Nexora Energy Solutions",
-    keywords: ["industrial procurement Qatar", "valves supplier Qatar", "EPC materials supply"],
-  },
-  "/projects": {
-    title: "Project Experience | Nexora Energy Solutions",
-    description:
-      "Representative Nexora project scenarios for refinery turnaround manpower, pipeline integrity, LNG shutdown support, EPC supervision and procurement scopes.",
-    ogTitle: "Project Portfolio - Nexora Energy Solutions",
-    keywords: ["industrial project support Qatar", "refinery manpower", "pipeline manpower GCC"],
-  },
-  "/resources": {
-    title: "Industrial Manpower Resources | Nexora Energy Solutions",
-    description:
-      "Buyer-focused Nexora resources for GCC technical manpower planning, industrial services, procurement support and EPC project coordination.",
-    ogTitle: "Industrial Manpower Resources | Nexora",
-    keywords: ["manpower guide GCC", "EPC project resources", "industrial procurement guide"],
-  },
-  "/resources/gcc-industrial-manpower-guide": {
-    title: "GCC Industrial Manpower and Project Support Guide | Nexora Energy Solutions",
-    description:
-      "A practical guide for EPC contractors, energy operators and procurement teams planning technical manpower, industrial services and project support across Qatar and the GCC.",
-    ogTitle: "GCC Industrial Manpower and Project Support Guide",
-    type: "article",
-    keywords: ["GCC industrial manpower guide", "technical manpower planning", "EPC mobilisation"],
+      "Project-focused sourcing enquiries for industrial valves, instrumentation and electrical products from Qatar, with support focused on Qatar, Saudi Arabia and Kuwait.",
+    ogTitle: "Industrial Products & Procurement - Nexora Energy Solutions",
+    keywords: [
+      "industrial products Qatar",
+      "industrial procurement Qatar",
+      "industrial valves Qatar",
+      "instrumentation suppliers Qatar",
+      "electrical products Qatar",
+      "industrial supply Saudi Arabia",
+      "industrial procurement Kuwait",
+      "valve and instrumentation sourcing",
+    ],
   },
   "/services": {
     title: "Energy and Industrial Services | Nexora Energy Solutions",
@@ -270,10 +284,7 @@ export function seoHead(path: SeoRoutePath) {
       { name: "twitter:description", content: page.description },
       { name: "twitter:image", content: image },
     ],
-    links: [
-      { rel: "canonical", href: canonical },
-      { rel: "alternate", href: canonical, hrefLang: "en" },
-    ],
+    links: [],
   };
 }
 
@@ -335,7 +346,7 @@ export function structuredDataForPath(pathname: string) {
     data.push(
       itemListSchema(
         "Nexora Energy Solutions industries",
-        ["Oil and gas", "LNG", "Petrochemical", "Infrastructure", "Manufacturing", "EPC"],
+        industryCards.map((industry) => industry.title),
         normalized,
       ),
     );
@@ -347,5 +358,3 @@ export function structuredDataForPath(pathname: string) {
 
   return data;
 }
-
-

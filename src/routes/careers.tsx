@@ -1,3 +1,4 @@
+import { EnquiryForm } from "@/components/EnquiryForm";
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import {
@@ -138,7 +139,7 @@ const perks = [
   {
     icon: Shield,
     title: "Compliance Support",
-    desc: "Full visa, CODO, medical and mobilisation support managed by Nexora.",
+    desc: "Coordination of project-specific visa, medical and mobilisation requirements.",
   },
   {
     icon: HardHat,
@@ -201,12 +202,12 @@ function CareersPage() {
           <Reveal className="mb-10">
             <span className="inline-flex items-center gap-2 rounded-full border border-energy-soft bg-white/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.22em] text-primary backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full bg-energy" />
-              Open Positions
+              Career Disciplines
             </span>
-            <h2 className="mt-5 text-3xl font-extrabold md:text-4xl">Current vacancies.</h2>
+            <h2 className="mt-5 text-3xl font-extrabold md:text-4xl">Roles we recruit for.</h2>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              All positions are subject to project availability. Additional roles are added
-              regularly - submit your CV if you don&apos;t see your discipline listed.
+              These role profiles illustrate the disciplines we recruit for; they are not confirmed
+              vacancies. Email your experience and availability to discuss suitable opportunities.
             </p>
           </Reveal>
 
@@ -278,98 +279,13 @@ function CareersPage() {
               <span className="text-gradient-energy">Submit your CV.</span>
             </h2>
             <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-muted-foreground">
-              We regularly place professionals across 50+ technical disciplines. Send your profile
-              and we&apos;ll match you to suitable upcoming opportunities.
+              We welcome expressions of interest across engineering and technical disciplines. Send
+              your profile and we&apos;ll match you to suitable upcoming opportunities.
             </p>
           </Reveal>
 
           <Reveal>
-            <form className="space-y-4 rounded-4xl border border-border bg-white p-6 shadow-sm md:p-8">
-              <div className="grid gap-4 sm:grid-cols-2">
-                <FormField label="Full Name *" placeholder="Your full name" />
-                <FormField label="Email Address *" type="email" placeholder="name@email.com" />
-                <FormField label="Phone / WhatsApp *" placeholder="+974 or international..." />
-                <FormField label="Current Location" placeholder="City, Country" />
-                <FormField
-                  label="Area of Expertise *"
-                  placeholder="e.g. Mechanical Engineering, Welding"
-                />
-                <FormField label="Years of Experience" placeholder="e.g. 8 years" />
-              </div>
-
-              <div>
-                <label className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">
-                  Industry Experience
-                </label>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {[
-                    "Oil & Gas",
-                    "LNG",
-                    "Petrochemical",
-                    "Power",
-                    "Infrastructure",
-                    "Marine",
-                    "EPC",
-                  ].map((ind) => (
-                    <button
-                      key={ind}
-                      type="button"
-                      className="rounded-full border border-border px-4 py-1.5 text-xs font-bold text-muted-foreground transition hover:border-primary/40 hover:text-primary"
-                    >
-                      {ind}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <label className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">
-                  Cover Note
-                </label>
-                <textarea
-                  rows={4}
-                  placeholder="Tell us about your experience, certifications, project history and availability..."
-                  className="mt-2 w-full resize-none rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition placeholder:text-muted-foreground/60 focus:border-energy-soft focus:ring-4 focus:ring-energy/10"
-                />
-              </div>
-
-              <label className="flex cursor-pointer items-center gap-3 rounded-xl border border-dashed border-border bg-surface/60 px-4 py-4 text-sm text-muted-foreground transition hover:border-energy-soft">
-                <Upload className="h-5 w-5 shrink-0 text-primary" />
-                <span>
-                  <span className="font-bold text-foreground">Upload your CV</span> - PDF or DOC
-                  (max 5 MB)
-                </span>
-                <input type="file" accept=".pdf,.doc,.docx" className="hidden" />
-              </label>
-
-              <div className="grid gap-3 sm:grid-cols-2">
-                {[
-                  "Available for immediate deployment",
-                  "Hold valid Qatar/GCC residency",
-                  "OPITO / safety certifications",
-                  "Available for GCC-wide projects",
-                ].map((item) => (
-                  <label
-                    key={item}
-                    className="flex cursor-pointer items-center gap-2.5 text-xs font-semibold"
-                  >
-                    <input type="checkbox" className="rounded border-border text-primary" />
-                    {item}
-                  </label>
-                ))}
-              </div>
-
-              <button
-                type="submit"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-4 text-sm font-bold text-primary-foreground transition hover:bg-primary/90 btn-glow-blue"
-              >
-                Submit Application <Send className="h-4 w-4" />
-              </button>
-
-              <p className="text-center text-xs text-muted-foreground">
-                All applications are reviewed by our recruitment team within 3 business days.
-              </p>
-            </form>
+            <EnquiryForm kind="careers" />
           </Reveal>
         </div>
       </section>
@@ -382,7 +298,7 @@ function CareersPage() {
           </Reveal>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { n: "01", icon: Send, t: "Submit CV", d: "Apply via this form or email directly." },
+              { n: "01", icon: Send, t: "Submit CV", d: "Prepare an email and attach your CV." },
               {
                 n: "02",
                 icon: Users,
@@ -419,28 +335,5 @@ function CareersPage() {
         </div>
       </section>
     </Layout>
-  );
-}
-
-function FormField({
-  label,
-  type = "text",
-  placeholder,
-}: {
-  label: string;
-  type?: string;
-  placeholder?: string;
-}) {
-  return (
-    <div>
-      <label className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">
-        {label}
-      </label>
-      <input
-        type={type}
-        placeholder={placeholder}
-        className="mt-2 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition placeholder:text-muted-foreground/60 focus:border-energy-soft focus:ring-4 focus:ring-energy/10"
-      />
-    </div>
   );
 }

@@ -51,5 +51,3 @@ function walk(dir) {
 walk(join(process.cwd(), ".output", "public"));
 
 console.log("[og-inject] done");
-
-

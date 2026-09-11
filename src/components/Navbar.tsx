@@ -1,8 +1,10 @@
+import { site } from "@/lib/enterprise-content";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
+  ChevronDown,
   ChevronRight,
   Facebook,
   Linkedin,
@@ -14,18 +16,266 @@ import {
   X,
 } from "lucide-react";
 import { Logo } from "@/components/Logo";
+import { cn } from "@/lib/utils";
 
-const navLinks = [
-  { to: "/" as const, label: "Home" },
-  { to: "/about" as const, label: "About" },
-  { to: "/manpower" as const, label: "Technical Manpower", primary: true },
+const solutionsLinks = [
+  { to: "/manpower" as const, label: "Technical Manpower" },
   { to: "/industrial-services" as const, label: "Industrial Services" },
-  { to: "/products" as const, label: "Products" },
-  { to: "/industries" as const, label: "Industries" },
-  { to: "/resources" as const, label: "Resources" },
-  { to: "/partners" as const, label: "Partners" },
-  { to: "/contact" as const, label: "Contact" },
+  { to: "/products" as const, label: "Products & Procurement" },
 ];
+
+const industriesLinks = [
+  { to: "/industries/oil-and-gas" as const, label: "Oil & Gas" },
+  { to: "/industries/lng" as const, label: "LNG" },
+  { to: "/industries/petrochemical" as const, label: "Petrochemical" },
+  { to: "/industries/infrastructure" as const, label: "Infrastructure" },
+  { to: "/industries/manufacturing" as const, label: "Manufacturing" },
+  { to: "/industries/epc" as const, label: "EPC" },
+];
+
+const trailingLinks = [{ to: "/contact" as const, label: "Contact" }];
+
+function isActive(pathname: string, to: string) {
+  return to === "/" ? pathname === "/" : pathname === to || pathname.startsWith(`${to}/`);
+}
+
+function NavDropdown({
+  label,
+  items,
+  lightHeader,
+  pathname,
+  moreLink,
+  active,
+}: {
+  label: string;
+  items: { to: string; label: string }[];
+  lightHeader: boolean;
+  pathname: string;
+  moreLink?: { to: string; label: string };
+  /** Route-based active state, computed by the caller so it can cover child
+   * routes (e.g. /services/*) that aren't in `items` itself. */
+  active: boolean;
+}) {
+  const [open, setOpen] = useState(false);
+  const wrapRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function onDocClick(event: MouseEvent) {
+      if (wrapRef.current && !wrapRef.current.contains(event.target as Node)) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", onDocClick);
+    return () => document.removeEventListener("mousedown", onDocClick);
+  }, []);
+
+  return (
+    <div
+      ref={wrapRef}
+      className="relative"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+      onFocus={() => setOpen(true)}
+      onBlur={(event) => {
+        if (!wrapRef.current?.contains(event.relatedTarget as Node)) {
+          setOpen(false);
+        }
+      }}
+      onKeyDown={(event) => {
+        if (event.key === "Escape") {
+          setOpen(false);
+          (event.currentTarget.querySelector("button") as HTMLButtonElement | null)?.focus();
+        }
+      }}
+    >
+      <button
+        type="button"
+        aria-expanded={open}
+        aria-haspopup="true"
+        onClick={() => setOpen((value) => !value)}
+        className={`group relative flex items-center gap-1.5 whitespace-nowrap px-3 py-3 text-sm transition ${
+          active
+            ? lightHeader
+              ? "font-extrabold text-primary"
+              : "font-extrabold text-white"
+            : lightHeader
+              ? "font-bold text-foreground/72 hover:text-foreground"
+              : "font-bold text-white/76 hover:text-white"
+        }`}
+      >
+        {label}
+        <ChevronDown
+          className={cn("h-3.5 w-3.5 transition-transform duration-200", open && "rotate-180")}
+        />
+        <span
+          className={`absolute inset-x-3 bottom-1 h-0.5 origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100 ${
+            lightHeader ? "bg-primary/45" : "bg-energy/55"
+          } ${active ? "scale-x-100" : ""}`}
+        />
+      </button>
+
+      <div
+        className={cn(
+          "absolute left-0 top-full w-64 pt-3 transition duration-150",
+          open
+            ? "visible translate-y-0 opacity-100"
+            : "pointer-events-none invisible -translate-y-1 opacity-0",
+        )}
+      >
+        <div className="rounded-xl border border-border bg-white p-2 shadow-elevated">
+          <ul>
+            {items.map((item) => (
+              <li key={item.to}>
+                <Link
+                  to={item.to}
+                  tabIndex={open ? 0 : -1}
+                  onClick={() => setOpen(false)}
+                  className={cn(
+                    "block rounded-lg px-3.5 py-2.5 text-sm font-semibold transition",
+                    isActive(pathname, item.to)
+                      ? "bg-primary/8 text-primary"
+                      : "text-foreground/78 hover:bg-surface hover:text-primary",
+                  )}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+            {moreLink && (
+              <li>
+                <Link
+                  to={moreLink.to}
+                  tabIndex={open ? 0 : -1}
+                  onClick={() => setOpen(false)}
+                  className="mt-1 block rounded-lg border-t border-border px-3.5 py-2.5 pt-3 text-xs font-extrabold uppercase tracking-[0.1em] text-primary hover:text-navy"
+                >
+                  {moreLink.label}
+                </Link>
+              </li>
+            )}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function TopNavLink({
+  to,
+  label,
+  lightHeader,
+  pathname,
+}: {
+  to: string;
+  label: string;
+  lightHeader: boolean;
+  pathname: string;
+}) {
+  const active = isActive(pathname, to);
+  return (
+    <Link
+      to={to}
+      className={`group relative whitespace-nowrap px-3 py-3 text-sm transition ${
+        active
+          ? lightHeader
+            ? "font-extrabold text-primary"
+            : "font-extrabold text-white"
+          : lightHeader
+            ? "font-bold text-foreground/72 hover:text-foreground"
+            : "font-bold text-white/76 hover:text-white"
+      }`}
+    >
+      {label}
+      <span
+        className={`absolute inset-x-3 bottom-1 h-0.5 origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100 ${
+          lightHeader ? "bg-primary/45" : "bg-energy/55"
+        }`}
+      />
+      {active && (
+        <motion.span
+          layoutId="nav-active-line"
+          className={`absolute inset-x-3 bottom-1 h-0.5 ${lightHeader ? "bg-primary" : "bg-energy"}`}
+          transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
+        />
+      )}
+    </Link>
+  );
+}
+
+function MobileNavGroup({
+  label,
+  items,
+  pathname,
+  active,
+}: {
+  label: string;
+  items: { to: string; label: string }[];
+  pathname: string;
+  active: boolean;
+}) {
+  const [open, setOpen] = useState(active);
+
+  return (
+    <div className="py-1">
+      <button
+        type="button"
+        aria-expanded={open}
+        onClick={() => setOpen((value) => !value)}
+        className={`flex w-full items-center justify-between py-3 text-sm transition-colors ${
+          active ? "font-extrabold text-primary" : "font-bold text-foreground"
+        }`}
+      >
+        <span>{label}</span>
+        <ChevronDown
+          className={cn("h-4 w-4 shrink-0 transition-transform", open && "rotate-180")}
+        />
+      </button>
+      <div
+        className={cn(
+          "grid transition-all duration-200",
+          open ? "grid-rows-[1fr] pb-2" : "grid-rows-[0fr]",
+        )}
+      >
+        <div className="overflow-hidden">
+          <ul className="space-y-1 pl-3">
+            {items.map((item) => (
+              <li key={item.to}>
+                <Link
+                  to={item.to}
+                  className={`flex items-center justify-between rounded-md py-2.5 text-sm transition-colors ${
+                    isActive(pathname, item.to)
+                      ? "font-bold text-primary"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  <span>{item.label}</span>
+                  <ChevronRight className="h-3.5 w-3.5 shrink-0 text-muted-foreground/45" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function MobileTopLink({ to, label, pathname }: { to: string; label: string; pathname: string }) {
+  const active = isActive(pathname, to);
+  return (
+    <Link
+      to={to}
+      className={`flex items-center justify-between py-4 text-sm transition-colors ${
+        active ? "font-extrabold text-primary" : "font-bold text-foreground hover:text-primary"
+      }`}
+    >
+      <span>{label}</span>
+      <ChevronRight
+        className={`h-4 w-4 shrink-0 ${active ? "text-primary" : "text-muted-foreground/45"}`}
+      />
+    </Link>
+  );
+}
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -45,8 +295,13 @@ export function Navbar() {
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMobileOpen(false);
+    };
+    document.addEventListener("keydown", onKeyDown);
     return () => {
       document.body.style.overflow = "";
+      document.removeEventListener("keydown", onKeyDown);
     };
   }, [mobileOpen]);
 
@@ -55,11 +310,18 @@ export function Navbar() {
   const utilityHover = lightHeader ? "hover:text-primary" : "hover:text-white";
   const utilityDivider = lightHeader ? "bg-border" : "bg-white/14";
   const utilityIcon = lightHeader ? "text-primary" : "text-energy";
+  const pathname = location.pathname;
+
+  // Route-based active state - covers child routes (e.g. /services/shutdown-support,
+  // /industries/lng) that aren't themselves in the dropdown's visible item list.
+  const servicesActive =
+    solutionsLinks.some((link) => isActive(pathname, link.to)) || pathname.startsWith("/services/");
+  const industriesActive = isActive(pathname, "/industries");
 
   return (
     <>
       <motion.header
-        initial={{ y: -16, opacity: 0 }}
+        initial={false}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
         className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
@@ -82,19 +344,18 @@ export function Navbar() {
               </span>
               <span className={`mx-4 h-3 w-px ${utilityDivider}`} aria-hidden="true" />
               <a
-                href="tel:+97400000000"
-                className={`flex items-center gap-2 font-semibold transition-colors ${utilityText} ${utilityHover}`}
+                href={`tel:${site.phone.replace(/\s/g, "")}`}
+                className={`text-xs font-semibold transition-colors ${utilityText} ${utilityHover}`}
               >
-                <Phone className={`h-3.5 w-3.5 shrink-0 ${utilityIcon}`} />
-                <span>+974 0000 0000</span>
+                {site.phone}
               </a>
               <span className={`mx-4 h-3 w-px ${utilityDivider}`} aria-hidden="true" />
               <a
-                href="mailto:info@nexora-energy.com"
+                href={`mailto:${site.email}`}
                 className={`flex items-center gap-2 font-semibold transition-colors ${utilityText} ${utilityHover}`}
               >
                 <Mail className={`h-3.5 w-3.5 shrink-0 ${utilityIcon}`} />
-                <span>info@nexora-energy.com</span>
+                <span>{site.email}</span>
               </a>
             </div>
             <div className="flex items-center gap-1.5">
@@ -122,11 +383,11 @@ export function Navbar() {
           </div>
         </div>
 
-        <div className="mx-auto grid max-w-[1400px] grid-cols-[auto_1fr_auto] items-center gap-5 px-5 py-3 lg:px-8">
+        <div className="mx-auto grid max-w-[1400px] grid-cols-[1fr_auto_1fr] items-center gap-4 px-5 py-3 lg:px-8">
           <Link
             to="/"
             aria-label="Nexora Energy Solutions - Home"
-            className="relative block h-12 w-[172px] overflow-visible rounded-md transition duration-300 hover:opacity-90"
+            className="relative block h-12 w-[172px] justify-self-start overflow-visible rounded-md transition duration-300 hover:opacity-90"
           >
             <Logo
               size={70}
@@ -139,65 +400,59 @@ export function Navbar() {
             className="hidden items-center justify-center [@media(min-width:1280px)]:flex"
             aria-label="Primary navigation"
           >
-            {navLinks.map((link) => {
-              const active =
-                link.to === "/" ? location.pathname === "/" : location.pathname === link.to;
-              const primary = "primary" in link;
+            <TopNavLink to="/" label="Home" lightHeader={lightHeader} pathname={pathname} />
+            <TopNavLink to="/about" label="About" lightHeader={lightHeader} pathname={pathname} />
 
-              return (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  className={`group relative whitespace-nowrap px-3 py-3 text-sm transition ${
-                    active
-                      ? lightHeader
-                        ? "font-extrabold text-primary"
-                        : "font-extrabold text-white"
-                      : primary
-                        ? lightHeader
-                          ? "font-extrabold text-foreground hover:text-primary"
-                          : "font-extrabold text-white hover:text-energy"
-                        : lightHeader
-                          ? "font-bold text-foreground/72 hover:text-foreground"
-                          : "font-bold text-white/76 hover:text-white"
-                  }`}
-                >
-                  {link.label}
-                  <span
-                    className={`absolute inset-x-3 bottom-1 h-0.5 origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100 ${
-                      lightHeader ? "bg-primary/45" : "bg-energy/55"
-                    }`}
-                  />
-                  {active && (
-                    <motion.span
-                      layoutId="nav-active-line"
-                      className={`absolute inset-x-3 bottom-1 h-0.5 ${
-                        lightHeader ? "bg-primary" : "bg-energy"
-                      }`}
-                      transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
-                    />
-                  )}
-                </Link>
-              );
-            })}
+            <NavDropdown
+              label="Services"
+              items={solutionsLinks}
+              lightHeader={lightHeader}
+              pathname={pathname}
+              active={servicesActive}
+            />
+
+            <NavDropdown
+              label="Industries"
+              items={industriesLinks}
+              lightHeader={lightHeader}
+              pathname={pathname}
+              active={industriesActive}
+              moreLink={{ to: "/industries", label: "View all industries" }}
+            />
+
+            {trailingLinks.map((link) => (
+              <TopNavLink
+                key={link.to}
+                to={link.to}
+                label={link.label}
+                lightHeader={lightHeader}
+                pathname={pathname}
+              />
+            ))}
           </nav>
 
           <div className="flex items-center justify-end gap-3">
             <Link
               to="/manpower"
-              className={`hidden min-h-11 items-center gap-2 rounded-md px-5 py-2.5 text-sm font-extrabold transition sm:inline-flex ${
+              hash="request-form"
+              className={cn(
+                "group hidden min-h-11 items-center gap-2 rounded-md border border-transparent bg-energy px-5 py-2.5 text-sm font-extrabold text-navy transition duration-200 hover:brightness-95 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 sm:inline-flex",
                 lightHeader
-                  ? "bg-primary text-white hover:bg-navy"
-                  : "bg-energy text-navy hover:bg-white"
-              }`}
+                  ? "focus-visible:ring-primary focus-visible:ring-offset-white"
+                  : "focus-visible:ring-white focus-visible:ring-offset-navy",
+              )}
             >
               Request Manpower
-              <ArrowRight className="h-4 w-4" />
+              <ArrowRight
+                className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5"
+                aria-hidden="true"
+              />
             </Link>
             <button
               onClick={() => setMobileOpen((value) => !value)}
               aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
               aria-expanded={mobileOpen}
+              aria-controls="mobile-navigation"
               className={`grid h-11 w-11 place-items-center rounded-md border transition [@media(min-width:1280px)]:hidden ${
                 lightHeader
                   ? "border-border text-foreground hover:border-primary/40 hover:text-primary"
@@ -211,10 +466,12 @@ export function Navbar() {
       </motion.header>
 
       <div
+        id="mobile-navigation"
         className={`fixed inset-0 z-40 transition [@media(min-width:1280px)]:hidden ${
           mobileOpen ? "pointer-events-auto" : "pointer-events-none"
         }`}
         aria-hidden={!mobileOpen}
+        inert={!mobileOpen}
       >
         <div
           className={`absolute inset-0 bg-navy/55 transition-opacity ${
@@ -231,38 +488,36 @@ export function Navbar() {
           <div className="mx-auto max-w-[1400px] px-5 pb-8 pt-24 lg:pt-26 lg:px-8">
             <Link
               to="/manpower"
-              className="mb-4 flex min-h-12 items-center justify-between rounded-md bg-primary px-5 py-3 text-sm font-extrabold text-white transition hover:bg-navy"
+              hash="request-form"
+              className="group mb-4 flex min-h-12 items-center justify-between rounded-md border border-transparent bg-primary px-5 py-3 text-sm font-extrabold text-white transition duration-200 hover:brightness-95 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-white"
             >
               <span>Request Manpower</span>
-              <ArrowRight className="h-4 w-4" />
+              <ArrowRight
+                className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5"
+                aria-hidden="true"
+              />
             </Link>
 
             <nav className="divide-y divide-border" aria-label="Mobile navigation">
-              {navLinks.map((link) => {
-                const active =
-                  link.to === "/" ? location.pathname === "/" : location.pathname === link.to;
-                const primary = "primary" in link;
-                return (
-                  <Link
-                    key={link.to}
-                    to={link.to}
-                    className={`flex items-center justify-between py-4 text-sm transition-colors ${
-                      active
-                        ? "font-extrabold text-primary"
-                        : primary
-                          ? "font-extrabold text-foreground hover:text-primary"
-                          : "font-bold text-muted-foreground hover:text-foreground"
-                    }`}
-                  >
-                    <span>{link.label}</span>
-                    <ChevronRight
-                      className={`h-4 w-4 shrink-0 ${
-                        active ? "text-primary" : "text-muted-foreground/45"
-                      }`}
-                    />
-                  </Link>
-                );
-              })}
+              <MobileTopLink to="/" label="Home" pathname={pathname} />
+              <MobileTopLink to="/about" label="About" pathname={pathname} />
+
+              <MobileNavGroup
+                label="Services"
+                items={solutionsLinks}
+                pathname={pathname}
+                active={servicesActive}
+              />
+              <MobileNavGroup
+                label="Industries"
+                items={[...industriesLinks, { to: "/industries", label: "View all industries" }]}
+                pathname={pathname}
+                active={industriesActive}
+              />
+
+              {trailingLinks.map((link) => (
+                <MobileTopLink key={link.to} to={link.to} label={link.label} pathname={pathname} />
+              ))}
             </nav>
 
             <div className="mt-6 rounded-md border border-border bg-surface p-4">
@@ -270,17 +525,14 @@ export function Navbar() {
                 Qatar Headquarters
               </div>
               <div className="mt-2 text-sm font-bold text-foreground">Doha, Qatar</div>
-              <a
-                href="tel:+97400000000"
-                className="mt-1 block text-sm font-bold text-primary hover:text-navy"
-              >
-                +974 0000 0000
+              <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="text-sm font-semibold">
+                {site.phone}
               </a>
               <a
-                href="mailto:info@nexora-energy.com"
+                href={`mailto:${site.email}`}
                 className="mt-0.5 block text-xs text-muted-foreground hover:text-foreground"
               >
-                info@nexora-energy.com
+                {site.email}
               </a>
             </div>
           </div>

@@ -3,33 +3,27 @@ import { motion } from "framer-motion";
 import {
   ArrowRight,
   ArrowUpRight,
-  Award,
   Building2,
   ClipboardList,
-  HardHat,
-  Package,
-  Send,
+  Factory,
+  FileCheck2,
+  Flame,
+  FlaskConical,
+  Layers,
+  MessageSquare,
+  Network,
   Settings2,
   Shield,
   Timer,
-  TrendingUp,
-  Users,
+  UsersRound,
   Wrench,
   Zap,
 } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
-import { site } from "@/lib/enterprise-content";
 import { seoHead } from "@/lib/seo";
-import homeHeroBriefing from "@/assets/home-hero-briefing.png";
-import homeHeroMaintenance from "@/assets/home-hero-maintenance.png";
-import homeHeroPlanning from "@/assets/home-hero-planning.png";
-import homeHeroProcurement from "@/assets/home-hero-procurement.png";
-import industrialServicesValveTeam from "@/assets/industrial-services-valve-team.png";
-import manpowerHeroCrewBriefing from "@/assets/manpower-hero-crew-briefing.png";
-import pMaint from "@/assets/project-maintenance.jpg";
-import pRefinery from "@/assets/project-refinery.jpg";
-import pEng from "@/assets/project-engineering.jpg";
+import pMaint from "@/assets/optimized/project-maintenance.webp";
+import pRefinery from "@/assets/optimized/project-refinery.webp";
 
 export const Route = createFileRoute("/industrial-services")({
   head: () => seoHead("/industrial-services"),
@@ -58,15 +52,15 @@ function IndustrialServicesPage() {
     <Layout>
       <ServicesHero />
       <ServicesGrid />
-      <MethodologySection />
-      <ProjectTypesSection />
+      <DeliveryApproachSection />
+      <EnvironmentsSection />
       <SafetySection />
       <ServicesCTA />
     </Layout>
   );
 }
 
-/* --- HERO ------------------------------------------------------------------ */
+/* --- 1. HERO ------------------------------------------------------------------ */
 
 function ServicesHero() {
   return (
@@ -100,7 +94,7 @@ function ServicesHero() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="max-w-3xl font-display text-5xl font-extrabold leading-[1.02] text-white md:text-6xl"
         >
-          Full Lifecycle <span className="text-energy">Industrial Site Support</span>
+          Industrial Services for <span className="text-energy">Complex Project Requirements</span>
         </motion.h1>
 
         <motion.p
@@ -109,9 +103,9 @@ function ServicesHero() {
           transition={{ duration: 0.7, delay: 0.22 }}
           className="mt-6 max-w-xl text-base leading-relaxed text-white/68 md:text-lg"
         >
-          From planned shutdowns to emergency maintenance and long-term site services - Nexora
-          delivers specialist industrial crews with the discipline, compliance and documentation
-          standards your facility demands.
+          NEXORA coordinates maintenance, engineering and site-support requirements from its base in
+          Qatar, with a focus on Qatar, Saudi Arabia and Kuwait. Support is structured around the
+          approved scope, schedule, site conditions and required technical disciplines.
         </motion.p>
 
         <motion.div
@@ -124,13 +118,13 @@ function ServicesHero() {
             to="/contact"
             className="inline-flex items-center gap-2 rounded-full bg-energy px-7 py-4 text-sm font-bold text-navy transition hover:-translate-y-0.5 hover:bg-energy/90 btn-glow-teal"
           >
-            Request a Proposal <ArrowRight className="h-4 w-4" />
+            Discuss Your Requirement <ArrowRight className="h-4 w-4" />
           </Link>
           <Link
             to="/manpower"
             className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-7 py-4 text-sm font-bold text-white backdrop-blur transition hover:border-white/40 hover:bg-white/16"
           >
-            View Manpower Solutions <ArrowUpRight className="h-4 w-4" />
+            View Technical Manpower <ArrowUpRight className="h-4 w-4" />
           </Link>
         </motion.div>
       </div>
@@ -138,50 +132,50 @@ function ServicesHero() {
   );
 }
 
-/* --- SERVICES GRID --------------------------------------------------------- */
+/* --- 2. INDUSTRIAL SERVICE LINES ------------------------------------------------ */
 
 const services = [
   {
     icon: Timer,
-    title: "Shutdown Support",
-    desc: "Qualified manpower and site support for shutdown planning, execution and close-out activities.",
-    image: manpowerHeroCrewBriefing,
-  },
-  {
-    icon: TrendingUp,
-    title: "Turnaround Support",
-    desc: "Multi-discipline support teams for refinery, LNG and petrochemical turnaround projects.",
-    image: homeHeroMaintenance,
+    title: "Shutdown & Turnaround Support",
+    desc: "Coordinated personnel and site support for planned shutdown, turnaround and maintenance windows.",
+    to: "/services/shutdown-support" as const,
+    linkLabel: "Learn More",
   },
   {
     icon: Wrench,
-    title: "Maintenance Support",
-    desc: "Preventive, corrective and routine maintenance support for critical industrial assets.",
-    image: industrialServicesValveTeam,
-  },
-  {
-    icon: HardHat,
-    title: "Project Support",
-    desc: "Technical personnel and site coordination support for project delivery and execution.",
-    image: homeHeroPlanning,
-  },
-  {
-    icon: Building2,
-    title: "Site Services",
-    desc: "Site-ready manpower and operational support for industrial facilities and infrastructure projects.",
-    image: homeHeroBriefing,
-  },
-  {
-    icon: Package,
-    title: "Procurement Support",
-    desc: "Procurement coordination and industrial material sourcing support for project requirements.",
-    image: homeHeroProcurement,
+    title: "Industrial Maintenance Support",
+    desc: "Technical support for preventive, corrective and planned maintenance requirements across industrial facilities.",
+    to: "/services/maintenance-support" as const,
+    linkLabel: "Learn More",
   },
   {
     icon: Settings2,
-    title: "Engineering Support",
-    desc: "Engineering, inspection and documentation support for controlled project environments.",
-    image: pEng,
+    title: "Mechanical & Piping Support",
+    desc: "Project-focused support for mechanical, piping, equipment and related site requirements.",
+    to: "/contact" as const,
+    linkLabel: "Discuss This Requirement",
+  },
+  {
+    icon: Zap,
+    title: "Electrical & Instrumentation Support",
+    desc: "Technical support for electrical, instrumentation and control-related project requirements.",
+    to: "/contact" as const,
+    linkLabel: "Discuss This Requirement",
+  },
+  {
+    icon: Building2,
+    title: "Project & Site Support",
+    desc: "Coordinated technical and site support aligned with approved project scope, schedule and operational conditions.",
+    to: "/services/project-support" as const,
+    linkLabel: "Learn More",
+  },
+  {
+    icon: Layers,
+    title: "Engineering & Technical Coordination",
+    desc: "Engineering, documentation and technical coordination support for defined industrial requirements.",
+    to: "/services/engineering-support" as const,
+    linkLabel: "Learn More",
   },
 ];
 
@@ -192,195 +186,172 @@ function ServicesGrid() {
         <Reveal className="mb-12 max-w-3xl">
           <Eyebrow>Our Services</Eyebrow>
           <h2 className="mt-5 text-4xl font-extrabold leading-[1.06] text-foreground md:text-5xl">
-            Seven Service Lines. One Trusted Partner.
+            Coordinated Support Across Industrial Requirements
           </h2>
           <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
-            Practical industrial support solutions for energy, LNG, petrochemical, infrastructure
-            and EPC projects across Qatar and the GCC.
+            NEXORA supports defined industrial scopes through technical coordination, relevant
+            personnel and project-focused service delivery.
           </p>
         </Reveal>
 
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => (
             <Reveal key={service.title} delay={i * 0.055}>
-              <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-energy/35 hover:shadow-elevated">
-                <div className="relative aspect-video overflow-hidden bg-navy">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-navy/42 via-navy/5 to-transparent" />
+              <article className="flex h-full flex-col rounded-2xl border border-border bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-energy/35 hover:shadow-elevated">
+                <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl border border-primary/10 bg-primary/6 text-primary">
+                  <service.icon className="h-6 w-6" />
                 </div>
-                <div className="flex flex-1 flex-col p-6">
-                  <div className="flex items-start justify-between gap-5">
-                    <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-primary/10 bg-primary/6 text-primary transition group-hover:border-energy/30 group-hover:bg-energy/12">
-                      <service.icon className="h-5.5 w-5.5" />
-                    </div>
-                    <span className="pt-1 text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground/65">
-                      0{i + 1}
-                    </span>
-                  </div>
-                  <h3 className="mt-6 text-xl font-extrabold leading-tight text-foreground">
-                    {service.title}
-                  </h3>
-                  <p className="mt-3 flex-1 text-sm leading-6 text-muted-foreground">
-                    {service.desc}
-                  </p>
-                  <div className="mt-6 border-t border-border pt-5">
-                    <Link
-                      to="/contact"
-                      className="inline-flex items-center gap-2 text-sm font-bold text-primary transition hover:text-energy"
-                    >
-                      Learn More
-                      <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
-                    </Link>
-                  </div>
+                <h3 className="mt-6 text-xl font-extrabold leading-tight text-foreground">
+                  {service.title}
+                </h3>
+                <p className="mt-3 flex-1 text-sm leading-6 text-muted-foreground">
+                  {service.desc}
+                </p>
+                <div className="mt-6 border-t border-border pt-5">
+                  <Link
+                    to={service.to}
+                    className="inline-flex items-center gap-2 text-sm font-bold text-primary transition hover:text-energy"
+                  >
+                    {service.linkLabel}
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
                 </div>
               </article>
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={0.3}>
+          <p className="mt-10 text-sm leading-6 text-muted-foreground">
+            Looking for industrial products or supply support?{" "}
+            <Link to="/products" className="font-bold text-primary hover:text-energy">
+              View Products &amp; Procurement
+            </Link>
+            .
+          </p>
+        </Reveal>
       </div>
     </section>
   );
 }
 
-/* --- METHODOLOGY ----------------------------------------------------------- */
+/* --- 3. DELIVERY APPROACH -------------------------------------------------------- */
 
-const methodology = [
+const approach = [
   {
     num: "01",
     icon: ClipboardList,
-    title: "Scope Review",
-    desc: "We analyse your project requirements, site conditions and timeline.",
+    title: "Requirement Review",
+    desc: "We review the approved scope, disciplines, schedule, location and site requirements.",
   },
   {
     num: "02",
-    icon: Users,
-    title: "Team Assembly",
-    desc: "Specialist crews assembled from verified workforce pool.",
+    icon: UsersRound,
+    title: "Team and Resource Planning",
+    desc: "Required personnel, technical support and relevant resources are coordinated around the agreed scope.",
   },
   {
     num: "03",
-    icon: Shield,
-    title: "HSE Preparation",
-    desc: "Site-specific safety plans, permits and inductions completed.",
+    icon: Settings2,
+    title: "Site Execution and Coordination",
+    desc: "Service activities are coordinated with the client's site, schedule, reporting and HSE requirements.",
   },
   {
     num: "04",
-    icon: HardHat,
-    title: "Site Execution",
-    desc: "Deployment with full supervision, monitoring and documentation.",
-  },
-  {
-    num: "05",
-    icon: Award,
-    title: "Handover",
-    desc: "Quality documentation, lessons learned and project closeout.",
+    icon: FileCheck2,
+    title: "Handover and Closeout",
+    desc: "Relevant records, status updates and agreed deliverables are coordinated at completion.",
   },
 ];
 
-function MethodologySection() {
+function DeliveryApproachSection() {
   return (
     <section className="border-y border-border bg-surface/60 py-24">
       <div className="mx-auto max-w-7xl px-6">
         <Reveal className="mb-14 text-center">
-          <Eyebrow>Our Methodology</Eyebrow>
+          <Eyebrow>Our Approach</Eyebrow>
           <h2 className="mt-5 text-4xl font-extrabold leading-[1.06] md:text-5xl">
-            Structured delivery. <span className="text-gradient-energy">Consistent results.</span>
+            Structured Delivery. <span className="text-gradient-energy">Clear Coordination.</span>
           </h2>
         </Reveal>
 
         <div className="relative">
           <div className="absolute left-0 right-0 top-9 hidden h-px bg-linear-to-r from-transparent via-primary/20 to-transparent lg:block" />
-          <div className="grid gap-8 lg:grid-cols-5">
-            {methodology.map((step, i) => (
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {approach.map((step, i) => (
               <Reveal key={step.num} delay={i * 0.08}>
-                <div className="group flex flex-col items-center text-center lg:px-2">
-                  <div className="relative z-10 mb-5 grid h-[68px] w-[68px] place-items-center rounded-full border-2 border-border bg-white shadow-sm transition group-hover:border-energy group-hover:shadow-elevated">
-                    <step.icon className="h-6 w-6 text-primary transition group-hover:text-energy" />
+                <div className="flex flex-col items-center text-center lg:px-2">
+                  <div className="relative z-10 mb-5 grid h-[68px] w-[68px] place-items-center rounded-full border-2 border-border bg-white shadow-sm">
+                    <step.icon className="h-6 w-6 text-primary" />
                     <span className="absolute -right-1 -top-1 grid h-5 w-5 place-items-center rounded-full bg-primary text-[9px] font-bold text-white">
                       {step.num}
                     </span>
                   </div>
-                  <div className="font-display text-sm font-bold">{step.title}</div>
-                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{step.desc}</p>
+                  <div className="font-display text-base font-bold">{step.title}</div>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.desc}</p>
                 </div>
               </Reveal>
             ))}
           </div>
         </div>
+
+        <Reveal delay={0.3}>
+          <p className="mx-auto mt-12 max-w-2xl text-center text-sm leading-6 text-muted-foreground">
+            Safety and site requirements are considered throughout each applicable stage, not as a
+            single isolated step.
+          </p>
+        </Reveal>
       </div>
     </section>
   );
 }
 
-/* --- PROJECT TYPES --------------------------------------------------------- */
+/* --- 4. INDUSTRIAL ENVIRONMENTS -------------------------------------------------- */
 
-const projectTypes = [
-  { icon: Zap, title: "Refineries & Process Plants" },
-  { icon: Settings2, title: "LNG & Gas Facilities" },
-  { icon: Building2, title: "Petrochemical Plants" },
-  { icon: TrendingUp, title: "Power Generation" },
-  { icon: Package, title: "Pipelines & Terminals" },
-  { icon: Wrench, title: "Offshore & Marine" },
+const environments = [
+  { icon: Factory, title: "Refineries & Process Plants" },
+  { icon: Flame, title: "LNG & Gas Facilities" },
+  { icon: FlaskConical, title: "Petrochemical Facilities" },
+  { icon: Network, title: "Pipelines & Terminals" },
 ];
 
-function ProjectTypesSection() {
+function EnvironmentsSection() {
   return (
     <section className="py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <Reveal>
-            <Eyebrow>Project Experience</Eyebrow>
+            <Eyebrow>Industrial Environments</Eyebrow>
             <h2 className="mt-5 text-4xl font-extrabold leading-[1.06] md:text-5xl">
-              Experienced across all <span className="text-gradient-energy">facility types.</span>
+              Support Across <span className="text-gradient-energy">Relevant Environments.</span>
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-              Our industrial service teams have been deployed across Qatar and the GCC&apos;s most
-              demanding facilities - from high-pressure refineries to offshore platforms and
-              government infrastructure programs.
+              Service requirements vary by facility, project phase and operating conditions. NEXORA
+              coordinates support around the specific environment and approved scope.
             </p>
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              {projectTypes.map((pt, i) => (
-                <motion.div
-                  key={pt.title}
-                  whileHover={{ x: 4 }}
+              {environments.map((env) => (
+                <div
+                  key={env.title}
                   className="flex items-center gap-3 rounded-xl border border-border bg-white p-3.5 shadow-sm"
                 >
                   <div className="grid h-9 w-9 place-items-center rounded-lg bg-primary/8 text-primary">
-                    <pt.icon className="h-4 w-4" />
+                    <env.icon className="h-4 w-4" />
                   </div>
-                  <span className="text-sm font-semibold">{pt.title}</span>
-                </motion.div>
+                  <span className="text-sm font-semibold">{env.title}</span>
+                </div>
               ))}
             </div>
           </Reveal>
 
           <Reveal delay={0.1}>
-            <div className="relative overflow-hidden rounded-[2rem] border border-border bg-white shadow-elevated">
+            <div className="overflow-hidden rounded-[2rem] border border-border bg-white shadow-elevated">
               <img
                 src={pRefinery}
-                alt="Industrial refinery project execution"
+                alt="Industrial process facility"
                 loading="lazy"
                 className="h-[460px] w-full object-cover"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-navy/70 via-transparent to-transparent" />
-              <div className="absolute inset-x-6 bottom-6 rounded-2xl border border-white/50 bg-white/85 p-4 backdrop-blur-xl">
-                <div className="flex items-center gap-3">
-                  <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-energy/14 text-primary">
-                    <Shield className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <div className="font-display text-sm font-bold">Safety-First Execution</div>
-                    <div className="text-xs text-muted-foreground">
-                      HSE embedded in every scope - zero compromise
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </Reveal>
         </div>
@@ -389,7 +360,30 @@ function ProjectTypesSection() {
   );
 }
 
-/* --- SAFETY ---------------------------------------------------------------- */
+/* --- 5. SAFETY INTEGRATION -------------------------------------------------------- */
+
+const safetyPrinciples = [
+  {
+    icon: Shield,
+    title: "Site-Requirement Review",
+    desc: "Relevant site rules, work conditions and HSE expectations are identified during requirement review.",
+  },
+  {
+    icon: UsersRound,
+    title: "Personnel Readiness",
+    desc: "Required briefings, documentation and role-specific requirements are coordinated before applicable site activities.",
+  },
+  {
+    icon: ClipboardList,
+    title: "Project-Specific HSE Coordination",
+    desc: "Service activities are aligned with the client's approved site procedures and responsible project stakeholders.",
+  },
+  {
+    icon: MessageSquare,
+    title: "Clear Reporting and Communication",
+    desc: "Relevant observations, status updates and coordination needs are communicated through the agreed project channels.",
+  },
+];
 
 function SafetySection() {
   return (
@@ -398,48 +392,25 @@ function SafetySection() {
       <div className="absolute -top-32 left-1/2 h-[40rem] w-[40rem] -translate-x-1/2 rounded-full bg-radial from-energy/14 to-transparent blur-3xl" />
       <div className="relative mx-auto max-w-7xl px-6">
         <Reveal className="mb-12 text-center">
-          <Eyebrow light>HSE &amp; Quality</Eyebrow>
+          <Eyebrow light>Safety and Coordination</Eyebrow>
           <h2 className="mt-5 text-4xl font-extrabold leading-[1.06] text-white md:text-5xl">
-            Safety is not a deliverable.
-            <br />
-            <span className="text-energy">It is our culture.</span>
+            Safety Integrated Into <span className="text-energy">Service Delivery.</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-white/55">
-            Every Nexora industrial service is planned, executed and handed over under a structured
-            HSE framework aligned to Qatar and GCC operator requirements.
+          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-white/60">
+            Applicable project, site and HSE requirements are considered during planning, personnel
+            coordination and service execution.
           </p>
         </Reveal>
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            {
-              icon: Shield,
-              title: "Permit-to-Work",
-              desc: "All personnel trained in Qatar and GCC operator PTW requirements.",
-            },
-            {
-              icon: HardHat,
-              title: "PPE Compliance",
-              desc: "Full personal protective equipment provided and enforced.",
-            },
-            {
-              icon: ClipboardList,
-              title: "Toolbox Talks",
-              desc: "Daily hazard identification and safety briefings on every shift.",
-            },
-            {
-              icon: Award,
-              title: "Incident Reporting",
-              desc: "Zero-tolerance near-miss reporting and root cause analysis.",
-            },
-          ].map((item, i) => (
+          {safetyPrinciples.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.06}>
-              <div className="group rounded-2xl border border-white/10 bg-white/6 p-6 backdrop-blur transition hover:border-energy/30 hover:bg-white/10">
+              <div className="rounded-2xl border border-white/10 bg-white/6 p-6 backdrop-blur">
                 <div className="grid h-11 w-11 place-items-center rounded-xl bg-energy/14 text-energy">
                   <item.icon className="h-5 w-5" />
                 </div>
                 <div className="mt-4 font-display text-sm font-bold text-white">{item.title}</div>
-                <p className="mt-2 text-xs leading-relaxed text-white/50">{item.desc}</p>
+                <p className="mt-2 text-sm leading-relaxed text-white/55">{item.desc}</p>
               </div>
             </Reveal>
           ))}
@@ -449,7 +420,7 @@ function SafetySection() {
   );
 }
 
-/* --- CTA ------------------------------------------------------------------- */
+/* --- 6. FINAL CTA ------------------------------------------------------------------ */
 
 function ServicesCTA() {
   return (
@@ -459,25 +430,25 @@ function ServicesCTA() {
           <div className="rounded-[2rem] border border-border bg-white p-8 text-center shadow-elevated md:p-12">
             <Eyebrow>Get In Touch</Eyebrow>
             <h2 className="mt-5 text-3xl font-extrabold md:text-4xl">
-              Ready to discuss your industrial{" "}
-              <span className="text-gradient-energy">service requirement?</span>
+              Discuss Your Industrial{" "}
+              <span className="text-gradient-energy">Service Requirement</span>
             </h2>
             <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-muted-foreground">
-              Tell us about your project and we&apos;ll propose a service delivery plan tailored to
-              your facility, timeline and workforce requirements.
+              Share your project scope, location and schedule so the Nexora team can review the
+              required industrial support.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link
                 to="/contact"
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-bold text-primary-foreground transition hover:bg-primary/90 btn-glow-blue"
               >
-                Request a Proposal <Send className="h-4 w-4" />
+                Discuss Your Requirement <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 to="/manpower"
                 className="inline-flex items-center gap-2 rounded-full border border-border px-7 py-3.5 text-sm font-bold text-foreground transition hover:border-energy-soft hover:text-primary"
               >
-                View Manpower Solutions <ArrowUpRight className="h-4 w-4" />
+                View Technical Manpower <ArrowUpRight className="h-4 w-4" />
               </Link>
             </div>
           </div>

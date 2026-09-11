@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useRouterState } from "@tanstack/react-router";
 import { ArrowUp } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -16,9 +16,11 @@ function JsonLd({ data }: { data: unknown }) {
 
 function ScrollToTop() {
   const [visible, setVisible] = useState(false);
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
     const onScroll = () => setVisible(window.scrollY > 320);
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -27,15 +29,16 @@ function ScrollToTop() {
     <AnimatePresence>
       {visible && (
         <motion.button
-          initial={{ opacity: 0, scale: 0.75, y: 10 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.75, y: 10 }}
-          transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          initial={reduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.75, y: 10 }}
+          animate={reduceMotion ? { opacity: 1 } : { opacity: 1, scale: 1, y: 0 }}
+          exit={reduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.75, y: 10 }}
+          transition={{ duration: reduceMotion ? 0.01 : 0.22, ease: [0.16, 1, 0.3, 1] }}
+          onClick={() => window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" })}
           aria-label="Back to top"
-          className="fixed bottom-24 right-6 z-50 grid h-12 w-12 place-items-center rounded-full bg-primary text-white shadow-elevated transition duration-200 hover:scale-110 hover:bg-navy"
+          title="Back to top"
+          className="fixed bottom-24 right-6 z-40 grid h-12 w-12 place-items-center rounded-full bg-primary text-white shadow-elevated transition duration-200 hover:scale-110 hover:bg-navy focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-energy"
         >
-          <ArrowUp className="h-5 w-5" />
+          <ArrowUp className="h-5 w-5" aria-hidden="true" />
         </motion.button>
       )}
     </AnimatePresence>
@@ -55,7 +58,7 @@ export function Layout({ children }: { children: ReactNode }) {
       <AnimatePresence mode="wait">
         <motion.main
           key={location.pathname}
-          initial={{ opacity: 0, y: 10 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -6 }}
           transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}

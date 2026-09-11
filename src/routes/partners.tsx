@@ -21,8 +21,8 @@ import { Reveal } from "@/components/Reveal";
 import { Counter } from "@/components/Counter";
 import { site } from "@/lib/enterprise-content";
 import { seoHead } from "@/lib/seo";
-import about from "@/assets/about-engineers.jpg";
-import pRefinery from "@/assets/project-refinery.jpg";
+import about from "@/assets/optimized/about-engineers.webp";
+import pRefinery from "@/assets/optimized/project-refinery.webp";
 
 export const Route = createFileRoute("/partners")({
   head: () => seoHead("/partners"),
@@ -115,16 +115,17 @@ function PartnersHero() {
         >
           {[
             { v: 6, s: "", l: "GCC Countries" },
-            { v: 50, s: "+", l: "Active Partners" },
-            { v: 15, s: "+", l: "Years Networks" },
-            { v: 100, s: "%", l: "Compliant Supply" },
+            { v: "Supply", s: "", l: "Partner Coordination" },
+            { v: "Doha", s: "", l: "Coordination Base" },
+            { v: "QHSE", s: "", l: "Documentation Review" },
           ].map((stat) => (
             <div
               key={stat.l}
               className="rounded-2xl border border-white/12 bg-white/7 p-4 text-center backdrop-blur"
             >
               <div className="font-display text-2xl font-extrabold text-white">
-                <Counter value={stat.v} suffix={stat.s} />
+                {stat.v}
+                {stat.s}
               </div>
               <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-white/50">
                 {stat.l}
@@ -143,7 +144,7 @@ const partnerTypes = [
   {
     icon: HardHat,
     title: "Energy Operators",
-    desc: "Direct relationships with Kuwait Oil Company (KOC), KNPC, QatarEnergy and GCC state oil companies as primary client partners.",
+    desc: "Partnership opportunities with energy operators and state oil companies across the GCC. Organization names below illustrate the sector; they do not imply a client relationship or endorsement.",
     examples: ["KOC", "KNPC", "QatarEnergy", "ADNOC", "Saudi Aramco"],
     color: "bg-primary/8 text-primary ring-primary/12",
   },
@@ -263,14 +264,19 @@ function ClientsSection() {
     <section className="border-y border-border bg-surface/60 py-24">
       <div className="mx-auto max-w-7xl px-6">
         <Reveal className="mb-12 text-center">
-          <Eyebrow>Client Partners</Eyebrow>
+          <Eyebrow>Industry Landscape</Eyebrow>
           <h2 className="mt-5 text-4xl font-extrabold leading-[1.06] md:text-5xl">
-            Supporting the region&apos;s{" "}
-            <span className="text-gradient-energy">leading organisations.</span>
+            Organizations in the region&apos;s{" "}
+            <span className="text-gradient-energy">industrial sectors.</span>
           </h2>
+          <p className="mx-auto mt-5 max-w-2xl text-sm text-muted-foreground">
+            Examples of organizations in the regional market. This is not a client list and does not
+            imply a commercial relationship or endorsement.
+          </p>
         </Reveal>
 
         <div className="grid gap-6 lg:grid-cols-3">
+          {/* Names illustrate the market, not a client list. */}
           {clientGroups.map((group, i) => (
             <Reveal key={group.title} delay={i * 0.07}>
               <div className="rounded-2xl border border-border bg-white p-6 shadow-sm">

@@ -1,0 +1,771 @@
+{
+  "results": [
+    {
+      "width": 320,
+      "route": "/",
+      "count": 12,
+      "columns": 2,
+      "names": [
+        "QatarEnergy",
+        "QatarEnergy LNG",
+        "NOC",
+        "Saleh Al Hamad Al Mana Co.",
+        "Mowasalat",
+        "QAFAC",
+        "QAFCO",
+        "Milaha",
+        "Mannai Corporation",
+        "GWC",
+        "ACCIONA",
+        "Manatec"
+      ],
+      "images": [
+        {
+          "alt": "ACCIONA logo",
+          "loading": "eager",
+          "width": 95,
+          "height": 49,
+          "filter": "none",
+          "src": "/images/collaborations/acciona.webp"
+        }
+      ],
+      "overflow": false,
+      "top": 0,
+      "headerBottom": 73,
+      "slots": [
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96
+      ],
+      "animations": 0,
+      "shifts": [],
+      "transfer": [
+        {
+          "name": "http://127.0.0.1:4173/images/collaborations/acciona.webp",
+          "transferSize": 23232,
+          "encodedBodySize": 22932
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "route": "/about#collaborations",
+      "count": 27,
+      "columns": 2,
+      "names": [
+        "QatarEnergy",
+        "QatarEnergy LNG",
+        "NOC",
+        "Saleh Al Hamad Al Mana Co.",
+        "Mowasalat",
+        "QAFAC",
+        "QAFCO",
+        "Milaha",
+        "Mannai Corporation",
+        "GWC",
+        "ACCIONA",
+        "Manatec",
+        "ABB",
+        "CCC",
+        "Technip",
+        "L&T",
+        "HBK Engineering",
+        "Tadmur",
+        "Al Darwish",
+        "Gulfar",
+        "Al Balagh",
+        "QAPCO",
+        "Q-Chem",
+        "Qatalum",
+        "GDI",
+        "GE",
+        "DOPET"
+      ],
+      "images": [
+        {
+          "alt": "ACCIONA logo",
+          "loading": "lazy",
+          "width": 95,
+          "height": 49,
+          "filter": "none",
+          "src": "/images/collaborations/acciona.webp"
+        }
+      ],
+      "overflow": false,
+      "top": 91.453125,
+      "headerBottom": 73,
+      "slots": [
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96
+      ],
+      "animations": 0,
+      "shifts": [],
+      "transfer": [
+        {
+          "name": "http://127.0.0.1:4173/images/collaborations/acciona.webp",
+          "transferSize": 23232,
+          "encodedBodySize": 22932
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "route": "/",
+      "count": 12,
+      "columns": 2,
+      "names": [
+        "QatarEnergy",
+        "QatarEnergy LNG",
+        "NOC",
+        "Saleh Al Hamad Al Mana Co.",
+        "Mowasalat",
+        "QAFAC",
+        "QAFCO",
+        "Milaha",
+        "Mannai Corporation",
+        "GWC",
+        "ACCIONA",
+        "Manatec"
+      ],
+      "images": [
+        {
+          "alt": "ACCIONA logo",
+          "loading": "eager",
+          "width": 122,
+          "height": 63,
+          "filter": "none",
+          "src": "/images/collaborations/acciona.webp"
+        }
+      ],
+      "overflow": false,
+      "top": 0,
+      "headerBottom": 73,
+      "slots": [
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96
+      ],
+      "animations": 0,
+      "shifts": [],
+      "transfer": [
+        {
+          "name": "http://127.0.0.1:4173/images/collaborations/acciona.webp",
+          "transferSize": 23232,
+          "encodedBodySize": 22932
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "route": "/about#collaborations",
+      "count": 27,
+      "columns": 2,
+      "names": [
+        "QatarEnergy",
+        "QatarEnergy LNG",
+        "NOC",
+        "Saleh Al Hamad Al Mana Co.",
+        "Mowasalat",
+        "QAFAC",
+        "QAFCO",
+        "Milaha",
+        "Mannai Corporation",
+        "GWC",
+        "ACCIONA",
+        "Manatec",
+        "ABB",
+        "CCC",
+        "Technip",
+        "L&T",
+        "HBK Engineering",
+        "Tadmur",
+        "Al Darwish",
+        "Gulfar",
+        "Al Balagh",
+        "QAPCO",
+        "Q-Chem",
+        "Qatalum",
+        "GDI",
+        "GE",
+        "DOPET"
+      ],
+      "images": [
+        {
+          "alt": "ACCIONA logo",
+          "loading": "lazy",
+          "width": 122,
+          "height": 63,
+          "filter": "none",
+          "src": "/images/collaborations/acciona.webp"
+        }
+      ],
+      "overflow": false,
+      "top": 90.375,
+      "headerBottom": 73,
+      "slots": [
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96
+      ],
+      "animations": 0,
+      "shifts": [],
+      "transfer": [
+        {
+          "name": "http://127.0.0.1:4173/images/collaborations/acciona.webp",
+          "transferSize": 23232,
+          "encodedBodySize": 22932
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "count": 12,
+      "columns": 2,
+      "names": [
+        "QatarEnergy",
+        "QatarEnergy LNG",
+        "NOC",
+        "Saleh Al Hamad Al Mana Co.",
+        "Mowasalat",
+        "QAFAC",
+        "QAFCO",
+        "Milaha",
+        "Mannai Corporation",
+        "GWC",
+        "ACCIONA",
+        "Manatec"
+      ],
+      "images": [
+        {
+          "alt": "ACCIONA logo",
+          "loading": "eager",
+          "width": 123,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/acciona.webp"
+        }
+      ],
+      "overflow": false,
+      "top": 0,
+      "headerBottom": 73,
+      "slots": [
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96
+      ],
+      "animations": 0,
+      "shifts": [],
+      "transfer": [
+        {
+          "name": "http://127.0.0.1:4173/images/collaborations/acciona.webp",
+          "transferSize": 23232,
+          "encodedBodySize": 22932
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/about#collaborations",
+      "count": 27,
+      "columns": 2,
+      "names": [
+        "QatarEnergy",
+        "QatarEnergy LNG",
+        "NOC",
+        "Saleh Al Hamad Al Mana Co.",
+        "Mowasalat",
+        "QAFAC",
+        "QAFCO",
+        "Milaha",
+        "Mannai Corporation",
+        "GWC",
+        "ACCIONA",
+        "Manatec",
+        "ABB",
+        "CCC",
+        "Technip",
+        "L&T",
+        "HBK Engineering",
+        "Tadmur",
+        "Al Darwish",
+        "Gulfar",
+        "Al Balagh",
+        "QAPCO",
+        "Q-Chem",
+        "Qatalum",
+        "GDI",
+        "GE",
+        "DOPET"
+      ],
+      "images": [
+        {
+          "alt": "ACCIONA logo",
+          "loading": "lazy",
+          "width": 123,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/acciona.webp"
+        }
+      ],
+      "overflow": false,
+      "top": 90.375,
+      "headerBottom": 73,
+      "slots": [
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96
+      ],
+      "animations": 0,
+      "shifts": [],
+      "transfer": [
+        {
+          "name": "http://127.0.0.1:4173/images/collaborations/acciona.webp",
+          "transferSize": 23232,
+          "encodedBodySize": 22932
+        }
+      ]
+    },
+    {
+      "width": 430,
+      "route": "/",
+      "count": 12,
+      "columns": 2,
+      "names": [
+        "QatarEnergy",
+        "QatarEnergy LNG",
+        "NOC",
+        "Saleh Al Hamad Al Mana Co.",
+        "Mowasalat",
+        "QAFAC",
+        "QAFCO",
+        "Milaha",
+        "Mannai Corporation",
+        "GWC",
+        "ACCIONA",
+        "Manatec"
+      ],
+      "images": [
+        {
+          "alt": "ACCIONA logo",
+          "loading": "eager",
+          "width": 123,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/acciona.webp"
+        }
+      ],
+      "overflow": false,
+      "top": 0,
+      "headerBottom": 73,
+      "slots": [
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96
+      ],
+      "animations": 0,
+      "shifts": [],
+      "transfer": [
+        {
+          "name": "http://127.0.0.1:4173/images/collaborations/acciona.webp",
+          "transferSize": 23232,
+          "encodedBodySize": 22932
+        }
+      ]
+    },
+    {
+      "width": 430,
+      "route": "/about#collaborations",
+      "count": 27,
+      "columns": 2,
+      "names": [
+        "QatarEnergy",
+        "QatarEnergy LNG",
+        "NOC",
+        "Saleh Al Hamad Al Mana Co.",
+        "Mowasalat",
+        "QAFAC",
+        "QAFCO",
+        "Milaha",
+        "Mannai Corporation",
+        "GWC",
+        "ACCIONA",
+        "Manatec",
+        "ABB",
+        "CCC",
+        "Technip",
+        "L&T",
+        "HBK Engineering",
+        "Tadmur",
+        "Al Darwish",
+        "Gulfar",
+        "Al Balagh",
+        "QAPCO",
+        "Q-Chem",
+        "Qatalum",
+        "GDI",
+        "GE",
+        "DOPET"
+      ],
+      "images": [
+        {
+          "alt": "ACCIONA logo",
+          "loading": "lazy",
+          "width": 123,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/acciona.webp"
+        }
+      ],
+      "overflow": false,
+      "top": 89.875,
+      "headerBottom": 73,
+      "slots": [
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96
+      ],
+      "animations": 0,
+      "shifts": [],
+      "transfer": [
+        {
+          "name": "http://127.0.0.1:4173/images/collaborations/acciona.webp",
+          "transferSize": 23232,
+          "encodedBodySize": 22932
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "route": "/",
+      "count": 12,
+      "columns": 3,
+      "names": [
+        "QatarEnergy",
+        "QatarEnergy LNG",
+        "NOC",
+        "Saleh Al Hamad Al Mana Co.",
+        "Mowasalat",
+        "QAFAC",
+        "QAFCO",
+        "Milaha",
+        "Mannai Corporation",
+        "GWC",
+        "ACCIONA",
+        "Manatec"
+      ],
+      "images": [
+        {
+          "alt": "ACCIONA logo",
+          "loading": "eager",
+          "width": 123,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/acciona.webp"
+        }
+      ],
+      "overflow": false,
+      "top": 0,
+      "headerBottom": 73,
+      "slots": [
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96
+      ],
+      "animations": 0,
+      "shifts": [],
+      "transfer": [
+        {
+          "name": "http://127.0.0.1:4173/images/collaborations/acciona.webp",
+          "transferSize": 23232,
+          "encodedBodySize": 22932
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "route": "/about#collaborations",
+      "count": 27,
+      "columns": 3,
+      "names": [
+        "QatarEnergy",
+        "QatarEnergy LNG",
+        "NOC",
+        "Saleh Al Hamad Al Mana Co.",
+        "Mowasalat",
+        "QAFAC",
+        "QAFCO",
+        "Milaha",
+        "Mannai Corporation",
+        "GWC",
+        "ACCIONA",
+        "Manatec",
+        "ABB",
+        "CCC",
+        "Technip",
+        "L&T",
+        "HBK Engineering",
+        "Tadmur",
+        "Al Darwish",
+        "Gulfar",
+        "Al Balagh",
+        "QAPCO",
+        "Q-Chem",
+        "Qatalum",
+        "GDI",
+        "GE",
+        "DOPET"
+      ],
+      "images": [
+        {
+          "alt": "ACCIONA logo",
+          "loading": "lazy",
+          "width": 123,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/acciona.webp"
+        }
+      ],
+      "overflow": false,
+      "top": 90.625,
+      "headerBottom": 73,
+      "slots": [
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96
+      ],
+      "animations": 0,
+      "shifts": [],
+      "transfer": [
+        {
+          "name": "http://127.0.0.1:4173/images/collaborations/acciona.webp",
+          "transferSize": 23232,
+          "encodedBodySize": 22932
+        }
+      ]
+    },
+    {
+      "width": 1024,
+      "route": "/",
+      "count": 12,
+      "columns": 6,
+      "names": [
+        "QatarEnergy",
+        "QatarEnergy LNG",
+        "NOC",
+        "Saleh Al Hamad Al Mana Co.",
+        "Mowasalat",
+        "QAFAC",
+        "QAFCO",
+        "Milaha",
+        "Mannai Corporation",
+        "GWC",
+        "ACCIONA",
+        "Manatec"
+      ],
+      "images": [
+        {
+          "alt": "ACCIONA logo",
+          "loading": "eager",
+          "width": 117,
+          "height": 61,
+          "filter": "none",
+          "src": "/images/collaborations/acciona.webp"
+        }
+      ],
+      "overflow": false,
+      "top": 0,
+      "headerBottom": 110,
+      "slots": [
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96
+      ],
+      "animations": 0,
+      "shifts": [],
+      "transfer": [
+        {
+          "name": "http://127.0.0.1:4173/images/collaborations/acciona.webp",
+          "transferSize": 23232,
+          "encodedBodySize": 22932
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

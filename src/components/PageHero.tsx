@@ -8,6 +8,12 @@ interface PageHeroProps {
   description?: string;
   backgroundImage?: string;
   imagePosition?: string;
+  /** Hides the fixed "Technical manpower / Industrial services / Procurement support"
+   * capability strip - useful when a page's hero shouldn't duplicate the site nav. */
+  hideTags?: boolean;
+  /** Reduces hero height by roughly 25% - for utility-focused pages (e.g. Contact)
+   * that don't need a full-height brand moment. */
+  compact?: boolean;
 }
 
 export function PageHero({
@@ -16,6 +22,8 @@ export function PageHero({
   description,
   backgroundImage,
   imagePosition = "object-[62%_center]",
+  hideTags = false,
+  compact = false,
 }: PageHeroProps) {
   const hasImage = Boolean(backgroundImage);
 
@@ -23,7 +31,10 @@ export function PageHero({
     <section
       className={cn(
         "industrial-page-hero relative overflow-hidden pb-20 pt-36 md:pb-28 md:pt-44",
-        hasImage && "min-h-[720px] bg-navy pb-24 pt-40 md:min-h-[760px] md:pb-32 md:pt-48",
+        hasImage &&
+          (compact
+            ? "min-h-[520px] bg-navy pb-16 pt-28 md:min-h-[560px] md:pb-20 md:pt-36"
+            : "min-h-[720px] bg-navy pb-24 pt-40 md:min-h-[760px] md:pb-32 md:pt-48"),
       )}
     >
       {backgroundImage ? (
@@ -32,6 +43,8 @@ export function PageHero({
             src={backgroundImage}
             alt=""
             aria-hidden="true"
+            fetchPriority="high"
+            loading="eager"
             className={cn(
               "absolute inset-0 h-full w-full object-cover opacity-[0.82]",
               imagePosition,
@@ -81,7 +94,8 @@ export function PageHero({
             className={cn(
               "max-w-4xl text-4xl font-extrabold leading-[1.05] tracking-display text-foreground md:text-6xl lg:text-7xl",
               !hasImage && "mx-auto",
-              hasImage && "max-w-3xl text-white drop-shadow-[0_3px_22px_rgba(0,0,0,0.42)]",
+              hasImage &&
+                "[&_.text-gradient-energy]:bg-none [&_.text-gradient-energy]:text-energy [&_.text-gradient-energy]:[-webkit-text-fill-color:currentColor] max-w-3xl text-white drop-shadow-[0_3px_22px_rgba(0,0,0,0.42)]",
             )}
           >
             {title}
@@ -100,27 +114,29 @@ export function PageHero({
             </p>
           </Reveal>
         )}
-        <Reveal delay={0.24}>
-          <div
-            className={cn(
-              "mt-10 flex max-w-3xl flex-wrap gap-2 text-[11px] font-bold uppercase tracking-[0.14em] text-muted-foreground",
-              !hasImage && "mx-auto justify-center",
-              hasImage && "justify-start text-white/58",
-            )}
-          >
-            {["Technical manpower", "Industrial services", "Procurement support"].map((item) => (
-              <span
-                key={item}
-                className={cn(
-                  "rounded-md border px-3 py-2 shadow-sm backdrop-blur",
-                  hasImage ? "border-white/18 bg-white/10" : "border-border bg-white/70",
-                )}
-              >
-                {item}
-              </span>
-            ))}
-          </div>
-        </Reveal>
+        {!hideTags && (
+          <Reveal delay={0.24}>
+            <div
+              className={cn(
+                "mt-10 flex max-w-3xl flex-wrap gap-2 text-[11px] font-bold uppercase tracking-[0.14em] text-muted-foreground",
+                !hasImage && "mx-auto justify-center",
+                hasImage && "justify-start text-white/58",
+              )}
+            >
+              {["Technical manpower", "Industrial services", "Procurement support"].map((item) => (
+                <span
+                  key={item}
+                  className={cn(
+                    "rounded-md border px-3 py-2 shadow-sm backdrop-blur",
+                    hasImage ? "border-white/18 bg-white/10" : "border-border bg-white/70",
+                  )}
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </Reveal>
+        )}
       </div>
     </section>
   );

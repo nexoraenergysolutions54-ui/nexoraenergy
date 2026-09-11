@@ -1,5 +1,5 @@
-import nexoraLogo from "@/assets/nexora-logo-new.png";
-import nexoraLogoLight from "@/assets/nexora-logo-new-light.png";
+import nexoraLogo from "@/assets/optimized/nexora-logo-new.webp";
+import nexoraLogoLight from "@/assets/optimized/nexora-logo-new-light.webp";
 
 interface LogoProps {
   size?: number;
@@ -15,6 +15,8 @@ export function Logo({ size = 40, variant = "dark", className }: LogoProps) {
     <img
       src={src}
       alt="Nexora Energy Solutions"
+      width={500}
+      height={234}
       className={`block object-contain ${variantClass} ${className ?? ""}`}
       style={{ height: size, width: "auto" }}
     />

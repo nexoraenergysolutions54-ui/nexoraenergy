@@ -7,19 +7,18 @@ export function organizationSchema() {
     name: site.name,
     legalName: site.legalName,
     description:
-      "Doha-based technical manpower, industrial services, procurement support and project coordination company serving Qatar and GCC energy markets.",
+      "Doha-based technical manpower, industrial services, procurement support and project coordination company serving Qatar, Saudi Arabia and Kuwait energy markets.",
     url: site.url,
     logo: `${site.url}/og-nexora-energy.jpg`,
     email: site.email,
-    telephone: site.phone,
+    ...(site.phone ? { telephone: site.phone } : {}),
     address: {
       "@type": "PostalAddress",
-      streetAddress: site.address,
       addressLocality: site.city,
       addressCountry: site.country,
     },
     openingHours: "Su-Th 08:00-17:00",
-    areaServed: ["Qatar", "Saudi Arabia", "United Arab Emirates", "Kuwait", "Bahrain", "Oman"],
+    areaServed: ["Qatar", "Saudi Arabia", "Kuwait"],
     knowsAbout: [
       "Technical manpower supply",
       "Industrial services",
@@ -35,9 +34,9 @@ export function organizationSchema() {
     contactPoint: [
       {
         "@type": "ContactPoint",
-        telephone: site.phone,
+        ...(site.phone ? { telephone: site.phone } : {}),
         contactType: "sales",
-        areaServed: "GCC",
+        areaServed: ["Qatar", "Saudi Arabia", "Kuwait"],
         availableLanguage: ["English", "Arabic"],
       },
     ],
@@ -61,7 +60,7 @@ export function websiteSchema() {
       "Industrial services",
       "Procurement support",
       "Shutdown support",
-      "GCC energy projects",
+      "Energy and industrial projects in Qatar, Saudi Arabia and Kuwait",
     ],
   };
 }
@@ -77,11 +76,12 @@ export function serviceSchema(name: string, description: string, url: string) {
       name: site.name,
       url: site.url,
     },
-    areaServed: ["Qatar", "Saudi Arabia", "UAE", "Kuwait", "Bahrain", "Oman"],
-    serviceArea: {
-      "@type": "AdministrativeArea",
-      name: "Gulf Cooperation Council",
-    },
+    areaServed: ["Qatar", "Saudi Arabia", "Kuwait"],
+    serviceArea: [
+      { "@type": "AdministrativeArea", name: "Qatar" },
+      { "@type": "AdministrativeArea", name: "Saudi Arabia" },
+      { "@type": "AdministrativeArea", name: "Kuwait" },
+    ],
     audience: [
       {
         "@type": "BusinessAudience",
@@ -125,7 +125,7 @@ export function webPageSchema({
     about: [
       "Technical manpower supply",
       "Industrial services",
-      "GCC energy projects",
+      "Energy and industrial projects in Qatar, Saudi Arabia and Kuwait",
       "EPC contractor support",
       "Qatar industrial project coordination",
     ],
@@ -178,4 +178,3 @@ export function faqSchema(items: Array<{ question: string; answer: string }>) {
     })),
   };
 }
-

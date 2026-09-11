@@ -1,0 +1,283 @@
+{
+  "results": [
+    {
+      "route": "/",
+      "canonical": [
+        "https://www.nexoraqa.com/"
+      ],
+      "h1": 1,
+      "overflow": false,
+      "oldContact": false,
+      "forms": []
+    },
+    {
+      "route": "/about",
+      "canonical": [
+        "https://www.nexoraqa.com/about"
+      ],
+      "h1": 1,
+      "overflow": false,
+      "oldContact": false,
+      "forms": []
+    },
+    {
+      "route": "/manpower",
+      "canonical": [
+        "https://www.nexoraqa.com/manpower"
+      ],
+      "h1": 1,
+      "overflow": false,
+      "oldContact": false,
+      "forms": [
+        true
+      ]
+    },
+    {
+      "route": "/industrial-services",
+      "canonical": [
+        "https://www.nexoraqa.com/industrial-services"
+      ],
+      "h1": 1,
+      "overflow": false,
+      "oldContact": false,
+      "forms": []
+    },
+    {
+      "route": "/services",
+      "canonical": [
+        "https://www.nexoraqa.com/services"
+      ],
+      "h1": 1,
+      "overflow": false,
+      "oldContact": false,
+      "forms": []
+    },
+    {
+      "route": "/products",
+      "canonical": [
+        "https://www.nexoraqa.com/products"
+      ],
+      "h1": 1,
+      "overflow": false,
+      "oldContact": false,
+      "forms": [
+        true
+      ]
+    },
+    {
+      "route": "/industries",
+      "canonical": [
+        "https://www.nexoraqa.com/industries"
+      ],
+      "h1": 1,
+      "overflow": false,
+      "oldContact": false,
+      "forms": []
+    },
+    {
+      "route": "/projects",
+      "canonical": [
+        "https://www.nexoraqa.com/projects"
+      ],
+      "h1": 1,
+      "overflow": false,
+      "oldContact": false,
+      "forms": []
+    },
+    {
+      "route": "/partners",
+      "canonical": [
+        "https://www.nexoraqa.com/partners"
+      ],
+      "h1": 1,
+      "overflow": false,
+      "oldContact": false,
+      "forms": []
+    },
+    {
+      "route": "/hse",
+      "canonical": [
+        "https://www.nexoraqa.com/hse"
+      ],
+      "h1": 1,
+      "overflow": false,
+      "oldContact": false,
+      "forms": []
+    },
+    {
+      "route": "/careers",
+      "canonical": [
+        "https://www.nexoraqa.com/careers"
+      ],
+      "h1": 1,
+      "overflow": false,
+      "oldContact": false,
+      "forms": [
+        true
+      ]
+    },
+    {
+      "route": "/contact",
+      "canonical": [
+        "https://www.nexoraqa.com/contact"
+      ],
+      "h1": 1,
+      "overflow": false,
+      "oldContact": false,
+      "forms": [
+        true
+      ]
+    },
+    {
+      "route": "/news",
+      "canonical": [
+        "https://www.nexoraqa.com/news"
+      ],
+      "h1": 1,
+      "overflow": false,
+      "oldContact": false,
+      "forms": []
+    },
+    {
+      "route": "/resources",
+      "canonical": [
+        "https://www.nexoraqa.com/resources"
+      ],
+      "h1": 1,
+      "overflow": false,
+      "oldContact": false,
+      "forms": []
+    },
+    {
+      "route": "/resources/gcc-industrial-manpower-guide",
+      "canonical": [
+        "https://www.nexoraqa.com/resources/gcc-industrial-manpower-guide"
+      ],
+      "h1": 1,
+      "overflow": false,
+      "oldContact": false,
+      "forms": []
+    },
+    {
+      "route": "/industries/oil-and-gas",
+      "canonical": [
+        "https://www.nexoraqa.com/industries/oil-and-gas"
+      ],
+      "h1": 1,
+      "overflow": false,
+      "oldContact": false,
+      "forms": []
+    },
+    {
+      "route": "/industries/lng",
+      "canonical": [
+        "https://www.nexoraqa.com/industries/lng"
+      ],
+      "h1": 1,
+      "overflow": false,
+      "oldContact": false,
+      "forms": []
+    },
+    {
+      "route": "/industries/petrochemical",
+      "canonical": [
+        "https://www.nexoraqa.com/industries/petrochemical"
+      ],
+      "h1": 1,
+      "overflow": false,
+      "oldContact": false,
+      "forms": []
+    },
+    {
+      "route": "/industries/infrastructure",
+      "canonical": [
+        "https://www.nexoraqa.com/industries/infrastructure"
+      ],
+      "h1": 1,
+      "overflow": false,
+      "oldContact": false,
+      "forms": []
+    },
+    {
+      "route": "/industries/manufacturing",
+      "canonical": [
+        "https://www.nexoraqa.com/industries/manufacturing"
+      ],
+      "h1": 1,
+      "overflow": false,
+      "oldContact": false,
+      "forms": []
+    },
+    {
+      "route": "/industries/epc",
+      "canonical": [
+        "https://www.nexoraqa.com/industries/epc"
+      ],
+      "h1": 1,
+      "overflow": false,
+      "oldContact": false,
+      "forms": []
+    },
+    {
+      "route": "/services/manpower-supply",
+      "canonical": [
+        "https://www.nexoraqa.com/services/manpower-supply"
+      ],
+      "h1": 1,
+      "overflow": false,
+      "oldContact": false,
+      "forms": []
+    },
+    {
+      "route": "/services/shutdown-support",
+      "canonical": [
+        "https://www.nexoraqa.com/services/shutdown-support"
+      ],
+      "h1": 1,
+      "overflow": false,
+      "oldContact": false,
+      "forms": []
+    },
+    {
+      "route": "/services/maintenance-support",
+      "canonical": [
+        "https://www.nexoraqa.com/services/maintenance-support"
+      ],
+      "h1": 1,
+      "overflow": false,
+      "oldContact": false,
+      "forms": []
+    },
+    {
+      "route": "/services/procurement-support",
+      "canonical": [
+        "https://www.nexoraqa.com/services/procurement-support"
+      ],
+      "h1": 1,
+      "overflow": false,
+      "oldContact": false,
+      "forms": []
+    },
+    {
+      "route": "/services/project-support",
+      "canonical": [
+        "https://www.nexoraqa.com/services/project-support"
+      ],
+      "h1": 1,
+      "overflow": false,
+      "oldContact": false,
+      "forms": []
+    },
+    {
+      "route": "/services/engineering-support",
+      "canonical": [
+        "https://www.nexoraqa.com/services/engineering-support"
+      ],
+      "h1": 1,
+      "overflow": false,
+      "oldContact": false,
+      "forms": []
+    }
+  ],
+  "errors": []
+}

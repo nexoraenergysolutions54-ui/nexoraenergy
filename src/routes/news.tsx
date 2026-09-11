@@ -5,11 +5,11 @@ import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { site } from "@/lib/enterprise-content";
 import { seoHead } from "@/lib/seo";
-import pEng from "@/assets/project-engineering.jpg";
-import pMaint from "@/assets/project-maintenance.jpg";
-import pPipeline from "@/assets/project-pipeline.jpg";
-import pPlant from "@/assets/project-plant.jpg";
-import pRefinery from "@/assets/project-refinery.jpg";
+import pEng from "@/assets/optimized/project-engineering.webp";
+import pMaint from "@/assets/optimized/project-maintenance.webp";
+import pPipeline from "@/assets/optimized/project-pipeline.webp";
+import pPlant from "@/assets/optimized/project-plant.webp";
+import pRefinery from "@/assets/optimized/project-refinery.webp";
 
 export const Route = createFileRoute("/news")({
   head: () => seoHead("/news"),
@@ -19,39 +19,39 @@ export const Route = createFileRoute("/news")({
 const articles = [
   {
     image: pRefinery,
-    category: "Contracts",
-    date: "Sept 2026",
-    title: "Nexora expands turnaround support capability in Ras Laffan",
+    category: "Manpower",
+    title: "Planning manpower for a shutdown window",
+    body: "Start with the work packages and shift pattern. List each discipline, headcount, supervision requirement and target start date. Confirm site access and required documentation before agreeing a mobilisation plan.",
   },
   {
     image: pEng,
-    category: "Technology",
-    date: "Aug 2026",
-    title: "Digital asset integrity workflows introduced for field teams",
+    category: "Documentation",
+    title: "Preparing a useful technical personnel brief",
+    body: "Specify the role, relevant equipment or process experience, qualifications and reporting line. Ask for evidence relevant to the assignment and agree how missing documents will be resolved before deployment.",
   },
   {
     image: pMaint,
     category: "Operations",
-    date: "July 2026",
-    title: "Maintenance response model scaled for GCC industrial partners",
+    title: "Defining maintenance support requirements",
+    body: "Separate planned work from reactive support. Share the asset list, access constraints, expected duration and responsibilities for tools and materials. Agree reporting and handover requirements with the site team.",
   },
   {
     image: pPipeline,
     category: "Projects",
-    date: "June 2026",
-    title: "Pipeline infrastructure readiness milestone completed",
+    title: "Coordinating field teams across project locations",
+    body: "A location-by-location brief helps teams plan travel, accommodation, reporting and site access. Identify a contact for each work area and document changes to the schedule so personnel receive consistent instructions.",
   },
   {
     image: pPlant,
     category: "HSE",
-    date: "May 2026",
-    title: "Safety leadership program launched across active work sites",
+    title: "Including site requirements in the supplier brief",
+    body: "Ask the site owner which inductions, training records and access approvals apply to the work. Include those requirements in the supplier brief and confirm who checks them. Requirements vary by operator, location and task.",
   },
   {
     image: pEng,
-    category: "Innovation",
-    date: "April 2026",
-    title: "Predictive reporting layer goes live for operations support",
+    category: "Procurement",
+    title: "What to include in an industrial product enquiry",
+    body: "Include a specification or datasheet, quantity, material, dimensions, applicable standards and delivery location. Identify required certification and traceability documents, and state whether alternatives may be proposed for approval.",
   },
 ];
 
@@ -59,14 +59,14 @@ function NewsPage() {
   return (
     <Layout>
       <PageHero
-        eyebrow="News & Insights"
+        eyebrow="Industrial Insights"
         title={
           <>
-            Company updates and{" "}
+            Practical planning notes and{" "}
             <span className="text-gradient-energy">energy-sector insights.</span>
           </>
         }
-        description="Follow Nexora's project milestones, operational improvements, HSE initiatives and technology updates."
+        description="Practical notes for planning manpower, maintenance, documentation and industrial procurement requirements."
       />
 
       <section className="py-16">
@@ -87,15 +87,15 @@ function NewsPage() {
                   </span>
                 </div>
                 <div className="p-6">
-                  <div className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">
-                    {article.date}
-                  </div>
-                  <h3 className="mt-3 font-display text-xl font-bold leading-snug transition group-hover:text-primary">
+                  <h2 className="mt-3 font-display text-xl font-bold leading-snug transition group-hover:text-primary">
                     {article.title}
-                  </h3>
-                  <div className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-muted-foreground transition group-hover:text-primary">
-                    Read article <ArrowUpRight className="h-4 w-4" />
-                  </div>
+                  </h2>
+                  <details className="mt-6 text-sm leading-7">
+                    <summary className="cursor-pointer font-bold text-primary">
+                      Read planning note
+                    </summary>
+                    <p className="mt-3 text-muted-foreground">{article.body}</p>
+                  </details>
                 </div>
               </article>
             </Reveal>

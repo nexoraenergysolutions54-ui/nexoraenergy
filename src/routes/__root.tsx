@@ -6,10 +6,18 @@ import {
   Scripts,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
 } from "@tanstack/react-router";
 import type { ReactNode } from "react";
+import { SiteSplash } from "@/components/SiteSplash";
+import splashCss from "@/components/site-splash.css?inline";
+import { SPLASH_BOOTSTRAP } from "@/lib/site-splash";
+
+import { canonicalUrl, seoPages, type SeoRoutePath } from "@/lib/seo";
 
 import appCss from "../styles.css?url";
+import interFont from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
+import displayFont from "@fontsource-variable/plus-jakarta-sans/files/plus-jakarta-sans-latin-wght-normal.woff2?url";
 
 const siteUrl = "https://www.nexoraqa.com";
 const defaultDescription =
@@ -107,11 +115,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "sitemap", type: "application/xml", href: "/sitemap.xml" },
       { rel: "alternate", type: "text/plain", href: "/llms.txt", title: "Nexora AI summary" },
       { rel: "stylesheet", href: appCss },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "preload", href: interFont, as: "font", type: "font/woff2", crossOrigin: "anonymous" },
       {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap",
+        rel: "preload",
+        href: displayFont,
+        as: "font",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
       },
     ],
   }),
@@ -122,9 +132,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const pathname = useRouterState({ select: (state) => state.location.pathname });
+  const path = (pathname.replace(/\/+$/, "") || "/") as SeoRoutePath;
+  const canonical = seoPages[path] ? canonicalUrl(path) : undefined;
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <style dangerouslySetInnerHTML={{ __html: splashCss }} />
+        <script dangerouslySetInnerHTML={{ __html: SPLASH_BOOTSTRAP }} />
         {/*
          * og:image injected BEFORE HeadContent because TanStack Start / React 19
          * silently drops meta[property] tags that appear after the HeadContent flush.
@@ -134,12 +149,17 @@ function RootShell({ children }: { children: ReactNode }) {
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property=”og:image:alt” content=”Nexora Energy Solutions - Qatar and GCC Technical Manpower” />
+        <meta
+          property="og:image:alt"
+          content="Nexora Energy Solutions - Qatar and GCC Technical Manpower"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={defaultOgImage} />
         <HeadContent />
+        {canonical && <link rel="canonical" href={canonical} />}
       </head>
       <body>
+        <SiteSplash />
         {children}
         <Scripts />
       </body>
@@ -157,5 +177,3 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
-
-

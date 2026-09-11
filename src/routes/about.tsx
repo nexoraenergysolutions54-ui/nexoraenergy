@@ -1,87 +1,81 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { motion } from "framer-motion";
 import {
   ArrowRight,
   Award,
-  CheckCircle2,
-  Globe,
+  ClipboardList,
+  FileText,
   HardHat,
+  MapPin,
+  MessageSquare,
   Network,
   Shield,
-  Target,
-  Users,
+  UsersRound,
 } from "lucide-react";
-import { Counter } from "@/components/Counter";
+import { CollaborationsGrid } from "@/components/CollaborationsGrid";
 import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
-import { site } from "@/lib/enterprise-content";
 import { seoHead } from "@/lib/seo";
-import aboutHero from "@/assets/about-hero-team-refinery.png";
-import about from "@/assets/about-engineers.jpg";
-import pEng from "@/assets/project-engineering.jpg";
-import pRefinery from "@/assets/project-refinery.jpg";
+import aboutHero from "@/assets/optimized/about-hero-team-refinery.webp";
+import aboutTeam from "@/assets/optimized/about-nexora-team.webp";
 
 export const Route = createFileRoute("/about")({
   head: () => seoHead("/about"),
   component: AboutPage,
 });
 
+function SectionEyebrow({ children }: { children: string }) {
+  return (
+    <span className="inline-flex items-center gap-2 rounded-full border border-energy-soft bg-white/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.22em] text-primary backdrop-blur">
+      <span className="h-1.5 w-1.5 rounded-full bg-energy" />
+      {children}
+    </span>
+  );
+}
+
 function AboutPage() {
   return (
     <Layout>
+      {/* 1. Hero */}
       <PageHero
-        eyebrow="About Nexora"
-        title={
-          <>
-            The technical partner built for{" "}
-            <span className="text-energy">GCC energy projects.</span>
-          </>
-        }
-        description="Nexora Energy Solutions is a Qatar-based Technical Manpower & Industrial Solutions Partner. We deliver qualified workforce, industrial services and procurement support for the region's most demanding energy, LNG and industrial projects."
+        eyebrow="About NEXORA"
+        title="Qatar-Based Technical Expertise for Industry"
+        description="NEXORA Energy Solutions provides technical manpower, industrial services and procurement support from its base in Qatar, with a focus on Qatar, Saudi Arabia and Kuwait."
         backgroundImage={aboutHero}
         imagePosition="object-[64%_center]"
+        hideTags
       />
 
-      {/* Company story */}
+      {/* 2. Who We Are */}
       <section className="py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-2">
           <Reveal>
-            <span className="inline-flex items-center gap-2 rounded-full border border-energy-soft bg-white/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.22em] text-primary backdrop-blur">
-              <span className="h-1.5 w-1.5 rounded-full bg-energy" />
-              Who We Are
-            </span>
+            <SectionEyebrow>Who We Are</SectionEyebrow>
             <h2 className="mt-5 text-3xl font-extrabold leading-[1.06] md:text-5xl">
-              Positioned where Qatar&apos;s{" "}
-              <span className="text-gradient-energy">energy projects need us most.</span>
+              Built in Qatar for{" "}
+              <span className="text-gradient-energy">demanding industrial requirements.</span>
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-              Nexora Energy Solutions was established to fill a specific gap in the Qatar and GCC
-              market: a technically capable, compliance-focused manpower and industrial solutions
-              partner that understands the real demands of energy, LNG, petrochemical and EPC
-              project environments.
+              NEXORA Energy Solutions is based in Doha, Qatar, supporting technical manpower,
+              industrial-service and procurement requirements for industrial project teams. Our
+              approach starts with understanding the scope, discipline, schedule and project
+              conditions behind each request.
             </p>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              We are not a general labour company. We are a technical partner - deploying qualified
-              engineers, certified tradespeople and experienced supervisors who meet the
-              documentation, safety and technical standards of Qatar&apos;s major operators and
-              international EPC contractors.
+              Qatar is our home market. Saudi Arabia and Kuwait are priority markets we support from
+              our Doha base, with every requirement approached on its own project conditions rather
+              than a standard package.
             </p>
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {[
-                "QatarEnergy project aligned",
-                "QatarEnergy LNG capable",
-                "EPC contractor preferred",
-                "GCC compliance managed",
-                "24/7 mobilisation support",
-                "GCC-wide deployment capability",
+                { icon: ClipboardList, text: "Requirement-led planning" },
+                { icon: UsersRound, text: "Technical workforce coordination" },
+                { icon: FileText, text: "Documentation support" },
+                { icon: MessageSquare, text: "Project-focused communication" },
               ].map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-3 rounded-xl border border-border bg-white p-3"
-                >
-                  <CheckCircle2 className="h-4 w-4 shrink-0 text-energy" />
-                  <span className="text-sm font-semibold">{item}</span>
+                <div key={item.text} className="flex items-center gap-3">
+                  <item.icon className="h-4 w-4 shrink-0 text-primary" />
+                  <span className="text-sm font-semibold text-foreground">{item.text}</span>
                 </div>
               ))}
             </div>
@@ -92,23 +86,18 @@ function AboutPage() {
               <div className="absolute -inset-4 rounded-4xl bg-linear-to-br from-primary/12 to-energy/16 blur-2xl" />
               <div className="relative overflow-hidden rounded-4xl border border-white/60 bg-white shadow-elevated">
                 <img
-                  src={about}
-                  alt="Nexora engineering team at energy facility"
+                  src={aboutTeam}
+                  alt="Nexora team members at an industrial site in Qatar"
                   loading="lazy"
                   className="h-120 w-full object-cover"
                 />
                 <div className="absolute inset-x-5 bottom-5 rounded-2xl border border-white/50 bg-white/88 p-4 backdrop-blur-xl">
                   <div className="flex items-center gap-3">
                     <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-energy/14 text-primary">
-                      <Award className="h-5 w-5" />
+                      <MapPin className="h-5 w-5" />
                     </div>
-                    <div>
-                      <div className="font-display text-sm font-bold">
-                        Headquartered in Doha, Qatar
-                      </div>
-                      <div className="text-xs text-muted-foreground">
-                        Serving Qatar, Kuwait, Saudi Arabia, UAE, Bahrain &amp; Oman
-                      </div>
+                    <div className="font-display text-sm font-bold">
+                      Headquartered in Doha, Qatar
                     </div>
                   </div>
                 </div>
@@ -118,123 +107,54 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="border-y border-border bg-surface/60 py-16">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="grid grid-cols-2 gap-px overflow-hidden rounded-4xl border border-border bg-border md:grid-cols-4">
-            {[
-              { v: 500, s: "+", l: "Workforce Pool" },
-              { v: 50, s: "+", l: "Technical Disciplines" },
-              { v: 6, s: "", l: "GCC Countries" },
-              { v: 100, s: "%", l: "Compliance Managed" },
-            ].map((stat, i) => (
-              <Reveal key={stat.l} delay={i * 0.06}>
-                <motion.div whileHover={{ y: -3 }} className="bg-white p-8 text-center">
-                  <div className="font-display text-4xl font-extrabold text-primary md:text-5xl">
-                    <Counter value={stat.v} suffix={stat.s} />
-                  </div>
-                  <div className="mt-3 text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">
-                    {stat.l}
-                  </div>
-                </motion.div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Mission & Vision */}
-      <section className="py-20">
-        <div className="mx-auto max-w-7xl px-6">
-          <Reveal className="mb-12 text-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-energy-soft bg-white/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.22em] text-primary backdrop-blur">
-              <span className="h-1.5 w-1.5 rounded-full bg-energy" />
-              Our Purpose
-            </span>
-            <h2 className="mt-5 text-3xl font-extrabold leading-[1.06] md:text-5xl">
-              Mission, vision &amp; <span className="text-gradient-energy">core values.</span>
-            </h2>
-          </Reveal>
-
-          <div className="grid gap-6 lg:grid-cols-3">
-            <Reveal>
-              <div className="rounded-2xl border border-border bg-white p-7 shadow-sm">
-                <div className="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-primary/8 text-primary ring-1 ring-primary/10">
-                  <Target className="h-6 w-6" />
-                </div>
-                <div className="font-display text-lg font-bold">Our Mission</div>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  To be Qatar and the GCC&apos;s most trusted technical manpower and industrial
-                  solutions partner - delivering qualified, compliant and reliable workforce and
-                  services for every project phase, every time.
-                </p>
-              </div>
-            </Reveal>
-            <Reveal delay={0.06}>
-              <div className="rounded-2xl border border-border bg-white p-7 shadow-sm">
-                <div className="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-primary/8 text-primary ring-1 ring-primary/10">
-                  <Globe className="h-6 w-6" />
-                </div>
-                <div className="font-display text-lg font-bold">Our Vision</div>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  To build the GCC&apos;s leading technical manpower and industrial solutions
-                  platform - recognised by operators, EPC contractors and government programs as the
-                  partner of choice for critical project delivery.
-                </p>
-              </div>
-            </Reveal>
-            <Reveal delay={0.12}>
-              <div className="rounded-2xl border border-border bg-white p-7 shadow-sm">
-                <div className="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-primary/8 text-primary ring-1 ring-primary/10">
-                  <Shield className="h-6 w-6" />
-                </div>
-                <div className="font-display text-lg font-bold">Our Commitment</div>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  Compliance, safety and quality are non-negotiable. Every Nexora deployment,
-                  service and supply is executed with the documentation discipline and HSE standards
-                  that our clients&apos; facilities demand.
-                </p>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Values */}
+      {/* 3. Mission and Operating Principles */}
       <section className="border-y border-border bg-surface/60 py-20">
         <div className="mx-auto max-w-7xl px-6">
           <Reveal className="mb-12 text-center">
-            <h2 className="text-3xl font-extrabold md:text-4xl">The values we work by.</h2>
+            <SectionEyebrow>Our Purpose</SectionEyebrow>
+            <h2 className="mt-5 text-3xl font-extrabold leading-[1.06] md:text-5xl">
+              A Clear Purpose. <span className="text-gradient-energy">Practical Principles.</span>
+            </h2>
           </Reveal>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+
+          <Reveal>
+            <div className="mx-auto max-w-3xl rounded-2xl border border-border bg-white p-7 text-center shadow-sm md:p-9">
+              <p className="text-lg font-medium leading-8 text-foreground">
+                To support industrial organizations with responsive technical manpower, coordinated
+                services and project-focused procurement from our base in Qatar.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 icon: Shield,
                 title: "Safety First",
-                desc: "HSE is embedded in planning, execution and handover - zero compromise on personnel or facility safety.",
+                desc: "Safety considerations guide how requirements, personnel and project support are approached.",
               },
               {
                 icon: Award,
                 title: "Integrity",
-                desc: "We say what we deliver and we deliver what we say. Transparent reporting and honest project communication.",
+                desc: "We communicate clearly, represent capabilities accurately and avoid promises we cannot support.",
               },
               {
-                icon: Users,
-                title: "Partnership",
-                desc: "Long-term partnerships with clients, employees and suppliers built on trust, performance and mutual benefit.",
+                icon: UsersRound,
+                title: "Collaboration",
+                desc: "We work closely with clients and relevant stakeholders to understand project requirements.",
               },
               {
                 icon: HardHat,
-                title: "Technical Excellence",
-                desc: "Every person we deploy, every service we deliver meets the technical standard our clients are entitled to expect.",
+                title: "Technical Discipline",
+                desc: "Requirements are approached with attention to scope, documentation and project conditions.",
               },
             ].map((val, i) => (
               <Reveal key={val.title} delay={i * 0.06}>
-                <div className="group rounded-2xl border border-border bg-white p-6 shadow-sm transition hover:shadow-elevated hover:-translate-y-0.5">
-                  <div className="grid h-12 w-12 place-items-center rounded-xl bg-primary/8 text-primary ring-1 ring-primary/10 transition group-hover:bg-energy/14 group-hover:ring-energy/20">
-                    <val.icon className="h-6 w-6" />
+                <div className="rounded-2xl border border-border bg-white p-6 shadow-sm">
+                  <div className="grid h-11 w-11 place-items-center rounded-xl bg-primary/8 text-primary ring-1 ring-primary/10">
+                    <val.icon className="h-5 w-5" />
                   </div>
-                  <div className="mt-5 font-display text-base font-bold">{val.title}</div>
+                  <div className="mt-4 font-display text-base font-bold">{val.title}</div>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{val.desc}</p>
                 </div>
               </Reveal>
@@ -243,92 +163,103 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* Regional reach */}
-      <section className="py-20">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <Reveal>
-              <span className="inline-flex items-center gap-2 rounded-full border border-energy-soft bg-white/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.22em] text-primary backdrop-blur">
-                <span className="h-1.5 w-1.5 rounded-full bg-energy" />
-                Regional Reach
-              </span>
-              <h2 className="mt-5 text-3xl font-extrabold leading-[1.06] md:text-5xl">
-                Qatar headquarters. <span className="text-gradient-energy">GCC deployment.</span>
-              </h2>
-              <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-                Nexora&apos;s headquarters in Doha, Qatar places us at the heart of the
-                region&apos;s energy industry. From here, we support project deployment across all
-                six GCC member states - with in-country coordination, visa and compliance support
-                managed locally.
-              </p>
-              <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                {[
-                  { code: "QA", country: "Qatar - HQ" },
-                  { code: "KW", country: "Kuwait" },
-                  { code: "SA", country: "Saudi Arabia" },
-                  { code: "AE", country: "UAE" },
-                  { code: "BH", country: "Bahrain" },
-                  { code: "OM", country: "Oman" },
-                ].map((c) => (
-                  <div
-                    key={c.code}
-                    className="flex items-center gap-3 rounded-xl border border-border bg-white p-3.5"
-                  >
-                    <div className="grid h-8 w-10 place-items-center rounded-lg bg-primary/8 font-display text-xs font-bold text-primary">
-                      {c.code}
-                    </div>
-                    <span className="text-sm font-semibold">{c.country}</span>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
+      {/* 4. Qatar Base and Priority Markets */}
+      <section className="bg-light-gray py-20 md:py-24">
+        <div className="mx-auto max-w-5xl px-6 text-center">
+          <Reveal>
+            <SectionEyebrow>Regional Focus</SectionEyebrow>
+            <h2 className="mx-auto mt-5 max-w-2xl text-3xl font-extrabold leading-[1.06] md:text-5xl">
+              Headquartered in Qatar. Focused on Priority Gulf Markets.
+            </h2>
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground">
+              NEXORA coordinates its services from Doha, with Qatar as its headquarters and home
+              market and Saudi Arabia and Kuwait as priority markets.
+            </p>
+          </Reveal>
 
-            <Reveal delay={0.1}>
-              <div className="grid gap-4">
-                <div className="relative overflow-hidden rounded-4xl border border-border bg-white shadow-elevated">
-                  <img
-                    src={pRefinery}
-                    alt="Energy facility in Qatar"
-                    loading="lazy"
-                    className="h-56 w-full object-cover"
-                  />
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="overflow-hidden rounded-2xl border border-border bg-white">
-                    <img
-                      src={pEng}
-                      alt="Engineering professionals"
-                      loading="lazy"
-                      className="h-32 w-full object-cover"
-                    />
+          <Reveal delay={0.08}>
+            <div className="mt-12 grid gap-4 sm:grid-cols-3">
+              {[
+                { code: "QA", country: "Qatar", role: "Headquarters & Home Market", primary: true },
+                { code: "SA", country: "Saudi Arabia", role: "Priority Market", primary: false },
+                { code: "KW", country: "Kuwait", role: "Priority Market", primary: false },
+              ].map((market) => (
+                <div
+                  key={market.code}
+                  className={
+                    market.primary
+                      ? "rounded-lg border-2 border-energy bg-navy p-6 shadow-elevated"
+                      : "rounded-lg border border-border bg-white p-6 shadow-sm"
+                  }
+                >
+                  <div
+                    className={
+                      market.primary
+                        ? "mx-auto grid h-12 w-12 place-items-center rounded-md bg-energy/15 text-energy"
+                        : "mx-auto grid h-12 w-12 place-items-center rounded-md bg-primary/8 text-primary"
+                    }
+                  >
+                    <MapPin className="h-6 w-6" />
                   </div>
-                  <div className="flex flex-col items-center justify-center rounded-2xl border border-border bg-navy p-4 text-center">
-                    <div className="font-display text-3xl font-extrabold text-energy">
-                      <Counter value={6} suffix="" />
-                    </div>
-                    <div className="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-white/55">
-                      GCC Countries
-                    </div>
+                  <div
+                    className={
+                      market.primary
+                        ? "mt-4 text-xl font-extrabold text-white"
+                        : "mt-4 text-xl font-extrabold text-foreground"
+                    }
+                  >
+                    {market.country}
+                  </div>
+                  <div
+                    className={
+                      market.primary
+                        ? "mt-1 text-xs font-extrabold uppercase tracking-[0.12em] text-energy"
+                        : "mt-1 text-xs font-extrabold uppercase tracking-[0.12em] text-primary"
+                    }
+                  >
+                    {market.role}
                   </div>
                 </div>
-              </div>
-            </Reveal>
-          </div>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="pb-24">
+      {/* 5. Collaborations */}
+      <section
+        id="collaborations"
+        className="scroll-mt-32 border-t border-border bg-white py-20 lg:scroll-mt-40"
+      >
+        <div className="mx-auto max-w-7xl px-6">
+          <Reveal className="mx-auto mb-12 max-w-2xl text-center">
+            <SectionEyebrow>Collaborations</SectionEyebrow>
+            <h2 className="mt-5 text-3xl font-extrabold leading-[1.06] md:text-5xl">
+              Organizations We Have Collaborated With
+            </h2>
+            <p className="mt-5 text-base leading-relaxed text-muted-foreground">
+              NEXORA has supported and collaborated with organizations across energy, industry,
+              infrastructure and commercial operations.
+            </p>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <CollaborationsGrid />
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 6. Final CTA */}
+      <section className="bg-light-gray py-24">
         <div className="mx-auto max-w-7xl px-6">
           <Reveal>
             <div className="flex flex-col items-center gap-5 rounded-4xl border border-border bg-white px-8 py-12 text-center shadow-elevated md:px-16">
               <Network className="h-10 w-10 text-energy" />
               <h2 className="max-w-xl text-3xl font-extrabold md:text-4xl">
-                Ready to partner with Nexora?
+                Discuss Your Project Requirements
               </h2>
               <p className="max-w-md text-base leading-relaxed text-muted-foreground">
-                Discuss your manpower requirements, industrial service needs or procurement scopes
-                with our team.
+                Share your manpower, industrial-service or procurement requirement, and our team
+                will review the details with you.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link
@@ -341,7 +272,7 @@ function AboutPage() {
                   to="/contact"
                   className="inline-flex items-center gap-2 rounded-full border border-border px-7 py-3.5 text-sm font-bold transition hover:border-energy-soft hover:text-primary"
                 >
-                  Contact Us
+                  Contact Nexora
                 </Link>
               </div>
             </div>

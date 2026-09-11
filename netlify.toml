@@ -8,3 +8,21 @@
 [dev]
   command = "npm run dev"
   port = 5173
+
+[[redirects]]
+  from = "/resources/gcc-industrial-manpower-guide"
+  to = "/manpower"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources"
+  to = "/manpower"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/projects"
+  to = "/industrial-services"
+  status = 301
+  force = true

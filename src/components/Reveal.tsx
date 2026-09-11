@@ -26,7 +26,7 @@ export function Reveal({ children, delay = 0, className, y, amount = 0.18 }: Rev
     <motion.div
       className={className}
       variants={reducedMotion ? undefined : variants}
-      initial={reducedMotion ? false : "hidden"}
+      initial={false}
       whileInView={reducedMotion ? undefined : "show"}
       viewport={{ once: true, amount }}
       custom={delay}

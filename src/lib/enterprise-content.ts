@@ -8,35 +8,38 @@ import {
   HardHat,
   MapPinned,
   Package,
+  Settings2,
   ShieldCheck,
+  SlidersHorizontal,
   Truck,
   UsersRound,
   Wrench,
   Zap,
 } from "lucide-react";
-import aboutNexoraTeam from "@/assets/about-nexora-team.png";
-import homeHeroBriefing from "@/assets/home-hero-briefing.png";
-import homeHeroLng from "@/assets/home-hero-lng.png";
-import homeHeroMaintenance from "@/assets/home-hero-maintenance.png";
-import homeHeroPlanning from "@/assets/home-hero-planning.png";
-import homeHeroProcurement from "@/assets/home-hero-procurement.png";
-import heroManpower from "@/assets/hero-manpower-refinery.jpg";
-import industrialServicesValveTeam from "@/assets/industrial-services-valve-team.png";
-import manpowerHeroCrewBriefing from "@/assets/manpower-hero-crew-briefing.png";
-import pEng from "@/assets/project-engineering.jpg";
-import pMaint from "@/assets/project-maintenance.jpg";
-import pPipeline from "@/assets/project-pipeline.jpg";
-import pPlant from "@/assets/project-plant.jpg";
-import pRefinery from "@/assets/project-refinery.jpg";
-import technicalManpowerTeam from "@/assets/technical-manpower-team.png";
+import aboutNexoraTeam from "@/assets/optimized/about-nexora-team.webp";
+import homeHeroBriefing from "@/assets/optimized/home-hero-briefing.webp";
+import homeHeroLng from "@/assets/optimized/home-hero-lng.webp";
+import homeHeroMaintenance from "@/assets/optimized/home-hero-maintenance.webp";
+import homeHeroPlanning from "@/assets/optimized/home-hero-planning.webp";
+import homeHeroProcurement from "@/assets/optimized/home-hero-procurement.webp";
+import heroManpower from "@/assets/optimized/hero-manpower-refinery.webp";
+import industrialServicesValveTeam from "@/assets/optimized/industrial-services-valve-team.webp";
+import manpowerHeroCrewBriefing from "@/assets/optimized/manpower-hero-crew-briefing.webp";
+import pEng from "@/assets/optimized/project-engineering.webp";
+import pMaint from "@/assets/optimized/project-maintenance.webp";
+import pPipeline from "@/assets/optimized/project-pipeline.webp";
+import pPlant from "@/assets/optimized/project-plant.webp";
+import pRefinery from "@/assets/optimized/project-refinery.webp";
+import technicalManpowerTeam from "@/assets/optimized/technical-manpower-team.webp";
 
 export const site = {
   name: "Nexora Energy Solutions",
   legalName: "Nexora Energy Solutions W.L.L",
   url: "https://www.nexoraqa.com",
-  phone: "+974 0000 0000",
-  whatsapp: "+974 3311 0000",
-  email: "info@nexora-energy.com",
+  phone: "+974 5546 7325",
+  whatsapp: "+974 5546 7325",
+  whatsappUrl: "https://wa.me/97455467325",
+  email: "sales@nexoraqa.com",
   city: "Doha",
   country: "Qatar",
   address: "Al Muntazah St., Doha, Qatar",
@@ -95,44 +98,47 @@ export const industryCards: IndustryCard[] = [
     slug: "oil-and-gas",
     image: pRefinery,
     summary:
-      "Technical manpower, maintenance and project support for upstream and downstream assets.",
+      "Support for manpower, maintenance and project requirements across relevant upstream, midstream and downstream environments.",
   },
   {
     icon: Flame,
-    title: "LNG",
+    title: "LNG & Gas Processing",
     slug: "lng",
     image: homeHeroLng,
     summary:
-      "Qualified teams for LNG process facilities, terminals and controlled maintenance windows.",
+      "Project-focused support for LNG and gas-processing requirements, aligned with the submitted scope and site conditions.",
   },
   {
     icon: Building2,
     title: "Petrochemical",
     slug: "petrochemical",
     image: pPlant,
-    summary: "Discipline-specific support for process units, plant upgrades and shutdown scopes.",
+    summary:
+      "Technical and industrial support for defined petrochemical project, maintenance and operational requirements.",
   },
   {
     icon: MapPinned,
-    title: "Infrastructure",
+    title: "Infrastructure & Pipelines",
     slug: "infrastructure",
     image: pPipeline,
     summary:
-      "Project manpower for pipelines, utilities corridors and industrial infrastructure programs.",
+      "Support for pipeline and industrial-infrastructure requirements involving technical personnel, coordination and project services.",
   },
   {
     icon: Zap,
     title: "Manufacturing",
     slug: "manufacturing",
-    image: pEng,
-    summary: "Operations, maintenance and technical support for production-critical facilities.",
+    image: industrialServicesValveTeam,
+    summary:
+      "Technical manpower and industrial support structured around manufacturing, fabrication and facility requirements.",
   },
   {
     icon: HardHat,
-    title: "EPC",
+    title: "EPC Projects",
     slug: "epc",
     image: homeHeroPlanning,
-    summary: "Flexible engineering, supervision and trades support for EPC delivery teams.",
+    summary:
+      "Coordinated manpower and technical support for defined engineering, procurement and construction project requirements.",
   },
 ];
 
@@ -184,6 +190,55 @@ export const primaryServices = [
     image: pEng,
     summary:
       "Engineering, inspection and technical documentation support for controlled delivery environments.",
+  },
+];
+
+export type ProductCategory = {
+  icon: LucideIcon;
+  title: string;
+  types: string[];
+  summary: string;
+};
+
+/**
+ * Shared taxonomy for the Products & Procurement page - used by both the
+ * visible category grid and the RFQ enquiry form's category select, so the
+ * two never drift apart. "Other Industrial Requirement" is form-only (see
+ * EnquiryForm) since it isn't a displayable category in its own right.
+ */
+export const productCategories: ProductCategory[] = [
+  {
+    icon: Settings2,
+    title: "Isolation Valves",
+    types: ["Ball Valves", "Butterfly Valves", "Gate Valves", "Globe Valves"],
+    summary:
+      "Valve options for isolation, flow control and industrial piping requirements, subject to approved project specifications.",
+  },
+  {
+    icon: SlidersHorizontal,
+    title: "Control and Actuated Valves",
+    types: ["Control Valves"],
+    summary:
+      "Control and actuation products selected according to process conditions, control requirements and approved specifications.",
+  },
+  {
+    icon: Gauge,
+    title: "Instrumentation and Measurement",
+    types: [
+      "Pressure Instruments",
+      "Temperature Instruments",
+      "Flow Instruments",
+      "Level Instruments",
+    ],
+    summary:
+      "Measurement and instrumentation products coordinated around process variables, application conditions and project requirements.",
+  },
+  {
+    icon: Zap,
+    title: "Electrical Products",
+    types: ["Switchgear", "Distribution Panels", "Cables and Accessories"],
+    summary:
+      "Electrical products reviewed against the required ratings, application, certification and project specification.",
   },
 ];
 

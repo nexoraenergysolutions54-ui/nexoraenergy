@@ -1,0 +1,215 @@
+{
+  "results": [
+    {
+      "width": 320,
+      "initial": {
+        "active": true,
+        "hidden": "true",
+        "bg": "rgb(2, 17, 31)",
+        "logoWidth": 233.1575927734375,
+        "logoHeight": 109.1104736328125,
+        "logoLeft": 43.42120361328125,
+        "ringWidth": 320.73394775390625,
+        "ringLeft": -0.36698150634765625,
+        "logoAnimation": "site-splash-logo-in",
+        "ringAnimation": "site-splash-orbit",
+        "bodyOverflow": "hidden",
+        "focus": "BODY"
+      },
+      "final": {
+        "active": 1,
+        "duration": 863.0999999940395,
+        "shifts": [],
+        "overflow": false,
+        "dom": false
+      },
+      "internalNavigation": true,
+      "homeReturn": true,
+      "refreshSkipped": true
+    },
+    {
+      "width": 375,
+      "initial": {
+        "active": true,
+        "hidden": "true",
+        "bg": "rgb(2, 17, 31)",
+        "logoWidth": 234.3916015625,
+        "logoHeight": 109.68795776367188,
+        "logoLeft": 70.30419921875,
+        "ringWidth": 338.1285400390625,
+        "ringLeft": 18.435714721679688,
+        "logoAnimation": "site-splash-logo-in",
+        "ringAnimation": "site-splash-orbit",
+        "bodyOverflow": "hidden",
+        "focus": "BODY"
+      },
+      "final": {
+        "active": 1,
+        "duration": 850.8000000119209,
+        "shifts": [],
+        "overflow": false,
+        "dom": false
+      },
+      "internalNavigation": true,
+      "homeReturn": true,
+      "refreshSkipped": true
+    },
+    {
+      "width": 390,
+      "initial": {
+        "active": true,
+        "hidden": "true",
+        "bg": "rgb(2, 17, 31)",
+        "logoWidth": 233.15887451171875,
+        "logoHeight": 109.18698120117188,
+        "logoLeft": 78.4205551147461,
+        "ringWidth": 320.75274658203125,
+        "ringLeft": 34.62362289428711,
+        "logoAnimation": "site-splash-logo-in",
+        "ringAnimation": "site-splash-orbit",
+        "bodyOverflow": "hidden",
+        "focus": "BODY"
+      },
+      "final": {
+        "active": 1,
+        "duration": 852.7999999821186,
+        "shifts": [],
+        "overflow": false,
+        "dom": false
+      },
+      "internalNavigation": true,
+      "homeReturn": true,
+      "refreshSkipped": true
+    },
+    {
+      "width": 430,
+      "initial": {
+        "active": true,
+        "hidden": "true",
+        "bg": "rgb(2, 17, 31)",
+        "logoWidth": 234.3890380859375,
+        "logoHeight": 109.686767578125,
+        "logoLeft": 97.80548095703125,
+        "ringWidth": 338.09326171875,
+        "ringLeft": 45.953372955322266,
+        "logoAnimation": "site-splash-logo-in",
+        "ringAnimation": "site-splash-orbit",
+        "bodyOverflow": "hidden",
+        "focus": "BODY"
+      },
+      "final": {
+        "active": 1,
+        "duration": 862.5,
+        "shifts": [],
+        "overflow": false,
+        "dom": false
+      },
+      "internalNavigation": true,
+      "homeReturn": true,
+      "refreshSkipped": true
+    },
+    {
+      "width": 768,
+      "initial": {
+        "active": true,
+        "hidden": "true",
+        "bg": "rgb(2, 17, 31)",
+        "logoWidth": 233.162109375,
+        "logoHeight": 109.112548828125,
+        "logoLeft": 267.4189453125,
+        "ringWidth": 320.7991943359375,
+        "ringLeft": 223.6004180908203,
+        "logoAnimation": "site-splash-logo-in",
+        "ringAnimation": "site-splash-orbit",
+        "bodyOverflow": "hidden",
+        "focus": "BODY"
+      },
+      "final": {
+        "active": 1,
+        "duration": 853,
+        "shifts": [],
+        "overflow": false,
+        "dom": false
+      },
+      "internalNavigation": true,
+      "homeReturn": true,
+      "refreshSkipped": true
+    },
+    {
+      "width": 1440,
+      "initial": {
+        "active": true,
+        "hidden": "true",
+        "bg": "rgb(2, 17, 31)",
+        "logoWidth": 388.6029052734375,
+        "logoHeight": 181.85400390625,
+        "logoLeft": 525.6985473632812,
+        "ringWidth": 549.931884765625,
+        "ringLeft": 445.0340270996094,
+        "logoAnimation": "site-splash-logo-in",
+        "ringAnimation": "site-splash-orbit",
+        "bodyOverflow": "hidden",
+        "focus": "BODY"
+      },
+      "final": {
+        "active": 1,
+        "duration": 854.1999999880791,
+        "shifts": [],
+        "overflow": false,
+        "dom": false
+      },
+      "internalNavigation": true,
+      "homeReturn": true,
+      "refreshSkipped": true
+    },
+    {
+      "width": 1920,
+      "initial": {
+        "active": true,
+        "hidden": "true",
+        "bg": "rgb(2, 17, 31)",
+        "logoWidth": 390.6533203125,
+        "logoHeight": 182.8135986328125,
+        "logoLeft": 764.67333984375,
+        "ringWidth": 579.6591186523438,
+        "ringLeft": 670.1704711914062,
+        "logoAnimation": "site-splash-logo-in",
+        "ringAnimation": "site-splash-orbit",
+        "bodyOverflow": "hidden",
+        "focus": "BODY"
+      },
+      "final": {
+        "active": 1,
+        "duration": 862.3000000119209,
+        "shifts": [],
+        "overflow": false,
+        "dom": false
+      },
+      "internalNavigation": true,
+      "homeReturn": true,
+      "refreshSkipped": true
+    },
+    {
+      "reducedMotion": "skipped"
+    },
+    {
+      "blockedStorage": "safe; refresh may replay"
+    },
+    {
+      "failedHydration": {
+        "active": 1,
+        "duration": 1408.5,
+        "shifts": [],
+        "overflow": false,
+        "dom": true
+      }
+    },
+    {
+      "javascriptDisabled": "content present; overlay hidden"
+    },
+    {
+      "keyboard": "immediate dismissal; focus remains on page"
+    }
+  ],
+  "errors": []
+}
