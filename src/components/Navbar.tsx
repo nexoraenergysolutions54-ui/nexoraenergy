@@ -320,6 +320,17 @@ export function Navbar() {
 
   return (
     <>
+      {/*
+       * Page chrome z-index hierarchy (see also WhatsAppButton.tsx and Layout.tsx's
+       * ScrollToTop, which follow the same tiers):
+       *   z-50 - sticky header (always on top of page content)
+       *   z-40 - mobile nav drawer (below header, above content and floating controls)
+       *   z-30 - floating action controls (WhatsApp, back-to-top)
+       * The one-time boot splash (site-splash.css) is a separate, intentionally very
+       * high z-index (10000) since it must cover literally everything for a moment at
+       * load; it is unmounted from the DOM immediately after, so it never competes
+       * with this ongoing hierarchy.
+       */}
       <motion.header
         initial={false}
         animate={{ y: 0, opacity: 1 }}
@@ -383,7 +394,18 @@ export function Navbar() {
           </div>
         </div>
 
-        <div className="mx-auto grid max-w-[1400px] grid-cols-[1fr_auto_1fr] items-center gap-4 px-5 py-3 lg:px-8">
+        {/*
+         * Below 1280px (the breakpoint where the desktop nav/CTA appear - see the
+         * `[@media(min-width:1280px)]` variants on <nav> and the CTA/hamburger below),
+         * this must be a plain two-item flex row (logo, right-side group), NOT the
+         * desktop three-column grid. The grid's middle "auto" track is sized for the
+         * primary nav, which is `display:none` on mobile - but a grid still reserves
+         * that column's gaps, pushing the hamburger away from the true right edge
+         * instead of letting it sit flush against it. `justify-between` on a two-item
+         * flex row has no such reserved-space problem, so it's the correct mobile
+         * layout; the grid only takes over once the desktop nav actually renders.
+         */}
+        <div className="mx-auto flex w-full max-w-[1400px] items-center justify-between gap-4 px-4 py-3 sm:px-5 [@media(min-width:1280px)]:grid [@media(min-width:1280px)]:grid-cols-[1fr_auto_1fr] [@media(min-width:1280px)]:px-8">
           <Link
             to="/"
             aria-label="Nexora Energy Solutions - Home"
@@ -449,17 +471,23 @@ export function Navbar() {
               />
             </Link>
             <button
+              type="button"
               onClick={() => setMobileOpen((value) => !value)}
-              aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
               aria-expanded={mobileOpen}
               aria-controls="mobile-navigation"
-              className={`grid h-11 w-11 place-items-center rounded-md border transition [@media(min-width:1280px)]:hidden ${
+              className={cn(
+                "grid h-11 w-11 shrink-0 place-items-center rounded-xl border transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 [@media(min-width:1280px)]:hidden",
                 lightHeader
-                  ? "border-border text-foreground hover:border-primary/40 hover:text-primary"
-                  : "border-white/35 text-white hover:border-white hover:bg-white/10"
-              }`}
+                  ? "border-border text-foreground hover:border-primary/40 hover:text-primary focus-visible:ring-primary focus-visible:ring-offset-white"
+                  : "border-white/35 text-white hover:border-white hover:bg-white/10 focus-visible:ring-white focus-visible:ring-offset-navy",
+              )}
             >
-              {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {mobileOpen ? (
+                <X className="h-5 w-5" aria-hidden="true" />
+              ) : (
+                <Menu className="h-5 w-5" aria-hidden="true" />
+              )}
             </button>
           </div>
         </div>

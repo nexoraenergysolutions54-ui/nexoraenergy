@@ -18,7 +18,7 @@ export function CollaborationLogoTile({
           height={org.logoHeight}
           loading={loading}
           decoding="async"
-          className="h-auto max-h-16 w-auto max-w-full object-contain"
+          className="h-16 w-full max-w-40 object-contain"
         />
       ) : (
         <span className="text-center font-display text-sm font-semibold leading-snug text-muted-foreground">

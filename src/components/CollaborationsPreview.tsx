@@ -19,7 +19,7 @@ export function CollaborationsPreview() {
           hash="collaborations"
           className="rounded text-sm font-semibold text-foreground underline decoration-border underline-offset-4 hover:decoration-current focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-energy"
         >
-          View all collaborations
+          View the full list
         </Link>
       </div>
     </div>

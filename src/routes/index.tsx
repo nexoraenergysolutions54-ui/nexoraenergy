@@ -37,11 +37,11 @@ function Home() {
   return (
     <Layout>
       <HeroSection />
-      <CollaborationsSection />
       <CoreServicesSection />
       <WhyNexoraSection />
       <IndustriesGridSection />
       <RegionalFocusSection />
+      <CollaborationsSection />
       <FinalCTASection />
     </Layout>
   );
@@ -168,30 +168,7 @@ function HeroSection() {
   );
 }
 
-/* --- 2. COLLABORATION LOGOS --------------------------------------------------- */
-
-function CollaborationsSection() {
-  return (
-    <section className="border-b border-border bg-white py-14 md:py-16">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <Reveal className="mb-8 text-center">
-          <h2 className="text-xl font-extrabold leading-tight text-foreground md:text-2xl">
-            Organizations We Have Collaborated With
-          </h2>
-          <p className="mx-auto mt-2 max-w-2xl text-sm font-medium leading-6 text-muted-foreground">
-            Supporting energy, industrial, infrastructure and commercial organizations through
-            professional manpower and operational solutions.
-          </p>
-        </Reveal>
-        <Reveal delay={0.08}>
-          <CollaborationsPreview />
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
-/* --- 3. CORE SERVICES ---------------------------------------------------------- */
+/* --- 2. CORE SERVICES ---------------------------------------------------------- */
 
 const coreServices = [
   {
@@ -254,7 +231,7 @@ function CoreServicesSection() {
   );
 }
 
-/* --- 4. WHY NEXORA -------------------------------------------------------------- */
+/* --- 3. WHY NEXORA -------------------------------------------------------------- */
 
 const whyNexoraPoints = [
   {
@@ -328,7 +305,7 @@ function WhyNexoraSection() {
   );
 }
 
-/* --- 5. INDUSTRIES SERVED -------------------------------------------------------- */
+/* --- 4. INDUSTRIES SERVED -------------------------------------------------------- */
 
 const industryHref = {
   "oil-and-gas": "/industries/oil-and-gas",
@@ -358,7 +335,7 @@ function IndustriesGridSection() {
               >
                 <img
                   src={industry.image}
-                  alt={`${industry.title} industrial site`}
+                  alt={industry.imageAlt}
                   loading="lazy"
                   className="absolute inset-0 h-full w-full object-cover opacity-82 transition duration-700 group-hover:scale-[1.04]"
                 />
@@ -378,7 +355,7 @@ function IndustriesGridSection() {
   );
 }
 
-/* --- 6. REGIONAL FOCUS ------------------------------------------------------------ */
+/* --- 5. REGIONAL FOCUS ------------------------------------------------------------ */
 
 const priorityMarkets = [
   { code: "QA", country: "Qatar", role: "Headquarters & Home Market", primary: true },
@@ -448,6 +425,40 @@ function RegionalFocusSection() {
               </div>
             ))}
           </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* --- 6. INDUSTRY LANDSCAPE (logo section) ------------------------------------------ */
+
+function CollaborationsSection() {
+  return (
+    <section className="border-t border-border bg-white py-16 md:py-20">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <Reveal className="mb-8 text-center">
+          <div className="mb-4 flex items-center justify-center gap-3">
+            <span className="h-px w-10 bg-primary" />
+            <span className="text-[11px] font-extrabold uppercase tracking-[0.24em] text-primary">
+              Industry Landscape
+            </span>
+            <span className="h-px w-10 bg-primary" />
+          </div>
+          <h2 className="text-xl font-extrabold leading-tight text-foreground md:text-2xl">
+            Organizations Across the Regional Industrial Landscape
+          </h2>
+          <p className="mx-auto mt-2 max-w-2xl text-sm font-medium leading-6 text-muted-foreground">
+            A selection of organizations active across the energy, industrial, infrastructure and
+            commercial sectors in Qatar and the wider region.
+          </p>
+          <p className="mx-auto mt-4 max-w-xl rounded-md border border-border bg-surface/70 px-4 py-2.5 text-sm font-semibold leading-5 text-foreground">
+            Logos are shown for industry-context purposes only. No client, partner, supplier,
+            endorsement or commercial relationship with NEXORA Energy Solutions is implied.
+          </p>
+        </Reveal>
+        <Reveal delay={0.08}>
+          <CollaborationsPreview />
         </Reveal>
       </div>
     </section>

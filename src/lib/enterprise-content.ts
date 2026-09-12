@@ -24,6 +24,12 @@ import homeHeroPlanning from "@/assets/optimized/home-hero-planning.webp";
 import homeHeroProcurement from "@/assets/optimized/home-hero-procurement.webp";
 import heroManpower from "@/assets/optimized/hero-manpower-refinery.webp";
 import industrialServicesValveTeam from "@/assets/optimized/industrial-services-valve-team.webp";
+import industryOilGas from "@/assets/optimized/industry-oil-gas.webp";
+import industryLng from "@/assets/optimized/industry-lng-gas-processing.webp";
+import industryPetrochemical from "@/assets/optimized/industry-petrochemical.webp";
+import industryInfrastructure from "@/assets/optimized/industry-infrastructure-pipelines.webp";
+import industryManufacturing from "@/assets/optimized/industry-manufacturing.webp";
+import industryEpc from "@/assets/optimized/industry-epc-projects.webp";
 import manpowerHeroCrewBriefing from "@/assets/optimized/manpower-hero-crew-briefing.webp";
 import pEng from "@/assets/optimized/project-engineering.webp";
 import pMaint from "@/assets/optimized/project-maintenance.webp";
@@ -88,6 +94,7 @@ export type IndustryCard = {
   title: string;
   slug: string;
   image: string;
+  imageAlt: string;
   summary: string;
 };
 
@@ -96,7 +103,8 @@ export const industryCards: IndustryCard[] = [
     icon: Factory,
     title: "Oil & Gas",
     slug: "oil-and-gas",
-    image: pRefinery,
+    image: industryOilGas,
+    imageAlt: "Oil and gas processing facility with industrial pipework",
     summary:
       "Support for manpower, maintenance and project requirements across relevant upstream, midstream and downstream environments.",
   },
@@ -104,7 +112,8 @@ export const industryCards: IndustryCard[] = [
     icon: Flame,
     title: "LNG & Gas Processing",
     slug: "lng",
-    image: homeHeroLng,
+    image: industryLng,
+    imageAlt: "Spherical gas-storage tanks at an industrial gas-processing facility",
     summary:
       "Project-focused support for LNG and gas-processing requirements, aligned with the submitted scope and site conditions.",
   },
@@ -112,7 +121,8 @@ export const industryCards: IndustryCard[] = [
     icon: Building2,
     title: "Petrochemical",
     slug: "petrochemical",
-    image: pPlant,
+    image: industryPetrochemical,
+    imageAlt: "Petrochemical process plant with pipe racks and a distillation column",
     summary:
       "Technical and industrial support for defined petrochemical project, maintenance and operational requirements.",
   },
@@ -120,7 +130,8 @@ export const industryCards: IndustryCard[] = [
     icon: MapPinned,
     title: "Infrastructure & Pipelines",
     slug: "infrastructure",
-    image: pPipeline,
+    image: industryInfrastructure,
+    imageAlt: "Industrial pipeline infrastructure with valves and pipe supports",
     summary:
       "Support for pipeline and industrial-infrastructure requirements involving technical personnel, coordination and project services.",
   },
@@ -128,7 +139,8 @@ export const industryCards: IndustryCard[] = [
     icon: Zap,
     title: "Manufacturing",
     slug: "manufacturing",
-    image: industrialServicesValveTeam,
+    image: industryManufacturing,
+    imageAlt: "Worker welding metal components inside an industrial fabrication workshop",
     summary:
       "Technical manpower and industrial support structured around manufacturing, fabrication and facility requirements.",
   },
@@ -136,7 +148,8 @@ export const industryCards: IndustryCard[] = [
     icon: HardHat,
     title: "EPC Projects",
     slug: "epc",
-    image: homeHeroPlanning,
+    image: industryEpc,
+    imageAlt: "Engineers reviewing project drawings at an industrial construction site",
     summary:
       "Coordinated manpower and technical support for defined engineering, procurement and construction project requirements.",
   },

@@ -21,10 +21,58 @@
       ],
       "images": [
         {
+          "alt": "QatarEnergy logo",
+          "loading": "eager",
+          "width": 95,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy.webp"
+        },
+        {
+          "alt": "QatarEnergy LNG logo",
+          "loading": "eager",
+          "width": 95,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy-lng.webp"
+        },
+        {
+          "alt": "QAFAC logo",
+          "loading": "eager",
+          "width": 95,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafac.webp"
+        },
+        {
+          "alt": "QAFCO logo",
+          "loading": "eager",
+          "width": 95,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafco.webp"
+        },
+        {
+          "alt": "Milaha logo",
+          "loading": "eager",
+          "width": 95,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/milaha.svg"
+        },
+        {
+          "alt": "Mannai Corporation logo",
+          "loading": "eager",
+          "width": 95,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/mannai.webp"
+        },
+        {
           "alt": "ACCIONA logo",
           "loading": "eager",
           "width": 95,
-          "height": 49,
+          "height": 64,
           "filter": "none",
           "src": "/images/collaborations/acciona.webp"
         }
@@ -50,7 +98,37 @@
       "shifts": [],
       "transfer": [
         {
-          "name": "http://127.0.0.1:4173/images/collaborations/acciona.webp",
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy.webp",
+          "transferSize": 56114,
+          "encodedBodySize": 55814
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy-lng.webp",
+          "transferSize": 14666,
+          "encodedBodySize": 14366
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafac.webp",
+          "transferSize": 6416,
+          "encodedBodySize": 6116
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafco.webp",
+          "transferSize": 12364,
+          "encodedBodySize": 12064
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/milaha.svg",
+          "transferSize": 1594,
+          "encodedBodySize": 1294
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/mannai.webp",
+          "transferSize": 8214,
+          "encodedBodySize": 7914
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/acciona.webp",
           "transferSize": 23232,
           "encodedBodySize": 22932
         }
@@ -92,16 +170,80 @@
       ],
       "images": [
         {
+          "alt": "QatarEnergy logo",
+          "loading": "lazy",
+          "width": 95,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy.webp"
+        },
+        {
+          "alt": "QatarEnergy LNG logo",
+          "loading": "lazy",
+          "width": 95,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy-lng.webp"
+        },
+        {
+          "alt": "QAFAC logo",
+          "loading": "lazy",
+          "width": 95,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafac.webp"
+        },
+        {
+          "alt": "QAFCO logo",
+          "loading": "lazy",
+          "width": 95,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafco.webp"
+        },
+        {
+          "alt": "Milaha logo",
+          "loading": "lazy",
+          "width": 95,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/milaha.svg"
+        },
+        {
+          "alt": "Mannai Corporation logo",
+          "loading": "lazy",
+          "width": 95,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/mannai.webp"
+        },
+        {
           "alt": "ACCIONA logo",
           "loading": "lazy",
           "width": 95,
-          "height": 49,
+          "height": 64,
           "filter": "none",
           "src": "/images/collaborations/acciona.webp"
+        },
+        {
+          "alt": "ABB logo",
+          "loading": "lazy",
+          "width": 95,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/abb.svg"
+        },
+        {
+          "alt": "DOPET logo",
+          "loading": "lazy",
+          "width": 95,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/dopet.webp"
         }
       ],
       "overflow": false,
-      "top": 91.453125,
+      "top": 128.453125,
       "headerBottom": 73,
       "slots": [
         96,
@@ -136,9 +278,49 @@
       "shifts": [],
       "transfer": [
         {
-          "name": "http://127.0.0.1:4173/images/collaborations/acciona.webp",
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy.webp",
+          "transferSize": 56114,
+          "encodedBodySize": 55814
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy-lng.webp",
+          "transferSize": 14666,
+          "encodedBodySize": 14366
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafac.webp",
+          "transferSize": 6416,
+          "encodedBodySize": 6116
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafco.webp",
+          "transferSize": 12364,
+          "encodedBodySize": 12064
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/milaha.svg",
+          "transferSize": 1594,
+          "encodedBodySize": 1294
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/mannai.webp",
+          "transferSize": 8214,
+          "encodedBodySize": 7914
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/abb.svg",
+          "transferSize": 1019,
+          "encodedBodySize": 719
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/acciona.webp",
           "transferSize": 23232,
           "encodedBodySize": 22932
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/dopet.webp",
+          "transferSize": 29378,
+          "encodedBodySize": 29078
         }
       ]
     },
@@ -163,10 +345,58 @@
       ],
       "images": [
         {
+          "alt": "QatarEnergy logo",
+          "loading": "eager",
+          "width": 122,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy.webp"
+        },
+        {
+          "alt": "QatarEnergy LNG logo",
+          "loading": "eager",
+          "width": 122,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy-lng.webp"
+        },
+        {
+          "alt": "QAFAC logo",
+          "loading": "eager",
+          "width": 122,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafac.webp"
+        },
+        {
+          "alt": "QAFCO logo",
+          "loading": "eager",
+          "width": 122,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafco.webp"
+        },
+        {
+          "alt": "Milaha logo",
+          "loading": "eager",
+          "width": 122,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/milaha.svg"
+        },
+        {
+          "alt": "Mannai Corporation logo",
+          "loading": "eager",
+          "width": 122,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/mannai.webp"
+        },
+        {
           "alt": "ACCIONA logo",
           "loading": "eager",
           "width": 122,
-          "height": 63,
+          "height": 64,
           "filter": "none",
           "src": "/images/collaborations/acciona.webp"
         }
@@ -192,7 +422,37 @@
       "shifts": [],
       "transfer": [
         {
-          "name": "http://127.0.0.1:4173/images/collaborations/acciona.webp",
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy.webp",
+          "transferSize": 56114,
+          "encodedBodySize": 55814
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy-lng.webp",
+          "transferSize": 14666,
+          "encodedBodySize": 14366
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafac.webp",
+          "transferSize": 6416,
+          "encodedBodySize": 6116
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafco.webp",
+          "transferSize": 12364,
+          "encodedBodySize": 12064
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/milaha.svg",
+          "transferSize": 1594,
+          "encodedBodySize": 1294
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/mannai.webp",
+          "transferSize": 8214,
+          "encodedBodySize": 7914
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/acciona.webp",
           "transferSize": 23232,
           "encodedBodySize": 22932
         }
@@ -234,16 +494,80 @@
       ],
       "images": [
         {
+          "alt": "QatarEnergy logo",
+          "loading": "lazy",
+          "width": 122,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy.webp"
+        },
+        {
+          "alt": "QatarEnergy LNG logo",
+          "loading": "lazy",
+          "width": 122,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy-lng.webp"
+        },
+        {
+          "alt": "QAFAC logo",
+          "loading": "lazy",
+          "width": 122,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafac.webp"
+        },
+        {
+          "alt": "QAFCO logo",
+          "loading": "lazy",
+          "width": 122,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafco.webp"
+        },
+        {
+          "alt": "Milaha logo",
+          "loading": "lazy",
+          "width": 122,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/milaha.svg"
+        },
+        {
+          "alt": "Mannai Corporation logo",
+          "loading": "lazy",
+          "width": 122,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/mannai.webp"
+        },
+        {
           "alt": "ACCIONA logo",
           "loading": "lazy",
           "width": 122,
-          "height": 63,
+          "height": 64,
           "filter": "none",
           "src": "/images/collaborations/acciona.webp"
+        },
+        {
+          "alt": "ABB logo",
+          "loading": "lazy",
+          "width": 122,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/abb.svg"
+        },
+        {
+          "alt": "DOPET logo",
+          "loading": "lazy",
+          "width": 122,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/dopet.webp"
         }
       ],
       "overflow": false,
-      "top": 90.375,
+      "top": 128.375,
       "headerBottom": 73,
       "slots": [
         96,
@@ -278,9 +602,49 @@
       "shifts": [],
       "transfer": [
         {
-          "name": "http://127.0.0.1:4173/images/collaborations/acciona.webp",
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy.webp",
+          "transferSize": 56114,
+          "encodedBodySize": 55814
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy-lng.webp",
+          "transferSize": 14666,
+          "encodedBodySize": 14366
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafac.webp",
+          "transferSize": 6416,
+          "encodedBodySize": 6116
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafco.webp",
+          "transferSize": 12364,
+          "encodedBodySize": 12064
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/milaha.svg",
+          "transferSize": 1594,
+          "encodedBodySize": 1294
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/mannai.webp",
+          "transferSize": 8214,
+          "encodedBodySize": 7914
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/acciona.webp",
           "transferSize": 23232,
           "encodedBodySize": 22932
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/abb.svg",
+          "transferSize": 1019,
+          "encodedBodySize": 719
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/dopet.webp",
+          "transferSize": 29378,
+          "encodedBodySize": 29078
         }
       ]
     },
@@ -305,9 +669,57 @@
       ],
       "images": [
         {
+          "alt": "QatarEnergy logo",
+          "loading": "eager",
+          "width": 130,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy.webp"
+        },
+        {
+          "alt": "QatarEnergy LNG logo",
+          "loading": "eager",
+          "width": 130,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy-lng.webp"
+        },
+        {
+          "alt": "QAFAC logo",
+          "loading": "eager",
+          "width": 130,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafac.webp"
+        },
+        {
+          "alt": "QAFCO logo",
+          "loading": "eager",
+          "width": 130,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafco.webp"
+        },
+        {
+          "alt": "Milaha logo",
+          "loading": "eager",
+          "width": 130,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/milaha.svg"
+        },
+        {
+          "alt": "Mannai Corporation logo",
+          "loading": "eager",
+          "width": 130,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/mannai.webp"
+        },
+        {
           "alt": "ACCIONA logo",
           "loading": "eager",
-          "width": 123,
+          "width": 130,
           "height": 64,
           "filter": "none",
           "src": "/images/collaborations/acciona.webp"
@@ -334,7 +746,37 @@
       "shifts": [],
       "transfer": [
         {
-          "name": "http://127.0.0.1:4173/images/collaborations/acciona.webp",
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy.webp",
+          "transferSize": 56114,
+          "encodedBodySize": 55814
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy-lng.webp",
+          "transferSize": 14666,
+          "encodedBodySize": 14366
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafac.webp",
+          "transferSize": 6416,
+          "encodedBodySize": 6116
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafco.webp",
+          "transferSize": 12364,
+          "encodedBodySize": 12064
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/milaha.svg",
+          "transferSize": 1594,
+          "encodedBodySize": 1294
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/mannai.webp",
+          "transferSize": 8214,
+          "encodedBodySize": 7914
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/acciona.webp",
           "transferSize": 23232,
           "encodedBodySize": 22932
         }
@@ -376,16 +818,80 @@
       ],
       "images": [
         {
+          "alt": "QatarEnergy logo",
+          "loading": "lazy",
+          "width": 130,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy.webp"
+        },
+        {
+          "alt": "QatarEnergy LNG logo",
+          "loading": "lazy",
+          "width": 130,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy-lng.webp"
+        },
+        {
+          "alt": "QAFAC logo",
+          "loading": "lazy",
+          "width": 130,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafac.webp"
+        },
+        {
+          "alt": "QAFCO logo",
+          "loading": "lazy",
+          "width": 130,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafco.webp"
+        },
+        {
+          "alt": "Milaha logo",
+          "loading": "lazy",
+          "width": 130,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/milaha.svg"
+        },
+        {
+          "alt": "Mannai Corporation logo",
+          "loading": "lazy",
+          "width": 130,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/mannai.webp"
+        },
+        {
           "alt": "ACCIONA logo",
           "loading": "lazy",
-          "width": 123,
+          "width": 130,
           "height": 64,
           "filter": "none",
           "src": "/images/collaborations/acciona.webp"
+        },
+        {
+          "alt": "ABB logo",
+          "loading": "lazy",
+          "width": 130,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/abb.svg"
+        },
+        {
+          "alt": "DOPET logo",
+          "loading": "lazy",
+          "width": 130,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/dopet.webp"
         }
       ],
       "overflow": false,
-      "top": 90.375,
+      "top": 128.375,
       "headerBottom": 73,
       "slots": [
         96,
@@ -420,9 +926,49 @@
       "shifts": [],
       "transfer": [
         {
-          "name": "http://127.0.0.1:4173/images/collaborations/acciona.webp",
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy.webp",
+          "transferSize": 56114,
+          "encodedBodySize": 55814
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy-lng.webp",
+          "transferSize": 14666,
+          "encodedBodySize": 14366
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafac.webp",
+          "transferSize": 6416,
+          "encodedBodySize": 6116
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafco.webp",
+          "transferSize": 12364,
+          "encodedBodySize": 12064
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/milaha.svg",
+          "transferSize": 1594,
+          "encodedBodySize": 1294
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/mannai.webp",
+          "transferSize": 8214,
+          "encodedBodySize": 7914
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/acciona.webp",
           "transferSize": 23232,
           "encodedBodySize": 22932
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/abb.svg",
+          "transferSize": 1019,
+          "encodedBodySize": 719
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/dopet.webp",
+          "transferSize": 29378,
+          "encodedBodySize": 29078
         }
       ]
     },
@@ -447,9 +993,57 @@
       ],
       "images": [
         {
+          "alt": "QatarEnergy logo",
+          "loading": "eager",
+          "width": 150,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy.webp"
+        },
+        {
+          "alt": "QatarEnergy LNG logo",
+          "loading": "eager",
+          "width": 150,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy-lng.webp"
+        },
+        {
+          "alt": "QAFAC logo",
+          "loading": "eager",
+          "width": 150,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafac.webp"
+        },
+        {
+          "alt": "QAFCO logo",
+          "loading": "eager",
+          "width": 150,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafco.webp"
+        },
+        {
+          "alt": "Milaha logo",
+          "loading": "eager",
+          "width": 150,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/milaha.svg"
+        },
+        {
+          "alt": "Mannai Corporation logo",
+          "loading": "eager",
+          "width": 150,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/mannai.webp"
+        },
+        {
           "alt": "ACCIONA logo",
           "loading": "eager",
-          "width": 123,
+          "width": 150,
           "height": 64,
           "filter": "none",
           "src": "/images/collaborations/acciona.webp"
@@ -476,7 +1070,37 @@
       "shifts": [],
       "transfer": [
         {
-          "name": "http://127.0.0.1:4173/images/collaborations/acciona.webp",
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy.webp",
+          "transferSize": 56114,
+          "encodedBodySize": 55814
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy-lng.webp",
+          "transferSize": 14666,
+          "encodedBodySize": 14366
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafac.webp",
+          "transferSize": 6416,
+          "encodedBodySize": 6116
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafco.webp",
+          "transferSize": 12364,
+          "encodedBodySize": 12064
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/milaha.svg",
+          "transferSize": 1594,
+          "encodedBodySize": 1294
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/mannai.webp",
+          "transferSize": 8214,
+          "encodedBodySize": 7914
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/acciona.webp",
           "transferSize": 23232,
           "encodedBodySize": 22932
         }
@@ -518,16 +1142,80 @@
       ],
       "images": [
         {
+          "alt": "QatarEnergy logo",
+          "loading": "lazy",
+          "width": 150,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy.webp"
+        },
+        {
+          "alt": "QatarEnergy LNG logo",
+          "loading": "lazy",
+          "width": 150,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy-lng.webp"
+        },
+        {
+          "alt": "QAFAC logo",
+          "loading": "lazy",
+          "width": 150,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafac.webp"
+        },
+        {
+          "alt": "QAFCO logo",
+          "loading": "lazy",
+          "width": 150,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafco.webp"
+        },
+        {
+          "alt": "Milaha logo",
+          "loading": "lazy",
+          "width": 150,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/milaha.svg"
+        },
+        {
+          "alt": "Mannai Corporation logo",
+          "loading": "lazy",
+          "width": 150,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/mannai.webp"
+        },
+        {
           "alt": "ACCIONA logo",
           "loading": "lazy",
-          "width": 123,
+          "width": 150,
           "height": 64,
           "filter": "none",
           "src": "/images/collaborations/acciona.webp"
+        },
+        {
+          "alt": "ABB logo",
+          "loading": "lazy",
+          "width": 150,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/abb.svg"
+        },
+        {
+          "alt": "DOPET logo",
+          "loading": "lazy",
+          "width": 150,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/dopet.webp"
         }
       ],
       "overflow": false,
-      "top": 89.875,
+      "top": 127.875,
       "headerBottom": 73,
       "slots": [
         96,
@@ -562,9 +1250,49 @@
       "shifts": [],
       "transfer": [
         {
-          "name": "http://127.0.0.1:4173/images/collaborations/acciona.webp",
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy.webp",
+          "transferSize": 56114,
+          "encodedBodySize": 55814
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy-lng.webp",
+          "transferSize": 14666,
+          "encodedBodySize": 14366
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafac.webp",
+          "transferSize": 6416,
+          "encodedBodySize": 6116
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafco.webp",
+          "transferSize": 12364,
+          "encodedBodySize": 12064
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/milaha.svg",
+          "transferSize": 1594,
+          "encodedBodySize": 1294
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/mannai.webp",
+          "transferSize": 8214,
+          "encodedBodySize": 7914
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/acciona.webp",
           "transferSize": 23232,
           "encodedBodySize": 22932
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/abb.svg",
+          "transferSize": 1019,
+          "encodedBodySize": 719
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/dopet.webp",
+          "transferSize": 29378,
+          "encodedBodySize": 29078
         }
       ]
     },
@@ -589,9 +1317,57 @@
       ],
       "images": [
         {
+          "alt": "QatarEnergy logo",
+          "loading": "eager",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy.webp"
+        },
+        {
+          "alt": "QatarEnergy LNG logo",
+          "loading": "eager",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy-lng.webp"
+        },
+        {
+          "alt": "QAFAC logo",
+          "loading": "eager",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafac.webp"
+        },
+        {
+          "alt": "QAFCO logo",
+          "loading": "eager",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafco.webp"
+        },
+        {
+          "alt": "Milaha logo",
+          "loading": "eager",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/milaha.svg"
+        },
+        {
+          "alt": "Mannai Corporation logo",
+          "loading": "eager",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/mannai.webp"
+        },
+        {
           "alt": "ACCIONA logo",
           "loading": "eager",
-          "width": 123,
+          "width": 160,
           "height": 64,
           "filter": "none",
           "src": "/images/collaborations/acciona.webp"
@@ -618,7 +1394,37 @@
       "shifts": [],
       "transfer": [
         {
-          "name": "http://127.0.0.1:4173/images/collaborations/acciona.webp",
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy.webp",
+          "transferSize": 56114,
+          "encodedBodySize": 55814
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy-lng.webp",
+          "transferSize": 14666,
+          "encodedBodySize": 14366
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafac.webp",
+          "transferSize": 6416,
+          "encodedBodySize": 6116
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafco.webp",
+          "transferSize": 12364,
+          "encodedBodySize": 12064
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/milaha.svg",
+          "transferSize": 1594,
+          "encodedBodySize": 1294
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/mannai.webp",
+          "transferSize": 8214,
+          "encodedBodySize": 7914
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/acciona.webp",
           "transferSize": 23232,
           "encodedBodySize": 22932
         }
@@ -660,16 +1466,80 @@
       ],
       "images": [
         {
+          "alt": "QatarEnergy logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy.webp"
+        },
+        {
+          "alt": "QatarEnergy LNG logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy-lng.webp"
+        },
+        {
+          "alt": "QAFAC logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafac.webp"
+        },
+        {
+          "alt": "QAFCO logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafco.webp"
+        },
+        {
+          "alt": "Milaha logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/milaha.svg"
+        },
+        {
+          "alt": "Mannai Corporation logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/mannai.webp"
+        },
+        {
           "alt": "ACCIONA logo",
           "loading": "lazy",
-          "width": 123,
+          "width": 160,
           "height": 64,
           "filter": "none",
           "src": "/images/collaborations/acciona.webp"
+        },
+        {
+          "alt": "ABB logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/abb.svg"
+        },
+        {
+          "alt": "DOPET logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/dopet.webp"
         }
       ],
       "overflow": false,
-      "top": 90.625,
+      "top": 126.625,
       "headerBottom": 73,
       "slots": [
         96,
@@ -704,9 +1574,49 @@
       "shifts": [],
       "transfer": [
         {
-          "name": "http://127.0.0.1:4173/images/collaborations/acciona.webp",
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy.webp",
+          "transferSize": 56114,
+          "encodedBodySize": 55814
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy-lng.webp",
+          "transferSize": 14666,
+          "encodedBodySize": 14366
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafac.webp",
+          "transferSize": 6416,
+          "encodedBodySize": 6116
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafco.webp",
+          "transferSize": 12364,
+          "encodedBodySize": 12064
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/milaha.svg",
+          "transferSize": 1594,
+          "encodedBodySize": 1294
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/mannai.webp",
+          "transferSize": 8214,
+          "encodedBodySize": 7914
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/acciona.webp",
           "transferSize": 23232,
           "encodedBodySize": 22932
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/abb.svg",
+          "transferSize": 1019,
+          "encodedBodySize": 719
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/dopet.webp",
+          "transferSize": 29378,
+          "encodedBodySize": 29078
         }
       ]
     },
@@ -731,10 +1641,58 @@
       ],
       "images": [
         {
+          "alt": "QatarEnergy logo",
+          "loading": "eager",
+          "width": 117,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy.webp"
+        },
+        {
+          "alt": "QatarEnergy LNG logo",
+          "loading": "eager",
+          "width": 117,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy-lng.webp"
+        },
+        {
+          "alt": "QAFAC logo",
+          "loading": "eager",
+          "width": 117,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafac.webp"
+        },
+        {
+          "alt": "QAFCO logo",
+          "loading": "eager",
+          "width": 117,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafco.webp"
+        },
+        {
+          "alt": "Milaha logo",
+          "loading": "eager",
+          "width": 117,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/milaha.svg"
+        },
+        {
+          "alt": "Mannai Corporation logo",
+          "loading": "eager",
+          "width": 117,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/mannai.webp"
+        },
+        {
           "alt": "ACCIONA logo",
           "loading": "eager",
           "width": 117,
-          "height": 61,
+          "height": 64,
           "filter": "none",
           "src": "/images/collaborations/acciona.webp"
         }
@@ -760,11 +1718,884 @@
       "shifts": [],
       "transfer": [
         {
-          "name": "http://127.0.0.1:4173/images/collaborations/acciona.webp",
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy.webp",
+          "transferSize": 56114,
+          "encodedBodySize": 55814
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy-lng.webp",
+          "transferSize": 14666,
+          "encodedBodySize": 14366
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafac.webp",
+          "transferSize": 6416,
+          "encodedBodySize": 6116
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafco.webp",
+          "transferSize": 12364,
+          "encodedBodySize": 12064
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/milaha.svg",
+          "transferSize": 1594,
+          "encodedBodySize": 1294
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/mannai.webp",
+          "transferSize": 8214,
+          "encodedBodySize": 7914
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/acciona.webp",
           "transferSize": 23232,
           "encodedBodySize": 22932
         }
       ]
+    },
+    {
+      "width": 1024,
+      "route": "/about#collaborations",
+      "count": 27,
+      "columns": 4,
+      "names": [
+        "QatarEnergy",
+        "QatarEnergy LNG",
+        "NOC",
+        "Saleh Al Hamad Al Mana Co.",
+        "Mowasalat",
+        "QAFAC",
+        "QAFCO",
+        "Milaha",
+        "Mannai Corporation",
+        "GWC",
+        "ACCIONA",
+        "Manatec",
+        "ABB",
+        "CCC",
+        "Technip",
+        "L&T",
+        "HBK Engineering",
+        "Tadmur",
+        "Al Darwish",
+        "Gulfar",
+        "Al Balagh",
+        "QAPCO",
+        "Q-Chem",
+        "Qatalum",
+        "GDI",
+        "GE",
+        "DOPET"
+      ],
+      "images": [
+        {
+          "alt": "QatarEnergy logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy.webp"
+        },
+        {
+          "alt": "QatarEnergy LNG logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy-lng.webp"
+        },
+        {
+          "alt": "QAFAC logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafac.webp"
+        },
+        {
+          "alt": "QAFCO logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafco.webp"
+        },
+        {
+          "alt": "Milaha logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/milaha.svg"
+        },
+        {
+          "alt": "Mannai Corporation logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/mannai.webp"
+        },
+        {
+          "alt": "ACCIONA logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/acciona.webp"
+        },
+        {
+          "alt": "ABB logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/abb.svg"
+        },
+        {
+          "alt": "DOPET logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/dopet.webp"
+        }
+      ],
+      "overflow": false,
+      "top": 158.75,
+      "headerBottom": 110,
+      "slots": [
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96
+      ],
+      "animations": 0,
+      "shifts": [],
+      "transfer": [
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy.webp",
+          "transferSize": 56114,
+          "encodedBodySize": 55814
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy-lng.webp",
+          "transferSize": 14666,
+          "encodedBodySize": 14366
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafac.webp",
+          "transferSize": 6416,
+          "encodedBodySize": 6116
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafco.webp",
+          "transferSize": 12364,
+          "encodedBodySize": 12064
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/milaha.svg",
+          "transferSize": 1594,
+          "encodedBodySize": 1294
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/mannai.webp",
+          "transferSize": 8214,
+          "encodedBodySize": 7914
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/acciona.webp",
+          "transferSize": 23232,
+          "encodedBodySize": 22932
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/abb.svg",
+          "transferSize": 1019,
+          "encodedBodySize": 719
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/dopet.webp",
+          "transferSize": 29378,
+          "encodedBodySize": 29078
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "count": 12,
+      "columns": 6,
+      "names": [
+        "QatarEnergy",
+        "QatarEnergy LNG",
+        "NOC",
+        "Saleh Al Hamad Al Mana Co.",
+        "Mowasalat",
+        "QAFAC",
+        "QAFCO",
+        "Milaha",
+        "Mannai Corporation",
+        "GWC",
+        "ACCIONA",
+        "Manatec"
+      ],
+      "images": [
+        {
+          "alt": "QatarEnergy logo",
+          "loading": "eager",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy.webp"
+        },
+        {
+          "alt": "QatarEnergy LNG logo",
+          "loading": "eager",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy-lng.webp"
+        },
+        {
+          "alt": "QAFAC logo",
+          "loading": "eager",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafac.webp"
+        },
+        {
+          "alt": "QAFCO logo",
+          "loading": "eager",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafco.webp"
+        },
+        {
+          "alt": "Milaha logo",
+          "loading": "eager",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/milaha.svg"
+        },
+        {
+          "alt": "Mannai Corporation logo",
+          "loading": "eager",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/mannai.webp"
+        },
+        {
+          "alt": "ACCIONA logo",
+          "loading": "eager",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/acciona.webp"
+        }
+      ],
+      "overflow": false,
+      "top": 0,
+      "headerBottom": 110,
+      "slots": [
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96
+      ],
+      "animations": 0,
+      "shifts": [],
+      "transfer": [
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy.webp",
+          "transferSize": 56114,
+          "encodedBodySize": 55814
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy-lng.webp",
+          "transferSize": 14666,
+          "encodedBodySize": 14366
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafac.webp",
+          "transferSize": 6416,
+          "encodedBodySize": 6116
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafco.webp",
+          "transferSize": 12364,
+          "encodedBodySize": 12064
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/milaha.svg",
+          "transferSize": 1594,
+          "encodedBodySize": 1294
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/mannai.webp",
+          "transferSize": 8214,
+          "encodedBodySize": 7914
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/acciona.webp",
+          "transferSize": 23232,
+          "encodedBodySize": 22932
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/about#collaborations",
+      "count": 27,
+      "columns": 6,
+      "names": [
+        "QatarEnergy",
+        "QatarEnergy LNG",
+        "NOC",
+        "Saleh Al Hamad Al Mana Co.",
+        "Mowasalat",
+        "QAFAC",
+        "QAFCO",
+        "Milaha",
+        "Mannai Corporation",
+        "GWC",
+        "ACCIONA",
+        "Manatec",
+        "ABB",
+        "CCC",
+        "Technip",
+        "L&T",
+        "HBK Engineering",
+        "Tadmur",
+        "Al Darwish",
+        "Gulfar",
+        "Al Balagh",
+        "QAPCO",
+        "Q-Chem",
+        "Qatalum",
+        "GDI",
+        "GE",
+        "DOPET"
+      ],
+      "images": [
+        {
+          "alt": "QatarEnergy logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy.webp"
+        },
+        {
+          "alt": "QatarEnergy LNG logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy-lng.webp"
+        },
+        {
+          "alt": "QAFAC logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafac.webp"
+        },
+        {
+          "alt": "QAFCO logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafco.webp"
+        },
+        {
+          "alt": "Milaha logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/milaha.svg"
+        },
+        {
+          "alt": "Mannai Corporation logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/mannai.webp"
+        },
+        {
+          "alt": "ACCIONA logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/acciona.webp"
+        },
+        {
+          "alt": "ABB logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/abb.svg"
+        },
+        {
+          "alt": "DOPET logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/dopet.webp"
+        }
+      ],
+      "overflow": false,
+      "top": 158.375,
+      "headerBottom": 110,
+      "slots": [
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96
+      ],
+      "animations": 0,
+      "shifts": [],
+      "transfer": [
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy.webp",
+          "transferSize": 56114,
+          "encodedBodySize": 55814
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy-lng.webp",
+          "transferSize": 14666,
+          "encodedBodySize": 14366
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafac.webp",
+          "transferSize": 6416,
+          "encodedBodySize": 6116
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafco.webp",
+          "transferSize": 12364,
+          "encodedBodySize": 12064
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/milaha.svg",
+          "transferSize": 1594,
+          "encodedBodySize": 1294
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/mannai.webp",
+          "transferSize": 8214,
+          "encodedBodySize": 7914
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/acciona.webp",
+          "transferSize": 23232,
+          "encodedBodySize": 22932
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/abb.svg",
+          "transferSize": 1019,
+          "encodedBodySize": 719
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/dopet.webp",
+          "transferSize": 29378,
+          "encodedBodySize": 29078
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "route": "/",
+      "count": 12,
+      "columns": 6,
+      "names": [
+        "QatarEnergy",
+        "QatarEnergy LNG",
+        "NOC",
+        "Saleh Al Hamad Al Mana Co.",
+        "Mowasalat",
+        "QAFAC",
+        "QAFCO",
+        "Milaha",
+        "Mannai Corporation",
+        "GWC",
+        "ACCIONA",
+        "Manatec"
+      ],
+      "images": [
+        {
+          "alt": "QatarEnergy logo",
+          "loading": "eager",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy.webp"
+        },
+        {
+          "alt": "QatarEnergy LNG logo",
+          "loading": "eager",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy-lng.webp"
+        },
+        {
+          "alt": "QAFAC logo",
+          "loading": "eager",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafac.webp"
+        },
+        {
+          "alt": "QAFCO logo",
+          "loading": "eager",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafco.webp"
+        },
+        {
+          "alt": "Milaha logo",
+          "loading": "eager",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/milaha.svg"
+        },
+        {
+          "alt": "Mannai Corporation logo",
+          "loading": "eager",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/mannai.webp"
+        },
+        {
+          "alt": "ACCIONA logo",
+          "loading": "eager",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/acciona.webp"
+        }
+      ],
+      "overflow": false,
+      "top": 0,
+      "headerBottom": 110,
+      "slots": [
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96
+      ],
+      "animations": 0,
+      "shifts": [],
+      "transfer": [
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy.webp",
+          "transferSize": 56114,
+          "encodedBodySize": 55814
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy-lng.webp",
+          "transferSize": 14666,
+          "encodedBodySize": 14366
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafac.webp",
+          "transferSize": 6416,
+          "encodedBodySize": 6116
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafco.webp",
+          "transferSize": 12364,
+          "encodedBodySize": 12064
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/milaha.svg",
+          "transferSize": 1594,
+          "encodedBodySize": 1294
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/mannai.webp",
+          "transferSize": 8214,
+          "encodedBodySize": 7914
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/acciona.webp",
+          "transferSize": 23232,
+          "encodedBodySize": 22932
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "route": "/about#collaborations",
+      "count": 27,
+      "columns": 6,
+      "names": [
+        "QatarEnergy",
+        "QatarEnergy LNG",
+        "NOC",
+        "Saleh Al Hamad Al Mana Co.",
+        "Mowasalat",
+        "QAFAC",
+        "QAFCO",
+        "Milaha",
+        "Mannai Corporation",
+        "GWC",
+        "ACCIONA",
+        "Manatec",
+        "ABB",
+        "CCC",
+        "Technip",
+        "L&T",
+        "HBK Engineering",
+        "Tadmur",
+        "Al Darwish",
+        "Gulfar",
+        "Al Balagh",
+        "QAPCO",
+        "Q-Chem",
+        "Qatalum",
+        "GDI",
+        "GE",
+        "DOPET"
+      ],
+      "images": [
+        {
+          "alt": "QatarEnergy logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy.webp"
+        },
+        {
+          "alt": "QatarEnergy LNG logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qatarenergy-lng.webp"
+        },
+        {
+          "alt": "QAFAC logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafac.webp"
+        },
+        {
+          "alt": "QAFCO logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/qafco.webp"
+        },
+        {
+          "alt": "Milaha logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/milaha.svg"
+        },
+        {
+          "alt": "Mannai Corporation logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/mannai.webp"
+        },
+        {
+          "alt": "ACCIONA logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/acciona.webp"
+        },
+        {
+          "alt": "ABB logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/abb.svg"
+        },
+        {
+          "alt": "DOPET logo",
+          "loading": "lazy",
+          "width": 160,
+          "height": 64,
+          "filter": "none",
+          "src": "/images/collaborations/dopet.webp"
+        }
+      ],
+      "overflow": false,
+      "top": 158.375,
+      "headerBottom": 110,
+      "slots": [
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96
+      ],
+      "animations": 0,
+      "shifts": [],
+      "transfer": [
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy.webp",
+          "transferSize": 56114,
+          "encodedBodySize": 55814
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qatarenergy-lng.webp",
+          "transferSize": 14666,
+          "encodedBodySize": 14366
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafac.webp",
+          "transferSize": 6416,
+          "encodedBodySize": 6116
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/qafco.webp",
+          "transferSize": 12364,
+          "encodedBodySize": 12064
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/milaha.svg",
+          "transferSize": 1594,
+          "encodedBodySize": 1294
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/mannai.webp",
+          "transferSize": 8214,
+          "encodedBodySize": 7914
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/acciona.webp",
+          "transferSize": 23232,
+          "encodedBodySize": 22932
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/abb.svg",
+          "transferSize": 1019,
+          "encodedBodySize": 719
+        },
+        {
+          "name": "http://127.0.0.1:4180/images/collaborations/dopet.webp",
+          "transferSize": 29378,
+          "encodedBodySize": 29078
+        }
+      ]
+    },
+    {
+      "reducedMotion": true,
+      "halfWidthZoomLayout": true,
+      "anchorLink": true
     }
   ],
   "errors": []

@@ -36,7 +36,7 @@ function ScrollToTop() {
           onClick={() => window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" })}
           aria-label="Back to top"
           title="Back to top"
-          className="fixed bottom-24 right-6 z-40 grid h-12 w-12 place-items-center rounded-full bg-primary text-white shadow-elevated transition duration-200 hover:scale-110 hover:bg-navy focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-energy"
+          className="fixed bottom-24 right-6 z-30 grid h-12 w-12 place-items-center rounded-full bg-primary text-white shadow-elevated transition duration-200 hover:scale-110 hover:bg-navy focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-energy"
         >
           <ArrowUp className="h-5 w-5" aria-hidden="true" />
         </motion.button>

@@ -1,5 +1,7 @@
 # Collaboration identity and asset audit
 
+**Historical pre-implementation table.** See [approved sourcing update](approved-update.md) and [installed source manifest](installed-approved.json) for current assets. The user has since approved display; identity ambiguities remain open.
+
 12 September 2026. Prepared before implementation. Official sources establish names, not evidence of a relationship with Nexora or a trademark licence. Supplied display names remain unchanged for unresolved identities. All public logo use needs the client's final approval and confirmation of permission.
 
 Repository inspection: one 27-entry dataset; Home uses a duplicated animated text track; About uses a full static grid. All logo fields are empty. No supplied third-party logo files, external collaboration image URLs, footer logo collection, duplicate third-party assets, or collaboration relationships in JSON-LD were found. Existing Nexora logo variants have consumers and are outside scope. Headings/support text already match the brief. Tile code currently applies grayscale and exposes pending status in a tooltip; both will be removed.

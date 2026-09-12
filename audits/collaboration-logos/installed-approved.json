@@ -1,0 +1,74 @@
+[
+  {
+    "id": "qatarenergy",
+    "source": "https://www.qatarenergy.qa/Style%20Library/QPRevamp2021/imgs/QP%20logo%20vertical-big.jpg",
+    "logo": "/images/collaborations/qatarenergy.webp",
+    "logoWidth": 400,
+    "logoHeight": 380,
+    "bytes": 55814,
+    "sha256": "4882320a2df65350417679a17e4371734367091cf63649d086ca9ebe5f7bce47"
+  },
+  {
+    "id": "qatarenergy-lng",
+    "source": "https://www.qatarenergylng.qa/Portals/0/logo.png",
+    "logo": "/images/collaborations/qatarenergy-lng.webp",
+    "logoWidth": 110,
+    "logoHeight": 130,
+    "bytes": 14366,
+    "sha256": "6c47d7fc95bbf905491bdc4190a25536612ffcfaa183c3c97f94d6ad43d35424"
+  },
+  {
+    "id": "qafac",
+    "source": "https://www.qafac.com.qa/wp-content/uploads/2025/08/logo-header-new.png",
+    "logo": "/images/collaborations/qafac.webp",
+    "logoWidth": 350,
+    "logoHeight": 100,
+    "bytes": 6116,
+    "sha256": "c6c7e916bdc038135f2f0d2033469ce3c23066adc8c30b94ff72c3f913482cc4"
+  },
+  {
+    "id": "qafco",
+    "source": "https://www.qafco.qa/wp-content/uploads/2024/12/QAFCO-logo.png",
+    "logo": "/images/collaborations/qafco.webp",
+    "logoWidth": 249,
+    "logoHeight": 127,
+    "bytes": 12064,
+    "sha256": "baae3527213f5c21f83f4e57ee7233d712fcb521be6cd2681391789a78785666"
+  },
+  {
+    "id": "milaha",
+    "source": "https://www.milaha.com/themes/custom/milaha/images/logo.svg",
+    "logo": "/images/collaborations/milaha.svg",
+    "logoWidth": 168,
+    "logoHeight": 74,
+    "bytes": 2677,
+    "sha256": "d0b80885cca1f750497d99c3c9266cb437222b90ad570de066365ee8ab20b2ca"
+  },
+  {
+    "id": "mannai",
+    "source": "https://mannai.com/wp-content/uploads/2017/05/manni-png.png",
+    "logo": "/images/collaborations/mannai.webp",
+    "logoWidth": 684,
+    "logoHeight": 236,
+    "bytes": 7914,
+    "sha256": "5533a5a2ce107a6d8944feb8cb79cdf98f13143812d71d5367dccf78805d1e8c"
+  },
+  {
+    "id": "dopet",
+    "source": "https://www.dopet.com/wp-content/uploads/2023/02/DOPET-logoTP.png",
+    "logo": "/images/collaborations/dopet.webp",
+    "logoWidth": 459,
+    "logoHeight": 260,
+    "bytes": 29078,
+    "sha256": "bf5326417fb097a4f55d8ad8ef92930dcbe9b3b727f477f52a9dabd3138cefc0"
+  },
+  {
+    "id": "abb",
+    "source": "https://brand.abb/etc.clientlibs/brandportal/clientlibs/clientlib-site/resources/images/ABBLogo.svg",
+    "logo": "/images/collaborations/abb.svg",
+    "logoWidth": 64,
+    "logoHeight": 24,
+    "bytes": 2236,
+    "sha256": "cae792e7bca7a3eef65f28f065d927de89574f61660a6e2a7240bca99ef1c141"
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "qatarenergy",
+    "url": "https://www.qatarenergy.qa/Style%20Library/QPRevamp2021/imgs/QP%20logo%20vertical-big.jpg",
+    "file": "audits/collaboration-logos/sources/qatarenergy.jpg",
+    "bytes": 96950,
+    "width": 919,
+    "height": 874,
+    "format": "jpeg"
+  },
+  {
+    "id": "qatarenergy-lng",
+    "url": "https://www.qatarenergylng.qa/Portals/0/logo.png",
+    "file": "audits/collaboration-logos/sources/qatarenergy-lng.png",
+    "bytes": 10912,
+    "width": 110,
+    "height": 130,
+    "format": "jpeg"
+  },
+  {
+    "id": "qafac",
+    "url": "https://www.qafac.com.qa/wp-content/uploads/2025/08/logo-header-new.png",
+    "file": "audits/collaboration-logos/sources/qafac.png",
+    "bytes": 16207,
+    "width": 350,
+    "height": 100,
+    "format": "png"
+  },
+  {
+    "id": "qafco",
+    "url": "https://www.qafco.qa/wp-content/uploads/2024/12/QAFCO-logo.png",
+    "file": "audits/collaboration-logos/sources/qafco.png",
+    "bytes": 21951,
+    "width": 249,
+    "height": 127,
+    "format": "png"
+  },
+  {
+    "id": "milaha",
+    "url": "https://www.milaha.com/themes/custom/milaha/images/logo.svg",
+    "file": "audits/collaboration-logos/sources/milaha.svg",
+    "bytes": 2677,
+    "width": 168,
+    "height": 74,
+    "format": "svg"
+  },
+  {
+    "id": "mannai",
+    "url": "https://mannai.com/wp-content/uploads/2020/07/logo-big.png",
+    "file": "audits/collaboration-logos/sources/mannai.png",
+    "bytes": 5852,
+    "width": 237,
+    "height": 236,
+    "format": "png"
+  },
+  {
+    "id": "al-balagh",
+    "url": "https://www.albalagh.com/public//user/images/logosticky.png",
+    "file": "audits/collaboration-logos/sources/al-balagh.png",
+    "bytes": 6244,
+    "width": 104,
+    "height": 70,
+    "format": "png"
+  },
+  {
+    "id": "dopet",
+    "url": "https://www.dopet.com/wp-content/uploads/2023/02/DOPET-logoTP.png",
+    "file": "audits/collaboration-logos/sources/dopet.png",
+    "bytes": 65776,
+    "width": 459,
+    "height": 260,
+    "format": "png"
+  }
+]

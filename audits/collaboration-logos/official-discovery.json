@@ -1,0 +1,235 @@
+[
+  {
+    "id": "qatarenergy",
+    "url": "https://www.qatarenergy.qa/en/Pages/vHome.aspx",
+    "status": 200,
+    "images": [
+      "<img src=\"/Style Library/QPRevamp2021/imgs/QatarEnergy_Logo_32X32_Transparent.png?rev=44\" />",
+      "<img class=\"img-fluid\" src=\"/Style%20Library/QPRevamp2021/imgs/QP%20logo%20vertical-big.jpg\" alt=\"QatarEnergy\" title=\"QatarEnergy\" />",
+      "<img alt='news image' class='img-fluid embed-responsive-item' onerror='this.onerror=null;this.src='/Style%20Library/QPRevamp2021/imgs/Logo.png';' src='https://www.qatarenergy.qa/en/MediaCenter/QPNewsImages/2026/10092026_QatarEnergy_Signs_Agreement_for_Angola_Offshore_Blocks_01.jpg'>",
+      "<img alt='news image' class='img-fluid embed-responsive-item' onerror='this.onerror=null;this.src='/Style%20Library/QPRevamp2021/imgs/Logo.png';' src='https://www.qatarenergy.qa/en/MediaCenter/QPNewsImages/2026/05072026_QatarEnergy_And_MoCI_Sign_Cooperation_Agreement_01.jpg'>",
+      "<img alt='news image' class='img-fluid embed-responsive-item' onerror='this.onerror=null;this.src='/Style%20Library/QPRevamp2021/imgs/Logo.png';' src='https://www.qatarenergy.qa/en/MediaCenter/QPNewsImages/2026/30062026_QatarEnergy_Signs_Commercial_Discovery_Declaration_For_Cyprus_Offshore_Discoveries_01.jpg'>",
+      "<img alt='news image' class='img-fluid embed-responsive-item' src='/Style%20Library/QPRevamp2021/imgs/Logo.png'>",
+      "<img alt='news image' class='img-fluid embed-responsive-item' onerror='this.onerror=null;this.src='/Style%20Library/QPRevamp2021/imgs/Logo.png';' src='https://www.qatarenergy.qa/en/MediaCenter/QPNewsImages/2026/24062026_HE_Visits_Pakistani_Embassy_Offers_Condolences.jpg'>",
+      "<img alt='news image' class='img-fluid embed-responsive-item' onerror='this.onerror=null;this.src='/Style%20Library/QPRevamp2021/imgs/Logo.png';' src='https://www.qatarenergy.qa/en/MediaCenter/QPNewsImages/2026/24062026_HE_Visits_Indian_Embassy_Offers_Condolences.jpg'>",
+      "<img alt='news image' class='img-fluid embed-responsive-item' onerror='this.onerror=null;this.src='/Style%20Library/QPRevamp2021/imgs/Logo.png';' src='https://www.qatarenergy.qa/en/MediaCenter/QPNewsImages/2026/22062026_Update_on_Operational_Incident_at_RLIC.jpg'>",
+      "<img alt='news image' class='img-fluid embed-responsive-item' src='/Style%20Library/QPRevamp2021/imgs/Logo.png'>",
+      "<img alt='news image' class='img-fluid embed-responsive-item' onerror='this.onerror=null;this.src='/Style%20Library/QPRevamp2021/imgs/Logo.png';' src='https://www.qatarenergy.qa/en/MediaCenter/QPNewsImages/2026/10062026_QatarEnergy_Announces_New_Namibia_Discovery.jpg'>",
+      "<img alt='news image' class='img-fluid embed-responsive-item' onerror='this.onerror=null;this.src='/Style%20Library/QPRevamp2021/imgs/Logo.png';' src='https://www.qatarenergy.qa/en/MediaCenter/QPNewsImages/2026/21052026_%20QatarEnergy_Signs_Egypt_Gas_Cooperation_MoU_01.jpg'>",
+      "<img alt='news image' class='img-fluid embed-responsive-item' onerror='this.onerror=null;this.src='/Style%20Library/QPRevamp2021/imgs/Logo.png';' src='https://www.qatarenergy.qa/en/MediaCenter/QPNewsImages/2026/20052026_QatarEnergy_Acquires_Uruguay_Offshore_Blocks.jpg'>",
+      "<img alt='news image' class='img-fluid embed-responsive-item' onerror='this.onerror=null;this.src='/Style%20Library/QPRevamp2021/imgs/Logo.png';' src='https://www.qatarenergy.qa/en/MediaCenter/QPNewsImages/2026/17052026_US_Secretary_of_Energys_Visit_to_Golden_Pass_LNG_01.jpg'>",
+      "<img src=\"/Style Library/QPRevamp2021/imgs/homepage/qp-footer-logo.png\" class=\"img-fluid\" />"
+    ],
+    "links": [
+      "/Style Library/QPRevamp2021/imgs/QatarEnergy_Logo_32X32_Transparent.png",
+      "/Style Library/QPRevamp2021/imgs/QatarEnergy_Logo_32X32_Transparent.png",
+      "/Style Library/QPRevamp2021/imgs/QatarEnergy_Logo_32X32_Transparent.png?rev=44",
+      "/Style%20Library/QPRevamp2021/imgs/QP%20logo%20vertical-big.jpg",
+      "/Style%20Library/QPRevamp2021/imgs/Logo.png",
+      "/Style%20Library/QPRevamp2021/imgs/Logo.png",
+      "/Style%20Library/QPRevamp2021/imgs/Logo.png",
+      "/Style%20Library/QPRevamp2021/imgs/Logo.png",
+      "/Style%20Library/QPRevamp2021/imgs/Logo.png",
+      "/Style%20Library/QPRevamp2021/imgs/Logo.png",
+      "/Style%20Library/QPRevamp2021/imgs/Logo.png",
+      "/Style%20Library/QPRevamp2021/imgs/Logo.png",
+      "/Style%20Library/QPRevamp2021/imgs/Logo.png",
+      "/Style%20Library/QPRevamp2021/imgs/Logo.png",
+      "/Style%20Library/QPRevamp2021/imgs/Logo.png",
+      "/Style%20Library/QPRevamp2021/imgs/Logo.png",
+      "/Style Library/QPRevamp2021/imgs/homepage/qp-footer-logo.png"
+    ]
+  },
+  {
+    "id": "qatarenergy-lng",
+    "url": "https://www.qatarenergylng.qa/english",
+    "status": 200,
+    "images": [
+      "<img src=\"/Portals/0/logo.png\" alt=\"QatarEnergy LNG\" class=\"header-logo\">",
+      "<img src=\"/Portals/0/logo.png\" alt=\"QatarEnergy LNG\" class=\"floating-header-logo\">",
+      "<img src=\"/Portals/0/logo.png\" alt=\"QatarEnergy LNG\" class=\"header-logo\">",
+      "<img src=\"/Portals/0/logo.png\" alt=\"QatarEnergy LNG\" class=\"floating-header-logo\">"
+    ],
+    "links": [
+      "/Portals/0/logo.png",
+      "/Portals/0/logo.png",
+      "/Portals/0/logo.png",
+      "/Portals/0/logo.png"
+    ]
+  },
+  {
+    "id": "qafac",
+    "url": "https://www.qafac.com.qa/",
+    "status": 200,
+    "images": [
+      "<img src=\"https://www.qafac.com.qa/wp-content/uploads/2025/08/logo-header-new.png\" srcset=\"https://www.qafac.com.qa/wp-content/uploads/2025/08/logo-header-new.png 1x,https://www.qafac.com.qa/wp-content/uploads/2025/08/logo-header-new.png 2x,https://www.qafac.com.qa/wp-content/uploads/2025/08/logo-header-new.png 3x\" alt=\"QAFAC\" style=\"width:300px;\" class=\"tgp-exclude default\"/>",
+      "<img src=\"https://www.qafac.com.qa/wp-content/uploads/2025/08/logo-header-new.png\" srcset=\"https://www.qafac.com.qa/wp-content/uploads/2025/08/logo-header-new.png 1x,https://www.qafac.com.qa/wp-content/uploads/2025/08/logo-header-new.png 2x,https://www.qafac.com.qa/wp-content/uploads/2025/08/logo-header-new.png 3x\" alt=\"QAFAC\" style=\"width:350px;\" class=\"tgp-exclude small\"/>",
+      "<img loading=\"lazy\" width=\"350\" height=\"100\" src=\"https://www.qafac.com.qa/wp-content/uploads/2025/08/logo-header-new.png\" title=\"logo-header-new\" alt=\"\" class=\"attachment-full size-full wp-image-20422\" loading=\"lazy\" decoding=\"async\"  />",
+      "<img src=\"https://www.qafac.com.qa/wp-content/uploads/2025/08/logo-header-new.png\" srcset=\"https://www.qafac.com.qa/wp-content/uploads/2025/08/logo-header-new.png 1x,https://www.qafac.com.qa/wp-content/uploads/2025/08/logo-header-new.png 2x,https://www.qafac.com.qa/wp-content/uploads/2025/08/logo-header-new.png 3x\" alt=\"QAFAC\" style=\"width:300px;\" class=\"tgp-exclude default\"/>",
+      "<img src=\"https://www.qafac.com.qa/wp-content/uploads/2025/08/logo-header-new.png\" srcset=\"https://www.qafac.com.qa/wp-content/uploads/2025/08/logo-header-new.png 1x,https://www.qafac.com.qa/wp-content/uploads/2025/08/logo-header-new.png 2x,https://www.qafac.com.qa/wp-content/uploads/2025/08/logo-header-new.png 3x\" alt=\"QAFAC\" style=\"width:350px;\" class=\"tgp-exclude small\"/>",
+      "<img loading=\"lazy\" width=\"350\" height=\"100\" src=\"https://www.qafac.com.qa/wp-content/uploads/2025/08/logo-header-new.png\" title=\"logo-header-new\" alt=\"\" class=\"attachment-full size-full wp-image-20422\" loading=\"lazy\" decoding=\"async\"  />",
+      "<img width=\"300\" height=\"102\" src=\"https://www.qafac.com.qa/wp-content/uploads/2025/04/LOGO-white-300x102.png\" class=\"attachment-medium size-medium wp-image-3442\" alt=\"\" srcset=\"https://www.qafac.com.qa/wp-content/uploads/2025/04/LOGO-white-300x102.png 300w, https://www.qafac.com.qa/wp-content/uploads/2025/04/LOGO-white.png 609w\" sizes=\"(max-width: 300px) 100vw, 300px\" loading=\"lazy\" decoding=\"async\"  />"
+    ],
+    "links": [
+      "https://www.qafac.com.qa/wp-content/plugins/thegem-elements-elementor/inc/templates/elements/logo/css/logo.css?ver=8e461006185463f02962c93e7d0cf3f3",
+      "https://www.qafac.com.qa/wp-content/uploads/2025/08/logo-header-new.png",
+      "https://www.qafac.com.qa/wp-content/uploads/2025/08/logo-header-new.png",
+      "https://www.qafac.com.qa/wp-content/uploads/2025/08/logo-header-new.png",
+      "https://www.qafac.com.qa/wp-content/uploads/2025/08/logo-header-new.png",
+      "https://www.qafac.com.qa/wp-content/uploads/2025/08/logo-header-new.png",
+      "https://www.qafac.com.qa/wp-content/uploads/2025/08/logo-header-new.png",
+      "https://www.qafac.com.qa/wp-content/uploads/2025/04/LOGO-white-300x102.png",
+      "https://www.qafac.com.qa/wp-content/plugins/thegem-elements-elementor/inc/templates/elements/logo/js/logo.js?ver=8e461006185463f02962c93e7d0cf3f3"
+    ]
+  },
+  {
+    "id": "qafco",
+    "url": "https://www.qafco.qa/en/",
+    "status": 200,
+    "images": [
+      "<img width=\"249\" height=\"127\" src=\"https://www.qafco.qa/wp-content/uploads/2024/12/QAFCO-logo.png\" class=\"attachment-full size-full wp-image-1992\" alt=\"\" srcset=\"https://www.qafco.qa/wp-content/uploads/2024/12/QAFCO-logo.png 249w, https://www.qafco.qa/wp-content/uploads/2024/12/elementor/thumbs/QAFCO-logo-qxwrkmgy29gwswm01x00w69rt7228fzmvwaqu83vka.png 128w\" sizes=\"(max-width: 249px) 100vw, 249px\" />"
+    ],
+    "links": [
+      "https://www.qafco.qa/wp-content/uploads/2024/12/QAFCO-logo.png"
+    ]
+  },
+  {
+    "id": "milaha",
+    "url": "https://www.milaha.com/en",
+    "status": 200,
+    "images": [
+      "<img alt=\"Milaha\" class=\"img-fluid\" src=\"/themes/custom/milaha/images/logo.svg\">",
+      "<img alt=\"Milaha\" class=\"img-fluid\" src=\"https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL\">",
+      "<img alt=\"Milaha\" class=\"img-fluid\" src=\"https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL\">",
+      "<img alt=\"Milaha\" class=\"img-fluid\" src=\"https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL\">",
+      "<img alt=\"Milaha\" class=\"img-fluid\" src=\"https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL\">",
+      "<img alt=\"Milaha\" class=\"img-fluid\" src=\"https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL\">",
+      "<img alt=\"Milaha\" class=\"img-fluid\" src=\"https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL\">",
+      "<img alt=\"Milaha\" class=\"img-fluid\" src=\"https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL\">",
+      "<img alt=\"Milaha\" class=\"img-fluid\" src=\"https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL\">",
+      "<img alt=\"Milaha\" class=\"img-fluid\" src=\"https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL\">",
+      "<img alt=\"Milaha\" class=\"img-fluid\" src=\"https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL\">",
+      "<img alt=\"Milaha\" class=\"img-fluid\" src=\"https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL\">",
+      "<img alt=\"Milaha\" class=\"img-fluid\" src=\"https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL\">",
+      "<img alt=\"Milaha\" class=\"img-fluid\" src=\"https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL\">",
+      "<img alt=\"Milaha\" class=\"img-fluid\" src=\"https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL\">",
+      "<img alt=\"Milaha\" class=\"img-fluid\" src=\"https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL\">",
+      "<img alt=\"Milaha\" class=\"img-fluid\" src=\"https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL\">",
+      "<img alt=\"Milaha\" class=\"img-fluid\" src=\"https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL\">",
+      "<img alt=\"Milaha\" class=\"img-fluid\" src=\"https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL\">",
+      "<img alt=\"Milaha\" class=\"img-fluid\" src=\"https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL\">",
+      "<img alt=\"Milaha Logo\" class=\"img-fluid\" src=\"/sites/default/files/2023-04/MILAHA_LOGO_SMALL_0.jpg\">",
+      "<img alt=\"milaha logo thunb\" class=\"img-fluid\" src=\"/sites/default/files/2026-01/Milaha%20Logo%20thunb.png\">",
+      "<img alt=\"milaha logo thunb\" class=\"img-fluid\" src=\"/sites/default/files/2026-01/Milaha%20Logo%20thunb.png\">",
+      "<img alt=\"Milaha Logo\" class=\"img-fluid\" src=\"/sites/default/files/2023-04/MILAHA_LOGO_SMALL_0.jpg\">",
+      "<img alt=\"milaha logo thunb\" class=\"img-fluid\" src=\"/sites/default/files/2026-01/Milaha%20Logo.png\">",
+      "<img alt=\"milaha logo thunb\" class=\"img-fluid\" src=\"/sites/default/files/2026-01/Milaha%20Logo.png\">",
+      "<img alt=\"Milaha Logo\" src=\"/sites/default/files/2023-04/MILAHA_LOGO_SMALL_0.jpg\" class=\"img-fluid\">",
+      "<img alt=\"milaha logo thunb\" src=\"/sites/default/files/2026-01/Milaha%20Logo%20thunb.png\" class=\"img-fluid\">",
+      "<img alt=\"Milaha\" src=\"https://www.milaha.com/sites/default/files/2022-09/footer-logo.svg\" class=\"img-fluid\">"
+    ],
+    "links": [
+      "/sites/default/files/MILAHA_LOGO_DUAL_CMYK.png",
+      "/themes/custom/milaha/images/logo.svg",
+      "https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL",
+      "https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL",
+      "https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL",
+      "https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL",
+      "https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL",
+      "https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL",
+      "https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL",
+      "https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL",
+      "https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL",
+      "https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL",
+      "https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL",
+      "https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL",
+      "https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL",
+      "https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL",
+      "https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL",
+      "https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL",
+      "https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL",
+      "https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL",
+      "https://www.milaha.com/sites/default/files/styles/megamenu_media_center/public/2023-04/MILAHA_LOGO_SMALL_0.jpg.webp?itok=6TTwKOOL",
+      "/sites/default/files/2023-04/MILAHA_LOGO_SMALL_0.jpg",
+      "/sites/default/files/2026-01/Milaha%20Logo%20thunb.png",
+      "/sites/default/files/2026-01/Milaha%20Logo%20thunb.png",
+      "/sites/default/files/2023-04/MILAHA_LOGO_SMALL_0.jpg",
+      "/sites/default/files/2026-01/Milaha%20Logo.png",
+      "/sites/default/files/2026-01/Milaha%20Logo.png",
+      "/sites/default/files/2023-04/MILAHA_LOGO_SMALL_0.jpg",
+      "/sites/default/files/2026-01/Milaha%20Logo%20thunb.png",
+      "https://www.milaha.com/sites/default/files/2022-09/footer-logo.svg"
+    ]
+  },
+  {
+    "id": "mannai",
+    "url": "https://mannai.com/",
+    "status": 200,
+    "images": [
+      "<img class=\"mk-desktop-logo dark-logo \"\r\n\t\t\t\ttitle=\"Your Trusted Partner\"\r\n\t\t\t\talt=\"Your Trusted Partner\"\r\n\t\t\t\tsrc=\"https://mannai.com/wp-content/uploads/2017/05/manni-png.png\" />",
+      "<img class=\"mk-desktop-logo light-logo \"\r\n\t\t\t\t\ttitle=\"Your Trusted Partner\"\r\n\t\t\t\t\talt=\"Your Trusted Partner\"\r\n\t\t\t\t\tsrc=\"https://mannai.com/wp-content/uploads/2017/12/logo-small.png\" />",
+      "<img class=\"mk-resposnive-logo \"\r\n\t\t\t\t\ttitle=\"Your Trusted Partner\"\r\n\t\t\t\t\talt=\"Your Trusted Partner\"\r\n\t\t\t\t\tsrc=\"https://mannai.com/wp-content/uploads/2017/07/logo-raw-mobile.png\" />",
+      "<img class=\"mk-sticky-logo \"\r\n\t\t\t\t\ttitle=\"Your Trusted Partner\"\r\n\t\t\t\t\talt=\"Your Trusted Partner\"\r\n\t\t\t\t\tsrc=\"https://mannai.com/wp-content/uploads/2017/05/manni-png.png\" />",
+      "<img alt=\"Mannai Corporation QPSC\"\r\n\t\t\t\t\t\tsrc=\"https://mannai.com/wp-content/uploads/2017/12/logo-small.png\" />"
+    ],
+    "links": [
+      "https://mannai.com/wp-content/uploads/2020/07/logo-big.png",
+      "https://mannai.com/wp-content/uploads/2017/12/logo-small.png",
+      "https://mannai.com/wp-content/uploads/2017/07/logo-raw-mobile.png",
+      "https://mannai.com/wp-content/uploads/2017/12/logo-small.png"
+    ]
+  },
+  {
+    "id": "abb",
+    "url": "https://www.abb.com/global/en",
+    "status": 200,
+    "images": [],
+    "links": []
+  },
+  {
+    "id": "al-balagh",
+    "url": "https://www.albalagh.com/",
+    "status": 200,
+    "images": [
+      "<img src=\"https://www.albalagh.com/public//user/images/logo.png\" alt=\"\">",
+      "<img src=\"https://www.albalagh.com/public//user/images/logosticky.png\" alt=\"\">",
+      "<img class=\"img-fluid FootLogo m-0\" src=\"https://www.albalagh.com/public//user/images/footer-logo.png\">"
+    ],
+    "links": [
+      "https://www.albalagh.com/public//user/images/logo.png",
+      "https://www.albalagh.com/public//user/images/logosticky.png",
+      "https://www.albalagh.com/public//user/images/footer-logo.png"
+    ]
+  },
+  {
+    "id": "qapco",
+    "url": "https://qapco.com/",
+    "status": 307,
+    "images": [],
+    "links": []
+  },
+  {
+    "id": "qatalum",
+    "url": "https://www.qatalum.com/brand-center/",
+    "status": 403,
+    "images": [],
+    "links": []
+  },
+  {
+    "id": "dopet",
+    "url": "https://www.dopet.com/",
+    "status": 200,
+    "images": [
+      "<img class=\"log-pm\" src=\"https://www.dopet.com/wp-content/uploads/2023/02/DOPET-logoTP.png\" alt=\"\">",
+      "<img class=\"log-sc\" src=\"https://www.dopet.com/wp-content/uploads/2023/02/DOPET-logoTP.png\" alt=\"\">",
+      "<img src=\"https://www.dopet.com/wp-content/uploads/2021/08/QAPCO-Logo.png\" alt=\"\">",
+      "<img class=\"ft-logo\" src=\"https://www.dopet.com/wp-content/uploads/2023/02/DOPET-logoTP-white.png\">"
+    ],
+    "links": [
+      "https://www.dopet.com/wp-content/uploads/2023/02/DOPET-logoTP.png",
+      "https://www.dopet.com/wp-content/uploads/2023/02/DOPET-logoTP.png",
+      "https://www.dopet.com/wp-content/uploads/2021/08/QAPCO-Logo.png",
+      "https://www.dopet.com/wp-content/uploads/2023/02/DOPET-logoTP-white.png"
+    ]
+  }
+]

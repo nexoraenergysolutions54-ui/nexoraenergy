@@ -57,7 +57,7 @@ function IndustriesPage() {
                     <div className="relative aspect-[4/3] overflow-hidden">
                       <img
                         src={industry.image}
-                        alt={`${industry.title} industrial environment`}
+                        alt={industry.imageAlt}
                         loading="lazy"
                         className="h-full w-full object-cover transition duration-700 hover:scale-105"
                       />

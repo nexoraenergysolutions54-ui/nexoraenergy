@@ -12,7 +12,7 @@ const serviceLinks = [
 const companyLinks = [
   { to: "/about" as const, label: "About Nexora" },
   { to: "/industries" as const, label: "Industries" },
-  { to: "/about" as const, hash: "collaborations", label: "Collaborations" },
+  { to: "/about" as const, hash: "collaborations", label: "Industry Landscape" },
   { to: "/careers" as const, label: "Careers" },
   { to: "/hse" as const, label: "HSE Standards" },
 ];

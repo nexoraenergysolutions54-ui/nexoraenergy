@@ -9,79 +9,34 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ServicesRouteImport } from './routes/services'
-import { Route as ProductsRouteImport } from './routes/products'
-import { Route as PartnersRouteImport } from './routes/partners'
-import { Route as NewsRouteImport } from './routes/news'
-import { Route as ManpowerRouteImport } from './routes/manpower'
-import { Route as IndustriesRouteImport } from './routes/industries'
-import { Route as IndustrialServicesRouteImport } from './routes/industrial-services'
-import { Route as HseRouteImport } from './routes/hse'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as CareersRouteImport } from './routes/careers'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ServicesShutdownSupportRouteImport } from './routes/services/shutdown-support'
-import { Route as ServicesProjectSupportRouteImport } from './routes/services/project-support'
-import { Route as ServicesProcurementSupportRouteImport } from './routes/services/procurement-support'
-import { Route as ServicesManpowerSupplyRouteImport } from './routes/services/manpower-supply'
-import { Route as ServicesMaintenanceSupportRouteImport } from './routes/services/maintenance-support'
-import { Route as ServicesEngineeringSupportRouteImport } from './routes/services/engineering-support'
-import { Route as IndustriesPetrochemicalRouteImport } from './routes/industries/petrochemical'
-import { Route as IndustriesOilAndGasRouteImport } from './routes/industries/oil-and-gas'
-import { Route as IndustriesManufacturingRouteImport } from './routes/industries/manufacturing'
-import { Route as IndustriesLngRouteImport } from './routes/industries/lng'
-import { Route as IndustriesInfrastructureRouteImport } from './routes/industries/infrastructure'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as CareersRouteImport } from './routes/careers'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as HseRouteImport } from './routes/hse'
+import { Route as IndustrialServicesRouteImport } from './routes/industrial-services'
+import { Route as IndustriesRouteImport } from './routes/industries'
+import { Route as ManpowerRouteImport } from './routes/manpower'
+import { Route as NewsRouteImport } from './routes/news'
+import { Route as PartnersRouteImport } from './routes/partners'
+import { Route as ProductsRouteImport } from './routes/products'
+import { Route as ServicesRouteImport } from './routes/services'
 import { Route as IndustriesEpcRouteImport } from './routes/industries/epc'
+import { Route as IndustriesInfrastructureRouteImport } from './routes/industries/infrastructure'
+import { Route as IndustriesLngRouteImport } from './routes/industries/lng'
+import { Route as IndustriesManufacturingRouteImport } from './routes/industries/manufacturing'
+import { Route as IndustriesOilAndGasRouteImport } from './routes/industries/oil-and-gas'
+import { Route as IndustriesPetrochemicalRouteImport } from './routes/industries/petrochemical'
+import { Route as ServicesEngineeringSupportRouteImport } from './routes/services/engineering-support'
+import { Route as ServicesMaintenanceSupportRouteImport } from './routes/services/maintenance-support'
+import { Route as ServicesManpowerSupplyRouteImport } from './routes/services/manpower-supply'
+import { Route as ServicesProcurementSupportRouteImport } from './routes/services/procurement-support'
+import { Route as ServicesProjectSupportRouteImport } from './routes/services/project-support'
+import { Route as ServicesShutdownSupportRouteImport } from './routes/services/shutdown-support'
 
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProductsRoute = ProductsRouteImport.update({
-  id: '/products',
-  path: '/products',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PartnersRoute = PartnersRouteImport.update({
-  id: '/partners',
-  path: '/partners',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NewsRoute = NewsRouteImport.update({
-  id: '/news',
-  path: '/news',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ManpowerRoute = ManpowerRouteImport.update({
-  id: '/manpower',
-  path: '/manpower',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const IndustriesRoute = IndustriesRouteImport.update({
-  id: '/industries',
-  path: '/industries',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const IndustrialServicesRoute = IndustrialServicesRouteImport.update({
-  id: '/industrial-services',
-  path: '/industrial-services',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HseRoute = HseRouteImport.update({
-  id: '/hse',
-  path: '/hse',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CareersRoute = CareersRouteImport.update({
-  id: '/careers',
-  path: '/careers',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -89,62 +44,59 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const CareersRoute = CareersRouteImport.update({
+  id: '/careers',
+  path: '/careers',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesShutdownSupportRoute = ServicesShutdownSupportRouteImport.update({
-  id: '/shutdown-support',
-  path: '/shutdown-support',
-  getParentRoute: () => ServicesRoute,
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesProjectSupportRoute = ServicesProjectSupportRouteImport.update({
-  id: '/project-support',
-  path: '/project-support',
-  getParentRoute: () => ServicesRoute,
+const HseRoute = HseRouteImport.update({
+  id: '/hse',
+  path: '/hse',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesProcurementSupportRoute =
-  ServicesProcurementSupportRouteImport.update({
-    id: '/procurement-support',
-    path: '/procurement-support',
-    getParentRoute: () => ServicesRoute,
-  } as any)
-const ServicesManpowerSupplyRoute = ServicesManpowerSupplyRouteImport.update({
-  id: '/manpower-supply',
-  path: '/manpower-supply',
-  getParentRoute: () => ServicesRoute,
+const IndustrialServicesRoute = IndustrialServicesRouteImport.update({
+  id: '/industrial-services',
+  path: '/industrial-services',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesMaintenanceSupportRoute =
-  ServicesMaintenanceSupportRouteImport.update({
-    id: '/maintenance-support',
-    path: '/maintenance-support',
-    getParentRoute: () => ServicesRoute,
-  } as any)
-const ServicesEngineeringSupportRoute =
-  ServicesEngineeringSupportRouteImport.update({
-    id: '/engineering-support',
-    path: '/engineering-support',
-    getParentRoute: () => ServicesRoute,
-  } as any)
-const IndustriesPetrochemicalRoute = IndustriesPetrochemicalRouteImport.update({
-  id: '/petrochemical',
-  path: '/petrochemical',
-  getParentRoute: () => IndustriesRoute,
+const IndustriesRoute = IndustriesRouteImport.update({
+  id: '/industries',
+  path: '/industries',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const IndustriesOilAndGasRoute = IndustriesOilAndGasRouteImport.update({
-  id: '/oil-and-gas',
-  path: '/oil-and-gas',
-  getParentRoute: () => IndustriesRoute,
+const ManpowerRoute = ManpowerRouteImport.update({
+  id: '/manpower',
+  path: '/manpower',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const IndustriesManufacturingRoute = IndustriesManufacturingRouteImport.update({
-  id: '/manufacturing',
-  path: '/manufacturing',
-  getParentRoute: () => IndustriesRoute,
+const NewsRoute = NewsRouteImport.update({
+  id: '/news',
+  path: '/news',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const IndustriesLngRoute = IndustriesLngRouteImport.update({
-  id: '/lng',
-  path: '/lng',
+const PartnersRoute = PartnersRouteImport.update({
+  id: '/partners',
+  path: '/partners',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsRoute = ProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndustriesEpcRoute = IndustriesEpcRouteImport.update({
+  id: '/epc',
+  path: '/epc',
   getParentRoute: () => IndustriesRoute,
 } as any)
 const IndustriesInfrastructureRoute =
@@ -153,10 +105,58 @@ const IndustriesInfrastructureRoute =
     path: '/infrastructure',
     getParentRoute: () => IndustriesRoute,
   } as any)
-const IndustriesEpcRoute = IndustriesEpcRouteImport.update({
-  id: '/epc',
-  path: '/epc',
+const IndustriesLngRoute = IndustriesLngRouteImport.update({
+  id: '/lng',
+  path: '/lng',
   getParentRoute: () => IndustriesRoute,
+} as any)
+const IndustriesManufacturingRoute = IndustriesManufacturingRouteImport.update({
+  id: '/manufacturing',
+  path: '/manufacturing',
+  getParentRoute: () => IndustriesRoute,
+} as any)
+const IndustriesOilAndGasRoute = IndustriesOilAndGasRouteImport.update({
+  id: '/oil-and-gas',
+  path: '/oil-and-gas',
+  getParentRoute: () => IndustriesRoute,
+} as any)
+const IndustriesPetrochemicalRoute = IndustriesPetrochemicalRouteImport.update({
+  id: '/petrochemical',
+  path: '/petrochemical',
+  getParentRoute: () => IndustriesRoute,
+} as any)
+const ServicesEngineeringSupportRoute =
+  ServicesEngineeringSupportRouteImport.update({
+    id: '/engineering-support',
+    path: '/engineering-support',
+    getParentRoute: () => ServicesRoute,
+  } as any)
+const ServicesMaintenanceSupportRoute =
+  ServicesMaintenanceSupportRouteImport.update({
+    id: '/maintenance-support',
+    path: '/maintenance-support',
+    getParentRoute: () => ServicesRoute,
+  } as any)
+const ServicesManpowerSupplyRoute = ServicesManpowerSupplyRouteImport.update({
+  id: '/manpower-supply',
+  path: '/manpower-supply',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesProcurementSupportRoute =
+  ServicesProcurementSupportRouteImport.update({
+    id: '/procurement-support',
+    path: '/procurement-support',
+    getParentRoute: () => ServicesRoute,
+  } as any)
+const ServicesProjectSupportRoute = ServicesProjectSupportRouteImport.update({
+  id: '/project-support',
+  path: '/project-support',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesShutdownSupportRoute = ServicesShutdownSupportRouteImport.update({
+  id: '/shutdown-support',
+  path: '/shutdown-support',
+  getParentRoute: () => ServicesRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -336,74 +336,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/products': {
-      id: '/products'
-      path: '/products'
-      fullPath: '/products'
-      preLoaderRoute: typeof ProductsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/partners': {
-      id: '/partners'
-      path: '/partners'
-      fullPath: '/partners'
-      preLoaderRoute: typeof PartnersRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/news': {
-      id: '/news'
-      path: '/news'
-      fullPath: '/news'
-      preLoaderRoute: typeof NewsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/manpower': {
-      id: '/manpower'
-      path: '/manpower'
-      fullPath: '/manpower'
-      preLoaderRoute: typeof ManpowerRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/industries': {
-      id: '/industries'
-      path: '/industries'
-      fullPath: '/industries'
-      preLoaderRoute: typeof IndustriesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/industrial-services': {
-      id: '/industrial-services'
-      path: '/industrial-services'
-      fullPath: '/industrial-services'
-      preLoaderRoute: typeof IndustrialServicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/hse': {
-      id: '/hse'
-      path: '/hse'
-      fullPath: '/hse'
-      preLoaderRoute: typeof HseRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/careers': {
-      id: '/careers'
-      path: '/careers'
-      fullPath: '/careers'
-      preLoaderRoute: typeof CareersRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -413,81 +350,81 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/careers': {
+      id: '/careers'
+      path: '/careers'
+      fullPath: '/careers'
+      preLoaderRoute: typeof CareersRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services/shutdown-support': {
-      id: '/services/shutdown-support'
-      path: '/shutdown-support'
-      fullPath: '/services/shutdown-support'
-      preLoaderRoute: typeof ServicesShutdownSupportRouteImport
-      parentRoute: typeof ServicesRoute
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/services/project-support': {
-      id: '/services/project-support'
-      path: '/project-support'
-      fullPath: '/services/project-support'
-      preLoaderRoute: typeof ServicesProjectSupportRouteImport
-      parentRoute: typeof ServicesRoute
+    '/hse': {
+      id: '/hse'
+      path: '/hse'
+      fullPath: '/hse'
+      preLoaderRoute: typeof HseRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/services/procurement-support': {
-      id: '/services/procurement-support'
-      path: '/procurement-support'
-      fullPath: '/services/procurement-support'
-      preLoaderRoute: typeof ServicesProcurementSupportRouteImport
-      parentRoute: typeof ServicesRoute
+    '/industrial-services': {
+      id: '/industrial-services'
+      path: '/industrial-services'
+      fullPath: '/industrial-services'
+      preLoaderRoute: typeof IndustrialServicesRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/services/manpower-supply': {
-      id: '/services/manpower-supply'
-      path: '/manpower-supply'
-      fullPath: '/services/manpower-supply'
-      preLoaderRoute: typeof ServicesManpowerSupplyRouteImport
-      parentRoute: typeof ServicesRoute
+    '/industries': {
+      id: '/industries'
+      path: '/industries'
+      fullPath: '/industries'
+      preLoaderRoute: typeof IndustriesRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/services/maintenance-support': {
-      id: '/services/maintenance-support'
-      path: '/maintenance-support'
-      fullPath: '/services/maintenance-support'
-      preLoaderRoute: typeof ServicesMaintenanceSupportRouteImport
-      parentRoute: typeof ServicesRoute
+    '/manpower': {
+      id: '/manpower'
+      path: '/manpower'
+      fullPath: '/manpower'
+      preLoaderRoute: typeof ManpowerRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/services/engineering-support': {
-      id: '/services/engineering-support'
-      path: '/engineering-support'
-      fullPath: '/services/engineering-support'
-      preLoaderRoute: typeof ServicesEngineeringSupportRouteImport
-      parentRoute: typeof ServicesRoute
+    '/news': {
+      id: '/news'
+      path: '/news'
+      fullPath: '/news'
+      preLoaderRoute: typeof NewsRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/industries/petrochemical': {
-      id: '/industries/petrochemical'
-      path: '/petrochemical'
-      fullPath: '/industries/petrochemical'
-      preLoaderRoute: typeof IndustriesPetrochemicalRouteImport
-      parentRoute: typeof IndustriesRoute
+    '/partners': {
+      id: '/partners'
+      path: '/partners'
+      fullPath: '/partners'
+      preLoaderRoute: typeof PartnersRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/industries/oil-and-gas': {
-      id: '/industries/oil-and-gas'
-      path: '/oil-and-gas'
-      fullPath: '/industries/oil-and-gas'
-      preLoaderRoute: typeof IndustriesOilAndGasRouteImport
-      parentRoute: typeof IndustriesRoute
+    '/products': {
+      id: '/products'
+      path: '/products'
+      fullPath: '/products'
+      preLoaderRoute: typeof ProductsRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/industries/manufacturing': {
-      id: '/industries/manufacturing'
-      path: '/manufacturing'
-      fullPath: '/industries/manufacturing'
-      preLoaderRoute: typeof IndustriesManufacturingRouteImport
-      parentRoute: typeof IndustriesRoute
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/industries/lng': {
-      id: '/industries/lng'
-      path: '/lng'
-      fullPath: '/industries/lng'
-      preLoaderRoute: typeof IndustriesLngRouteImport
+    '/industries/epc': {
+      id: '/industries/epc'
+      path: '/epc'
+      fullPath: '/industries/epc'
+      preLoaderRoute: typeof IndustriesEpcRouteImport
       parentRoute: typeof IndustriesRoute
     }
     '/industries/infrastructure': {
@@ -497,12 +434,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndustriesInfrastructureRouteImport
       parentRoute: typeof IndustriesRoute
     }
-    '/industries/epc': {
-      id: '/industries/epc'
-      path: '/epc'
-      fullPath: '/industries/epc'
-      preLoaderRoute: typeof IndustriesEpcRouteImport
+    '/industries/lng': {
+      id: '/industries/lng'
+      path: '/lng'
+      fullPath: '/industries/lng'
+      preLoaderRoute: typeof IndustriesLngRouteImport
       parentRoute: typeof IndustriesRoute
+    }
+    '/industries/manufacturing': {
+      id: '/industries/manufacturing'
+      path: '/manufacturing'
+      fullPath: '/industries/manufacturing'
+      preLoaderRoute: typeof IndustriesManufacturingRouteImport
+      parentRoute: typeof IndustriesRoute
+    }
+    '/industries/oil-and-gas': {
+      id: '/industries/oil-and-gas'
+      path: '/oil-and-gas'
+      fullPath: '/industries/oil-and-gas'
+      preLoaderRoute: typeof IndustriesOilAndGasRouteImport
+      parentRoute: typeof IndustriesRoute
+    }
+    '/industries/petrochemical': {
+      id: '/industries/petrochemical'
+      path: '/petrochemical'
+      fullPath: '/industries/petrochemical'
+      preLoaderRoute: typeof IndustriesPetrochemicalRouteImport
+      parentRoute: typeof IndustriesRoute
+    }
+    '/services/engineering-support': {
+      id: '/services/engineering-support'
+      path: '/engineering-support'
+      fullPath: '/services/engineering-support'
+      preLoaderRoute: typeof ServicesEngineeringSupportRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/maintenance-support': {
+      id: '/services/maintenance-support'
+      path: '/maintenance-support'
+      fullPath: '/services/maintenance-support'
+      preLoaderRoute: typeof ServicesMaintenanceSupportRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/manpower-supply': {
+      id: '/services/manpower-supply'
+      path: '/manpower-supply'
+      fullPath: '/services/manpower-supply'
+      preLoaderRoute: typeof ServicesManpowerSupplyRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/procurement-support': {
+      id: '/services/procurement-support'
+      path: '/procurement-support'
+      fullPath: '/services/procurement-support'
+      preLoaderRoute: typeof ServicesProcurementSupportRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/project-support': {
+      id: '/services/project-support'
+      path: '/project-support'
+      fullPath: '/services/project-support'
+      preLoaderRoute: typeof ServicesProjectSupportRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/shutdown-support': {
+      id: '/services/shutdown-support'
+      path: '/shutdown-support'
+      fullPath: '/services/shutdown-support'
+      preLoaderRoute: typeof ServicesShutdownSupportRouteImport
+      parentRoute: typeof ServicesRoute
     }
   }
 }

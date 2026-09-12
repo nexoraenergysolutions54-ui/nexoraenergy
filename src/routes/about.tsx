@@ -226,20 +226,24 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* 5. Collaborations */}
+      {/* 5. Industry Landscape (logo section) */}
       <section
         id="collaborations"
         className="scroll-mt-32 border-t border-border bg-white py-20 lg:scroll-mt-40"
       >
         <div className="mx-auto max-w-7xl px-6">
           <Reveal className="mx-auto mb-12 max-w-2xl text-center">
-            <SectionEyebrow>Collaborations</SectionEyebrow>
+            <SectionEyebrow>Industry Landscape</SectionEyebrow>
             <h2 className="mt-5 text-3xl font-extrabold leading-[1.06] md:text-5xl">
-              Organizations We Have Collaborated With
+              Organizations Across the Regional Industrial Landscape
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-              NEXORA has supported and collaborated with organizations across energy, industry,
-              infrastructure and commercial operations.
+              A selection of organizations active across the energy, industrial, infrastructure and
+              commercial sectors in Qatar and the wider region.
+            </p>
+            <p className="mx-auto mt-4 max-w-xl rounded-md border border-border bg-surface/70 px-4 py-2.5 text-sm font-semibold leading-5 text-foreground">
+              Logos are shown for industry-context purposes only. No client, partner, supplier,
+              endorsement or commercial relationship with NEXORA Energy Solutions is implied.
             </p>
           </Reveal>
           <Reveal delay={0.08}>

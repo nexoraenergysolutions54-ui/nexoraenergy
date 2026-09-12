@@ -12,7 +12,7 @@ export function WhatsAppButton() {
       onMouseLeave={() => setHover(false)}
       onFocus={() => setHover(true)}
       onBlur={() => setHover(false)}
-      className="fixed bottom-6 right-6 z-50 mb-[env(safe-area-inset-bottom)] mr-[env(safe-area-inset-right)] rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-energy group"
+      className="fixed bottom-6 right-6 z-30 mb-[env(safe-area-inset-bottom)] mr-[env(safe-area-inset-right)] rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-energy group"
       aria-label="Chat with Nexora on WhatsApp (opens in a new tab)"
     >
       <div className="relative grid h-14 w-14 place-items-center rounded-full bg-[#25D366] text-white shadow-[0_20px_50px_-24px_rgba(7,28,44,0.55)] ring-1 ring-white/50 transition-transform duration-300 hover:-translate-y-0.5 hover:scale-[1.04]">
