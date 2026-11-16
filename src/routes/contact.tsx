@@ -110,8 +110,17 @@ function ContactPage() {
               {[
                 {
                   icon: MapPin,
-                  title: "Location",
-                  content: <span>Doha, Qatar</span>,
+                  title: "Office Address",
+                  content: (
+                    <span>
+                      Office No. {site.office.officeNo}, Floor {site.office.floor}
+                      <br />
+                      Building {site.office.building}, Street {site.office.street}, Zone{" "}
+                      {site.office.zone}
+                      <br />
+                      Doha, Qatar
+                    </span>
+                  ),
                   sub: "Headquarters and primary contact location",
                 },
                 {

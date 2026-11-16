@@ -14,6 +14,7 @@ export function organizationSchema() {
     ...(site.phone ? { telephone: site.phone } : {}),
     address: {
       "@type": "PostalAddress",
+      streetAddress: `Office No. ${site.office.officeNo}, Floor ${site.office.floor}, Building ${site.office.building}, Street ${site.office.street}, Zone ${site.office.zone}`,
       addressLocality: site.city,
       addressCountry: site.country,
     },

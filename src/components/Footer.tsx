@@ -103,7 +103,11 @@ export function Footer() {
             <ul className="mt-5 space-y-4 text-sm text-white/68">
               <li className="flex gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-energy" aria-hidden="true" />
-                <span>Doha, Qatar</span>
+                <span>
+                  {site.addressShort}
+                  <br />
+                  Doha, Qatar
+                </span>
               </li>
               <li className="flex gap-3">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-energy" aria-hidden="true" />

@@ -48,7 +48,15 @@ export const site = {
   email: "sales@nexoraqa.com",
   city: "Doha",
   country: "Qatar",
-  address: "Al Muntazah St., Doha, Qatar",
+  office: {
+    officeNo: "112",
+    floor: "1",
+    building: "10",
+    street: "890",
+    zone: "6",
+  },
+  address: "Office No. 112, Floor 1, Building 10, Street 890, Zone 6, Doha, Qatar",
+  addressShort: "Office 112, Bldg 10, St 890, Zone 6",
 };
 
 export const markets = ["Qatar", "Saudi Arabia", "UAE", "Kuwait", "Bahrain", "Oman"];
